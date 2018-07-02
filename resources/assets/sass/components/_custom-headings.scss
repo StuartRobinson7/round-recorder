@@ -1,0 +1,30 @@
+// ========================================
+// Custom Headings ------------------------
+// ========================================
+
+// title
+.title {position: relative;
+    span{
+        background-color: $body-bg; 
+        padding: 1rem 1rem 1rem 0;
+        position: relative;
+        z-index: 1;
+    }
+    &:before{
+        @include vertical-align(absolute);
+        content: '';
+        left: 0;
+        right: 0;
+        height: 1px;
+        display: block;
+        border-top: 1px solid $border-color;
+        margin-top: 1px;
+    }
+}
+
+// adds padding if heading is center aligned
+.title.text-center{
+    span {
+        padding-left: 1rem;   
+    }
+}

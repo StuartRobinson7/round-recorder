@@ -1,0 +1,13 @@
+// ========================================
+// Print Styles ---------------------------
+// ========================================
+
+@media print {
+
+    // Removes 'href' content following links
+    a[href]:after {
+        content: none !important;
+    }
+
+
+}

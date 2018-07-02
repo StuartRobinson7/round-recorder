@@ -35,9 +35,10 @@ Route::get('/player_list', function () {
 //    return view('add_course', ['course' => $course]);
 //});
 
-Route::get('/add_course', 'CourseController@showAddCourseForm')->name('add_course');
-Route::post('/add_course', ['as' => 'add_course', 'uses' => 'CourseController@saveCourses']);
-
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/add_course', 'CourseController@showAddCourseForm')->name('add_course');
+    Route::post('/add_course', ['as' => 'add_course', 'uses' => 'CourseController@saveCourses']);
+});
 
 Route::get('/profile', function () {
 

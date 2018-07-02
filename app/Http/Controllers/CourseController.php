@@ -6,31 +6,20 @@ use App\Course;
 use App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-//use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class CourseController extends Controller
 
 {
 
-
     /*
     |--------------------------------------------------------------------------
-    | Register Controller
+    | Course Controller
     |--------------------------------------------------------------------------
     |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
+    | This controller handles the adding of courses to the database
     |
     */
-
-
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/add_course';
 
     public function showAddCourseForm()
     {
@@ -184,15 +173,6 @@ class CourseController extends Controller
         
        
     }    
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }               
+            
 
 }
