@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
+@section('title', 'Add Course')
+
 @section('content')
 
+            <div class="container">
 
                 <h1>{{ __('Add Course') }}</h1>
 
@@ -241,4 +244,6 @@
 
                     </form>
 
+            </div>
+            <!--/.container -->
 @endsection
