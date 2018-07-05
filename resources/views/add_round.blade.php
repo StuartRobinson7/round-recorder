@@ -66,19 +66,18 @@ $(document).ready(function(){
             }
         })
 
-        $.ajax({          
+        $.ajax({
+          
             url: '/ajax_getcourse',
             method: 'get',
             data: { id:id },
             cache: false,          
-            success: function (data) {
-                alert(id);
+            success: function (response) {
                 $("#add_round_form").innerHTML=response; 
             },
-            error:function(error)
-                {
-                    console.log(error);
-                }           
+            error:function(error){ 
+                console.log(error);
+            }            
         });       
 
     });

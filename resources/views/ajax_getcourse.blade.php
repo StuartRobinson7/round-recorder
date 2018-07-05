@@ -1,6 +1,6 @@
 <p> finally it works!!</p>
-<!--
-@foreach($id as $key => $par                        
+
+@foreach($course_data as $key => $par                        
 
 <table>
 

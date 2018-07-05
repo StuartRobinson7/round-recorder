@@ -19,9 +19,12 @@ class GetCourseController extends Controller
 
         $selected_id = $request->id;
 
-        $course_data = \App\Course::where('id', $selected_id)->get();
+        //return response()->json($selected_id);
+
+        $course_data = Course::where('id', $selected_id)->get();
     
-        $html = view('ajax_getcourse')->with(compact('course_data'))->render();
+        $html = view('ajax_getcourse')->with(compact('course_data'));
+
         return response()->json(['success' => true, 'html' => $html]);
 
     }
