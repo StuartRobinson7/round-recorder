@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Player List')
+@section('title', 'Course List')
 
 @section('content')
     
@@ -10,20 +10,20 @@
                 <thead>
                     <tr>    
                         <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Handicap</th>
-                        <th>Right/Left Handed</th>                 
+                        <th>Property Name</th>
+                        <th>Course Name</th>
+                        <th>Course Rating</th>
+                        <th>Course Slope</th>                 
                     </tr>                
                 </thead>
                 <tbody>
-                @foreach($player as $key => $data)
+                @foreach($course as $key => $data)
                     <tr>    
                         <th>{{$data->id}}</th>
-                        <th>{{$data->first_name}}</th>
-                        <th>{{$data->last_name}}</th>
-                        <th>{{$data->handicap}}</th>
-                        <th>{{$data->hand}}</th>                 
+                        <th>{{$data->property_name}}</th>
+                        <th>{{$data->course_name}}</th>
+                        <th>{{$data->course_rating}}</th>
+                        <th>{{$data->course_slope}}</th>                 
                     </tr>
                 @endforeach
                 </tbody>

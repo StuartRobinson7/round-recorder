@@ -27,6 +27,13 @@ Route::get('/player_list', function () {
     return view('player_list', ['player' => $player]);
 });
 
+Route::get('/course_list', function () {
+
+    $course = \App\Course::all();
+
+    return view('course_list', ['course' => $course]);
+});
+
 
 //Route::get('/add_course', function () {
 
@@ -35,10 +42,27 @@ Route::get('/player_list', function () {
 //    return view('add_course', ['course' => $course]);
 //});
 
+
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/add_course', 'CourseController@showAddCourseForm')->name('add_course');
     Route::post('/add_course', ['as' => 'add_course', 'uses' => 'CourseController@saveCourses']);
 });
+
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/add_round', 'RoundController@showAddRoundForm')->name('add_round');
+    Route::post('/add_round', ['as' => 'add_round', 'uses' => 'RoundController@saveRound']);
+});
+
+
+//Route::post('/ajax/get_course','GetCourseController@get_course');
+
+//Route::get('/ajax_getcourse', 'GetCourseController@get_course');
+
+Route::get('ajax_getcourse', 'GetCourseController@GetCourseId');
+
+
 
 Route::get('/profile', function () {
 

@@ -25,4 +25,20 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+
+    //public function GetCourseId(){
+        //$id = Input::get('id');
+        //$course_id = Course::find($id);
+        //return view('add_round', compact('course_id'));
+            
+
+        //$request = Request::all();
+        //$course_id = Course::where('course_id', $request->id)->get();
+    
+        //$html = view('add_course')->with(compact('course_id'))->render();
+        //return response()->json(['success' => true, 'html' => $html]);
+
+    //}
+
 }

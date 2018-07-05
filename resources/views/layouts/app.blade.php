@@ -11,8 +11,9 @@
     <title>{{ config('app.name', 'Round Recorder') }} - @yield('title')</title>
 
     <!-- Scripts -->
+    <script src="{{ asset('js/jquery/jquery-3.2.1.slim.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/scripts.js') }}" defer></script>
+    <script src="{{ asset('js/script.js') }}" defer></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/mainstyle.css') }}" rel="stylesheet">
