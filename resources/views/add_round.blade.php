@@ -73,10 +73,11 @@ $(document).ready(function(){
             data: { id:id },
             cache: false,          
             success: function (response) {
+                alert('success! Kind off... so close!');
                 $("#add_round_form").innerHTML=response; 
             },
             error:function(error){ 
-                console.log(error);
+                console.log(id);
             }            
         });       
 
