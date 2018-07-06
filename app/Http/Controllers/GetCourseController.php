@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Course;
-use App\Http\Controllers;
+//use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
+
+//use Illuminate\Support\Facades\Validator;
+//use Illuminate\Foundation\Auth\RegistersUsers;
 
 class GetCourseController extends Controller
 {
@@ -17,15 +19,21 @@ class GetCourseController extends Controller
         //return view('add_round', compact('course_id'));
             
 
-        $selected_id = $request->id;
+        $selected_id = $request->selected_course_id;
+
+        $course_data = Course::where('id', $selected_id)->get();
+
+        $view = view('/ajax_getcourse', compact('course_data'))->render();
 
         //return response()->json($selected_id);
 
-        $course_data = Course::where('id', $selected_id)->get();
-    
-        $html = view('ajax_getcourse')->with(compact('course_data'));
+        return response()->json($course_data);
 
-        return response()->json(['success' => true, 'html' => $html]);
+        //return response()->json(['success' => true, 'view' => $view]);
+
+        //$course_data = Course::where('id', $selected_id)->first();
+        //$course_data = DB::table('courses')->first();
+        //return this->$course_data[0]->
 
     }
 }

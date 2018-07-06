@@ -1,7 +1,8 @@
 <p> finally it works!!</p>
 
-@foreach($course_data as $key => $par                        
 
+@foreach($course_data as $key => $par)                       
+    
 <table>
 
     <tr>
@@ -24,6 +25,7 @@
         <td><input id="hole_1_gir" type="checkbox" class="form-control" name="hole_1_gir" value="0"></td>
     </tr>
 
+    
     <tr>
         <td>2</td>
         <td>{{$par->hole_2_par}}</td>
@@ -197,4 +199,3 @@
 </table>
 
 @endforeach
--->

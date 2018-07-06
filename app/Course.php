@@ -42,6 +42,6 @@ class Course extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 }

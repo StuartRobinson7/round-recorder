@@ -58,7 +58,7 @@ $(document).ready(function(){
 
     $('#course_id').on('change', function() {
 
-        var id=$(this).val();
+        var selected_course_id=$(this).val();
 
         $.ajaxSetup({
             headers: {
@@ -66,18 +66,16 @@ $(document).ready(function(){
             }
         })
 
-        $.ajax({
-          
+        $.ajax({         
             url: '/ajax_getcourse',
             method: 'get',
-            data: { id:id },
-            cache: false,          
+            data: {selected_course_id: selected_course_id},       
             success: function (response) {
-                alert('success! Kind off... so close!');
-                $("#add_round_form").innerHTML=response; 
+                alert(response);
+                //$("#add_round_form").html(response);  
             },
             error:function(error){ 
-                console.log(id);
+                console.log(error);
             }            
         });       
 
