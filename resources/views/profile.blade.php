@@ -10,6 +10,19 @@
                 <h2>{{ Auth::user()->hand }} Hand</h2>
                 <h3>Playing off {{ Auth::user()->handicap }}</h3>
 
+                
+                @foreach($career as $key => $career_stat) 
+                        <div class="row">
+                                <div class="col-6 col-md">
+                                        <h4>{{ number_format($career_stat->fir_percentage, 2) }}%</h4>
+                                </div>
+                                <div class="col-6 col-md">
+                                        <h4>{{ number_format($career_stat->gir_percentage, 2) }}%</h4>
+                                </div>                                                             
+                        </div>
+                @endforeach
+                
+
                 <table class="table">
 
                         <tr>
