@@ -10,6 +10,16 @@ $(document).ready(function () {
         format: 'dd/mm/yyyy'
     });
 
+    $('.number-symbol').each(function(i, obj) { 
+
+        var $value = $(this).text();        
+
+        if($value < 0) {
+            $(this).prepend("+");
+        }
+    });
+
+
     // Mobile menu menu ================================
 
         var $wrapper = $('#page_wrapper'),
