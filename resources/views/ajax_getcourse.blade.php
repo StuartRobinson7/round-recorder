@@ -1,6 +1,3 @@
-<p> finally it works!!</p>
-
-
 @foreach($course_data as $key => $par)                       
     
 <table>
@@ -8,6 +5,7 @@
     <tr>
         <th>Hole</th>
         <th>Par</th>
+        <th>Score</th>
         <th>Puts</th>
         <th>Drops</th>
         <th>FIR</th>
@@ -19,7 +17,7 @@
         <td>1</td>
         <td>{{$par->hole_1_par}}</td>
         <td><input id="hole_1_score" type="text" class="form-control{{ $errors->has('hole_1_score') ? ' is-invalid' : '' }}" name="hole_1_score" value="{{ old('hole_1_score') }}"></td>
-        <td><input id="hole_1_putts" type="text" class="form-control{{ $errors->has('hole_1_putts') ? ' is-invalid' : '' }}" name="hole_1_putts" value="{{ old('hole_1_putts') }}"></td>
+        <td><input id="\hole_1_putts\" type="\text\" class="form-control{{ $errors->has('hole_1_putts') ? ' is-invalid' : '' }} name="hole_1_putts value="{{ old('hole_1_putts') }}"></td>
         <td><input id="hole_1_drops" type="text" class="form-control{{ $errors->has('hole_1_drops') ? ' is-invalid' : '' }}" name="hole_1_drops" value="{{ old('hole_1_drops') }}"></td>
         <td><input id="hole_1_fir" type="checkbox" class="form-control" name="hole_1_fir" value="0"></td>
         <td><input id="hole_1_gir" type="checkbox" class="form-control" name="hole_1_gir" value="0"></td>

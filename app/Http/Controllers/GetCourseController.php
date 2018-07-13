@@ -23,13 +23,18 @@ class GetCourseController extends Controller
 
         $course_data = Course::where('id', $selected_id)->get();
 
-        $view = view('/ajax_getcourse', compact('course_data'))->render();
+        $view = view('/ajax_getcourse', ['course_data' => $course_data])->render();
+
+        $view = trim(preg_replace('/\r\n/', ' ', $view));
+
+        //$view = trim(preg_replace("#\\#", ' ', $view));
 
         //return response()->json($selected_id);
 
-        return response()->json($course_data);
+        //return response($course_data);
+        //return response()->json($course_data);
 
-        //return response()->json(['success' => true, 'view' => $view]);
+        return response()->json($view);
 
         //$course_data = Course::where('id', $selected_id)->first();
         //$course_data = DB::table('courses')->first();

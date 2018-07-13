@@ -17,6 +17,7 @@ class CreateRoundsTable extends Migration
             $table->increments('id');
             $table->date('round_date');
             $table->integer('course_id');
+            $table->integer('player_id');
             $table->integer('hole_1_score');
             $table->integer('hole_1_putts');
             $table->integer('hole_1_drops');

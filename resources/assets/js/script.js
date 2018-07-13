@@ -6,6 +6,10 @@ var screenSize = $(window).width();
 
 $(document).ready(function () {
 
+    $('#round_date').datepicker({
+        format: 'dd/mm/yyyy'
+    });
+
     // Mobile menu menu ================================
 
         var $wrapper = $('#page_wrapper'),

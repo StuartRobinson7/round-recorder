@@ -6,6 +6,7 @@ use App\Round;
 use App\Course;
 use App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -20,6 +21,7 @@ class RoundController extends Controller
     | This controller handles the adding of courses to the database
     |
     */
+    
 
     public function showAddRoundForm()
     {
@@ -34,11 +36,18 @@ class RoundController extends Controller
 
 
     public function saveRound(Request $request)
-    {     
-    $round = Round::create($request->all());
-    return redirect()->route('profile');
+    {           
+        $round = Round::create($request->all());
+        return redirect()->route('profile');
     }
 
+ 
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'round_date' => 'required|date_format:d/m/Y',
+        ]);
+    }  
 
     protected function create(array $data)
     {     
@@ -46,6 +55,7 @@ class RoundController extends Controller
         return Round::create([
 
                 'course_id' => $data['course_id'],
+                'player_id' => $data['player_id'],
                 'round_date' => $data['round_date'],
                 'hole_1_score' => $data['hole_1_score'],
                 'hole_1_putts' => $data['hole_1_putts'],

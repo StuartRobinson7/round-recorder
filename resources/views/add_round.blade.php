@@ -12,6 +12,8 @@
                         @csrf
 
 
+                        <input id="player_id" type="hidden" class="hidden" name="player_id" value="{{ Auth::user()->id }}">
+
                         <label>Course</label>
 
                         <select id="course_id" name="course_id" class="form-control">
@@ -22,7 +24,12 @@
 
 
                         <label>Date</label>
-                        <input id="round_date" type="text" class="form-control{{ $errors->has('round_date') ? ' is-invalid' : '' }}" name="round_date" value="{{ old('round_date') }}">
+
+                        <div class="input-group date">
+                            <input type="text" class="form-control{{ $errors->has('round_date') ? ' is-invalid' : '' }}" id="round_date" placeholder="DD/MM/YYYY" name="round_date" value="{{ old('round_date') }}">
+                        </div>
+
+                       <!-- <input id="round_date" type="text" class="form-control{{ $errors->has('round_date') ? ' is-invalid' : '' }}" name="round_date" value="{{ old('round_date') }}"> -->
 
 
 
@@ -68,14 +75,16 @@ $(document).ready(function(){
 
         $.ajax({         
             url: '/ajax_getcourse',
+            dataType: "json",
             method: 'get',
-            data: {selected_course_id: selected_course_id},       
+            data: {selected_course_id: selected_course_id},      
             success: function (response) {
-                alert(response);
-                //$("#add_round_form").html(response);  
+                //console.log(response)
+                //alert(response)
+                $("#add_round_form").html(response)  
             },
             error:function(error){ 
-                console.log(error);
+                console.log(error)
             }            
         });       
 
