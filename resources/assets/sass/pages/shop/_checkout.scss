@@ -1,0 +1,36 @@
+﻿// ========================================
+// Login ----------------------------------
+// ========================================
+
+@if ($ecommerce) {
+
+    .checkout-details {
+
+        dl {
+            @extend %number;
+            @extend .row;
+            @extend .align-items-center;
+
+            margin: 0;
+            line-height: 1.4rem;
+
+            dt {
+                @extend .col-md-5;
+                @include media-breakpoint-up(md) {
+                    text-align: right;
+                    line-height: 1.2rem;
+                    padding: 0.5rem;
+                }
+            }
+
+            dd {
+                @extend .col-md-7;
+                @include media-breakpoint-up(md) {
+                    margin-bottom: 0;
+                    padding: 0.5rem;
+                }
+            }
+        }
+    }
+
+}

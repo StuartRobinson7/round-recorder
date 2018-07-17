@@ -1,0 +1,74 @@
+// ========================================
+// Forms ----------------------------------
+// ========================================
+
+// Bootstrap Overrides
+.custom-control-label::before {
+    top:0.45rem;
+}
+
+
+// buttons --------------------------------
+
+// override default bootstrap styles
+.btn {
+    @extend %caps;
+    @extend %text-bold;
+
+    color: $white; 
+
+    #{$a-tags-hover} {
+        background: $black;
+        border-color: $black;
+        color: $white;
+    }
+}
+
+.btn-light {
+    color: $body-color;
+}
+
+.btn-link {
+    color:$link-color;
+
+    #{$a-tags-hover} {
+        color: $link-hover-color;
+        text-decoration: none;
+        background-color: $gray-300;
+        border-color: $gray-300;
+    }
+}
+
+// call-to-action 
+.btn-cta {
+    @extend %heading-base;
+
+    position: relative;
+    background: $cta;
+    border: none;
+    overflow: hidden;
+    
+    span{
+        position: relative;
+        z-index: 1;
+    }
+
+    &:before{
+        @include pseudo-cover();
+        @include transition(all 0.3s ease);
+        right: 100%;
+        background: $link-hover-color;        
+    }
+
+    &:hover{
+        background: $cta;
+
+        &:before{
+            @include transition(all 0.3s ease);
+            right:0;            
+        }
+    }
+
+    //#{$a-tags-hover} {}
+}
+

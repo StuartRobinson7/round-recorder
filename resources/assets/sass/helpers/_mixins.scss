@@ -1,0 +1,133 @@
+// ========================================
+// Mixins ---------------------------------
+// ========================================
+
+// TABLE OF CONTENTS ----------------------
+
+
+//      1. Vertical Center Align
+
+//      2. Background Image
+
+//      3. Font-size
+
+//      4. Pseudo Cover
+
+//      5. Responsive Ratio
+
+//      6. Reference all <h*> tags
+
+
+// ----------------------------------------
+
+
+
+// 1. Vertical Center Align
+
+@mixin vertical-align($position: relative) {
+    position: $position;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+
+// 2. Background-image
+
+// .png
+$image-path: '../img' !default;
+$fallback-extension: 'png' !default;
+$retina-suffix: '@2x';
+
+@mixin background-image($name, $size: false) {
+    background-image: url(#{$image-path}/#{$name}.svg);
+
+    @if($size) {
+        background-size: $size;
+    }
+
+    .no-svg & {
+        background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
+
+        @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+            background-image: url(#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension});
+        }
+    }
+}
+
+// .jpeg
+$jpeg-image-path: '../img' !default;
+$jpeg-fallback-extension: 'jpeg' !default;
+$jpeg-retina-suffix: '@2x';
+
+@mixin jpeg-background-image($name, $size: false) {
+    background-image: url(#{$jpeg-image-path}/#{$name}.jpeg);
+
+    @if($size) {
+        background-size: $size;
+    }
+
+    .no-svg & {
+        @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+            background-image: url(#{$jpeg-image-path}/#{$name}#{$jpeg-retina-suffix}.#{$jpeg-fallback-extension});
+        }
+    }
+}
+
+
+// 3. Font-size
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+
+// 4. Pseudo Cover
+@mixin pseudo-cover($display: block, $pos: absolute, $content: '') {
+    content: $content;
+    display: $display;
+    position: $pos;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+// 5. Responsive Ratio
+@mixin responsive-ratio($x,$y, $pseudo: false) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+
+    @if $pseudo {
+        &:before {
+            @include pseudo-cover($pos: relative);
+            width: 100%;
+            padding-top: $padding;
+        }
+    }
+    @else {
+        padding-top: $padding;
+    }
+}
+
+
+// 6. Reference all <h*> tags
+
+@mixin headings($from: 1, $to: 6){
+    @for $i from $from through $to{
+      h#{$i}{
+        @content
+      }
+    }
+}
+
+
+
+

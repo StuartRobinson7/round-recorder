@@ -1,0 +1,29 @@
+// ========================================
+// Footer ---------------------------------
+// ======================================== 
+
+footer {
+    position: relative;
+    background: $gray-500;
+
+    @include media-breakpoint-up(md) {
+        height: $footer-height;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+
+
+    .on2net{
+        @extend .d-block;
+        @extend .text-center;
+        @extend %number;
+        @include font-size(11px);
+        position:absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+    }
+}

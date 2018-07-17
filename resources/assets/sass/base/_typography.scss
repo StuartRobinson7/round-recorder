@@ -1,0 +1,276 @@
+﻿// ========================================
+// Typography -----------------------------
+// ========================================
+
+@import 'load-fonts';
+
+// TABLE OF CONTENTS ----------------------
+
+
+//      1. Set Fonts
+
+//      2. Set Global's
+
+//      3. Standard Elements
+
+//      4. Links
+
+//      5. Tables
+
+//      6. Numerals
+
+//      7. Subscripts/Superscripts
+
+
+// ----------------------------------------
+
+// 1. Set Fonts ---------------------------
+                                                         
+$system-font:               true; // true to use system fonts / false to use custom fonts
+
+
+// Custom ---------------------------------
+
+// Set font-face for headings
+
+$heading-base:              'OpenSansBold';
+
+
+// Set font-face for basic type
+
+$text-base:                 'OpenSansRegular';
+$text-bold:                 'OpenSansBold';
+
+
+// System ---------------------------------
+
+// Set font-face for system headings
+
+$heading-base-system:       $font-family-sans-serif;
+
+
+// Set font-face for system basic type
+
+$text-base-system:          $font-family-sans-serif;
+$text-bold-system:          $font-family-sans-serif;
+
+
+// @extends
+
+@if $system-font {
+
+    %heading-base {
+        font-family: $heading-base-system;
+        font-weight: bold;
+    }
+
+    %text-base {
+        font-family: $text-base-system;
+        font-weight: normal;
+    }
+
+    %text-bold {
+        font-family: $text-bold-system;
+        font-weight: bold;
+    }
+}
+@else {
+
+    %heading-base {
+        font-family: $heading-base;
+        font-weight: normal;
+    }
+
+    %text-base {
+        font-family: $text-base;
+        font-weight: normal;
+    }
+
+    %text-bold {
+        font-family: $text-bold;
+        font-weight: normal;
+    }
+}
+
+
+
+// 2. Set Global's -------------------------
+
+// Anti-alias
+* {
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    font-size-adjust: 0.5;
+}
+
+// Set base font, line-height, letter-spacing
+body {
+    @extend %text-base;
+    font-size: 16px;
+    letter-spacing: .015em;
+    line-height: 1.375em;
+}
+
+
+
+// 3. Standard Elements -------------------
+
+// headings
+h1, h2, h3, h4, h5, h6 {
+    @extend %heading-base;
+    margin-bottom: $vertical-rhythm;
+}
+
+h1 {
+    font-size: 218%;
+}
+    
+h2 {
+    font-size: 164%;
+}
+    
+h3 {
+    font-size: 145%;
+}
+    
+h4 {
+    font-size: 118%;
+}
+
+h5 {
+    font-size: 109%;
+}
+
+h5 {
+    font-size: 100%;
+}
+
+// elements
+a, p, ol, ul, th, td {
+    @extend %text-base;
+}
+
+// misc
+strong, label, legend {
+    @extend %text-bold;
+}
+
+
+// 4. Links -------------------------------
+                            
+$a-tags:                    '&:visited, &:active';
+$a-tags-hover:              '&:active, &:hover, &:focus';
+
+a {
+    color: $link-color;
+    transition: color .1s, background-color .1s;
+
+    #{$a-tags-hover} {
+        color: $link-hover-color;
+        text-decoration: none;
+    }
+}
+
+
+
+// 5. Tables ------------------------------
+
+// set cell white space
+td, th {
+    padding: 0.125em 0.5em 0.25em 0.5em;
+    line-height: 1;
+}
+
+// sets numerals to 'lining'
+table {
+    font-feature-settings: "lnum" 1;
+}
+
+@supports (font-variant-numeric: oldstyle-nums) {
+    table {
+        font-feature-settings: normal;
+        font-variant-numeric: lining-nums;
+    }
+}
+
+// align table cells to decimal point
+// td { text-align: "." center; }
+
+
+
+// 6. Numerals ----------------------------
+
+// sets body text to 'old style' numerals
+body {
+    font-feature-settings: "onum" 1;
+}
+
+@supports (font-variant-numeric: oldstyle-nums) {
+    body {
+        font-feature-settings: normal;
+        font-variant-numeric: oldstyle-nums;
+    }
+}
+
+// numbers to 'lining' numerals
+%number {
+    font-feature-settings: "lnum" 1;
+}
+
+@supports (font-variant-numeric: oldstyle-nums) {
+    %number {
+        font-feature-settings: normal;
+        font-variant-numeric: lining-nums;
+    }
+}
+
+// sets headings to 'lining' numerals
+h1, h2, h3, h4, h5, h6 {
+    @extend %number;
+}
+
+address{
+    @extend %number; 
+}
+
+
+
+// 7. Subscripts/Superscripts -------------
+
+// Subscripts
+sub {
+    font-variant-position: sub;
+}
+
+@supports ( font-variant-position: sub ) {
+    sub {
+        vertical-align: baseline;
+        font-size: inherit;
+    }
+}
+
+@supports ((font-variant-position: sub) or (font-feature-settings: "subs" 1)) {
+    sub {
+        vertical-align: baseline;
+        font-size: inherit;
+    }
+}
+
+// Superscripts
+sup {
+    font-feature-settings: "sups" 1;
+}
+
+@supports (font-variant-position: super) {
+    sup {
+        font-feature-settings: normal;
+        font-variant-position: super;
+    }
+}
+
+@supports ((font-variant-position: super) or (font-feature-settings: "sups" 1)) {
+    sup {
+        vertical-align: baseline;
+        font-size: inherit;
+    }
+}

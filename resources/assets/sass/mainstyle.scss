@@ -1,0 +1,31 @@
+﻿// ========================================   
+// COMPANY NAME 2018 ----------------------
+// ========================================
+     
+
+// Base  
+   @import 'base/base'; // colours, bootstrap, bootstrap overrides, typography
+
+// Settings  
+   @import 'settings/settings'; // site wide settings                     
+   
+// Helpers  
+   @import 'helpers/helpers'; // extends, functions, mixins, variables 
+
+// Layout  
+   @import 'layout/layout'; // page-structure, header, footer, breadcrumbs, mobile menu
+
+// Components  
+   @import 'components/components'; // alerts, forms, other modules     
+   
+// Pages  
+   @import 'pages/pages'; // page specific styles                         
+
+// Vendors  
+   @import 'vendors/vendors'; // third party plug-ins   
+   
+// Print  
+   @import 'print/print'; // print styles                   
+   
+
+                                     
