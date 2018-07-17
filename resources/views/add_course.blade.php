@@ -8,6 +8,16 @@
 
                 <h1>{{ __('Add Course') }}</h1>
 
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                     <form method="POST" action="{{ route('add_course') }}" aria-label="{{ __('Add Course') }}">
                         @csrf
 
@@ -23,6 +33,9 @@
 
                         <label>Course Slope</label>
                         <input id="course_slope" type="text" class="form-control{{ $errors->has('course_slope') ? ' is-invalid' : '' }}" name="course_slope" value="{{ old('course_slope') }}">                                                                        
+
+
+
 
                         <table>
 

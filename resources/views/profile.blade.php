@@ -11,16 +11,26 @@
                 <h3>Playing off {{ Auth::user()->handicap }}</h3>
 
                 
-                @foreach($career as $key => $career_stat) 
+                
                         <div class="row">
                                 <div class="col-6 col-md">
-                                        <h4>{{ number_format($career_stat->fir_percentage, 2) }}%</h4>
-                                </div>
+                                        <h4>{{ number_format($career_fir_total, 2) }}%</h4>
+                                        <p>Fairways in regulation</p>
+                                </div>   
                                 <div class="col-6 col-md">
-                                        <h4>{{ number_format($career_stat->gir_percentage, 2) }}%</h4>
-                                </div>                                                             
+                                        <h4>{{ number_format($career_gir_total, 2) }}%</h4>
+                                        <p>Greens in regulation</p>
+                                </div> 
+                                <div class="col-6 col-md">
+                                        <h4>{{ number_format($career_pph_total, 2) }}%</h4>
+                                        <p>Putts per hole</p>
+                                </div>   
+                                <div class="col-6 col-md">
+                                        <h4>{{ number_format($career_scramble_total, 2) }}%</h4>
+                                        <p>Scrambling</p>
+                                </div>                                                                                                                                                          
                         </div>
-                @endforeach
+               
                 
 
                 <table class="table">
@@ -36,6 +46,7 @@
                                 <td>FIR</td>
                                 <td>GIR</td>
                                 <td>Drops</td>
+                                <td>Scrambling</td>
                         </tr>
 
                 @foreach($rounds as $key => $round_result)   
@@ -57,6 +68,7 @@
                                 <td>{{ number_format($round_result->fir_percentage, 2) }}%</td>
                                 <td>{{ number_format($round_result->gir_percentage, 2) }}%</td>
                                 <td>{{ $round_result->total_drops }}</td>
+                                <td>{{ number_format($round_result->scrambling, 2) }}%</td>
                         </tr>                        
 
                 @endforeach

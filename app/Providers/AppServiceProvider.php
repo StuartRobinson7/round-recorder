@@ -17,6 +17,147 @@ class AppServiceProvider extends ServiceProvider
             $model->handicap = ($model->handicap) ?: '54.0';
         });
 
+        \App\Course::creating(function($model){
+
+            $model->course_rating = ($model->course_rating) ?: '72';
+            $model->course_slope = ($model->course_slope) ?: '80';
+
+            $model->hole_1_whites = ($model->hole_1_whites) ?: '0';
+            $model->hole_2_whites = ($model->hole_2_whites) ?: '0';
+            $model->hole_3_whites = ($model->hole_3_whites) ?: '0';
+            $model->hole_4_whites = ($model->hole_4_whites) ?: '0';
+            $model->hole_5_whites = ($model->hole_5_whites) ?: '0';
+            $model->hole_6_whites = ($model->hole_6_whites) ?: '0';
+            $model->hole_7_whites = ($model->hole_7_whites) ?: '0';
+            $model->hole_8_whites = ($model->hole_8_whites) ?: '0';
+            $model->hole_9_whites = ($model->hole_9_whites) ?: '0';
+            $model->hole_10_whites = ($model->hole_10_whites) ?: '0';
+            $model->hole_11_whites = ($model->hole_11_whites) ?: '0';
+            $model->hole_12_whites = ($model->hole_12_whites) ?: '0';
+            $model->hole_13_whites = ($model->hole_13_whites) ?: '0';
+            $model->hole_14_whites = ($model->hole_14_whites) ?: '0';
+            $model->hole_15_whites = ($model->hole_15_whites) ?: '0';
+            $model->hole_16_whites = ($model->hole_16_whites) ?: '0';
+            $model->hole_17_whites = ($model->hole_17_whites) ?: '0';
+            $model->hole_18_whites = ($model->hole_18_whites) ?: '0';  
+            
+            $model->hole_1_yellows = ($model->hole_1_yellows) ?: '0';
+            $model->hole_2_yellows = ($model->hole_2_yellows) ?: '0';
+            $model->hole_3_yellows = ($model->hole_3_yellows) ?: '0';
+            $model->hole_4_yellows = ($model->hole_4_yellows) ?: '0';
+            $model->hole_5_yellows = ($model->hole_5_yellows) ?: '0';
+            $model->hole_6_yellows = ($model->hole_6_yellows) ?: '0';
+            $model->hole_7_yellows = ($model->hole_7_yellows) ?: '0';
+            $model->hole_8_yellows = ($model->hole_8_yellows) ?: '0';
+            $model->hole_9_yellows = ($model->hole_9_yellows) ?: '0';
+            $model->hole_10_yellows = ($model->hole_10_yellows) ?: '0';
+            $model->hole_11_yellows = ($model->hole_11_yellows) ?: '0';
+            $model->hole_12_yellows = ($model->hole_12_yellows) ?: '0';
+            $model->hole_13_yellows = ($model->hole_13_yellows) ?: '0';
+            $model->hole_14_yellows = ($model->hole_14_yellows) ?: '0';
+            $model->hole_15_yellows = ($model->hole_15_yellows) ?: '0';
+            $model->hole_16_yellows = ($model->hole_16_yellows) ?: '0';
+            $model->hole_17_yellows = ($model->hole_17_yellows) ?: '0';
+            $model->hole_18_yellows = ($model->hole_18_yellows) ?: '0';  
+            
+            $model->hole_1_par = ($model->hole_1_par) ?: '0';
+            $model->hole_2_par = ($model->hole_2_par) ?: '0';
+            $model->hole_3_par = ($model->hole_3_par) ?: '0';
+            $model->hole_4_par = ($model->hole_4_par) ?: '0';
+            $model->hole_5_par = ($model->hole_5_par) ?: '0';
+            $model->hole_6_par = ($model->hole_6_par) ?: '0';
+            $model->hole_7_par = ($model->hole_7_par) ?: '0';
+            $model->hole_8_par = ($model->hole_8_par) ?: '0';
+            $model->hole_9_par = ($model->hole_9_par) ?: '0';
+            $model->hole_10_par = ($model->hole_10_par) ?: '0';
+            $model->hole_11_par = ($model->hole_11_par) ?: '0';
+            $model->hole_12_par = ($model->hole_12_par) ?: '0';
+            $model->hole_13_par = ($model->hole_13_par) ?: '0';
+            $model->hole_14_par = ($model->hole_14_par) ?: '0';
+            $model->hole_15_par = ($model->hole_15_par) ?: '0';
+            $model->hole_16_par = ($model->hole_16_par) ?: '0';
+            $model->hole_17_par = ($model->hole_17_par) ?: '0';
+            $model->hole_18_par = ($model->hole_18_par) ?: '0'; 
+            
+            $model->hole_1_stroke_index = ($model->hole_1_stroke_index) ?: '0';
+            $model->hole_2_stroke_index = ($model->hole_2_stroke_index) ?: '0';
+            $model->hole_3_stroke_index = ($model->hole_3_stroke_index) ?: '0';
+            $model->hole_4_stroke_index = ($model->hole_4_stroke_index) ?: '0';
+            $model->hole_5_stroke_index = ($model->hole_5_stroke_index) ?: '0';
+            $model->hole_6_stroke_index = ($model->hole_6_stroke_index) ?: '0';
+            $model->hole_7_stroke_index = ($model->hole_7_stroke_index) ?: '0';
+            $model->hole_8_stroke_index = ($model->hole_8_stroke_index) ?: '0';
+            $model->hole_9_stroke_index = ($model->hole_9_stroke_index) ?: '0';
+            $model->hole_10_stroke_index = ($model->hole_10_stroke_index) ?: '0';
+            $model->hole_11_stroke_index = ($model->hole_11_stroke_index) ?: '0';
+            $model->hole_12_stroke_index = ($model->hole_12_stroke_index) ?: '0';
+            $model->hole_13_stroke_index = ($model->hole_13_stroke_index) ?: '0';
+            $model->hole_14_stroke_index = ($model->hole_14_stroke_index) ?: '0';
+            $model->hole_15_stroke_index = ($model->hole_15_stroke_index) ?: '0';
+            $model->hole_16_stroke_index = ($model->hole_16_stroke_index) ?: '0';
+            $model->hole_17_stroke_index = ($model->hole_17_stroke_index) ?: '0';
+            $model->hole_18_stroke_index = ($model->hole_18_stroke_index) ?: '0';             
+
+            $model->hole_1_reds = ($model->hole_1_reds) ?: '0';
+            $model->hole_2_reds = ($model->hole_2_reds) ?: '0';
+            $model->hole_3_reds = ($model->hole_3_reds) ?: '0';
+            $model->hole_4_reds = ($model->hole_4_reds) ?: '0';
+            $model->hole_5_reds = ($model->hole_5_reds) ?: '0';
+            $model->hole_6_reds = ($model->hole_6_reds) ?: '0';
+            $model->hole_7_reds = ($model->hole_7_reds) ?: '0';
+            $model->hole_8_reds = ($model->hole_8_reds) ?: '0';
+            $model->hole_9_reds = ($model->hole_9_reds) ?: '0';
+            $model->hole_10_reds = ($model->hole_10_reds) ?: '0';
+            $model->hole_11_reds = ($model->hole_11_reds) ?: '0';
+            $model->hole_12_reds = ($model->hole_12_reds) ?: '0';
+            $model->hole_13_reds = ($model->hole_13_reds) ?: '0';
+            $model->hole_14_reds = ($model->hole_14_reds) ?: '0';
+            $model->hole_15_reds = ($model->hole_15_reds) ?: '0';
+            $model->hole_16_reds = ($model->hole_16_reds) ?: '0';
+            $model->hole_17_reds = ($model->hole_17_reds) ?: '0';
+            $model->hole_18_reds = ($model->hole_18_reds) ?: '0';
+            
+            $model->hole_1_ladies_par = ($model->hole_1_ladies_par) ?: '0';
+            $model->hole_2_ladies_par = ($model->hole_2_ladies_par) ?: '0';
+            $model->hole_3_ladies_par = ($model->hole_3_ladies_par) ?: '0';
+            $model->hole_4_ladies_par = ($model->hole_4_ladies_par) ?: '0';
+            $model->hole_5_ladies_par = ($model->hole_5_ladies_par) ?: '0';
+            $model->hole_6_ladies_par = ($model->hole_6_ladies_par) ?: '0';
+            $model->hole_7_ladies_par = ($model->hole_7_ladies_par) ?: '0';
+            $model->hole_8_ladies_par = ($model->hole_8_ladies_par) ?: '0';
+            $model->hole_9_ladies_par = ($model->hole_9_ladies_par) ?: '0';
+            $model->hole_10_ladies_par = ($model->hole_10_ladies_par) ?: '0';
+            $model->hole_11_ladies_par = ($model->hole_11_ladies_par) ?: '0';
+            $model->hole_12_ladies_par = ($model->hole_12_ladies_par) ?: '0';
+            $model->hole_13_ladies_par = ($model->hole_13_ladies_par) ?: '0';
+            $model->hole_14_ladies_par = ($model->hole_14_ladies_par) ?: '0';
+            $model->hole_15_ladies_par = ($model->hole_15_ladies_par) ?: '0';
+            $model->hole_16_ladies_par = ($model->hole_16_ladies_par) ?: '0';
+            $model->hole_17_ladies_par = ($model->hole_17_ladies_par) ?: '0';
+            $model->hole_18_ladies_par = ($model->hole_18_ladies_par) ?: '0'; 
+            
+            $model->hole_1_ladies_stroke_index = ($model->hole_1_ladies_stroke_index) ?: '0';
+            $model->hole_2_ladies_stroke_index = ($model->hole_2_ladies_stroke_index) ?: '0';
+            $model->hole_3_ladies_stroke_index = ($model->hole_3_ladies_stroke_index) ?: '0';
+            $model->hole_4_ladies_stroke_index = ($model->hole_4_ladies_stroke_index) ?: '0';
+            $model->hole_5_ladies_stroke_index = ($model->hole_5_ladies_stroke_index) ?: '0';
+            $model->hole_6_ladies_stroke_index = ($model->hole_6_ladies_stroke_index) ?: '0';
+            $model->hole_7_ladies_stroke_index = ($model->hole_7_ladies_stroke_index) ?: '0';
+            $model->hole_8_ladies_stroke_index = ($model->hole_8_ladies_stroke_index) ?: '0';
+            $model->hole_9_ladies_stroke_index = ($model->hole_9_ladies_stroke_index) ?: '0';
+            $model->hole_10_ladies_stroke_index = ($model->hole_10_ladies_stroke_index) ?: '0';
+            $model->hole_11_ladies_stroke_index = ($model->hole_11_ladies_stroke_index) ?: '0';
+            $model->hole_12_ladies_stroke_index = ($model->hole_12_ladies_stroke_index) ?: '0';
+            $model->hole_13_ladies_stroke_index = ($model->hole_13_ladies_stroke_index) ?: '0';
+            $model->hole_14_ladies_stroke_index = ($model->hole_14_ladies_stroke_index) ?: '0';
+            $model->hole_15_ladies_stroke_index = ($model->hole_15_ladies_stroke_index) ?: '0';
+            $model->hole_16_ladies_stroke_index = ($model->hole_16_ladies_stroke_index) ?: '0';
+            $model->hole_17_ladies_stroke_index = ($model->hole_17_ladies_stroke_index) ?: '0';
+            $model->hole_18_ladies_stroke_index = ($model->hole_18_ladies_stroke_index) ?: '0';               
+
+        });
+
+
         \App\Round::creating(function($model){
             $model->hole_1_drops = ($model->hole_1_drops) ?: '0';
             $model->hole_2_drops = ($model->hole_2_drops) ?: '0';
