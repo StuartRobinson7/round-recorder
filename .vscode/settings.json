@@ -1,8 +1,0 @@
-{
-    "cSpell.language": "en-GB",
-    "typescript.tsc.autoDetect": "off",
-    "jake.autoDetect": "off",
-    "grunt.autoDetect": "off",
-    "npm.autoDetect": "off",
-    "git.ignoreLimitWarning": true,
-}
