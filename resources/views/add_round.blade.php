@@ -18,11 +18,8 @@
                         </div>
                     @endif
 
-
-
-                    <form method="POST" action="{{ route('add_round') }}" aria-label="{{ __('Add Round') }}">
+                    <form id="add_course" @submit="checkForm" method="POST" action="{{ route('add_round') }}" aria-label="{{ __('Add Round') }}">
                         @csrf
-
 
                         <input id="player_id" type="hidden" class="hidden" name="player_id" value="{{ Auth::user()->id }}">
 
@@ -41,16 +38,8 @@
                             <input type="text" class="form-control{{ $errors->has('round_date') ? ' is-invalid' : '' }}" id="round_date" placeholder="DD/MM/YYYY" name="round_date" value="{{ old('round_date') }}">
                         </div>
 
-                       <!-- <input id="round_date" type="text" class="form-control{{ $errors->has('round_date') ? ' is-invalid' : '' }}" name="round_date" value="{{ old('round_date') }}"> -->
 
-
-
-
-                        <div id="add_round_form">
-                                                
-                            
-                        
-                        </div>
+                        <div id="add_round_form"></div>
                         <!-- /.add_round_form -->
 
 
@@ -69,12 +58,12 @@
             <!--/.container -->
 
 
+
+
 <script>
 
 $(document).ready(function(){
-
     
-
     $('#course_id').on('change', function() {
 
         var selected_course_id=$(this).val();
@@ -104,38 +93,6 @@ $(document).ready(function(){
 
 
 });
-
-/*
-    $.ajax({
-        url:'/ajax/get_course',
-        data:{id:$cur},
-        cache:false,
-        type:'POST',
-        beforeSend: function (xhr) {
-            var token = $('meta[name="csrf_token"]').attr('content');
-
-            if (token) {
-                return xhr.setRequestHeader('X-CSRF-TOKEN', token);
-            }
-        },
-        success:function(data){ // this is view data returned by controller 
-            console.log(data);
-            $('#add_round_form').html(data); // use it to fill your results
-        }
-    };
-
-      var id = $(this).val();
-      var token = $("input[name='_course_id']").val();
-      $.ajax({
-          url: '/ajax/get_course',
-          method: 'POST',
-          data: {id_country:id_country, _token:token},
-          success: function(data) {
-            $("select[name='id_state'").html('');
-            $("select[name='id_state'").html(data.options);
-          }
-      }); 
-*/
 
 </script>
 

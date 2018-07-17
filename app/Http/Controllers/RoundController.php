@@ -63,10 +63,11 @@ class RoundController extends Controller
             'hole_18_score' => 'required|integer'            
         ]);
 
+
         if ($validator->fails()) {
             return redirect('add_round')
                         ->withErrors($validator)
-                        ->withInput();
+                        ->withInput();                        
         } 
 
 

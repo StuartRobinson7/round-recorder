@@ -16,6 +16,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/script.js') }}" defer></script>
     <script src="{{ asset('js/bundle.js') }}" defer></script>
+    <script src="{{ asset('js/vue/dist/vue.js') }}" defer></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/mainstyle.css') }}" rel="stylesheet">
