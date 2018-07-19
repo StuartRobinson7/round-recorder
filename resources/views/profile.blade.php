@@ -5,6 +5,13 @@
 @section('content')
     
         <div class="container">
+
+                @if(Session::has('message'))
+                <div class="alert alert-{{ Session::get('message-type') }} alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <i class="glyphicon glyphicon-{{ Session::get('message-type') == 'success' ? 'ok' : 'remove'}}"></i> {{ Session::get('message') }}
+                </div>
+                @endif        
     
                 <h1>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h1>
                 <h2>{{ Auth::user()->hand }} Hand</h2>
@@ -23,7 +30,7 @@
                                         <p>Greens in regulation</p>
                                 </div> 
                                 <div class="col-6 col-md">
-                                        <h4>{{ number_format($career_pph_total, 2) }}%</h4>
+                                        <h4>{{ number_format($career_pph_total, 2) }}</h4>
                                         <p>Putts per hole</p>
                                 </div>   
                                 <div class="col-6 col-md">

@@ -252,7 +252,9 @@ class AppServiceProvider extends ServiceProvider
             $model->hole_15_gir = ($model->hole_15_gir) ?: '0';
             $model->hole_16_gir = ($model->hole_16_gir) ?: '0';
             $model->hole_17_gir = ($model->hole_17_gir) ?: '0';
-            $model->hole_18_gir = ($model->hole_18_gir) ?: '0'; 
+            $model->hole_18_gir = ($model->hole_18_gir) ?: '0';
+            
+            $model->round_notes = ($model->round_notes) ?: '';
                                          
         });        
     }

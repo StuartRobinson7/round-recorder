@@ -27,11 +27,9 @@ class RoundController extends Controller
     {
 
         $course = Course::all();
-        //$courses = Course::pluck(['id', 'property_name', 'course_name']);
     
         return view('add_round', compact('course'));
 
-        //return view('add_round');
     }      
 
 
@@ -41,8 +39,7 @@ class RoundController extends Controller
         $validator = Validator::make($request->all(), [     
             'round_date' => 'required|date_format:d/m/Y',
             'course_id' => 'required',
-            'player_id' => 'required',
-            'course_slope' => 'required|integer',
+            'player_id' => 'required',          
             'hole_1_score' => 'required|integer',
             'hole_2_score' => 'required|integer',
             'hole_3_score' => 'required|integer',
@@ -60,19 +57,26 @@ class RoundController extends Controller
             'hole_15_score' => 'required|integer',
             'hole_16_score' => 'required|integer',
             'hole_17_score' => 'required|integer',
-            'hole_18_score' => 'required|integer'            
+            'hole_18_score' => 'required|integer'                       
         ]);
 
 
         if ($validator->fails()) {
-            return redirect('add_round')
-                        ->withErrors($validator)
-                        ->withInput();                        
+
+            return response()->json(['errors'=>$validator->errors()->messages()]);
+            //return redirect('add_round')
+            //            ->withErrors($validator)
+            //            ->withInput();                        
         } 
 
 
         $round = Round::create($request->all());
-        return redirect()->route('profile');
+
+        $request->session()->flash('message', 'New round added successfully.');
+        $request->session()->flash('message-type', 'success');        
+
+        return response()->json('success');
+        //return redirect()->route('profile');
     }
  
 

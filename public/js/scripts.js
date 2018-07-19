@@ -68,21 +68,8 @@
 /***/ 8:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(9);
+(function webpackMissingModule() { throw new Error("Cannot find module \"D:\\code\\round-recorder\\resources\\assets\\js\\scripts.js\""); }());
 
-
-/***/ }),
-
-/***/ 9:
-/***/ (function(module, exports) {
-
-
-$(document).ready(function () {
-
-    $('#round_date').datepicker({
-        format: 'dd/mm/yyyy'
-    });
-});
 
 /***/ })
 
