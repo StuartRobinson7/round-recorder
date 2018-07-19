@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Round;
 use App\Course;
+use App\Events\RoundAdd;
 use App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +37,7 @@ class RoundController extends Controller
     public function saveRound(Request $request)
     {           
 
+        // Validate input
         $validator = Validator::make($request->all(), [     
             'round_date' => 'required|date_format:d/m/Y',
             'course_id' => 'required',
@@ -60,23 +62,23 @@ class RoundController extends Controller
             'hole_18_score' => 'required|integer'                       
         ]);
 
-
+        // Return Validation Errors            
         if ($validator->fails()) {
-
-            return response()->json(['errors'=>$validator->errors()->messages()]);
-            //return redirect('add_round')
-            //            ->withErrors($validator)
-            //            ->withInput();                        
+            return response()->json(['errors'=>$validator->errors()->messages()]);                        
         } 
 
-
+        // Add round to database
         $round = Round::create($request->all());
 
+        // Fire an event that a round has been added
+        event(new RoundAdd($round));
+
+        // Display Success Message            
         $request->session()->flash('message', 'New round added successfully.');
         $request->session()->flash('message-type', 'success');        
 
+        // Return Success
         return response()->json('success');
-        //return redirect()->route('profile');
     }
  
 
@@ -183,6 +185,6 @@ class RoundController extends Controller
         
        
     }    
-            
+       
 
 }

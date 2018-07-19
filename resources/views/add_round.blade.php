@@ -180,7 +180,7 @@ $(document).ready(function(){
                   			$('.alert-danger').show();
                             $('.alert-danger').append('<p>'+value+'</p>');
                             //var msg = '<label class="error" for="'+key+'">'+value+'</label>';
-                            $('input[name="' + key + '"], select[name="' + key + '"]').addClass('inputTxtError');                            
+                            $('input[name="' + key + '"], select[name="' + key + '"]').addClass('is-invalid');                            
                             
                   		});
                     },
@@ -192,7 +192,7 @@ $(document).ready(function(){
                }); 
                
     function resetErrors() {
-        $('form input, form select').removeClass('inputTxtError');
+        $('form input, form select').removeClass('is-invalid');
         //$('label.error').remove();
     }               
 
