@@ -2,7 +2,7 @@
 // Typography -----------------------------
 // ========================================
 
-@import 'load-fonts';
+//@import 'load-fonts'; 
 
 // TABLE OF CONTENTS ----------------------
 
@@ -33,13 +33,13 @@ $system-font:               true; // true to use system fonts / false to use cus
 
 // Set font-face for headings
 
-$heading-base:              'OpenSansBold';
+$heading-base:              '';
 
 
 // Set font-face for basic type
 
-$text-base:                 'OpenSansRegular';
-$text-bold:                 'OpenSansBold';
+$text-base:                 '';
+$text-bold:                 '';
 
 
 // System ---------------------------------

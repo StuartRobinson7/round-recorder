@@ -25,7 +25,7 @@
 
 
 
-                    <form>
+                    <form id="add_round">
 
                         @csrf
 
@@ -73,8 +73,12 @@
 
 <script>
 
+
 $(document).ready(function(){
     
+    
+   
+
     $('#course_id').on('change', function() {
 
         var selected_course_id=$(this).val();
@@ -91,8 +95,6 @@ $(document).ready(function(){
             method: 'get',
             data: {selected_course_id: selected_course_id},      
             success: function (response) {
-                //console.log(response)
-                //alert(response)
                 $("#add_round_form").html(response)  
             },
             error:function(error){ 
@@ -137,39 +139,26 @@ $(document).ready(function(){
     });     
     */
 
-            $('#submit').click(function(e){
+
+    
+            
+
+           // $("#hole_1_fir").is(":checked") ? 1:0;
+
+            $('#add_round').on('submit',function(e){
+
                e.preventDefault();
+
                $.ajaxSetup({
                   headers: {
                       'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                   }
               });
+
                $.ajax({
                   url: '/add_round',
                   method: 'post',
-                  data: {
-                     course_id: $('#course_id').val(),      
-                     round_date: $('#round_date').val(),
-                     player_id: $('#player_id').val(),    
-                     hole_1_score: $('#hole_1_score').val(),
-                     hole_2_score: $('#hole_2_score').val(),
-                     hole_3_score: $('#hole_3_score').val(),
-                     hole_4_score: $('#hole_4_score').val(),
-                     hole_5_score: $('#hole_5_score').val(),
-                     hole_6_score: $('#hole_6_score').val(),
-                     hole_7_score: $('#hole_7_score').val(),
-                     hole_8_score: $('#hole_8_score').val(),
-                     hole_9_score: $('#hole_9_score').val(),
-                     hole_10_score: $('#hole_10_score').val(),
-                     hole_11_score: $('#hole_11_score').val(),
-                     hole_12_score: $('#hole_12_score').val(),
-                     hole_13_score: $('#hole_13_score').val(),
-                     hole_14_score: $('#hole_14_score').val(),
-                     hole_15_score: $('#hole_15_score').val(),
-                     hole_16_score: $('#hole_16_score').val(),
-                     hole_17_score: $('#hole_17_score').val(),
-                     hole_18_score: $('#hole_18_score').val()                     
-                  },
+                  data: $(this).serialize(),
                   success: function(data){
 
                         if(data == "success")                        
@@ -179,7 +168,6 @@ $(document).ready(function(){
                   		$.each(data.errors, function(key, value){
                   			$('.alert-danger').show();
                             $('.alert-danger').append('<p>'+value+'</p>');
-                            //var msg = '<label class="error" for="'+key+'">'+value+'</label>';
                             $('input[name="' + key + '"], select[name="' + key + '"]').addClass('is-invalid');                            
                             
                   		});
@@ -193,7 +181,6 @@ $(document).ready(function(){
                
     function resetErrors() {
         $('form input, form select').removeClass('is-invalid');
-        //$('label.error').remove();
     }               
 
 });

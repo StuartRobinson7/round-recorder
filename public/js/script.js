@@ -60,29 +60,45 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 8:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(9);
-
-
-/***/ }),
-
-/***/ 9:
+/***/ 10:
 /***/ (function(module, exports) {
 
 
 $(document).ready(function () {
 
-    $('#round_date').datepicker({
-        format: 'dd/mm/yyyy'
-    });
+        //=======================================================================================
+        //  Add Round Date Picker
+        // ======================================================================================
+
+        // find our today's date
+        var date = new Date();
+        var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+
+        // set datepicker options
+        $('#round_date').datepicker({
+                endDate: '+0d',
+                format: 'dd/mm/yyyy'
+        });
+
+        // autoselect today's date
+        $('#round_date').datepicker('setDate', today);
+
+        // ======================================================================================
+
 });
+
+/***/ }),
+
+/***/ 9:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(10);
+
 
 /***/ })
 
