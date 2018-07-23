@@ -14,7 +14,7 @@ class HandicapObserver
      */
     public function created(User $user)
     {
-        $model->handicap = ($model->handicap) ?: '54.0'; 
+        $model->handicap = ($model->handicap) ?: '540'; 
     }  
 
 }

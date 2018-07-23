@@ -2,6 +2,9 @@
 
 namespace App\Listeners;
 
+use App\User;
+use App\Round;
+
 use App\Events\RoundAdd;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -31,25 +34,55 @@ class CalculateHandicap
         $player = $event->round->player_id;
 
         $course = $event->round->course_id; 
+        
+        $hole_1 = $event->round->hole_1_score;
+        $hole_2 = $event->round->hole_3_score;
+        $hole_3 = $event->round->hole_3_score;
+        $hole_4 = $event->round->hole_4_score;
+        $hole_5 = $event->round->hole_5_score;
+        $hole_6 = $event->round->hole_6_score;
+        $hole_7 = $event->round->hole_7_score;
+        $hole_8 = $event->round->hole_8_score;
+        $hole_9 = $event->round->hole_9_score;
+        $hole_10 = $event->round->hole_10_score;
+        $hole_11 = $event->round->hole_11_score;
+        $hole_12 = $event->round->hole_12_score;
+        $hole_13 = $event->round->hole_13_score;
+        $hole_14 = $event->round->hole_14_score;
+        $hole_15 = $event->round->hole_15_score;
+        $hole_16 = $event->round->hole_16_score;
+        $hole_17 = $event->round->hole_17_score;
+        $hole_18 = $event->round->hole_18_score;
 
-        $this_rounds = \App\Round::where('player_id', $player)
-        ->orderBy('id', 'desc')
-        ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as this_round_score")
-        ->take(1);
+        $score = $hole_1 + $hole_2 + $hole_3 + $hole_4 + $hole_5 + $hole_6 + $hole_7 + $hole_8 + $hole_9 + $hole_10 + $hole_11 + $hole_12 + $hole_13 + $hole_14 + $hole_15 + $hole_16 + $hole_17 + $hole_18;
 
-        foreach ($this_rounds as $this_round) {
-            $score = $this_rounds->sum('this_round_score');
-        }         
 
-        $current_handicap = \App\User::where('id', $player)->select('handicap')->get();
+        // get handicap
+        $get_handicap = \App\User::select('handicap')->where('id', $player)->first();
 
+        $handicap_data = $get_handicap->handicap;
+
+        $current_handicap = $handicap_data / 10;
+
+        // get round count
         $round_count = \App\Round::where('player_id', $player)->count();
 
-        $course_rating = \App\Course::where('id', $course)->select('course_rating')->get();
 
-        $course_slope =  \App\Course::where('id', $course)->select('course_slope')->get();
+        // get course ratings
+        $course_rating_data = \App\Course::where('id', $course)->select('course_rating')->first();
+
+        $course_rating = $course_rating_data->course_rating;
+
+
+        // get course slope
+        $course_slope_data =  \App\Course::where('id', $course)->select('course_slope')->first();
+
+        $slope_rating = $course_slope_data->course_slope;
                 
-                
+            
+        
+        $rounds_average = 0;
+
         // 5-6 rounds
         if ($round_count > 4 && $round_count < 7){
 
@@ -222,6 +255,9 @@ class CalculateHandicap
         } 
         
         // find out correct 'equitable score control'
+
+        $esc = 0;
+
         if ($current_handicap < 10){
             $esc = 7; // this needs looking at, should be +2 more than par per hole...
         }
@@ -255,7 +291,7 @@ class CalculateHandicap
         $handicap_differential = ($esc - $course_rating) * 113 / $slope_rating;
 
         // round to the nearest tenth
-        $handicap_differential = ceil($input / 10) * 10;
+        $handicap_differential = ceil($handicap_differential / 10) * 10;
 
         // course handicap
         $course_handicap = ($handicap_index * $slope_rating) /113;
@@ -272,7 +308,7 @@ class CalculateHandicap
 
 
         //$player = $event->round->player_id . 'has just added a round';
-        Storage::put('roundactivity.txt', $round_count);
+        Storage::put('roundactivity.txt', $handicap_index);
 
 
    

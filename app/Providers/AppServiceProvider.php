@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         \App\User::creating(function($model){
-            $model->handicap = ($model->handicap) ?: '54.0';
+            $model->handicap = ($model->handicap) ?: '540';
         });
 
         \App\Course::creating(function($model){
