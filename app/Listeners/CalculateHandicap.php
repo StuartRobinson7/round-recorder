@@ -294,7 +294,7 @@ class CalculateHandicap
         $handicap_differential = ceil($handicap_differential / 10) * 10;
 
         // course handicap
-        $course_handicap = ($handicap_index * $slope_rating) /113;
+        $course_handicap = ($handicap_index * $slope_rating) / 113;
 
         // round to the nearest whole number
         $course_handicap = round($course_handicap);
@@ -308,7 +308,7 @@ class CalculateHandicap
 
 
         //$player = $event->round->player_id . 'has just added a round';
-        Storage::put('roundactivity.txt', $handicap_index);
+        Storage::put('roundactivity.txt', $esc);
 
 
    
