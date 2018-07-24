@@ -15,7 +15,7 @@ class Course extends Model
      * @var array
      */
     protected $fillable = [
-        'property_name','course_name', 'course_rating', 'course_slope',
+        'property_name','course_name', 'sss',
         'hole_1_par', 'hole_1_stroke_index', 'hole_1_whites', 'hole_1_yellows', 'hole_1_reds', 'hole_1_ladies_par', 'hole_1_ladies_stroke_index',
         'hole_2_par', 'hole_2_stroke_index', 'hole_2_whites', 'hole_2_yellows', 'hole_2_reds', 'hole_2_ladies_par', 'hole_2_ladies_stroke_index',
         'hole_3_par', 'hole_3_stroke_index', 'hole_3_whites', 'hole_3_yellows', 'hole_3_reds', 'hole_3_ladies_par', 'hole_3_ladies_stroke_index',

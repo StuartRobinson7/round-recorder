@@ -28,12 +28,8 @@
                         <label>Course Name</label>
                         <input id="course_name" type="text" class="form-control{{ $errors->has('course_name') ? ' is-invalid' : '' }}" name="course_name" value="{{ old('course_name') }}">
 
-                        <label>Course Rating</label>
-                        <input id="course_rating" type="text" class="form-control{{ $errors->has('course_rating') ? ' is-invalid' : '' }}" name="course_rating" value="{{ old('course_rating') }}">
-
-                        <label>Course Slope</label>
-                        <input id="course_slope" type="text" class="form-control{{ $errors->has('course_slope') ? ' is-invalid' : '' }}" name="course_slope" value="{{ old('course_slope') }}">                                                                        
-
+                        <label>SSS</label>
+                        <input id="sss" type="text" class="form-control{{ $errors->has('sss') ? ' is-invalid' : '' }}" name="sss" value="{{ old('sss') }}"> 
 
 
 

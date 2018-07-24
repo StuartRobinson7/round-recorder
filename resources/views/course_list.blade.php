@@ -12,18 +12,24 @@
                         <th>ID</th>
                         <th>Property Name</th>
                         <th>Course Name</th>
-                        <th>Course Rating</th>
-                        <th>Course Slope</th>                 
+                        <th></th>
+                        <th></th>                 
                     </tr>                
                 </thead>
                 <tbody>
                 @foreach($course as $key => $data)
                     <tr>    
-                        <th>{{$data->id}}</th>
-                        <th>{{$data->property_name}}</th>
-                        <th>{{$data->course_name}}</th>
-                        <th>{{$data->course_rating}}</th>
-                        <th>{{$data->course_slope}}</th>                 
+                        <td>{{$data->id}}</td>
+                        <td>{{$data->property_name}}</td>
+                        <td>{{$data->course_name}}</td>
+                        <td><a href="{{action('CourseController@editCourse', $data['id'])}}" class="btn btn-warning">Edit</a></td>
+                        <td>
+                        <form action="{{action('CourseController@destroyCourse', $data['id'])}}" method="post">
+                            @csrf
+                            <input name="_method" type="hidden" value="DELETE">
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>                        
+                        </td>                 
                     </tr>
                 @endforeach
                 </tbody>

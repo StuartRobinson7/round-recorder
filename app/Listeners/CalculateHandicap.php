@@ -34,7 +34,7 @@ class CalculateHandicap
         $player = $event->round->player_id;
 
         $course = $event->round->course_id; 
-        
+              
         $hole_1 = $event->round->hole_1_score;
         $hole_2 = $event->round->hole_3_score;
         $hole_3 = $event->round->hole_3_score;
@@ -56,263 +56,85 @@ class CalculateHandicap
 
         $score = $hole_1 + $hole_2 + $hole_3 + $hole_4 + $hole_5 + $hole_6 + $hole_7 + $hole_8 + $hole_9 + $hole_10 + $hole_11 + $hole_12 + $hole_13 + $hole_14 + $hole_15 + $hole_16 + $hole_17 + $hole_18;
 
+        // get course sss
+        $sss_data = \App\Course::where('id', $course)->select('sss')->first();
+        $sss = $sss_data->sss;         
 
         // get handicap
         $get_handicap = \App\User::select('handicap')->where('id', $player)->first();
-
         $handicap_data = $get_handicap->handicap;
-
         $current_handicap = $handicap_data / 10;
 
-        // get round count
-        $round_count = \App\Round::where('player_id', $player)->count();
+        // get net score
+        $net_score = $score - $current_handicap;
 
-
-        // get course ratings
-        $course_rating_data = \App\Course::where('id', $course)->select('course_rating')->first();
-
-        $course_rating = $course_rating_data->course_rating;
-
-
-        // get course slope
-        $course_slope_data =  \App\Course::where('id', $course)->select('course_slope')->first();
-
-        $slope_rating = $course_slope_data->course_slope;
-                
-            
+        // if net score above or below sss then the handicap needs to be adjusted up or down            
+        $adjustment = $sss - $net_score;
         
-        $rounds_average = 0;
 
-        // 5-6 rounds
-        if ($round_count > 4 && $round_count < 7){
-
-            $rounds = \App\Round::where('player_id', $player)
-            ->groupBy('rounds.id')
-            ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as total_score")
-            ->orderBy('total_score', 'asc')
-            ->take(1)
-            ->get();
-
-            foreach ($rounds as $round) {
-                $rounds_total = $rounds->sum('total_score');
-            } 
-
-            $rounds_average = $rounds_total;  
-        } 
-
-        // 7-8 rounds
-        if ($round_count > 6 && $round_count < 9){
-
-            $rounds = \App\Round::where('player_id', $player)
-            ->groupBy('rounds.id')
-            ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as total_score")
-            ->orderBy('total_score', 'asc')
-            ->take(2)
-            ->get();
-
-            foreach ($rounds as $round) {
-                $rounds_total = $rounds->sum('total_score');
-            } 
-
-            $rounds_average = $rounds_total / 2;  
-        }  
-        
-        // 9-10 rounds
-        if ($round_count > 8 && $round_count < 11){
-
-            $rounds = \App\Round::where('player_id', $player)
-            ->groupBy('rounds.id')
-            ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as total_score")
-            ->orderBy('total_score', 'asc')
-            ->take(3)
-            ->get();
-
-            foreach ($rounds as $round) {
-                $rounds_total = $rounds->sum('total_score');
-            } 
-
-            $rounds_average = $rounds_total / 3;  
-        }   
-        
-        // 11-12 rounds
-        if ($round_count > 10 && $round_count < 13){
-
-            $rounds = \App\Round::where('player_id', $player)
-            ->groupBy('rounds.id')
-            ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as total_score")
-            ->orderBy('total_score', 'asc')
-            ->take(4)
-            ->get();
-
-            foreach ($rounds as $round) {
-                $rounds_total = $rounds->sum('total_score');
-            } 
-
-            $rounds_average = $rounds_total / 4;              
-        } 
-        
-        // 13-14 rounds
-        if ($round_count > 12 && $round_count < 15){
-
-            $rounds = \App\Round::where('player_id', $player)
-            ->groupBy('rounds.id')
-            ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as total_score")
-            ->orderBy('total_score', 'asc')
-            ->take(5)
-            ->get();
-
-            foreach ($rounds as $round) {
-                $rounds_total = $rounds->sum('total_score');
-            } 
-
-            $rounds_average = $rounds_total / 5;              
-        }  
-        
-        // 15-16 rounds
-        if ($round_count > 14 && $round_count < 17){
-
-            $rounds = \App\Round::where('player_id', $player)
-            ->groupBy('rounds.id')
-            ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as total_score")
-            ->orderBy('total_score', 'asc')
-            ->take(6)
-            ->get();
-
-            foreach ($rounds as $round) {
-                $rounds_total = $rounds->sum('total_score');
-            } 
-
-            $rounds_average = $rounds_total / 6;              
-        } 
-        
-        // 17 rounds
-        if ($round_count > 16 && $round_count < 18){
-
-            $rounds = \App\Round::where('player_id', $player)
-            ->groupBy('rounds.id')
-            ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as total_score")
-            ->orderBy('total_score', 'asc')
-            ->take(7)
-            ->get();
-
-            foreach ($rounds as $round) {
-                $rounds_total = $rounds->sum('total_score');
-            } 
-
-            $rounds_average = $rounds_total / 7;              
-        }  
-        
-        // 18 rounds
-        if ($round_count > 17 && $round_count < 19){
-
-            $rounds = \App\Round::where('player_id', $player)
-            ->groupBy('rounds.id')
-            ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as total_score")
-            ->orderBy('total_score', 'asc')
-            ->take(8)
-            ->get();
-
-            foreach ($rounds as $round) {
-                $rounds_total = $rounds->sum('total_score');
-            } 
-
-            $rounds_average = $rounds_total / 8;              
-        } 
-        
-        // 19 rounds
-        if ($round_count > 18 && $round_count < 20){
-
-            $rounds = \App\Round::where('player_id', $player)
-            ->groupBy('rounds.id')
-            ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as total_score")
-            ->orderBy('total_score', 'asc')
-            ->take(9)
-            ->get();
-
-            foreach ($rounds as $round) {
-                $rounds_total = $rounds->sum('total_score');
-            } 
-
-            $rounds_average = $rounds_total / 9;  
-        } 
-        
-        // 20+ rounds
-        if ($round_count > 19){
-
-            $rounds = \App\Round::where('player_id', $player)
-            ->groupBy('rounds.id')
-            ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as total_score")
-            ->orderBy('total_score', 'asc')
-            ->take(10)
-            ->get();
-
-            foreach ($rounds as $round) {
-                $rounds_total = $rounds->sum('total_score');
-            } 
-
-            $rounds_average = $rounds_total / 10;                       
-
-        } 
-        
-        // find out correct 'equitable score control'
-
-        $esc = 0;
-
-        if ($current_handicap < 10){
-            $esc = 7; // this needs looking at, should be +2 more than par per hole...
+        // find out buffer zone and adjustment amount based on current handicap
+        if($current_handicap < 6){
+            $buffer = 1;
+            $adjustment_amount = 0.1;
         }
 
-        if ($current_handicap > 9 && $current_handicap < 20){
-            $esc = 7;
+        if($current_handicap > 5 && $current_handicap < 13){
+            $buffer = 2;
+            $adjustment_amount = 0.2;
+        }        
+
+        if($current_handicap > 12 && $current_handicap < 21){
+            $buffer = 3;
+            $adjustment_amount = 0.3;
         } 
         
-        if ($current_handicap > 19 && $current_handicap < 30){
-            $esc = 8;
+        if($current_handicap > 20 && $current_handicap < 29){
+            $buffer = 4;
+            $adjustment_amount = 0.4;
+        }          
+
+        if($current_handicap > 28 && $current_handicap < 37){
+            $buffer = 5;
+            $adjustment_amount = 0.5;
+        }  
+
+        if($current_handicap > 37){
+            $buffer = 6;
+            $adjustment_amount = 0.6;
+        } 
+
+        // if positive adjustment needs to be made i.e. handicap needs reducing
+        if($adjustment > 0){
+            $decrease_amount = $adjustment_amount * $adjustment;
+            $updated_handicap = $current_handicap - $decrease_amount;
         } 
         
-        if ($current_handicap > 29 && $current_handicap < 40){
-            $esc = 9;
-        }           
+        // if no adjustment is required
+        if($adjustment <= 0){
+            $updated_handicap = $current_handicap;
+        }   
+        
+        // set the buffer zone
+        $buffer_zone = $sss + $buffer;
 
-        if ($current_handicap < 40){
-            $esc = 10;
-        } 
+        // if negative adjustment needs to be made 
+        if($net_score > $buffer_zone){          
+            $increase_amount = 0.1;
+            $updated_handicap = $current_handicap + $increase_amount;
+        }         
 
+        // change back from decimal to integer
+        $golden_number = $updated_handicap * 10;
 
+        // update handicap in database
+        $player_data = \App\User::where('id', $player)->first();
+        
+        $player_data->handicap = $golden_number;
 
-
-        // get handicap index
-        $handicap_index = $rounds_average * 0.96;
-
-        // truncate to one decimal place
-        $handicap_index = number_format(2.10, 1);
-            
-        // get handicap differential
-        $handicap_differential = ($esc - $course_rating) * 113 / $slope_rating;
-
-        // round to the nearest tenth
-        $handicap_differential = ceil($handicap_differential / 10) * 10;
-
-        // course handicap
-        $course_handicap = ($handicap_index * $slope_rating) / 113;
-
-        // round to the nearest whole number
-        $course_handicap = round($course_handicap);
-
-        // net score
-        $net_score = $score - $course_handicap;
-
-
-        // if net score above or below css then the handicap needs to be adjusted up or down            
-
-
+        $player_data->save();
 
         //$player = $event->round->player_id . 'has just added a round';
-        Storage::put('roundactivity.txt', $esc);
-
-
-   
-
+        //Storage::put('roundactivity.txt', $golden_number);
 
     }
 }

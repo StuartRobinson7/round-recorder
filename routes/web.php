@@ -46,8 +46,14 @@ Route::get('/course_list', function () {
 
 Route::group(['middleware' => 'auth'], function () {
 
+    //Route::resource('add_course','AddCourseController');
     Route::get('/add_course', 'CourseController@showAddCourseForm')->name('add_course');
     Route::post('/add_course', ['as' => 'add_course', 'uses' => 'CourseController@saveCourses']);
+
+    Route::post('/course_list{id}', 'CourseController@destroyCourse')->name('edit_course');
+
+    Route::get('/edit_course{id}', 'CourseController@editCourse')->name('edit_course');
+    Route::post('/edit_course{id}', 'CourseController@updateCourse')->name('update_course');
 
     Route::get('/add_round', 'RoundController@showAddRoundForm')->name('add_round');
     Route::post('/add_round', ['as' => 'add_round', 'uses' => 'RoundController@saveRound']);

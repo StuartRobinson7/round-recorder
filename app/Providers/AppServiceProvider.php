@@ -19,8 +19,9 @@ class AppServiceProvider extends ServiceProvider
 
         \App\Course::creating(function($model){
 
-            $model->course_rating = ($model->course_rating) ?: '72';
-            $model->course_slope = ($model->course_slope) ?: '80';
+            $par = $model->hole_1_par + $model->hole_2_par + $model->hole_3_par + $model->hole_4_par + $model->hole_5_par + $model->hole_6_par + $model->hole_7_par + $model->hole_8_par + $model->hole_9_par + $model->hole_10_par + $model->hole_11_par + $model->hole_2_par + $model->hole_13_par + $model->hole_14_par + $model->hole_15_par + $model->hole_16_par + $model->hole_17_par + $model->hole_18_par;
+
+            $model->sss = ($model->sss) ?: $par;
 
             $model->hole_1_whites = ($model->hole_1_whites) ?: '0';
             $model->hole_2_whites = ($model->hole_2_whites) ?: '0';

@@ -17,8 +17,7 @@ class CreateCoursesTable extends Migration
             $table->increments('id');
             $table->string('property_name');
             $table->string('course_name');
-            $table->integer('course_rating');
-            $table->integer('course_slope');
+            $table->integer('sss');
             $table->integer('hole_1_par');
             $table->integer('hole_1_stroke_index');
             $table->integer('hole_1_whites');
@@ -146,8 +145,6 @@ class CreateCoursesTable extends Migration
             $table->integer('hole_18_ladies_par');
             $table->integer('hole_18_ladies_stroke_index');                                                                                                                                                                                            
             $table->timestamps();
-
-
         });
     }
 
