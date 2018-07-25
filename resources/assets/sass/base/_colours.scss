@@ -19,14 +19,14 @@
 // Global 
                                 
     $body-color:            rgba(0,0,0,0.87);
-    $body-bg:               #fefefe;
+    $body-bg:               #efefef;
 
 
 // Company Colours 
 
-    $cc0:                   #1E88E5;
-    $cc1:                   #0D47A1;
-    $cc2:                   #FF0000;    
+    $theme-1:                   #009b77;
+    $theme-2:                   #0D47A1;
+    $theme-3:                   #FF0000;    
 
 
 // Neutral Colours 
@@ -37,7 +37,7 @@
 
 // links
     // overrides $link-color
-    $cta:                   #0bb7d1;
+    $cta:                   $theme-1;
 
 
 // Override bootstrap colours

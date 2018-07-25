@@ -59,8 +59,8 @@
                         <label>Round Notes</label>
                         <textarea id="round_notes" type="textarea" rows="4" class="form-control" name="round_notes" value="{{ old('round_notes') }}"> </textarea>                         
 
-                        <button id="submit" type="submit" class="btn btn-primary">
-                            {{ __('Add Round') }}
+                        <button id="submit" type="submit" class="btn btn-cta">
+                            <span>{{ __('Add Round') }}</span>
                         </button>
 
                     </form>

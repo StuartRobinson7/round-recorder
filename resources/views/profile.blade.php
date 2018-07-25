@@ -14,13 +14,13 @@
                 @endif        
     
                 <h1>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h1>
-                <h2>{{ Auth::user()->hand }} Hand</h2>
+                <h2>{{ ucfirst(trans(Auth::user()->hand)) }} Handed</h2>
                 <h3>Playing off {{ Auth::user()->handicap / 10 }}</h3>
 
                 
                 @if (count($rounds) > 0)
 
-                        <div class="row">
+                        <div class="row text-center">
                                 <div class="col-6 col-md">
                                         <h4>{{ number_format($career_fir_total, 2) }}%</h4>
                                         <p>Fairways in regulation</p>
@@ -60,7 +60,7 @@
 
                                 <tr>
                                         <td>{{ $round_result->round_date->format('d/m/Y') }}</td>
-                                        <td>{{ $round_result->property_name }} {{ $round_result->course_name }}</td>
+                                        <td>{{ $round_result->property_name }} - {{ $round_result->course_name }}</td>
                                         <td>{{ $round_result->total_par }}</td>
                                         <td>{{ $round_result->total_score }}</td>
                                         <td>                                

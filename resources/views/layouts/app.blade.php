@@ -23,10 +23,13 @@
 </head>
 <body>
     <div id="app">
+
+        <header>
+
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Testbed') }}
+                    {{ config('app.name', 'Round Recorder') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -36,15 +39,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('profile') }}">{{ __('Profile') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('courses.create') }}">{{ __('Add Course') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('add_round') }}">{{ __('Add Round') }}</a>
-                        </li>                      
+                     
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -54,6 +49,15 @@
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('profile') }}">{{ __('Profile') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('courses.create') }}">{{ __('Add Course') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('add_round') }}">{{ __('Add Round') }}</a>
+                            </li>                         
                             <li class="nav-item dropdown">
                             <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
@@ -63,6 +67,8 @@
                 </div>
             </div>
         </nav>
+
+        </header>
 
         <main class="py-4">
             @yield('content')
