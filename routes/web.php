@@ -27,12 +27,6 @@ Route::get('/player_list', function () {
     return view('player_list', ['player' => $player]);
 });
 
-Route::get('/course_list', function () {
-
-    $course = \App\Course::all();
-
-    return view('course_list', ['course' => $course]);
-});
 
 
 //Route::get('/add_course', function () {
@@ -47,13 +41,25 @@ Route::get('/course_list', function () {
 Route::group(['middleware' => 'auth'], function () {
 
     //Route::resource('add_course','AddCourseController');
-    Route::get('/add_course', 'CourseController@showAddCourseForm')->name('add_course');
-    Route::post('/add_course', ['as' => 'add_course', 'uses' => 'CourseController@saveCourses']);
+    //Route::get('/add_course', 'CourseController@showAddCourseForm')->name('add_course');
+    //Route::post('/add_course', ['as' => 'add_course', 'uses' => 'CourseController@saveCourses']);
 
-    Route::post('/course_list{id}', 'CourseController@destroyCourse')->name('edit_course');
+    //Route::post('/course_list{id}', 'CourseController@destroyCourse')->name('edit_course');
 
-    Route::get('/edit_course{id}', 'CourseController@editCourse')->name('edit_course');
-    Route::post('/edit_course{id}', 'CourseController@updateCourse')->name('update_course');
+    //Route::get('/edit_course{id}', 'CourseController@editCourse')->name('edit_course');
+    //Route::post('/edit_course{id}', 'CourseController@updateCourse')->name('update_course');
+
+    Route::resource('courses', 'CourseController');
+
+    Route::get('/course_list', function () {
+        $course_list = \App\Course::all();
+        return view('course_list', ['course_list' => $course_list]);
+    })->name('course_list'); 
+
+    Route::get('/view_course', function () {
+        return view('view_course');
+    })->name('view_course');
+    
 
     Route::get('/add_round', 'RoundController@showAddRoundForm')->name('add_round');
     Route::post('/add_round', ['as' => 'add_round', 'uses' => 'RoundController@saveRound']);

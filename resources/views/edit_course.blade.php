@@ -18,9 +18,11 @@
                             </div>
                         @endif
 
-                    <form method="POST" action="{{action('courseController@updateCourse', $id)}}" aria-label="{{ __('Edit Course') }}">
-                        @csrf
+                    <form method="post" action="{{ route('courses.update', $id) }}" aria-label="{{ __('Edit Course') }}">
+                        
+                        @method('put')
 
+                        @csrf
 
                         <label>Property Name</label>
                         <input id="property_name" type="text" class="form-control {{ $errors->has('property_name') ? ' is-invalid' : '' }}" name="property_name" value="{{ $course->property_name }}">
@@ -248,7 +250,7 @@
                         </table>
 
                         <button type="submit" class="btn btn-primary">
-                            {{ __('Add Course') }}
+                            {{ __('Save Changes') }}
                         </button>
 
                     </form>

@@ -18,7 +18,7 @@
                             </div>
                         @endif
 
-                    <form method="POST" action="{{ route('add_course') }}" aria-label="{{ __('Add Course') }}">
+                    <form method="POST" action="{{ route('courses.store') }}" aria-label="{{ __('Add Course') }}">
                         @csrf
 
 

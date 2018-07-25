@@ -40,7 +40,7 @@
                             <a class="nav-link" href="{{ route('profile') }}">{{ __('Profile') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('add_course') }}">{{ __('Add Course') }}</a>
+                            <a class="nav-link" href="{{ route('courses.create') }}">{{ __('Add Course') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('add_round') }}">{{ __('Add Round') }}</a>
