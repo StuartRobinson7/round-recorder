@@ -249,8 +249,8 @@
                         
                         </table>
 
-                        <button type="submit" class="btn btn-primary">
-                            {{ __('Save Changes') }}
+                        <button type="submit" class="btn btn-cta">
+                            <span>{{ __('Save Changes') }}</span>
                         </button>
 
                     </form>

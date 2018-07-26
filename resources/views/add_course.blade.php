@@ -247,8 +247,8 @@
                         
                         </table>
 
-                        <button type="submit" class="btn btn-primary">
-                            {{ __('Add Course') }}
+                        <button type="submit" class="btn btn-cta">
+                            <span>{{ __('Add Course') }}</span>
                         </button>
 
                     </form>
