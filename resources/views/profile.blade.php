@@ -54,12 +54,13 @@
                                         <td>GIR</td>
                                         <td>Drops</td>
                                         <td>Scrambling</td>
+                                        <td>Edit</td>
                                 </tr>
 
                                 @foreach($rounds as $key => $round_result)   
 
                                 <tr>
-                                        <td>{{ $round_result->round_date->format('d/m/Y') }}</td>
+                                        <td><a href="{{action('RoundController@show', $round_result['id'])}}">{{ $round_result->round_date->format('d/m/Y') }}</a></td>
                                         <td>{{ $round_result->property_name }} - {{ $round_result->course_name }}</td>
                                         <td>{{ $round_result->total_par }}</td>
                                         <td>{{ $round_result->total_score }}</td>
@@ -76,6 +77,7 @@
                                         <td>{{ number_format($round_result->gir_percentage, 2) }}%</td>
                                         <td>{{ $round_result->total_drops }}</td>
                                         <td>{{ number_format($round_result->scrambling, 2) }}%</td>
+                                        <td><a href="{{action('RoundController@edit', $round_result['id'])}}" class="btn btn-warning">Edit</a></td>
                                 </tr> 
 
                                 @endforeach

@@ -10,8 +10,7 @@
                 <thead>
                     <tr>    
                         <th>ID</th>
-                        <th>Property Name</th>
-                        <th>Course Name</th>
+                        <th>Course</th>
                         <th></th>
                         <th></th>                 
                     </tr>                
@@ -20,8 +19,7 @@
                 @foreach($course_list as $key => $data)
                     <tr>    
                         <td>{{$data->id}}</td>
-                        <td>{{$data->property_name}}</td>
-                        <td>{{$data->course_name}}</td>
+                        <td><a href="{{action('CourseController@show', $data['id'])}}">{{$data->property_name}} - {{$data->course_name}}</a></td>
                         <td><a href="{{action('CourseController@edit', $data['id'])}}" class="btn btn-warning">Edit</a></td>
                         <td>
                         <form action="{{action('CourseController@destroy', $data['id'])}}" method="post">

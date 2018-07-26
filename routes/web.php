@@ -59,10 +59,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/view_course', function () {
         return view('view_course');
     })->name('view_course');
+
+
+    Route::resource('rounds', 'RoundController');
     
 
-    Route::get('/add_round', 'RoundController@showAddRoundForm')->name('add_round');
-    Route::post('/add_round', ['as' => 'add_round', 'uses' => 'RoundController@saveRound']);
+    //Route::get('/add_round', 'RoundController@showAddRoundForm')->name('add_round');
+    //Route::post('/add_round', ['as' => 'add_round', 'uses' => 'RoundController@saveRound']);
 
     
     Route::get('/profile', 'ProfileController@ProfileStats')->name('profile');

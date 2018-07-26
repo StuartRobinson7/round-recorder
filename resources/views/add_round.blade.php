@@ -77,7 +77,7 @@
 $(document).ready(function(){
     
     
-   
+    var url = "<?php echo route('rounds.store')?>";
 
     $('#course_id').on('change', function() {
 
@@ -104,46 +104,6 @@ $(document).ready(function(){
 
     }); 
     
-    /*
-    $('#course_id').each(function() {
-
-        var selected_course_id=$(this).val();
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        })
-
-        $.ajax({         
-            url: '/ajax_getcourse',
-            dataType: "json",
-            method: 'get',
-            data: {selected_course_id: selected_course_id},      
-            success: function (response) {
-                //console.log(response)
-                //alert(response)
-                $("#add_round_form").html(response)  
-            },
-            error: function (request, status, error) {
-                json = $.parseJSON(request.responseText);
-                
-                $.each(json.errors, function(key, value){
-                    $('.alert-danger').show();
-                    $('.alert-danger').append('<p>'+value+'</p>');
-                });
-                $("#result").html(''); 
-            }           
-        });       
-
-    });     
-    */
-
-
-    
-            
-
-           // $("#hole_1_fir").is(":checked") ? 1:0;
 
             $('#add_round').on('submit',function(e){
 
@@ -156,7 +116,7 @@ $(document).ready(function(){
               });
 
                $.ajax({
-                  url: '/add_round',
+                  url: url,
                   method: 'post',
                   data: $(this).serialize(),
                   success: function(data){

@@ -3,7 +3,7 @@
 // ======================================== 
 
 header {
-    @extend %header-shaddow;
+    //@extend %header-shaddow;
     height: $header-height;
     background: $white;
     border-bottom: 3px solid $theme-1;

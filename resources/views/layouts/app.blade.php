@@ -56,7 +56,7 @@
                                 <a class="nav-link" href="{{ route('courses.create') }}">{{ __('Add Course') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('add_round') }}">{{ __('Add Round') }}</a>
+                                <a class="nav-link" href="{{ route('rounds.create') }}">{{ __('Add Round') }}</a>
                             </li>                         
                             <li class="nav-item dropdown">
                             <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
