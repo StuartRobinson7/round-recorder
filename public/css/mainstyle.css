@@ -185,14 +185,14 @@ sup {
 }
 
 a {
-  color: #009b77;
+  color: #018f6e;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #005d47;
+  color: #015642;
   text-decoration: underline;
 }
 
@@ -3399,12 +3399,12 @@ fieldset[disabled] a#cookieAcceptanceButton {
 
 .btn-link {
   font-weight: 400;
-  color: #009b77;
+  color: #018f6e;
   background-color: transparent;
 }
 
 .btn-link:hover {
-  color: #005d47;
+  color: #015642;
   text-decoration: underline;
   background-color: transparent;
   border-color: transparent;
@@ -5202,14 +5202,14 @@ tbody.collapse.show {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #009b77;
+  color: #018f6e;
   background-color: #fff;
   border: 1px solid #dee2e6;
 }
 
 .page-link:focus,
 .page-link:hover {
-  color: #005d47;
+  color: #015642;
   text-decoration: none;
   background-color: #e9ecef;
   border-color: #dee2e6;
@@ -10002,15 +10002,93 @@ a.text-dark:hover {
   }
 }
 
+@font-face {
+  font-family: "DosisExtraBold";
+  src: url("/fonts/dosis-extrabold-webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("/fonts/dosis-extrabold-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dosis-extrabold-webfont.woff2") format("woff2"), url("/fonts/dosis-extrabold-webfont.woff") format("woff"), url("/fonts/dosis-extrabold-webfont.ttf") format("truetype"), url("/fonts/dosis-extrabold-webfont.svg#DosisExtraBold") format("svg");
+  /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DosisBold";
+  src: url("/fonts/dosis-bold-webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("/fonts/dosis-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dosis-bold-webfont.woff2") format("woff2"), url("/fonts/dosis-bold-webfont.woff") format("woff"), url("/fonts/dosis-bold-webfont.ttf") format("truetype"), url("/fonts/dosis-bold-webfont.svg#DosisBold") format("svg");
+  /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DosisSemiBold";
+  src: url("/fonts/dosis-semibold-webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("/fonts/dosis-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dosis-semibold-webfont.woff2") format("woff2"), url("/fonts/dosis-semibold-webfont.woff") format("woff"), url("/fonts/dosis-semibold-webfont.ttf") format("truetype"), url("/fonts/dosis-semibold-webfont.svg#DosisSemiBold") format("svg");
+  /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DosisMedium";
+  src: url("/fonts/dosis-medium-webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("/fonts/dosis-medium-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dosis-medium-webfont.woff2") format("woff2"), url("/fonts/dosis-medium-webfont.woff") format("woff"), url("/fonts/dosis-medium-webfont.ttf") format("truetype"), url("/fonts/dosis-medium-webfont.svg#DosisMedium") format("svg");
+  /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DosisLight";
+  src: url("/fonts/dosis-light-webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("/fonts/dosis-light-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dosis-light-webfont.woff2") format("woff2"), url("/fonts/dosis-light-webfont.woff") format("woff"), url("/fonts/dosis-light-webfont.ttf") format("truetype"), url("/fonts/dosis-light-webfont.svg#DosisLight") format("svg");
+  /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DosisExtraLight";
+  src: url("/fonts/dosis-extralight-webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("/fonts/dosis-extralight-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dosis-extralight-webfont.woff2") format("woff2"), url("/fonts/dosis-extralight-webfont.woff") format("woff"), url("/fonts/dosis-extralight-webfont.ttf") format("truetype"), url("/fonts/dosis-extralight-webfont.svg#DosisExtraLight") format("svg");
+  /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-.btn-cta,
-#cookieAcceptanceButton {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+.btn,
+#cookieAcceptanceButton,
+.btn-cta {
+  font-family: "DosisSemiBold";
+}
+
+label {
+  font-family: "DosisMedium";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn,
+#cookieAcceptanceButton,
+.btn-cta {
+  font-family: "DosisSemiBold";
+  letter-spacing: 1px;
 }
 
 body,
@@ -10025,11 +10103,8 @@ td {
 }
 
 strong,
-label,
 legend,
 .alert > .alert-link,
-.btn,
-#cookieAcceptanceButton,
 .cart-item span {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: bold;
@@ -10081,7 +10156,7 @@ h5 {
 }
 
 a {
-  color: #009b77;
+  color: #018f6e;
   -webkit-transition: color .1s, background-color .1s;
   transition: color .1s, background-color .1s;
 }
@@ -10089,7 +10164,7 @@ a {
 a:active,
 a:hover,
 a:focus {
-  color: #005d47;
+  color: #015642;
   text-decoration: none;
 }
 
@@ -10478,12 +10553,12 @@ main {
 header {
   height: 56px;
   background: #fff;
-  border-bottom: 3px solid #009b77;
+  border-bottom: 3px solid #018f6e;
   background: #fff;
 }
 
-header h1 {
-  color: gray;
+header .navbar-brand {
+  width: 420px;
 }
 
 @media (min-width: 768px) {
@@ -10620,13 +10695,13 @@ footer .on2net {
 }
 
 .btn-link {
-  color: #009b77;
+  color: #018f6e;
 }
 
 .btn-link:active,
 .btn-link:hover,
 .btn-link:focus {
-  color: #005d47;
+  color: #015642;
   text-decoration: none;
   background-color: #dee2e6;
   border-color: #dee2e6;
@@ -10635,7 +10710,7 @@ footer .on2net {
 .btn-cta,
 #cookieAcceptanceButton {
   position: relative;
-  background: #009b77;
+  background: #018f6e;
   border: none;
   overflow: hidden;
 }
@@ -10658,12 +10733,12 @@ footer .on2net {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   right: 100%;
-  background: #005d47;
+  background: #015642;
 }
 
 .btn-cta:hover,
 #cookieAcceptanceButton:hover {
-  background: #009b77;
+  background: #018f6e;
 }
 
 .btn-cta:hover:before,
@@ -10710,7 +10785,7 @@ footer .on2net {
 }
 
 .tagline-carousel .slide-1 {
-  background: #009b77;
+  background: #018f6e;
   color: #fff;
   background-size: cover;
 }
@@ -10992,7 +11067,7 @@ footer .title.on2net span {
 }
 
 .style-guide-colour.cc-0 {
-  background: #009b77;
+  background: #018f6e;
 }
 
 .style-guide-colour.cc-1 {
@@ -11004,11 +11079,11 @@ footer .title.on2net span {
 }
 
 .style-guide-colour.link-1 {
-  background: #009b77;
+  background: #018f6e;
 }
 
 .style-guide-colour.link-2 {
-  background: #005d47;
+  background: #015642;
 }
 
 .login-register .login-holder {

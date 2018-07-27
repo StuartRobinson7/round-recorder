@@ -2,7 +2,7 @@
 // Typography -----------------------------
 // ========================================
 
-//@import 'load-fonts'; 
+@import 'load-fonts'; 
 
 // TABLE OF CONTENTS ----------------------
 
@@ -29,12 +29,23 @@
 $system-font:               true; // true to use system fonts / false to use custom fonts
 
 
+
 // Custom ---------------------------------
 
 // Set font-face for headings
 
-$heading-base:              '';
+$heading-base:              'DosisSemiBold';
 
+%heading-base{
+    font-family: $heading-base;
+}
+
+
+$heading-thin:              'DosisMedium';
+
+%heading-thin{
+    font-family: $heading-thin;
+}
 
 // Set font-face for basic type
 
@@ -60,7 +71,8 @@ $text-bold-system:          $font-family-sans-serif;
 @if $system-font {
 
     %heading-base {
-        font-family: $heading-base-system;
+        font-family: $heading-base;
+        letter-spacing: 1px;
         //font-weight: bold;
     }
 
@@ -151,8 +163,12 @@ a, p, ol, ul, th, td {
 }
 
 // misc
-strong, label, legend {
+strong, legend {
     @extend %text-bold;
+}
+
+label{
+    @extend %heading-thin;
 }
 
 

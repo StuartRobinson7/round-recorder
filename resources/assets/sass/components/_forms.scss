@@ -13,7 +13,7 @@
 // override default bootstrap styles
 .btn {
     @extend %caps;
-    @extend %text-bold;
+    @extend %heading-base;
 
 
     color: $white; 

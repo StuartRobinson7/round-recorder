@@ -13,7 +13,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/bootstrap.js') }}" defer></script>
     <script src="{{ asset('js/script.js') }}" defer></script>
     <script src="{{ asset('js/bundle.js') }}" defer></script>
     <script src="{{ asset('js/vue/dist/vue.js') }}" defer></script>
@@ -29,7 +29,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Round Recorder') }}
+                    <img src="/images/round-recorder.svg" alt="Round Recorder" class="img-fluid" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

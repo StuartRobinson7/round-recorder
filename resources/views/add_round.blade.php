@@ -43,6 +43,25 @@
                         </select>
 
 
+                        <br />
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="yards" id="yards-white" value="white">
+                            <label class="form-check-label" for="yards-white">Whites</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="yards" id="yards-yellow" value="yellow" checked>
+                            <label class="form-check-label" for="yards-yellow">Yellows</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="yards" id="yards-red" value="red">
+                            <label class="form-check-label" for="yards-reds">Reds</label>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <br />
+
                         <label>Date</label>
 
                         <div class="input-group date">
@@ -81,7 +100,8 @@ $(document).ready(function(){
 
     $('#course_id').on('change', function() {
 
-        var selected_course_id=$(this).val();
+        var selected_yards = $('input:radio[name=yards]:checked').val();
+        var selected_course_id = $(this).val();
 
         $.ajaxSetup({
             headers: {
@@ -93,7 +113,7 @@ $(document).ready(function(){
             url: '/ajax_getcourse',
             dataType: "json",
             method: 'get',
-            data: {selected_course_id: selected_course_id},      
+            data: {selected_course_id: selected_course_id, selected_yards: selected_yards},      
             success: function (response) {
                 $("#add_round_form").html(response)  
             },
@@ -103,6 +123,32 @@ $(document).ready(function(){
         });       
 
     }); 
+
+    $('input:radio[name=yards]').on('change', function() {
+
+        var selected_yards = $(this).val();
+        var selected_course_id = $('#course_id').val();
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        })
+
+        $.ajax({         
+            url: '/ajax_getcourse',
+            dataType: "json",
+            method: 'get',
+            data: {selected_course_id: selected_course_id, selected_yards: selected_yards},      
+            success: function (response) {
+                $("#add_round_form").html(response)  
+            },
+            error:function(error){ 
+                console.log(error)
+            }            
+        });       
+
+    });     
     
 
             $('#add_round').on('submit',function(e){

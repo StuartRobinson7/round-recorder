@@ -330,7 +330,14 @@ class CourseController extends Controller
         $course->save();
 
         $course = \App\Course::find($id);
-        return view('view_course',compact('course','id'));        
+        $course_totals = \App\Course::where('courses.id', $id)        
+                ->selectRaw("SUM(hole_1_par + hole_2_par + hole_3_par + hole_4_par + hole_5_par + hole_6_par + hole_7_par + hole_8_par + hole_9_par + hole_10_par + hole_11_par + hole_12_par + hole_13_par + hole_14_par + hole_15_par + hole_16_par + hole_17_par + hole_18_par) as total_par")
+                ->selectRaw("SUM(hole_1_whites + hole_2_whites + hole_3_whites + hole_4_whites + hole_5_whites + hole_6_whites + hole_7_whites + hole_8_whites + hole_9_whites + hole_10_whites + hole_11_whites + hole_12_whites + hole_13_whites + hole_14_whites + hole_15_whites + hole_16_whites + hole_17_whites + hole_18_whites) as total_whites")
+                ->selectRaw("SUM(hole_1_yellows + hole_2_yellows + hole_3_yellows + hole_4_yellows + hole_5_yellows + hole_6_yellows + hole_7_yellows + hole_8_yellows + hole_9_yellows + hole_10_yellows + hole_11_yellows + hole_12_yellows + hole_13_yellows + hole_14_yellows + hole_15_yellows + hole_16_yellows + hole_17_yellows + hole_18_yellows) as total_yellows")
+                ->selectRaw("SUM(hole_1_reds + hole_2_reds + hole_3_reds + hole_4_reds + hole_5_reds + hole_6_reds + hole_7_reds + hole_8_reds + hole_9_reds + hole_10_reds + hole_11_reds + hole_12_reds + hole_13_reds + hole_14_reds + hole_15_reds + hole_16_reds + hole_17_reds + hole_18_reds) as total_reds")
+                ->selectRaw("SUM(hole_1_ladies_par + hole_2_ladies_par + hole_3_ladies_par + hole_4_ladies_par + hole_5_ladies_par + hole_6_ladies_par + hole_7_ladies_par + hole_8_ladies_par + hole_9_ladies_par + hole_10_ladies_par + hole_11_ladies_par + hole_12_ladies_par + hole_13_ladies_par + hole_14_ladies_par + hole_15_ladies_par + hole_16_ladies_par + hole_17_ladies_par + hole_18_ladies_par) as total_ladies_par")
+                ->first();        
+        return view('view_course',compact('course', 'course_totals', 'id'));        
     }
 
     /**

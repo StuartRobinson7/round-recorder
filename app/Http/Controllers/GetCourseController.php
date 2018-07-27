@@ -16,9 +16,11 @@ class GetCourseController extends Controller
 
         $selected_id = $request->selected_course_id;
 
+        $selected_yards = $request->selected_yards;
+
         $course_data = Course::where('id', $selected_id)->get();
 
-        $view = view('/ajax_getcourse', ['course_data' => $course_data])->render();
+        $view = view('/ajax_getcourse', ['course_data' => $course_data, 'selected_yards' => $selected_yards])->render();
 
         $view = trim(preg_replace('/\r\n/', ' ', $view));                
 

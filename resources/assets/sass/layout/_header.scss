@@ -10,8 +10,8 @@ header {
 
     background:$white;                                                     
     
-    h1 {
-        color: tint($black, 50%);                
+    .navbar-brand{
+        width: 420px;
     }
 
 

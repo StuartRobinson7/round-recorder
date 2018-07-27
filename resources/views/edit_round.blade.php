@@ -33,7 +33,7 @@
                         <input id="player_id" type="hidden" class="hidden" name="player_id" value="{{ Auth::user()->id }}">
 
                         <label>Course</label>
-                        <h5>{{ $course->property_name }} - {{ $course->course_name }}</h5>
+                        <p>{{ $course->property_name }} - {{ $course->course_name }}</p>
 
 
 

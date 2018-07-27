@@ -16,6 +16,7 @@ class CreateRoundsTable extends Migration
         Schema::create('rounds', function (Blueprint $table) {
             $table->increments('id');
             $table->date('round_date');
+	        $table->string('yards');
             $table->integer('course_id');
             $table->integer('player_id');
             $table->integer('hole_1_score');

@@ -3,7 +3,7 @@
 // ========================================
 
 
-$font-path:'../fonts/';
+$font-path:'/fonts/';
 
 @mixin font-family($font-name, $font-path-name){
 
@@ -21,10 +21,18 @@ $font-path:'../fonts/';
 }
 
 
-// Open Sans ==============================
+// Dosis ==============================
 
-    @include font-family(OpenSansRegular, OpenSans-Regular-webfont);
-    @include font-family(OpenSansBold, OpenSans-Bold-webfont);
+    @include font-family(DosisExtraBold, dosis-extrabold-webfont);
+    @include font-family(DosisBold, dosis-bold-webfont);
+
+    @include font-family(DosisSemiBold, dosis-semibold-webfont);
+
+    @include font-family(DosisMedium, dosis-medium-webfont);
+
+    @include font-family(DosisLight, dosis-light-webfont);
+    @include font-family(DosisExtraLight, dosis-extralight-webfont);
+    
 
 
 

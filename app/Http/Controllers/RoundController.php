@@ -337,7 +337,7 @@ class RoundController extends Controller
 
 
 
-            return view('view_round',compact('round', 'course', 'course_totals', 'round_result', 'id'));        
+            return view('view_round',compact('round', 'course', 'course_totals', 'round_result', 'id'))->with('success','Course has been updated');        
         }
     }
 
