@@ -6,7 +6,7 @@
 
             <div class="container">
 
-                <h1>{{ __('Add Round') }}</h1>
+                <h1>{{ __('Edit Round') }}</h1>
 
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -59,7 +59,17 @@
                             
                             <tr>
                                 <td>1</td>
-                                <td>{{$course->hole_1_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_1_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_1_par}}  
+
+                                @endif 
+                                </td>
                                 <td><input id="hole_1_score" type="number" class="form-control{{ $errors->has('hole_1_score') ? ' is-invalid' : '' }}" name="hole_1_score" value="{{ $round->hole_1_score }}"></td>
                                 <td><input id="hole_1_putts" type="number" class="form-control{{ $errors->has('hole_1_putts') ? ' is-invalid' : '' }}" name="hole_1_putts" value="{{ $round->hole_1_putts }}"></td>
                                 <td><input id="hole_1_drops" type="number" class="form-control{{ $errors->has('hole_1_drops') ? ' is-invalid' : '' }}" name="hole_1_drops" value="{{ $round->hole_1_drops }}"></td>
@@ -71,7 +81,17 @@
                             
                             <tr>
                                 <td>2</td>
-                                <td>{{$course->hole_2_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_2_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_2_par}}  
+
+                                @endif                                 
+                                </td>
                                 <td><input id="hole_2_score" type="number" class="form-control{{ $errors->has('hole_2_score') ? ' is-invalid' : '' }}" name="hole_2_score" value="{{ $round->hole_2_score }}"></td>
                                 <td><input id="hole_2_putts" type="number" class="form-control{{ $errors->has('hole_2_putts') ? ' is-invalid' : '' }}" name="hole_2_putts" value="{{ $round->hole_2_putts }}"></td>
                                 <td><input id="hole_2_drops" type="number" class="form-control{{ $errors->has('hole_2_drops') ? ' is-invalid' : '' }}" name="hole_2_drops" value="{{ $round->hole_2_drops }}"></td>
@@ -81,7 +101,17 @@
                         
                             <tr>
                                 <td>3</td>
-                                <td>{{$course->hole_3_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_3_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_3_par}}  
+
+                                @endif                                     
+                                </td>
                                 <td><input id="hole_3_score" type="number" class="form-control{{ $errors->has('hole_3_score') ? ' is-invalid' : '' }}" name="hole_3_score" value="{{ $round->hole_3_score }}"></td>
                                 <td><input id="hole_3_putts" type="number" class="form-control{{ $errors->has('hole_3_putts') ? ' is-invalid' : '' }}" name="hole_3_putts" value="{{ $round->hole_3_putts }}"></td>
                                 <td><input id="hole_3_drops" type="number" class="form-control{{ $errors->has('hole_3_drops') ? ' is-invalid' : '' }}" name="hole_3_drops" value="{{ $round->hole_3_drops }}"></td>
@@ -91,7 +121,17 @@
                         
                             <tr>
                                 <td>4</td>
-                                <td>{{$course->hole_4_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_4_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_4_par}}  
+
+                                @endif                                     
+                                </td>
                                 <td><input id="hole_4_score" type="number" class="form-control{{ $errors->has('hole_4_score') ? ' is-invalid' : '' }}" name="hole_4_score" value="{{ $round->hole_4_score }}"></td>
                                 <td><input id="hole_4_putts" type="number" class="form-control{{ $errors->has('hole_4_putts') ? ' is-invalid' : '' }}" name="hole_4_putts" value="{{ $round->hole_4_putts }}"></td>
                                 <td><input id="hole_4_drops" type="number" class="form-control{{ $errors->has('hole_4_drops') ? ' is-invalid' : '' }}" name="hole_4_drops" value="{{ $round->hole_4_drops }}"></td>
@@ -101,7 +141,17 @@
                         
                             <tr>
                                 <td>5</td>
-                                <td>{{$course->hole_5_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_5_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_5_par}}  
+
+                                @endif                                     
+                                </td>
                                 <td><input id="hole_5_score" type="number" class="form-control{{ $errors->has('hole_5_score') ? ' is-invalid' : '' }}" name="hole_5_score" value="{{ $round->hole_5_score }}"></td>
                                 <td><input id="hole_5_putts" type="number" class="form-control{{ $errors->has('hole_5_putts') ? ' is-invalid' : '' }}" name="hole_5_putts" value="{{ $round->hole_5_putts }}"></td>
                                 <td><input id="hole_5_drops" type="number" class="form-control{{ $errors->has('hole_5_drops') ? ' is-invalid' : '' }}" name="hole_5_drops" value="{{ $round->hole_5_drops }}"></td>
@@ -111,7 +161,17 @@
                         
                             <tr>
                                 <td>6</td>
-                                <td>{{$course->hole_6_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_6_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_6_par}}  
+
+                                @endif                                     
+                                </td>
                                 <td><input id="hole_6_score" type="number" class="form-control{{ $errors->has('hole_6_score') ? ' is-invalid' : '' }}" name="hole_6_score" value="{{ $round->hole_6_score }}"></td>
                                 <td><input id="hole_6_putts" type="number" class="form-control{{ $errors->has('hole_6_putts') ? ' is-invalid' : '' }}" name="hole_6_putts" value="{{ $round->hole_6_putts }}"></td>
                                 <td><input id="hole_6_drops" type="number" class="form-control{{ $errors->has('hole_6_drops') ? ' is-invalid' : '' }}" name="hole_6_drops" value="{{ $round->hole_6_drops }}"></td>
@@ -121,7 +181,17 @@
                         
                             <tr>
                                 <td>7</td>
-                                <td>{{$course->hole_7_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_7_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_7_par}}  
+
+                                @endif                                     
+                                </td>
                                 <td><input id="hole_7_score" type="number" class="form-control{{ $errors->has('hole_7_score') ? ' is-invalid' : '' }}" name="hole_7_score" value="{{ $round->hole_7_score }}"></td>
                                 <td><input id="hole_7_putts" type="number" class="form-control{{ $errors->has('hole_7_putts') ? ' is-invalid' : '' }}" name="hole_7_putts" value="{{ $round->hole_7_putts }}"></td>
                                 <td><input id="hole_7_drops" type="number" class="form-control{{ $errors->has('hole_7_drops') ? ' is-invalid' : '' }}" name="hole_7_drops" value="{{ $round->hole_7_drops }}"></td>
@@ -131,7 +201,17 @@
                         
                             <tr>
                                 <td>8</td>
-                                <td>{{$course->hole_8_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_8_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_8_par}}  
+
+                                @endif                                     
+                                </td>
                                 <td><input id="hole_8_score" type="number" class="form-control{{ $errors->has('hole_8_score') ? ' is-invalid' : '' }}" name="hole_8_score" value="{{ $round->hole_8_score }}"></td>
                                 <td><input id="hole_8_putts" type="number" class="form-control{{ $errors->has('hole_8_putts') ? ' is-invalid' : '' }}" name="hole_8_putts" value="{{ $round->hole_8_putts }}"></td>
                                 <td><input id="hole_8_drops" type="number" class="form-control{{ $errors->has('hole_8_drops') ? ' is-invalid' : '' }}" name="hole_8_drops" value="{{ $round->hole_8_drops }}"></td>
@@ -141,7 +221,17 @@
                         
                             <tr>
                                 <td>9</td>
-                                <td>{{$course->hole_9_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_9_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_9_par}}  
+
+                                @endif                                     
+                                </td>
                                 <td><input id="hole_9_score" type="number" class="form-control{{ $errors->has('hole_9_score') ? ' is-invalid' : '' }}" name="hole_9_score" value="{{ $round->hole_9_score }}"></td>
                                 <td><input id="hole_9_putts" type="number" class="form-control{{ $errors->has('hole_9_putts') ? ' is-invalid' : '' }}" name="hole_9_putts" value="{{ $round->hole_9_putts }}"></td>
                                 <td><input id="hole_9_drops" type="number" class="form-control{{ $errors->has('hole_9_drops') ? ' is-invalid' : '' }}" name="hole_9_drops" value="{{ $round->hole_9_drops }}"></td>
@@ -151,7 +241,17 @@
                         
                             <tr>
                                 <td>10</td>
-                                <td>{{$course->hole_10_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_10_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_10_par}}  
+
+                                @endif                                     
+                                </td>
                                 <td><input id="hole_10_score" type="number" class="form-control{{ $errors->has('hole_10_score') ? ' is-invalid' : '' }}" name="hole_10_score" value="{{ $round->hole_10_score }}"></td>
                                 <td><input id="hole_10_putts" type="number" class="form-control{{ $errors->has('hole_10_putts') ? ' is-invalid' : '' }}" name="hole_10_putts" value="{{ $round->hole_10_putts }}"></td>
                                 <td><input id="hole_10_drops" type="number" class="form-control{{ $errors->has('hole_10_drops') ? ' is-invalid' : '' }}" name="hole_10_drops" value="{{ $round->hole_10_drops }}"></td>
@@ -161,7 +261,17 @@
                         
                             <tr>
                                 <td>11</td>
-                                <td>{{$course->hole_11_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_11_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_11_par}}  
+
+                                @endif                                     
+                                </td>
                                 <td><input id="hole_11_score" type="number" class="form-control{{ $errors->has('hole_11_score') ? ' is-invalid' : '' }}" name="hole_11_score" value="{{ $round->hole_11_score }}"></td>
                                 <td><input id="hole_11_putts" type="number" class="form-control{{ $errors->has('hole_11_putts') ? ' is-invalid' : '' }}" name="hole_11_putts" value="{{ $round->hole_11_putts }}"></td>
                                 <td><input id="hole_11_drops" type="number" class="form-control{{ $errors->has('hole_11_drops') ? ' is-invalid' : '' }}" name="hole_11_drops" value="{{ $round->hole_11_drops }}"></td>
@@ -171,7 +281,17 @@
                         
                             <tr>
                                 <td>12</td>
-                                <td>{{$course->hole_12_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_12_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_12_par}}  
+
+                                @endif                                     
+                                </td>
                                 <td><input id="hole_12_score" type="number" class="form-control{{ $errors->has('hole_12_score') ? ' is-invalid' : '' }}" name="hole_12_score" value="{{ $round->hole_12_score }}"></td>
                                 <td><input id="hole_12_putts" type="number" class="form-control{{ $errors->has('hole_12_putts') ? ' is-invalid' : '' }}" name="hole_12_putts" value="{{ $round->hole_12_putts }}"></td>
                                 <td><input id="hole_12_drops" type="number" class="form-control{{ $errors->has('hole_12_drops') ? ' is-invalid' : '' }}" name="hole_12_drops" value="{{ $round->hole_12_drops }}"></td>
@@ -181,7 +301,17 @@
                         
                             <tr>
                                 <td>13</td>
-                                <td>{{$course->hole_13_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_13_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_13_par}}  
+
+                                @endif                                     
+                                </td>
                                 <td><input id="hole_13_score" type="number" class="form-control{{ $errors->has('hole_13_score') ? ' is-invalid' : '' }}" name="hole_13_score" value="{{ $round->hole_13_score }}"></td>
                                 <td><input id="hole_13_putts" type="number" class="form-control{{ $errors->has('hole_13_putts') ? ' is-invalid' : '' }}" name="hole_13_putts" value="{{ $round->hole_13_putts }}"></td>
                                 <td><input id="hole_13_drops" type="number" class="form-control{{ $errors->has('hole_13_drops') ? ' is-invalid' : '' }}" name="hole_13_drops" value="{{ $round->hole_13_drops }}"></td>
@@ -191,7 +321,17 @@
                         
                             <tr>
                                 <td>14</td>
-                                <td>{{$course->hole_14_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_14_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_14_par}}  
+
+                                @endif                                     
+                                </td>
                                 <td><input id="hole_14_score" type="number" class="form-control{{ $errors->has('hole_14_score') ? ' is-invalid' : '' }}" name="hole_14_score" value="{{ $round->hole_14_score }}"></td>
                                 <td><input id="hole_14_putts" type="number" class="form-control{{ $errors->has('hole_14_putts') ? ' is-invalid' : '' }}" name="hole_14_putts" value="{{ $round->hole_14_putts }}"></td>
                                 <td><input id="hole_14_drops" type="number" class="form-control{{ $errors->has('hole_14_drops') ? ' is-invalid' : '' }}" name="hole_14_drops" value="{{ $round->hole_14_drops }}"></td>
@@ -201,7 +341,17 @@
                         
                             <tr>
                                 <td>15</td>
-                                <td>{{$course->hole_15_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_15_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_15_par}}  
+
+                                @endif                                     
+                                </td>
                                 <td><input id="hole_15_score" type="number" class="form-control{{ $errors->has('hole_15_score') ? ' is-invalid' : '' }}" name="hole_15_score" value="{{ $round->hole_15_score }}"></td>
                                 <td><input id="hole_15_putts" type="number" class="form-control{{ $errors->has('hole_15_putts') ? ' is-invalid' : '' }}" name="hole_15_putts" value="{{ $round->hole_15_putts }}"></td>
                                 <td><input id="hole_15_drops" type="number" class="form-control{{ $errors->has('hole_15_drops') ? ' is-invalid' : '' }}" name="hole_15_drops" value="{{ $round->hole_15_drops }}"></td>
@@ -211,7 +361,17 @@
                         
                             <tr>
                                 <td>16</td>
-                                <td>{{$course->hole_16_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_16_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_16_par}}  
+
+                                @endif                                     
+                                </td>
                                 <td><input id="hole_16_score" type="number" class="form-control{{ $errors->has('hole_16_score') ? ' is-invalid' : '' }}" name="hole_16_score" value="{{ $round->hole_16_score }}"></td>
                                 <td><input id="hole_16_putts" type="number" class="form-control{{ $errors->has('hole_16_putts') ? ' is-invalid' : '' }}" name="hole_16_putts" value="{{ $round->hole_16_putts }}"></td>
                                 <td><input id="hole_16_drops" type="number" class="form-control{{ $errors->has('hole_16_drops') ? ' is-invalid' : '' }}" name="hole_16_drops" value="{{ $round->hole_16_drops }}"></td>
@@ -221,7 +381,17 @@
                         
                             <tr>
                                 <td>17</td>
-                                <td>{{$course->hole_17_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_17_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_17_par}}  
+
+                                @endif                                     
+                                </td>
                                 <td><input id="hole_17_score" type="number" class="form-control{{ $errors->has('hole_17_score') ? ' is-invalid' : '' }}" name="hole_17_score" value="{{ $round->hole_17_score }}"></td>
                                 <td><input id="hole_17_putts" type="number" class="form-control{{ $errors->has('hole_17_putts') ? ' is-invalid' : '' }}" name="hole_17_putts" value="{{ $round->hole_17_putts }}"></td>
                                 <td><input id="hole_17_drops" type="number" class="form-control{{ $errors->has('hole_17_drops') ? ' is-invalid' : '' }}" name="hole_17_drops" value="{{ $round->hole_17_drops }}"></td>
@@ -231,7 +401,17 @@
                         
                             <tr>
                                 <td>18</td>
-                                <td>{{$course->hole_18_par}}</td>
+                                <td>
+                                @if (strpos($round->yards, 'red'))
+
+                                    {{$course->hole_18_ladies_par}}
+
+                                @else
+
+                                    {{$course->hole_18_par}}  
+
+                                @endif                                     
+                                </td>
                                 <td><input id="hole_18_score" type="number" class="form-control{{ $errors->has('hole_18_score') ? ' is-invalid' : '' }}" name="hole_18_score" value="{{ $round->hole_18_score }}"></td>
                                 <td><input id="hole_18_putts" type="number" class="form-control{{ $errors->has('hole_18_putts') ? ' is-invalid' : '' }}" name="hole_18_putts" value="{{ $round->hole_18_putts }}"></td>
                                 <td><input id="hole_18_drops" type="number" class="form-control{{ $errors->has('hole_18_drops') ? ' is-invalid' : '' }}" name="hole_18_drops" value="{{ $round->hole_18_drops }}"></td>
