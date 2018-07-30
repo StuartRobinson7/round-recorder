@@ -64,21 +64,68 @@
                                 <tr>
                                         <td><a href="{{action('RoundController@show', $round_result['id'])}}">{{ $round_result->round_date->format('d/m/Y') }}</a></td>
                                         <td>{{ $round_result->property_name }} - {{ $round_result->course_name }}</td>
-                                        <td>{{ $round_result->total_par }}</td>
+                                        <td>
+                                        @if ($round_result->yards === 'red')
+
+                                                {{ $round_result->total_ladies_par }}
+
+                                        @else
+
+                                                {{ $round_result->total_par }}  
+
+                                        @endif                                                
+                                                
+                                        </td>
                                         <td>{{ $round_result->total_score }}</td>
-                                        <td>                                
+                                        <td>    
+                                                
+                                        @if ($round_result->yards === 'red')
+
+                                                @if($round_result->ladies_plus_minus > 0)
+                                                        +{{ $round_result->ladies_plus_minus }}
+                                                @else
+                                                        {{ $round_result->ladies_plus_minus }}
+                                                @endif 
+
+                                        @else
+
                                                 @if($round_result->plus_minus > 0)
                                                         +{{ $round_result->plus_minus }}
                                                 @else
                                                         {{ $round_result->plus_minus }}
-                                                @endif                                                                                                                        
+                                                @endif  
+
+                                        @endif                                           
+                                                                                                                       
                                         </td>
                                         <td>{{ $round_result->total_putts }}</td>
                                         <td>{{ number_format($round_result->putts_per_hole, 2) }}</td>
-                                        <td>{{ number_format($round_result->fir_percentage, 2) }}%</td>
+                                        <td>
+                                        @if ($round_result->yards === 'red')
+
+                                                {{ number_format($round_result->ladies_fir_percentage, 2) }}%
+
+                                        @else
+
+                                                {{ number_format($round_result->fir_percentage, 2) }}%  
+
+                                        @endif                                                                                                                         
+                                        </td>
                                         <td>{{ number_format($round_result->gir_percentage, 2) }}%</td>
                                         <td>{{ $round_result->total_drops }}</td>
-                                        <td>{{ number_format($round_result->scrambling, 2) }}%</td>
+                                        <td>
+                                        @if ($round_result->yards === 'red')
+
+                                                {{ number_format($round_result->ladies_scrambling, 2) }}%
+
+                                        @else
+
+                                                {{ number_format($round_result->scrambling, 2) }}%  
+
+                                        @endif                                                 
+                                        
+                                
+                                </td>
                                         <td><a href="{{action('RoundController@edit', $round_result['id'])}}" class="btn btn-warning">Edit</a></td>
                                 </tr> 
 
