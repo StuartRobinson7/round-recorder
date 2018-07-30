@@ -1,0 +1,66 @@
+// ========================================
+// View Round -----------------------------
+// ========================================
+
+.round-row{
+    @extend %number;
+    text-align:center;
+    border-bottom: 1px solid $border-color;
+    line-height: 50px;
+
+    h4{
+        margin: 0;
+        line-height: 50px;
+    }
+
+    .col{
+        border-left: 1px solid $border-color;    
+
+        span{
+            @include vertical-align();
+            position: relative;
+            display: block;
+            margin: 0 auto;
+            width: 40px;
+            height:40px;
+
+            &:before{
+                @include pseudo-cover();
+                display: none;
+                border:1px solid $theme-1;                    
+            }
+            &:after{
+                @include pseudo-cover();
+                display: none;
+                border:1px solid $theme-1;
+                top:2px;
+                left:2px;
+                right:2px;
+                bottom:2px;                 
+            }
+        }
+
+        .eagle, .birdie{
+            &:before, &:after{
+                border-radius: 50%;
+            }
+        }
+
+        .eagle, .double-bogey{
+            &:before, &:after{
+                display: block;
+            }
+        }
+
+        .birdie, .bogey{
+            &:before{
+                display: block;
+            }            
+        }
+    }
+
+    .col:first-child{
+        border-left: none;
+    }
+}
+

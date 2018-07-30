@@ -138,7 +138,7 @@ class RoundController extends Controller
 
         $course_id = $round->course_id;
         
-        $course = \App\Course::select('property_name', 'course_name', 'hole_1_par', 'hole_2_par',  'hole_3_par', 'hole_4_par', 'hole_5_par', 'hole_6_par', 'hole_7_par', 'hole_8_par', 'hole_9_par', 'hole_10_par', 'hole_11_par', 'hole_12_par', 'hole_13_par', 'hole_14_par', 'hole_15_par', 'hole_16_par', 'hole_17_par', 'hole_18_par')      
+        $course = \App\Course::select('property_name', 'course_name', 'hole_1_par', 'hole_2_par',  'hole_3_par', 'hole_4_par', 'hole_5_par', 'hole_6_par', 'hole_7_par', 'hole_8_par', 'hole_9_par', 'hole_10_par', 'hole_11_par', 'hole_12_par', 'hole_13_par', 'hole_14_par', 'hole_15_par', 'hole_16_par', 'hole_17_par', 'hole_18_par', 'hole_1_ladies_par', 'hole_2_ladies_par',  'hole_3_ladies_par', 'hole_4_ladies_par', 'hole_5_ladies_par', 'hole_6_ladies_par', 'hole_7_ladies_par', 'hole_8_ladies_par', 'hole_9_ladies_par', 'hole_10_ladies_par', 'hole_11_ladies_par', 'hole_12_ladies_par', 'hole_13_ladies_par', 'hole_14_ladies_par', 'hole_15_ladies_par', 'hole_16_ladies_par', 'hole_17_ladies_par', 'hole_18_ladies_par' )      
         ->where('courses.id', $course_id)
         ->first();
 
@@ -330,14 +330,53 @@ class RoundController extends Controller
                 ->selectRaw("SUM(if(hole_1_gir > 0, 1, 0) + if(hole_2_gir > 0, 1, 0) + if(hole_3_gir > 0, 1, 0) + if(hole_4_gir > 0, 1, 0) + if(hole_5_gir > 0, 1, 0) + if(hole_6_gir > 0, 1, 0) + if(hole_7_gir > 0, 1, 0) + if(hole_8_gir > 0, 1, 0) + if(hole_9_gir > 0, 1, 0) + if(hole_10_gir > 0, 1, 0) + if(hole_11_gir > 0, 1, 0) + if(hole_12_gir > 0, 1, 0) + if(hole_13_gir > 0, 1, 0) + if(hole_14_gir > 0, 1, 0) + if(hole_15_gir > 0, 1, 0) + if(hole_16_gir > 0, 1, 0) + if(hole_17_gir > 0, 1, 0) + if(hole_18_gir > 0, 1, 0)) / 18 * 100 as gir_percentage")                      
                 ->selectRaw("SUM(hole_1_drops + hole_2_drops + hole_3_drops + hole_4_drops + hole_5_drops + hole_6_drops + hole_7_drops + hole_8_drops + hole_9_drops + hole_10_drops + hole_11_drops + hole_12_drops + hole_13_drops + hole_14_drops + hole_15_drops + hole_16_drops + hole_17_drops + hole_18_drops) as total_drops")               
                 ->selectRaw("SUM(if(hole_1_score <= hole_1_par and hole_1_gir < 1, 1, 0) + if(hole_2_score <= hole_2_par and hole_2_gir < 1, 1, 0) + if(hole_3_score <= hole_3_par and hole_3_gir < 1, 1, 0) + if(hole_4_score <= hole_4_par and hole_4_gir < 1, 1, 0) + if(hole_5_score <= hole_5_par and hole_5_gir < 1, 1, 0) + if(hole_6_score <= hole_6_par and hole_6_gir < 1, 1, 0) + if(hole_7_score <= hole_7_par and hole_7_gir < 1, 1, 0) + if(hole_8_score <= hole_8_par and hole_8_gir < 1, 1, 0) + if(hole_9_score <= hole_9_par and hole_9_gir < 1, 1, 0) + if(hole_10_score <= hole_10_par and hole_10_gir < 1, 1, 0) + if(hole_11_score <= hole_11_par and hole_11_gir < 1, 1, 0) + if(hole_12_score <= hole_12_par and hole_12_gir < 1, 1, 0) + if(hole_13_score <= hole_13_par and hole_13_gir < 1, 1, 0) + if(hole_14_score <= hole_14_par and hole_14_gir < 1, 1, 0) + if(hole_15_score <= hole_15_par and hole_15_gir < 1, 1, 0) + if(hole_16_score <= hole_16_par and hole_16_gir < 1, 1, 0) + if(hole_17_score <= hole_17_par and hole_17_gir < 1, 1, 0) + if(hole_17_score <= hole_18_par and hole_18_gir < 1, 1, 0) ) / (if(hole_1_gir < 1, 1, 0) + if(hole_2_gir < 1, 1, 0) + if(hole_3_gir < 1, 1, 0) + if(hole_4_gir < 1, 1, 0) + if(hole_5_gir < 1, 1, 0) + if(hole_6_gir < 1, 1, 0) + if(hole_7_gir < 1, 1, 0) + if(hole_8_gir < 1, 1, 0) + if(hole_9_gir < 1, 1, 0) + if(hole_10_gir < 1, 1, 0) + if(hole_11_gir < 1, 1, 0) + if(hole_12_gir < 1, 1, 0) + if(hole_13_gir < 1, 1, 0) + if(hole_14_gir < 1, 1, 0) + if(hole_15_gir < 1, 1, 0) + if(hole_16_gir < 1, 1, 0) + if(hole_17_gir < 1, 1, 0) + if(hole_18_gir < 1, 1, 0) ) * 100 as scrambling")
-                ->addSelect('round_date', 'property_name', 'course_name', 'rounds.id')
+                ->selectRaw("SUM(hole_1_par - hole_1_score) as hole_1_plus_minus")
+                ->selectRaw("SUM(hole_1_ladies_par - hole_1_score) as hole_1_red_plus_minus")
+                ->selectRaw("SUM(hole_2_par - hole_2_score) as hole_2_plus_minus")
+                ->selectRaw("SUM(hole_2_ladies_par - hole_2_score) as hole_2_red_plus_minus")  
+                ->selectRaw("SUM(hole_3_par - hole_3_score) as hole_3_plus_minus")
+                ->selectRaw("SUM(hole_3_ladies_par - hole_3_score) as hole_3_red_plus_minus")   
+                ->selectRaw("SUM(hole_4_par - hole_4_score) as hole_4_plus_minus")
+                ->selectRaw("SUM(hole_4_ladies_par - hole_4_score) as hole_4_red_plus_minus")    
+                ->selectRaw("SUM(hole_5_par - hole_5_score) as hole_5_plus_minus")
+                ->selectRaw("SUM(hole_5_ladies_par - hole_5_score) as hole_5_red_plus_minus")      
+                ->selectRaw("SUM(hole_6_par - hole_6_score) as hole_6_plus_minus")
+                ->selectRaw("SUM(hole_6_ladies_par - hole_6_score) as hole_6_red_plus_minus") 
+                ->selectRaw("SUM(hole_7_par - hole_7_score) as hole_7_plus_minus")
+                ->selectRaw("SUM(hole_7_ladies_par - hole_7_score) as hole_7_red_plus_minus")  
+                ->selectRaw("SUM(hole_8_par - hole_8_score) as hole_8_plus_minus")
+                ->selectRaw("SUM(hole_8_ladies_par - hole_8_score) as hole_8_red_plus_minus") 
+                ->selectRaw("SUM(hole_9_par - hole_9_score) as hole_9_plus_minus")
+                ->selectRaw("SUM(hole_9_ladies_par - hole_9_score) as hole_9_red_plus_minus") 
+                ->selectRaw("SUM(hole_10_par - hole_10_score) as hole_10_plus_minus")
+                ->selectRaw("SUM(hole_10_ladies_par - hole_10_score) as hole_10_red_plus_minus")   
+                ->selectRaw("SUM(hole_11_par - hole_11_score) as hole_11_plus_minus")
+                ->selectRaw("SUM(hole_11_ladies_par - hole_11_score) as hole_11_red_plus_minus")       
+                ->selectRaw("SUM(hole_12_par - hole_12_score) as hole_12_plus_minus")
+                ->selectRaw("SUM(hole_12_ladies_par - hole_12_score) as hole_12_red_plus_minus")          
+                ->selectRaw("SUM(hole_13_par - hole_13_score) as hole_13_plus_minus")
+                ->selectRaw("SUM(hole_13_ladies_par - hole_13_score) as hole_13_red_plus_minus")  
+                ->selectRaw("SUM(hole_14_par - hole_14_score) as hole_14_plus_minus")
+                ->selectRaw("SUM(hole_14_ladies_par - hole_14_score) as hole_14_red_plus_minus")   
+                ->selectRaw("SUM(hole_15_par - hole_15_score) as hole_15_plus_minus")
+                ->selectRaw("SUM(hole_15_ladies_par - hole_15_score) as hole_15_red_plus_minus")     
+                ->selectRaw("SUM(hole_16_par - hole_16_score) as hole_16_plus_minus")
+                ->selectRaw("SUM(hole_16_ladies_par - hole_16_score) as hole_16_red_plus_minus") 
+                ->selectRaw("SUM(hole_17_par - hole_17_score) as hole_17_plus_minus")
+                ->selectRaw("SUM(hole_17_ladies_par - hole_17_score) as hole_17_red_plus_minus") 
+                ->selectRaw("SUM(hole_18_par - hole_18_score) as hole_18_plus_minus")
+                ->selectRaw("SUM(hole_18_ladies_par - hole_18_score) as hole_18_red_plus_minus")                                                                                                                                                                                                                                   
+                ->addSelect('round_date', 'property_name', 'course_name', 'rounds.id', 'yards')
                 ->first();
 
 
 
-
-
-            return view('view_round',compact('round', 'course', 'course_totals', 'round_result', 'id'))->with('success','Course has been updated');        
+            return view('view_round',compact(
+                'round',
+                'course',
+                'course_totals',
+                'round_result',
+                'id'))->with('success','Course has been updated');        
         }
     }
 

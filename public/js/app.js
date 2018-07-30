@@ -60,11 +60,30 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"resources/assets/js/bootstrap/popper/popper.min.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"resources/assets/js/bootstrap/alert.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"resources/assets/js/bootstrap/button.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"resources/assets/js/bootstrap/carousel.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"resources/assets/js/bootstrap/collapse.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"resources/assets/js/bootstrap/dropdown.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"resources/assets/js/bootstrap/modal.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"resources/assets/js/bootstrap/tooltip.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"resources/assets/js/bootstrap/popover.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"resources/assets/js/bootstrap/util.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"resources/assets/js/bootstrap/scrollspy.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"resources/assets/js/bootstrap/tab.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports) {
 
 var g;
@@ -91,15 +110,15 @@ module.exports = g;
 
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(2);
+__webpack_require__(3);
 module.exports = __webpack_require__(8);
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -109,7 +128,7 @@ module.exports = __webpack_require__(8);
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(3);
+__webpack_require__(0);
 
 window.Vue = __webpack_require__(4);
 
@@ -217,34 +236,6 @@ const app = new Vue({
     }
   })
 */
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-/**
- * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-alpha.6): index.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * --------------------------------------------------------------------------
- */
-(function ($) {
-  if (typeof $ === 'undefined') {
-    throw new Error('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
-  }
-
-  var version = $.fn.jquery.split(' ')[0].split('.');
-  var minMajor = 1;
-  var ltMajor = 2;
-  var minMinor = 9;
-  var minPatch = 1;
-  var maxMajor = 4;
-
-  if (version[0] < ltMajor && version[1] < minMinor || version[0] === minMajor && version[1] === minMinor && version[2] < minPatch || version[0] >= maxMajor) {
-    throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');
-  }
-})($);
-//# sourceMappingURL=index.js.map
 
 /***/ }),
 /* 4 */
@@ -11210,7 +11201,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(5).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(5).setImmediate))
 
 /***/ }),
 /* 5 */
@@ -11280,7 +11271,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 6 */
@@ -11473,7 +11464,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(7)))
 
 /***/ }),
 /* 7 */
