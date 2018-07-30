@@ -161,6 +161,7 @@
 
                     <div class="col total-cell">
                         Total
+                        {{ $round_result->hole_4_red_plus_minus }}
                     </div>                      
 
             </div>
@@ -352,15 +353,15 @@
 
                                 class="eagle"
 
-                            @elseif($round_result->hole_4_red_plus_minus = 1 )
+                            @elseif($round_result->hole_4_red_plus_minus === 1 )
 
                                 class="birdie"
 
-                            @elseif($round_result->hole_4_red_plus_minus = 0 )
+                            @elseif($round_result->hole_4_red_plus_minus === 0 )
 
                                 class="par"
                                 
-                            @elseif($round_result->hole_4_red_plus_minus = -1 )
+                            @elseif($round_result->hole_4_red_plus_minus === '-1' )
 
                                 class="bogey"
                                 
@@ -409,15 +410,15 @@
 
                                 class="eagle"
 
-                            @elseif($round_result->hole_5_red_plus_minus = 1 )
+                            @elseif($round_result->hole_5_red_plus_minus === 1 )
 
                                 class="birdie"
 
-                            @elseif($round_result->hole_5_red_plus_minus = 0 )
+                            @elseif($round_result->hole_5_red_plus_minus === 0 )
 
                                 class="par"
                                 
-                            @elseif($round_result->hole_5_red_plus_minus = -1 )
+                            @elseif($round_result->hole_5_red_plus_minus === -1 )
 
                                 class="bogey"
                                 
