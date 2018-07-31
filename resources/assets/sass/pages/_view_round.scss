@@ -4,39 +4,77 @@
 
 .round-row{
     @extend %number;
-    text-align:center;
-    border-bottom: 1px solid $border-color;
-    line-height: 50px;
+    margin: 0;
+    text-align: center;
+    background: $white;
+    border-bottom: 1px solid $gray-300;
+    line-height: 36px;
+
 
     h4{
         margin: 0;
-        line-height: 50px;
+        line-height: 36px;
     }
 
     .col{
-        border-left: 1px solid $border-color;    
+        border-right: 1px solid $gray-300;    
+    }
 
+    .col:first-child{
+        border-left: 1px solid $gray-300;
+    }
+}
+
+.round-header-hole{
+    background: shade($theme-1, 20);
+    color:$white;
+    border-color: shade($theme-1, 30);
+
+    .col, .col:first-child{
+        border-color: shade($theme-1, 30);
+    }    
+}
+
+.round-header-par{
+    background: $theme-1;
+    color:$white;   
+    border-color: shade($theme-1, 20);
+
+    .col, .col:first-child{
+        border-color: shade($theme-1, 20);
+    }
+}
+
+.round-row-score{
+    line-height: 60px;
+
+    h4{
+        line-height: 60px;
+    }
+
+    .col{
         span{
-            @include vertical-align();
+            @include vertical-align(); 
             position: relative;
             display: block;
             margin: 0 auto;
+            line-height: 40px;
             width: 40px;
             height:40px;
 
             &:before{
                 @include pseudo-cover();
                 display: none;
-                border:1px solid $theme-1;                    
+                border:2px solid $theme-1;                    
             }
             &:after{
                 @include pseudo-cover();
                 display: none;
-                border:1px solid $theme-1;
-                top:2px;
-                left:2px;
-                right:2px;
-                bottom:2px;                 
+                border:2px solid $theme-1;
+                top:4px;
+                left:4px;
+                right:4px;
+                bottom:4px;                 
             }
         }
 
@@ -56,11 +94,7 @@
             &:before{
                 display: block;
             }            
-        }
-    }
-
-    .col:first-child{
-        border-left: none;
+        }        
     }
 }
 

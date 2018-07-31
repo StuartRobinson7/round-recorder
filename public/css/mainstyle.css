@@ -11079,21 +11079,57 @@ footer .title.on2net span {
 }
 
 .round-row {
+  margin: 0;
   text-align: center;
-  border-bottom: 1px solid #adb5bd;
-  line-height: 50px;
+  background: #fff;
+  border-bottom: 1px solid #dee2e6;
+  line-height: 36px;
 }
 
 .round-row h4 {
   margin: 0;
-  line-height: 50px;
+  line-height: 36px;
 }
 
 .round-row .col {
-  border-left: 1px solid #adb5bd;
+  border-right: 1px solid #dee2e6;
 }
 
-.round-row .col span {
+.round-row .col:first-child {
+  border-left: 1px solid #dee2e6;
+}
+
+.round-header-hole {
+  background: #017258;
+  color: #fff;
+  border-color: #01644d;
+}
+
+.round-header-hole .col,
+.round-header-hole .col:first-child {
+  border-color: #01644d;
+}
+
+.round-header-par {
+  background: #018f6e;
+  color: #fff;
+  border-color: #017258;
+}
+
+.round-header-par .col,
+.round-header-par .col:first-child {
+  border-color: #017258;
+}
+
+.round-row-score {
+  line-height: 60px;
+}
+
+.round-row-score h4 {
+  line-height: 60px;
+}
+
+.round-row-score .col span {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -11101,11 +11137,12 @@ footer .title.on2net span {
   position: relative;
   display: block;
   margin: 0 auto;
+  line-height: 40px;
   width: 40px;
   height: 40px;
 }
 
-.round-row .col span:before {
+.round-row-score .col span:before {
   content: "";
   display: block;
   position: absolute;
@@ -11114,10 +11151,10 @@ footer .title.on2net span {
   left: 0;
   right: 0;
   display: none;
-  border: 1px solid #018f6e;
+  border: 2px solid #018f6e;
 }
 
-.round-row .col span:after {
+.round-row-score .col span:after {
   content: "";
   display: block;
   position: absolute;
@@ -11126,34 +11163,30 @@ footer .title.on2net span {
   left: 0;
   right: 0;
   display: none;
-  border: 1px solid #018f6e;
-  top: 2px;
-  left: 2px;
-  right: 2px;
-  bottom: 2px;
+  border: 2px solid #018f6e;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
 }
 
-.round-row .col .eagle:before,
-.round-row .col .eagle:after,
-.round-row .col .birdie:before,
-.round-row .col .birdie:after {
+.round-row-score .col .eagle:before,
+.round-row-score .col .eagle:after,
+.round-row-score .col .birdie:before,
+.round-row-score .col .birdie:after {
   border-radius: 50%;
 }
 
-.round-row .col .eagle:before,
-.round-row .col .eagle:after,
-.round-row .col .double-bogey:before,
-.round-row .col .double-bogey:after {
+.round-row-score .col .eagle:before,
+.round-row-score .col .eagle:after,
+.round-row-score .col .double-bogey:before,
+.round-row-score .col .double-bogey:after {
   display: block;
 }
 
-.round-row .col .birdie:before,
-.round-row .col .bogey:before {
+.round-row-score .col .birdie:before,
+.round-row-score .col .bogey:before {
   display: block;
-}
-
-.round-row .col:first-child {
-  border-left: none;
 }
 
 /*!

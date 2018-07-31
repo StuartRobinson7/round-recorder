@@ -58,13 +58,32 @@ class ProfileController extends Controller
                     ->groupBy('rounds.id')
                     ->join('courses', 'courses.id', '=', 'course_id')
                     ->selectRaw("SUM(if(hole_1_fir > 0, 1, 0) + if(hole_2_fir > 0, 1, 0) + if(hole_3_fir > 0, 1, 0) + if(hole_4_fir > 0, 1, 0) + if(hole_5_fir > 0, 1, 0) + if(hole_6_fir > 0, 1, 0) + if(hole_7_fir > 0, 1, 0) + if(hole_8_fir > 0, 1, 0) + if(hole_9_fir > 0, 1, 0) + if(hole_10_fir > 0, 1, 0) + if(hole_11_fir > 0, 1, 0) + if(hole_12_fir > 0, 1, 0) + if(hole_13_fir > 0, 1, 0) + if(hole_14_fir > 0, 1, 0) + if(hole_15_fir > 0, 1, 0) + if(hole_16_fir > 0, 1, 0) + if(hole_17_fir > 0, 1, 0) + if(hole_18_fir > 0, 1, 0) ) / (if(hole_1_par > 3, 1, 0) + if(hole_2_par > 3, 1, 0) + if(hole_3_par > 3, 1, 0) + if(hole_4_par > 3, 1, 0) + if(hole_5_par > 3, 1, 0) + if(hole_6_par > 3, 1, 0) + if(hole_7_par > 3, 1, 0) + if(hole_8_par > 3, 1, 0) + if(hole_9_par > 3, 1, 0) + if(hole_10_par > 3, 1, 0) + if(hole_11_par > 3, 1, 0) + if(hole_12_par > 3, 1, 0) + if(hole_13_par > 3, 1, 0) + if(hole_14_par > 3, 1, 0) + if(hole_15_par > 3, 1, 0) + if(hole_16_par > 3, 1, 0) + if(hole_17_par > 3, 1, 0) + if(hole_18_par > 3, 1, 0)) * 100 as fir_percentage")
+                    ->selectRaw("SUM(if(hole_1_fir > 0, 1, 0) + if(hole_2_fir > 0, 1, 0) + if(hole_3_fir > 0, 1, 0) + if(hole_4_fir > 0, 1, 0) + if(hole_5_fir > 0, 1, 0) + if(hole_6_fir > 0, 1, 0) + if(hole_7_fir > 0, 1, 0) + if(hole_8_fir > 0, 1, 0) + if(hole_9_fir > 0, 1, 0) + if(hole_10_fir > 0, 1, 0) + if(hole_11_fir > 0, 1, 0) + if(hole_12_fir > 0, 1, 0) + if(hole_13_fir > 0, 1, 0) + if(hole_14_fir > 0, 1, 0) + if(hole_15_fir > 0, 1, 0) + if(hole_16_fir > 0, 1, 0) + if(hole_17_fir > 0, 1, 0) + if(hole_18_fir > 0, 1, 0) ) / (if(hole_1_ladies_par > 3, 1, 0) + if(hole_2_ladies_par > 3, 1, 0) + if(hole_3_ladies_par > 3, 1, 0) + if(hole_4_ladies_par > 3, 1, 0) + if(hole_5_ladies_par > 3, 1, 0) + if(hole_6_ladies_par > 3, 1, 0) + if(hole_7_ladies_par > 3, 1, 0) + if(hole_8_ladies_par > 3, 1, 0) + if(hole_9_ladies_par > 3, 1, 0) + if(hole_10_ladies_par > 3, 1, 0) + if(hole_11_ladies_par > 3, 1, 0) + if(hole_12_ladies_par > 3, 1, 0) + if(hole_13_ladies_par > 3, 1, 0) + if(hole_14_ladies_par > 3, 1, 0) + if(hole_15_ladies_par > 3, 1, 0) + if(hole_16_ladies_par > 3, 1, 0) + if(hole_17_ladies_par > 3, 1, 0) + if(hole_18_ladies_par > 3, 1, 0)) * 100 as ladies_fir_percentage")
+                    ->addSelect('yards')
                     ->get();
 
             $fir_divide = $career_firs->count($career_firs);        
 
+            $ladies_fir_total = 0;
+            $other_fir_total = 0;
+
             foreach ($career_firs as $career_fir) {
-                $fir_total = $career_firs->sum('fir_percentage');
+
+                if($career_fir->yards === "red"){
+
+                    $ladies_fir_total = $career_firs->sum('ladies_fir_percentage');
+
+                } 
+                
+                else{
+
+                    $other_fir_total = $career_firs->sum('fir_percentage');
+                    
+                }
+                
             }
+
+            $fir_total = $other_fir_total + $ladies_fir_total;
 
             $career_fir_total = $fir_total / $fir_divide;
 

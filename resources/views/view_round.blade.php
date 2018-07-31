@@ -28,9 +28,9 @@
                 </div>
                 <!--/.row -->
                 
-                <h3>Out</h3>
+            <h3>Out</h3>
                 
-                <div class="row round-row round-header-hole">
+            <div class="row round-row round-header-hole">
                 
                     <div class="col">
                         <h4>Hole</h4>
@@ -73,14 +73,14 @@
                     </div>
 
                     <div class="col total-cell">
-                        Total 
+                         
                     </div>                    
                                                                                                                                                                                                        
                 
-                </div>
-                <!--/.row -->
+            </div>
+            <!--/.row -->
 
-                <div class="row round-row round-header-par">
+            <div class="row round-row round-header-par">
                 
                 
                     <div class="col">
@@ -88,80 +88,67 @@
                     </div>
 
                     <div class="col">
-                        @if($round->yards === 'red')
-                            {{ $course->hole_1_ladies_par }}
-                        @else
-                            {{ $course->hole_1_par }} 
-                        @endif 
+
+                        {{ $course->hole_1_par }} 
+
                     </div>
 
                     <div class="col">
-                        @if($round->yards === 'red')
-                            {{ $course->hole_2_ladies_par }}
-                        @else
-                            {{ $course->hole_2_par }} 
-                        @endif
+
+                        {{ $course->hole_2_par }} 
+
                     </div>
 
                     <div class="col">
-                        @if($round->yards === 'red')
-                            {{ $course->hole_3_ladies_par }}
-                        @else
-                            {{ $course->hole_3_par }} 
-                        @endif
+
+                        {{ $course->hole_3_par }} 
+
                     </div>
 
                     <div class="col">
-                        @if($round->yards === 'red')
-                            {{ $course->hole_4_ladies_par }}
-                        @else
-                            {{ $course->hole_4_par }} 
-                        @endif
+
+                        {{ $course->hole_4_par }} 
+
                     </div>
 
                     <div class="col">
-                        @if($round->yards === 'red')
-                            {{ $course->hole_5_ladies_par }}
-                        @else
-                            {{ $course->hole_5_par }} 
-                        @endif
+
+                        {{ $course->hole_5_par }} 
+
                     </div>
 
                     <div class="col">
-                        @if($round->yards === 'red')
-                            {{ $course->hole_6_ladies_par }}
-                        @else
-                            {{ $course->hole_6_par }} 
-                        @endif
+
+                        {{ $course->hole_6_par }} 
+
                     </div>
 
                     <div class="col">
-                        @if($round->yards === 'red')
-                            {{ $course->hole_7_ladies_par }}
-                        @else
-                            {{ $course->hole_7_par }} 
-                        @endif
+
+                        {{ $course->hole_7_par }} 
+
                     </div>
 
                     <div class="col">
-                        @if($round->yards === 'red')
-                            {{ $course->hole_8_ladies_par }}
-                        @else
-                            {{ $course->hole_8_par }} 
-                        @endif
+
+                        {{ $course->hole_8_par }} 
+
                     </div>                                                                                                                                                                
 
                     <div class="col">
-                        @if($round->yards === 'red')
-                            {{ $course->hole_9_ladies_par }}
-                        @else
-                            {{ $course->hole_9_par }} 
-                        @endif
+
+                        {{ $course->hole_9_par }} 
+                        
                     </div>
 
                     <div class="col total-cell">
-                        Total
-                        {{ $round_result->hole_4_red_plus_minus }}
+
+                        <strong>
+
+                            {{ $course_totals->front_par }}
+
+                        </strong>
+
                     </div>                      
 
             </div>
@@ -176,55 +163,29 @@
                     <div class="col">
                         <span
                         
-                            @if($round->yards === 'red')
 
-                                @if($round_result->hole_1_red_plus_minus >= 2 )
-
-                                    class="eagle"
-
-                                @elseif($round_result->hole_1_red_plus_minus = 1 )
-
-                                    class="birdie"
-
-                                @elseif($round_result->hole_1_red_plus_minus = 0 )
-
-                                    class="par"
-                                    
-                                @elseif($round_result->hole_1_red_plus_minus = -1 )
-
-                                    class="bogey"
-                                    
-                                @elseif($round_result->hole_1_red_plus_minus <= -2 )
-
-                                    class="double-bogey"                                   
-                                    
-                                @endif                                    
-
-                            @else
-
-                                @if($round_result->hole_1_plus_minus === 2 )
+                                @if($round_result->hole_1_plus_minus > 1 )
 
                                     class="eagle"
 
-                                @elseif($round_result->hole_1_plus_minus === 1 )
+                                @elseif($round_result->hole_1_plus_minus == 1 )
 
                                     class="birdie"
 
-                                @elseif($round_result->hole_1_plus_minus === 0 )
+                                @elseif($round_result->hole_1_plus_minus == 0 )
 
                                     class="par"
 
-                                @elseif($round_result->hole_1_plus_minus === -1 )
+                                @elseif($round_result->hole_1_plus_minus == -1 )
 
                                     class="bogey"
 
-                                @elseif($round_result->hole_1_plus_minus === -2 )
+                                @elseif($round_result->hole_1_plus_minus < -1 )
 
                                     class="double-bogey"
                                     
                                 @endif                                    
-
-                            @endif                        
+                     
                         >
                             {{ $round->hole_1_score }}                             
                         </span>
@@ -233,169 +194,90 @@
                     <div class="col">
                         <span
                         
-                            @if($round->yards === 'red')
 
-                                @if($round_result->hole_2_red_plus_minus >= 2 )
-
-                                    class="eagle"
-
-                                @elseif($round_result->hole_2_red_plus_minus = 1 )
-
-                                    class="birdie"
-
-                                @elseif($round_result->hole_2_red_plus_minus = 0 )
-
-                                    class="par"
-                                    
-                                @elseif($round_result->hole_2_red_plus_minus = -1 )
-
-                                    class="bogey"
-                                    
-                                @elseif($round_result->hole_2_red_plus_minus <= -2 )
-
-                                    class="double-bogey"                                   
-                                    
-                                @endif                                    
-
-                            @else
-
-                                @if($round_result->hole_2_plus_minus === 2 )
+                                @if($round_result->hole_2_plus_minus > 1 )
 
                                     class="eagle"
 
-                                @elseif($round_result->hole_2_plus_minus === 1 )
+                                @elseif($round_result->hole_2_plus_minus == 1 )
 
                                     class="birdie"
 
-                                @elseif($round_result->hole_2_plus_minus === 0 )
+                                @elseif($round_result->hole_2_plus_minus == 0 )
 
                                     class="par"
 
-                                @elseif($round_result->hole_2_plus_minus === -1 )
+                                @elseif($round_result->hole_2_plus_minus == -1 )
 
                                     class="bogey"
 
-                                @elseif($round_result->hole_2_plus_minus === -2 )
+                                @elseif($round_result->hole_2_plus_minus < -1 )
 
                                     class="double-bogey"
                                     
                                 @endif                                    
-
-                            @endif                        
+                       
                         >
                             {{ $round->hole_2_score }}                                
                         </span>
                     </div>
                 
                     <div class="col">
-                    <span
-                        
-                        @if($round->yards === 'red')
+                    <span                        
 
-                            @if($round_result->hole_3_red_plus_minus >= 2 )
+                            @if($round_result->hole_3_plus_minus > 1 )
 
                                 class="eagle"
 
-                            @elseif($round_result->hole_3_red_plus_minus === 1 )
+                            @elseif($round_result->hole_3_plus_minus == 1 )
 
                                 class="birdie"
 
-                            @elseif($round_result->hole_3_red_plus_minus === 0 )
-
-                                class="par"
-                                
-                            @elseif($round_result->hole_3_red_plus_minus === -1 )
-
-                                class="bogey"
-                                
-                            @elseif($round_result->hole_3_red_plus_minus <= -2 )
-
-                                class="double-bogey"                                   
-                                
-                            @endif                                    
-
-                        @else
-
-                            @if($round_result->hole_3_plus_minus === 2 )
-
-                                class="eagle"
-
-                            @elseif($round_result->hole_3_plus_minus === 1 )
-
-                                class="birdie"
-
-                            @elseif($round_result->hole_3_plus_minus === 0 )
+                            @elseif($round_result->hole_3_plus_minus == 0 )
 
                                 class="par"
 
-                            @elseif($round_result->hole_3_plus_minus === -1 )
+                            @elseif($round_result->hole_3_plus_minus == -1 )
 
                                 class="bogey"
 
-                            @elseif($round_result->hole_3_plus_minus === -2 )
+                            @elseif($round_result->hole_3_plus_minus < -1 )
 
                                 class="double-bogey"
                                 
                             @endif                                    
-
-                        @endif                        
+                      
                     >
                             {{ $round->hole_3_score }}                                
                         </span>
                     </div>
                 
                     <div class="col">
-                    <span
-                        
-                        @if($round->yards === 'red')
+                    <span                        
 
-                            @if($round_result->hole_4_red_plus_minus >= 2 )
+                            @if($round_result->hole_4_plus_minus > 1 )
 
                                 class="eagle"
 
-                            @elseif($round_result->hole_4_red_plus_minus === 1 )
+                            @elseif($round_result->hole_4_plus_minus == 1 )
 
                                 class="birdie"
 
-                            @elseif($round_result->hole_4_red_plus_minus === 0 )
-
-                                class="par"
-                                
-                            @elseif($round_result->hole_4_red_plus_minus === '-1' )
-
-                                class="bogey"
-                                
-                            @elseif($round_result->hole_4_red_plus_minus <= -2 )
-
-                                class="double-bogey"                                   
-                                
-                            @endif                                    
-
-                        @else
-
-                            @if($round_result->hole_4_plus_minus === 2 )
-
-                                class="eagle"
-
-                            @elseif($round_result->hole_4_plus_minus === 1 )
-
-                                class="birdie"
-
-                            @elseif($round_result->hole_4_plus_minus === 0 )
+                            @elseif($round_result->hole_4_plus_minus == 0 )
 
                                 class="par"
 
-                            @elseif($round_result->hole_4_plus_minus === -1 )
+                            @elseif($round_result->hole_4_plus_minus == -1 )
 
                                 class="bogey"
 
-                            @elseif($round_result->hole_4_plus_minus === -2 )
+                            @elseif($round_result->hole_4_plus_minus < -1 )
 
                                 class="double-bogey"
                                 
                             @endif                                    
 
-                        @endif                        
+                      
                     >
                             {{ $round->hole_4_score }}                                
                         </span>
@@ -404,55 +286,29 @@
                     <div class="col">
                     <span
                         
-                        @if($round->yards === 'red')
 
-                            @if($round_result->hole_5_red_plus_minus >= 2 )
-
-                                class="eagle"
-
-                            @elseif($round_result->hole_5_red_plus_minus === 1 )
-
-                                class="birdie"
-
-                            @elseif($round_result->hole_5_red_plus_minus === 0 )
-
-                                class="par"
-                                
-                            @elseif($round_result->hole_5_red_plus_minus === -1 )
-
-                                class="bogey"
-                                
-                            @elseif($round_result->hole_5_red_plus_minus <= -2 )
-
-                                class="double-bogey"                                   
-                                
-                            @endif                                    
-
-                        @else
-
-                            @if($round_result->hole_5_plus_minus === 2 )
+                            @if($round_result->hole_5_plus_minus > 1 )
 
                                 class="eagle"
 
-                            @elseif($round_result->hole_5_plus_minus === 1 )
+                            @elseif($round_result->hole_5_plus_minus == 1 )
 
                                 class="birdie"
 
-                            @elseif($round_result->hole_5_plus_minus === 0 )
+                            @elseif($round_result->hole_5_plus_minus == 0 )
 
                                 class="par"
 
-                            @elseif($round_result->hole_5_plus_minus === -1 )
+                            @elseif($round_result->hole_5_plus_minus == -1 )
 
                                 class="bogey"
 
-                            @elseif($round_result->hole_5_plus_minus === -2 )
+                            @elseif($round_result->hole_5_plus_minus < -1 )
 
                                 class="double-bogey"
                                 
                             @endif                                    
-
-                        @endif                        
+                     
                     >
                             {{ $round->hole_5_score }}                                
                         </span>
@@ -462,112 +318,60 @@
 
                     <span
                         
-                        @if($round->yards === 'red')
 
-                            @if($round_result->hole_6_red_plus_minus >= 2 )
-
-                                class="eagle"
-
-                            @elseif($round_result->hole_6_red_plus_minus = 1 )
-
-                                class="birdie"
-
-                            @elseif($round_result->hole_6_red_plus_minus = 0 )
-
-                                class="par"
-                                
-                            @elseif($round_result->hole_6_red_plus_minus = -1 )
-
-                                class="bogey"
-                                
-                            @elseif($round_result->hole_6_red_plus_minus <= -2 )
-
-                                class="double-bogey"                                   
-                                
-                            @endif                                    
-
-                        @else
-
-                            @if($round_result->hole_6_plus_minus === 2 )
+                            @if($round_result->hole_6_plus_minus > 1 )
 
                                 class="eagle"
 
-                            @elseif($round_result->hole_6_plus_minus === 1 )
+                            @elseif($round_result->hole_6_plus_minus == 1 )
 
                                 class="birdie"
 
-                            @elseif($round_result->hole_6_plus_minus === 0 )
+                            @elseif($round_result->hole_6_plus_minus == 0 )
 
                                 class="par"
 
-                            @elseif($round_result->hole_6_plus_minus === -1 )
+                            @elseif($round_result->hole_6_plus_minus == -1 )
 
                                 class="bogey"
 
-                            @elseif($round_result->hole_6_plus_minus === -2 )
+                            @elseif($round_result->hole_6_plus_minus < -1 )
 
                                 class="double-bogey"
                                 
                             @endif                                    
-
-                        @endif                        
+                       
                     >
                             {{ $round->hole_6_score }}                                
                         </span>
                     </div>
                 
                     <div class="col">
-                    <span
-                        
-                        @if($round->yards === 'red')
+                    <span                        
 
-                            @if($round_result->hole_7_red_plus_minus >= 2 )
+                            @if($round_result->hole_7_plus_minus > 1 )
 
                                 class="eagle"
 
-                            @elseif($round_result->hole_7_red_plus_minus = 1 )
+                            @elseif($round_result->hole_7_plus_minus == 1 )
 
                                 class="birdie"
 
-                            @elseif($round_result->hole_7_red_plus_minus = 0 )
-
-                                class="par"
-                                
-                            @elseif($round_result->hole_7_red_plus_minus = -1 )
-
-                                class="bogey"
-                                
-                            @elseif($round_result->hole_7_red_plus_minus <= -2 )
-
-                                class="double-bogey"                                   
-                                
-                            @endif                                    
-
-                        @else
-
-                            @if($round_result->hole_7_plus_minus === 2 )
-
-                                class="eagle"
-
-                            @elseif($round_result->hole_7_plus_minus === 1 )
-
-                                class="birdie"
-
-                            @elseif($round_result->hole_7_plus_minus === 0 )
+                            @elseif($round_result->hole_7_plus_minus == 0 )
 
                                 class="par"
 
-                            @elseif($round_result->hole_7_plus_minus === -1 )
+                            @elseif($round_result->hole_7_plus_minus == -1 )
 
                                 class="bogey"
 
-                            @elseif($round_result->hole_7_plus_minus === -2 )
+                            @elseif($round_result->hole_7_plus_minus < -1 )
 
                                 class="double-bogey"
                                 
                             @endif                                    
 
-                        @endif                        
+                      
                     >
                             {{ $round->hole_7_score }}                                
                         </span>
@@ -576,55 +380,29 @@
                     <div class="col">
                     <span
                         
-                        @if($round->yards === 'red')
 
-                            @if($round_result->hole_8_red_plus_minus >= 2 )
-
-                                class="eagle"
-
-                            @elseif($round_result->hole_8_red_plus_minus = 1 )
-
-                                class="birdie"
-
-                            @elseif($round_result->hole_8_red_plus_minus = 0 )
-
-                                class="par"
-                                
-                            @elseif($round_result->hole_8_red_plus_minus = -1 )
-
-                                class="bogey"
-                                
-                            @elseif($round_result->hole_8_red_plus_minus <= -2 )
-
-                                class="double-bogey"                                   
-                                
-                            @endif                                    
-
-                        @else
-
-                            @if($round_result->hole_8_plus_minus === 2 )
+                            @if($round_result->hole_8_plus_minus > 1 )
 
                                 class="eagle"
 
-                            @elseif($round_result->hole_8_plus_minus === 1 )
+                            @elseif($round_result->hole_8_plus_minus == 1 )
 
                                 class="birdie"
 
-                            @elseif($round_result->hole_8_plus_minus === 0 )
+                            @elseif($round_result->hole_8_plus_minus == 0 )
 
                                 class="par"
 
-                            @elseif($round_result->hole_8_plus_minus === -1 )
+                            @elseif($round_result->hole_8_plus_minus == -1 )
 
                                 class="bogey"
 
-                            @elseif($round_result->hole_8_plus_minus === -2 )
+                            @elseif($round_result->hole_8_plus_minus < -1 )
 
                                 class="double-bogey"
                                 
                             @endif                                    
-
-                        @endif                        
+                      
                     >
                             {{ $round->hole_8_score }}                                
                         </span>
@@ -633,67 +411,48 @@
                     <div class="col">
                     <span
                         
-                        @if($round->yards === 'red')
 
-                            @if($round_result->hole_9_red_plus_minus >= 2 )
-
-                                class="eagle"
-
-                            @elseif($round_result->hole_9_red_plus_minus = 1 )
-
-                                class="birdie"
-
-                            @elseif($round_result->hole_9_red_plus_minus = 0 )
-
-                                class="par"
-                                
-                            @elseif($round_result->hole_9_red_plus_minus = -1 )
-
-                                class="bogey"
-                                
-                            @elseif($round_result->hole_9_red_plus_minus <= -2 )
-
-                                class="double-bogey"                                   
-                                
-                            @endif                                    
-
-                        @else
-
-                            @if($round_result->hole_9_plus_minus === 2 )
+                            @if($round_result->hole_9_plus_minus > 1 )
 
                                 class="eagle"
 
-                            @elseif($round_result->hole_9_plus_minus === 1 )
+                            @elseif($round_result->hole_9_plus_minus == 1 )
 
                                 class="birdie"
 
-                            @elseif($round_result->hole_9_plus_minus === 0 )
+                            @elseif($round_result->hole_9_plus_minus == 0 )
 
                                 class="par"
 
-                            @elseif($round_result->hole_9_plus_minus === -1 )
+                            @elseif($round_result->hole_9_plus_minus == -1 )
 
                                 class="bogey"
 
-                            @elseif($round_result->hole_9_plus_minus === -2 )
+                            @elseif($round_result->hole_9_plus_minus < -1 )
 
                                 class="double-bogey"
                                 
                             @endif                                    
-
-                        @endif                        
+                     
                     >
                             {{ $round->hole_9_score }}                                
                         </span>
                     </div>                     
                 
                     <div class="col total-cell">
-                        Total
+
+                        <strong>
+
+                            {{ $round_result->front_score }}
+
+                        </strong>
+
                     </div>   
 
-                </div>
-                <!--/.row -->            
-
+            </div>
+            <!--/.row -->            
+            
+            <br />
             
             <h3>In</h3>
 
@@ -740,7 +499,7 @@
                 </div>
 
                 <div class="col total-cell">
-                    Total
+                    
                 </div>                   
             
             </div>
@@ -753,43 +512,49 @@
                 </div>                
             
                 <div class="col">
-                    @if($round->yards === 'red') {{ $course->hole_10_ladies_par }} @else {{ $course->hole_10_par }} @endif
+                    {{ $course->hole_10_par }}
                 </div>
             
                 <div class="col">
-                    @if($round->yards === 'red') {{ $course->hole_11_ladies_par }} @else {{ $course->hole_11_par }} @endif
+                    {{ $course->hole_11_par }}
                 </div>
             
                 <div class="col">
-                    @if($round->yards === 'red') {{ $course->hole_12_ladies_par }} @else {{ $course->hole_12_par }} @endif
+                    {{ $course->hole_12_par }}
                 </div>
             
                 <div class="col">
-                    @if($round->yards === 'red') {{ $course->hole_13_ladies_par }} @else {{ $course->hole_13_par }} @endif
+                    {{ $course->hole_13_par }} 
                 </div>
             
                 <div class="col">
-                    @if($round->yards === 'red') {{ $course->hole_14_ladies_par }} @else {{ $course->hole_14_par }} @endif
+                   {{ $course->hole_14_par }} 
                 </div>
             
                 <div class="col">
-                    @if($round->yards === 'red') {{ $course->hole_15_ladies_par }} @else {{ $course->hole_15_par }} @endif
+                    {{ $course->hole_15_par }} 
                 </div>
             
                 <div class="col">
-                    @if($round->yards === 'red') {{ $course->hole_16_ladies_par }} @else {{ $course->hole_16_par }} @endif
+                    {{ $course->hole_16_par }}
                 </div>
             
                 <div class="col">
-                    @if($round->yards === 'red') {{ $course->hole_17_ladies_par }} @else {{ $course->hole_17_par }} @endif
+                    {{ $course->hole_17_par }}
                 </div>
             
                 <div class="col">
-                    @if($round->yards === 'red') {{ $course->hole_18_ladies_par }} @else {{ $course->hole_18_par }} @endif
+                    {{ $course->hole_18_par }}
                 </div>
             
                 <div class="col total-cell">
-                    Total
+
+                    <strong>
+
+                        {{ $course_totals->back_par}}
+                       
+                    </strong>
+
                 </div>                   
             
             </div>
@@ -797,143 +562,366 @@
 
             <div class="row round-row round-row-score">
             
-                <div class="col">
-                    <h4>Score</h4>
-                </div>
-            
-                <div class="col">
-                    <span>
-                        {{ $round->hole_10_score }}                         
-                    </span>
-                </div>
-            
-                <div class="col">
-                    <span>
-                        {{ $round->hole_11_score }}                             
-                    </span>
-                </div>
-            
-                <div class="col">
-                    <span>
-                        {{ $round->hole_12_score }}                             
-                    </span>
-                </div>
-            
-                <div class="col">
-                    <span>
-                        {{ $round->hole_13_score }}                             
-                    </span>
-                </div>
-            
-                <div class="col">
-                    <span>
-                        {{ $round->hole_14_score }}                             
-                    </span>
-                </div>
-            
-                <div class="col">
-                    <span>
-                        {{ $round->hole_15_score }}                             
-                    </span>
-                </div>
-            
-                <div class="col">
-                    <span>
-                        {{ $round->hole_16_score }}                             
-                    </span>
-                </div>
-            
-                <div class="col">
-                    <span>
-                        {{ $round->hole_17_score }}                             
-                    </span>
-                </div>
-            
-                <div class="col">
-                    <span>
-                        {{ $round->hole_18_score }}                             
-                    </span>
-                </div>
-
-                <div class="col total-cell">
-                    Total
-                </div>                   
-            
-            </div>
-            <!--/.row -->
-
-
-
-
-
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-
-
-
-                        <table class="table">
-                            <tr>
-                                <th>Par</th>
-                                <th>Score</th>
-                                <th>+/-</th>
-                            </tr>                          
-
-                            <tr>
-                                <td>{{ $round_result->total_par }}</td>
-                                <td>{{ $round_result->total_score }}</td>
-                                <td>                                
-                                    @if($round_result->plus_minus > 0)
-                                        +{{ $round_result->plus_minus }}
-                                    @else
-                                        {{ $round_result->plus_minus }}
-                                    @endif                                                                                                                        
-                                </td>
-                            </tr> 
-                        </table>
-
-
-                <h2>Round Stats</h2>
-
-
-                <div class="row text-center">
+                    <div class="col">
+                        <h4>Score</h4>
+                    </div>
                 
                     <div class="col">
-                        <h4>{{ number_format($round_result->fir_percentage, 2) }}%</h4>
-                        <p>Fairways in regulation</p>                    
+                        <span                        
+
+                                @if($round_result->hole_10_plus_minus > 1 )
+
+                                    class="eagle"
+
+                                @elseif($round_result->hole_10_plus_minus == 1 )
+
+                                    class="birdie"
+
+                                @elseif($round_result->hole_10_plus_minus == 0 )
+
+                                    class="par"
+
+                                @elseif($round_result->hole_10_plus_minus == -1 )
+
+                                    class="bogey"
+
+                                @elseif($round_result->hole_10_plus_minus < -1 )
+
+                                    class="double-bogey"
+                                    
+                                @endif                                    
+                      
+                        >
+                            {{ $round->hole_10_score }}                             
+                        </span>
+                    </div>
+                
+                    <div class="col">
+                        <span                        
+
+                                @if($round_result->hole_11_plus_minus > 1 )
+
+                                    class="eagle"
+
+                                @elseif($round_result->hole_11_plus_minus == 1 )
+
+                                    class="birdie"
+
+                                @elseif($round_result->hole_11_plus_minus == 0 )
+
+                                    class="par"
+
+                                @elseif($round_result->hole_11_plus_minus == -1 )
+
+                                    class="bogey"
+
+                                @elseif($round_result->hole_11_plus_minus < -1 )
+
+                                    class="double-bogey"
+                                    
+                                @endif                                    
+                    
+                        >
+                            {{ $round->hole_11_score }}                                
+                        </span>
+                    </div>
+                
+                    <div class="col">
+                    <span                        
+
+                            @if($round_result->hole_12_plus_minus > 1 )
+
+                                class="eagle"
+
+                            @elseif($round_result->hole_12_plus_minus == 1 )
+
+                                class="birdie"
+
+                            @elseif($round_result->hole_12_plus_minus == 0 )
+
+                                class="par"
+
+                            @elseif($round_result->hole_12_plus_minus == -1 )
+
+                                class="bogey"
+
+                            @elseif($round_result->hole_12_plus_minus < -1 )
+
+                                class="double-bogey"
+                                
+                            @endif                                    
+                      
+                    >
+                            {{ $round->hole_12_score }}                                
+                        </span>
+                    </div>
+                
+                    <div class="col">
+                    <span                        
+
+                            @if($round_result->hole_13_plus_minus > 1 )
+
+                                class="eagle"
+
+                            @elseif($round_result->hole_13_plus_minus == 1 )
+
+                                class="birdie"
+
+                            @elseif($round_result->hole_13_plus_minus == 0 )
+
+                                class="par"
+
+                            @elseif($round_result->hole_13_plus_minus == -1 )
+
+                                class="bogey"
+
+                            @elseif($round_result->hole_13_plus_minus < -1 )
+
+                                class="double-bogey"
+                                
+                            @endif                                    
+                      
+                    >
+                            {{ $round->hole_13_score }}                                
+                        </span>
+                    </div>
+                
+                    <div class="col">
+                    <span
+
+                            @if($round_result->hole_14_plus_minus > 1 )
+
+                                class="eagle"
+
+                            @elseif($round_result->hole_14_plus_minus == 1 )
+
+                                class="birdie"
+
+                            @elseif($round_result->hole_14_plus_minus == 0 )
+
+                                class="par"
+
+                            @elseif($round_result->hole_14_plus_minus == -1 )
+
+                                class="bogey"
+
+                            @elseif($round_result->hole_14_plus_minus < -1 )
+
+                                class="double-bogey"
+                                
+                            @endif                                    
+                    
+                    >
+                            {{ $round->hole_14_score }}                                
+                        </span>
                     </div>
 
                     <div class="col">
-                        <h4>{{ number_format($round_result->gir_percentage, 2) }}%</h4>
-                        <p>Greens in regulation</p>                    
-                    </div> 
 
+                    <span                       
+
+                            @if($round_result->hole_15_plus_minus > 1 )
+
+                                class="eagle"
+
+                            @elseif($round_result->hole_15_plus_minus == 1 )
+
+                                class="birdie"
+
+                            @elseif($round_result->hole_15_plus_minus == 0 )
+
+                                class="par"
+
+                            @elseif($round_result->hole_15_plus_minus == -1 )
+
+                                class="bogey"
+
+                            @elseif($round_result->hole_15_plus_minus < -1 )
+
+                                class="double-bogey"
+                                
+                            @endif                                    
+                     
+                    >
+                            {{ $round->hole_15_score }}                                
+                        </span>
+                    </div>
+                
                     <div class="col">
-                        <h4>{{ number_format($round_result->putts_per_hole, 2) }}</h4>
-                        <p>Putts per hole</p>                    
-                    </div> 
+                    <span
+                        
+                            @if($round_result->hole_16_plus_minus > 1 )
 
+                                class="eagle"
+
+                            @elseif($round_result->hole_16_plus_minus == 1 )
+
+                                class="birdie"
+
+                            @elseif($round_result->hole_16_plus_minus == 0 )
+
+                                class="par"
+
+                            @elseif($round_result->hole_16_plus_minus == -1 )
+
+                                class="bogey"
+
+                            @elseif($round_result->hole_16_plus_minus < -1 )
+
+                                class="double-bogey"
+                                
+                            @endif                                    
+                     
+                    >
+                            {{ $round->hole_16_score }}                                
+                        </span>
+                    </div>
+                
                     <div class="col">
-                        <h4>{{ number_format($round_result->scrambling, 2) }}%</h4>
-                        <p>Scrambling</p>                    
-                    </div>                                                              
+                    <span
+                        
 
+                            @if($round_result->hole_17_plus_minus > 1 )
+
+                                class="eagle"
+
+                            @elseif($round_result->hole_17_plus_minus == 1 )
+
+                                class="birdie"
+
+                            @elseif($round_result->hole_17_plus_minus == 0 )
+
+                                class="par"
+
+                            @elseif($round_result->hole_17_plus_minus == -1 )
+
+                                class="bogey"
+
+                            @elseif($round_result->hole_17_plus_minus < -1 )
+
+                                class="double-bogey"
+                                
+                            @endif                                    
+                      
+                    >
+                            {{ $round->hole_17_score }}                                
+                        </span>
+                    </div>
+                
+                    <div class="col">
+                    <span
+                        
+
+                            @if($round_result->hole_18_plus_minus > 1 )
+
+                                class="eagle"
+
+                            @elseif($round_result->hole_18_plus_minus == 1 )
+
+                                class="birdie"
+
+                            @elseif($round_result->hole_18_plus_minus == 0 )
+
+                                class="par"
+
+                            @elseif($round_result->hole_18_plus_minus == -1 )
+
+                                class="bogey"
+
+                            @elseif($round_result->hole_18_plus_minus < -1 )
+
+                                class="double-bogey"
+                                
+                            @endif                                    
+                       
+                    >
+                            {{ $round->hole_18_score }}                                
+                        </span>
+                    </div>                     
+                
+                    <div class="col total-cell">
+
+                        <strong>
+                            
+                            {{ $round_result->back_score }}
+
+                        </strong>
+
+                    </div>   
+
+            </div>
+            <!--/.row --> 
+
+            <br />
+
+            <div class="row text-center">
+
+                <div class="col">
+
+                    <h4>Course Par</h4>
+
+                    {{ $course_totals->total_par }}
+
+                </div>  
+                    
+                <div class="col">
+
+                    <h4>Score</h4>
+    
+                    {{ $round_result->total_score }}
+    
+                </div>  
+                    
+                <div class="col">
+
+                    <h4>Score to par</h4>
+    
+                     @if($round_result->plus_minus > 0)
+
+                        +{{ $round_result->plus_minus }}
+
+                    @else
+
+                        {{ $round_result->plus_minus }}
+
+                    @endif      
+                </div>                     
+
+            </div>                    
+            <!-- /.row -->
+
+            <br />
+
+            <h2>Round Stats</h2>
+
+            <div class="row text-center">
+
+                <div class="col">
+                    <h4>{{ number_format($round_result->fir_percentage, 2) }}%</h4>
+                    <p>Fairways in regulation</p>                    
                 </div>
-                <!--/.row -->
 
-                <h2>Breakdown</h2>
+                <div class="col">
+                    <h4>{{ number_format($round_result->gir_percentage, 2) }}%</h4>
+                    <p>Greens in regulation</p>                    
+                </div> 
+
+                <div class="col">
+                    <h4>{{ number_format($round_result->putts_per_hole, 2) }}</h4>
+                    <p>Putts per hole</p>                    
+                </div> 
+
+                <div class="col">
+                    <h4>{{ number_format($round_result->scrambling, 2) }}%</h4>
+                    <p>Scrambling</p>                    
+                </div>                                                              
+
+            </div>
+            <!--/.row -->
+
+            <br />
+
+                <h2>Hole by Hole Breakdown</h2>
 
                         <table class="table">
                         

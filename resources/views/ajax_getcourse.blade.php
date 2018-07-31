@@ -1,6 +1,6 @@
 @foreach($course_data as $key => $par)                       
     
-<table>
+<table class="table">
 
     <tr>
         <th>Hole</th>
