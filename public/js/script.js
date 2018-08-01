@@ -60,44 +60,52 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 21);
+/******/ 	return __webpack_require__(__webpack_require__.s = 22);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 21:
+/***/ 22:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(22);
+module.exports = __webpack_require__(23);
 
 
 /***/ }),
 
-/***/ 22:
+/***/ 23:
 /***/ (function(module, exports) {
 
 
 $(document).ready(function () {
 
-        //=======================================================================================
-        //  Add Round Date Picker
-        // ======================================================================================
+    //=======================================================================================
+    //  Add Round Date Picker
+    // ======================================================================================
 
-        // find our today's date
-        var date = new Date();
-        var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    // find our today's date
+    var date = new Date();
+    var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
 
-        // set datepicker options
-        $('#round_date').datepicker({
-                endDate: '+0d',
-                format: 'dd/mm/yyyy'
-        });
+    // set datepicker options
+    $('#round_date').datepicker({
+        endDate: '+0d',
+        format: 'dd/mm/yyyy'
+    });
 
-        // autoselect today's date
-        $('#round_date').datepicker('setDate', today);
+    // autoselect today's date
+    $('#round_date').datepicker('setDate', today);
 
-        // ======================================================================================
+    // ======================================================================================
 
+    //=======================================================================================
+    //  Number Animations
+    // ======================================================================================
+
+    $('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
 });
 
 /***/ })

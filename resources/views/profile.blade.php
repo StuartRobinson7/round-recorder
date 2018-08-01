@@ -43,21 +43,21 @@
                         </div>
 
 
-                        <table class="table">
+                        <table class="table rr-table">
 
                                 <tr>
-                                        <td>Date</td>
-                                        <td>Course</td>
-                                        <td>Par</td>
-                                        <td>Score</td>
-                                        <td>+/-</td>
-                                        <td>Putts</td>                                
-                                        <td>PPH</td>
-                                        <td>FIR</td>
-                                        <td>GIR</td>
-                                        <td>Drops</td>
-                                        <td>Scrambling</td>
-                                        <td>Edit</td>
+                                        <th>Date</th>
+                                        <th>Course</th>
+                                        <th>Par</th>
+                                        <th>Score</th>
+                                        <th>+/-</th>
+                                        <th>Putts</th>                                
+                                        <th>PPH</th>
+                                        <th>FIR</th>
+                                        <th>GIR</th>
+                                        <th>Drops</th>
+                                        <th>Scrambling</th>
+                                        <th>Edit</th>
                                 </tr>
 
                                 @foreach($rounds as $key => $round_result)   

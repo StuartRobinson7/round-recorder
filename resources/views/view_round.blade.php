@@ -35,6 +35,12 @@
 
             <div class="row round-row round-row-score round-key">
                     
+                    <div class="col col-3 text-left">
+
+                        <span class="tee-box @if($round->yards === 'white')white @elseif ($round->yards === 'yellow')yellow @else red @endif"></span>
+                        {{ ucfirst(trans($round->yards)) }}&nbsp;Tees
+
+                    </div>
                 
                     <div class="col col-auto ml-auto">
 
@@ -64,9 +70,7 @@
             </div>
             <!--/.row -->  
             <br />
-
-
-                
+ 
             <div class="row round-row round-header-hole">
                 
                     <div class="col">
@@ -563,7 +567,6 @@
             
             <br />
             
-
             <div class="row round-row round-header-hole">
                 
                 <div class="col">
@@ -1063,7 +1066,7 @@
                         </div>
 
                         <div class="col round-total">
-                            <span>{{ $course_totals->total_par }}</span>
+                            <span class="counter">{{ $course_totals->total_par }}</span>
                         </div>                        
 
                     </div>
@@ -1150,7 +1153,7 @@
             <div class="row text-center">
 
                 <div class="col">
-                    <h4>{{ number_format($round_result->fir_percentage, 2) }}%</h4>
+                    <h4><span class="counter">{{ number_format($round_result->fir_percentage, 2) }}<span>0%</h4>
                     <p>Fairways in regulation</p>                    
                 </div>
 
@@ -1176,12 +1179,12 @@
 
                 <h2>Hole by Hole Breakdown</h2>
 
-                        <table class="table">
+                        <table class="table rr-table">
                         
                         <tr>
                             <th>Hole</th>
                             <th>Par</th>
-                            <th>Stroke Index</th>
+                            <th>Stroke<br />Index</th>
                             <th>Yards</th>
                             <th>Score</th>
                             <th>FIR</th>
@@ -2883,7 +2886,7 @@
                             <td>{{$round->hole_18_drops}}</td>
                         </tr>   
 
-                        <tr>
+                        <tr class="total-row">
                             <td>Totals</td>
                             <td>{{$course_totals->total_par}}</td>
                             <td>&nbsp</td>

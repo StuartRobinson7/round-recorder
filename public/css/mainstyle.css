@@ -55,7 +55,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 @-ms-viewport {
@@ -10103,6 +10103,7 @@ td,
 strong,
 legend,
 .alert > .alert-link,
+.rr-table th,
 .cart-item span,
 .round-key {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -10520,7 +10521,7 @@ main {
   }
 
   .nav-skip.toggled span {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
     -webkit-transition-delay: .2s;
             transition-delay: .2s;
   }
@@ -10747,6 +10748,45 @@ footer .on2net {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   right: 0;
+}
+
+.rr-table {
+  text-align: center;
+}
+
+.rr-table th,
+.rr-table td {
+  vertical-align: middle;
+}
+
+.rr-table th {
+  background: #018f6e;
+  color: #fff;
+}
+
+.rr-table tr:nth-child(even) {
+  background: #e6f4f1;
+}
+
+.rr-table tr:nth-child(odd) {
+  background: #fff;
+}
+
+.rr-table .fa-check {
+  color: #018f6e;
+}
+
+.rr-table .fa-times {
+  color: #dc3545;
+}
+
+.rr-table .fa-minus {
+  color: #adb5bd;
+}
+
+.rr-table .total-row {
+  background: #dee2e6;
+  color: #018f6e;
 }
 
 .tagline-carousel {
@@ -11085,6 +11125,25 @@ footer .title.on2net span {
   background: #015642;
 }
 
+.tee-box {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #dee2e6;
+}
+
+.tee-box.white {
+  background: #fff;
+}
+
+.tee-box.yellow {
+  background: #ffc107;
+}
+
+.tee-box.red {
+  background: #dc3545;
+}
+
 .round-total-row {
   line-height: 80px;
 }
@@ -11236,7 +11295,7 @@ footer .title.on2net span {
   background: none;
   border: 0;
   line-height: 30px;
-  margin: 0;
+  margin: 0 -15px;
   text-align: center;
 }
 
@@ -15526,7 +15585,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: normal;
   src: url(/fonts/fa-brands-400.eot?92078a27adb3d46ba8089c452cd70bf6);
-  src: url(/fonts/fa-brands-400.eot?92078a27adb3d46ba8089c452cd70bf6?#iefix) format("embedded-opentype"), url(/fonts/fa-brands-400.woff2?3d19aa4959c59e6d93d44f3bd90aef14) format("woff2"), url(/fonts/fa-brands-400.woff?c4ed0a1f43bb44cf54014a03480b7177) format("woff"), url(/fonts/fa-brands-400.ttf?21964f74b00a1599fae9d0a993e9eaba) format("truetype"), url(/fonts/fa-brands-400.svg?9f0e797dfe03b14c92021c6e3d2ed501#fontawesome) format("svg");
+  src: url(/fonts/fa-brands-400.eot?92078a27adb3d46ba8089c452cd70bf6?#iefix) format("embedded-opentype"), url(/fonts/fa-brands-400.woff2?3d19aa4959c59e6d93d44f3bd90aef14) format("woff2"), url(/fonts/fa-brands-400.woff?c4ed0a1f43bb44cf54014a03480b7177) format("woff"), url(/fonts/fa-brands-400.ttf?21964f74b00a1599fae9d0a993e9eaba) format("truetype"), url(/fonts/fa-brands-400.svg?6be0d28532facdddf7153ae18175dd05#fontawesome) format("svg");
 }
 
 .fab {
@@ -15543,7 +15602,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 300;
   src: url(/fonts/fa-light-300.eot?d04e7c7a32ec3df6ee6cad38f99e4f2c);
-  src: url(/fonts/fa-light-300.eot?d04e7c7a32ec3df6ee6cad38f99e4f2c?#iefix) format("embedded-opentype"), url(/fonts/fa-light-300.woff2?7cc3813fd8210dc22ed2cc16891d0c6d) format("woff2"), url(/fonts/fa-light-300.woff?563925f7d15a0f5ab8d6b764b5b4645e) format("woff"), url(/fonts/fa-light-300.ttf?c183e1e55f4776c764b0349b484dca03) format("truetype"), url(/fonts/fa-light-300.svg?3b91afa2af4e700731a28a552bc0cb16#fontawesome) format("svg");
+  src: url(/fonts/fa-light-300.eot?d04e7c7a32ec3df6ee6cad38f99e4f2c?#iefix) format("embedded-opentype"), url(/fonts/fa-light-300.woff2?7cc3813fd8210dc22ed2cc16891d0c6d) format("woff2"), url(/fonts/fa-light-300.woff?563925f7d15a0f5ab8d6b764b5b4645e) format("woff"), url(/fonts/fa-light-300.ttf?c183e1e55f4776c764b0349b484dca03) format("truetype"), url(/fonts/fa-light-300.svg?5d468eaee7c2858069f7bcbf9b6b71d1#fontawesome) format("svg");
 }
 
 .fal {
@@ -15561,7 +15620,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   src: url(/fonts/fa-regular-400.eot?c530c69d2821c1ab9202edfeee81f085);
-  src: url(/fonts/fa-regular-400.eot?c530c69d2821c1ab9202edfeee81f085?#iefix) format("embedded-opentype"), url(/fonts/fa-regular-400.woff2?bd42a2f17bdd2cdd2a40bd46f69224cf) format("woff2"), url(/fonts/fa-regular-400.woff?f45b750ae42cc175e2273a6eee86c2b5) format("woff"), url(/fonts/fa-regular-400.ttf?c7a40b90b6180f4a0bd08762dafab054) format("truetype"), url(/fonts/fa-regular-400.svg?eecf03cf0ea4708f88157736f6cac817#fontawesome) format("svg");
+  src: url(/fonts/fa-regular-400.eot?c530c69d2821c1ab9202edfeee81f085?#iefix) format("embedded-opentype"), url(/fonts/fa-regular-400.woff2?bd42a2f17bdd2cdd2a40bd46f69224cf) format("woff2"), url(/fonts/fa-regular-400.woff?f45b750ae42cc175e2273a6eee86c2b5) format("woff"), url(/fonts/fa-regular-400.ttf?c7a40b90b6180f4a0bd08762dafab054) format("truetype"), url(/fonts/fa-regular-400.svg?4a51612847ed0cf06db0f3b86180e93d#fontawesome) format("svg");
 }
 
 .far,
@@ -15580,7 +15639,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 900;
   src: url(/fonts/fa-solid-900.eot?1056b521827390708dd3c2e140eb8533);
-  src: url(/fonts/fa-solid-900.eot?1056b521827390708dd3c2e140eb8533?#iefix) format("embedded-opentype"), url(/fonts/fa-solid-900.woff2?61f505c6569bacdd2b629dfd332a2cef) format("woff2"), url(/fonts/fa-solid-900.woff?1824ad4c98679821970e3e7e47a1aa02) format("woff"), url(/fonts/fa-solid-900.ttf?1e39699e99c5592e9f70990a735de2a1) format("truetype"), url(/fonts/fa-solid-900.svg?b2010731f1cb40b353d3786377b464f1#fontawesome) format("svg");
+  src: url(/fonts/fa-solid-900.eot?1056b521827390708dd3c2e140eb8533?#iefix) format("embedded-opentype"), url(/fonts/fa-solid-900.woff2?61f505c6569bacdd2b629dfd332a2cef) format("woff2"), url(/fonts/fa-solid-900.woff?1824ad4c98679821970e3e7e47a1aa02) format("woff"), url(/fonts/fa-solid-900.ttf?1e39699e99c5592e9f70990a735de2a1) format("truetype"), url(/fonts/fa-solid-900.svg?74404991700548b9b40251688ecfb210#fontawesome) format("svg");
 }
 
 .fa,
@@ -15866,7 +15925,7 @@ button::-moz-focus-inner {
   padding: 0;
   width: 90px;
   height: 110px;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .mfp-arrow:active {

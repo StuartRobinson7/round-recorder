@@ -17,17 +17,17 @@
                 </div>
                 @endif                 
 
-                        <table class="table">
+                        <table class="table rr-table">
                         
                         <tr>
                             <th>Hole</th>
                             <th>Par</th>
-                            <th>Stroke Index</th>
+                            <th>Stroke<br />Index</th>
                             <th>Whites</th>
                             <th>Yellows</th>
                             <th>Reds</th>
                             <th>Red Par</th>
-                            <th>Red Stroke Index</th>
+                            <th>Red Stroke<br />Index</th>
                         </tr>
                     
                         

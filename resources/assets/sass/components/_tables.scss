@@ -1,0 +1,42 @@
+// ========================================
+// Tables ---------------------------------
+// ========================================
+
+.rr-table{
+    text-align: center;
+
+    th, td{
+        vertical-align: middle;
+    }
+
+    th{
+        @extend %text-bold;        
+        background: $theme-1;
+        color: $white;
+    }
+
+    tr:nth-child(even){
+        background: tint($theme-1, 90%);
+    }
+
+    tr:nth-child(odd){
+        background: $white;
+    }    
+
+    .fa-check{
+        color:$theme-1; 
+    }
+
+    .fa-times{
+        color: $danger;
+    }
+
+    .fa-minus{
+        color: $gray-500;
+    }
+
+    .total-row{
+        background: $gray-300;
+        color:$theme-1;
+    }
+}
