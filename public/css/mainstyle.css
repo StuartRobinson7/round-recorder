@@ -7236,7 +7236,8 @@ footer .on2net {
 .align-items-center,
 .cart-header,
 .cart-item,
-.cart-total {
+.cart-total,
+.round-total-row {
   -webkit-box-align: center !important;
       -ms-flex-align: center !important;
           align-items: center !important;
@@ -10064,7 +10065,8 @@ h5,
 h6,
 .btn,
 #cookieAcceptanceButton,
-.btn-cta {
+.btn-cta,
+.round-total-row .round-total {
   font-family: "DosisSemiBold";
 }
 
@@ -10080,7 +10082,8 @@ h5,
 h6,
 .btn,
 #cookieAcceptanceButton,
-.btn-cta {
+.btn-cta,
+.round-total-row .round-total {
   font-family: "DosisSemiBold";
   letter-spacing: 1px;
 }
@@ -10099,7 +10102,8 @@ td {
 strong,
 legend,
 .alert > .alert-link,
-.cart-item span {
+.cart-item span,
+.round-key {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: bold;
 }
@@ -10208,6 +10212,7 @@ footer .on2net,
 .order-table-item,
 .style-guide-colour span,
 .number,
+.round-total-row,
 .round-row,
 .mfp-container {
   -webkit-font-feature-settings: "lnum" 1;
@@ -10229,6 +10234,7 @@ footer .on2net,
   .order-table-item,
   .style-guide-colour span,
   .number,
+  .round-total-row,
   .round-row,
   .mfp-container {
     -webkit-font-feature-settings: normal;
@@ -11078,6 +11084,39 @@ footer .title.on2net span {
   background: #015642;
 }
 
+.round-total-row {
+  line-height: 80px;
+}
+
+.round-total-row .round-total-label {
+  border: 1px solid #e9ecef;
+  text-align: right;
+  background: #e9ecef;
+  height: 80px;
+}
+
+.round-total-row .round-total-label h4 {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin: 0;
+  padding-right: 1rem;
+}
+
+.round-total-row .round-total {
+  height: 80px;
+  border: 1px solid #dee2e6;
+  color: #018f6e;
+}
+
+.round-total-row .round-total span {
+  font-size: 40px;
+  font-size: 2.5rem;
+}
+
 .round-row {
   margin: 0;
   text-align: center;
@@ -11187,6 +11226,63 @@ footer .title.on2net span {
 .round-row-score .col .birdie:before,
 .round-row-score .col .bogey:before {
   display: block;
+}
+
+.round-key {
+  font-size: 12px;
+  font-size: 0.75rem;
+  background: none;
+  border: 0;
+  line-height: 30px;
+  margin: 0;
+  text-align: center;
+}
+
+.round-key .col {
+  border: 0;
+}
+
+.round-key .col span {
+  -webkit-transform: none;
+          transform: none;
+  top: 10px;
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+}
+
+.round-key .col span:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  border: 2px solid #018f6e;
+}
+
+.round-key .col span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  border: 2px solid #018f6e;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+}
+
+.round-key .col:first-child {
+  border: none;
 }
 
 /*!

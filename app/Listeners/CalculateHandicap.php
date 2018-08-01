@@ -121,10 +121,17 @@ class CalculateHandicap
         if($net_score > $buffer_zone){          
             $increase_amount = 0.1;
             $updated_handicap = $current_handicap + $increase_amount;
-        }         
+        }   
+        
+        
+        // prevent handicap from going below 0
+        if($updated_handicap <= 0){
+            $updated_handicap = 0;
+        }        
 
         // change back from decimal to integer
         $golden_number = $updated_handicap * 10;
+
 
         // update handicap in database
         $player_data = \App\User::where('id', $player)->first();

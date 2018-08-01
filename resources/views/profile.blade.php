@@ -13,7 +13,8 @@
                         </button>
                         <i class="glyphicon glyphicon-{{ Session::get('message-type') == 'success' ? 'ok' : 'remove'}}"></i> {{ Session::get('message') }}
                 </div>
-                @endif        
+                @endif    
+                
     
                 <h1>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h1>
                 <h2>{{ ucfirst(trans(Auth::user()->hand)) }} Handed</h2>

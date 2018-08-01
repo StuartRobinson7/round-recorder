@@ -2,6 +2,42 @@
 // View Round -----------------------------
 // ========================================
 
+.round-total-row{
+    @extend .align-items-center;
+    @extend %number;
+    line-height: 80px;
+
+    .round-total-label{
+        border: 1px solid $gray-200;
+        text-align: right;
+        background: $gray-200;
+        height: 80px;
+
+        h4{
+            @include vertical-align();
+            @include font-size(14px);
+            margin: 0;
+            padding-right: 1rem;
+        }
+    }
+
+    .round-total{
+        @extend %heading-base;
+        height: 80px;
+        border:1px solid $gray-300;
+        color: $theme-1;
+        span{
+            @include font-size(40px);
+        }
+    }
+
+}
+
+
+
+
+
+
 .round-row{
     @extend %number;
     margin: 0;
@@ -96,5 +132,49 @@
             }            
         }        
     }
+}
+
+.round-key{
+    @include font-size(12px);
+    @extend %text-bold;
+    background: none;
+    border:0;
+    line-height: 30px;
+    margin: 0;
+    text-align: center;
+
+    .col{
+        border:0;
+        //line-height: 30px;
+
+        span{
+            transform: none;
+            top: 10px;
+            position: relative;
+            display: inline-block;
+            margin: 0 auto;
+            //line-height: 30px;
+            width: 30px;
+            height:30px;
+
+            &:before{
+                @include pseudo-cover();
+                display: none;
+                border:2px solid $theme-1;                    
+            }
+            &:after{
+                @include pseudo-cover();
+                display: none;
+                border:2px solid $theme-1;
+                top:4px;
+                left:4px;
+                right:4px;
+                bottom:4px;                 
+            }
+        }  
+    } 
+    .col:first-child{
+        border: none;
+    } 
 }
 
