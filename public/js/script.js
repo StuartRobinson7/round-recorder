@@ -60,53 +60,74 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 22);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 22:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(23);
-
-
-/***/ }),
-
-/***/ 23:
+/***/ 10:
 /***/ (function(module, exports) {
 
 
 $(document).ready(function () {
 
-    //=======================================================================================
-    //  Add Round Date Picker
-    // ======================================================================================
+        //=======================================================================================
+        //  Add Round Date Picker
+        // ======================================================================================
 
-    // find our today's date
-    var date = new Date();
-    var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+        // find our today's date
+        var date = new Date();
+        var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
 
-    // set datepicker options
-    $('#round_date').datepicker({
-        endDate: '+0d',
-        format: 'dd/mm/yyyy'
-    });
+        // set datepicker options
+        $('#round_date').datepicker({
+                endDate: '+0d',
+                format: 'dd/mm/yyyy'
+        });
 
-    // autoselect today's date
-    $('#round_date').datepicker('setDate', today);
+        // autoselect today's date
+        $('#round_date').datepicker('setDate', today);
 
-    // ======================================================================================
+        // ======================================================================================
 
-    //=======================================================================================
-    //  Number Animations
-    // ======================================================================================
+        //=======================================================================================
+        //  Number Animations
+        // ======================================================================================
 
-    $('.counter').counterUp({
-        delay: 10,
-        time: 1000
-    });
+        $(".stat-total").circliful({
+                decimals: 4,
+                alwaysDecimals: true,
+                animationStep: 5,
+                foregroundBorderWidth: 5,
+                backgroundBorderWidth: 15,
+                fontColor: "#018f6e",
+                foregroundColor: "#018f6e",
+                backgroundColor: "#e9ecef",
+                percentageY: 109,
+                percentageX: 102,
+                animateInView: true
+
+        });
+
+        $('.counter').countTo({
+                from: 0,
+                refreshInterval: 2
+        });
+
+        $('.putt-counter').countTo({
+                from: 0,
+                decimals: 2,
+                refreshInterval: 2
+        });
 });
+
+/***/ }),
+
+/***/ 9:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(10);
+
 
 /***/ })
 

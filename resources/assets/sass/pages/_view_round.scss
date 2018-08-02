@@ -2,7 +2,12 @@
 // View Round -----------------------------
 // ========================================
 
-.tee-box{
+
+.round-section{
+    padding: 2rem 0;
+}
+
+.tee-box{  
     display: block;
     width: 40px;
     height:40px;
@@ -27,7 +32,7 @@
     line-height: 80px;
 
     .round-total-label{
-        border: 1px solid $gray-200;
+        border: 1px solid $gray-200; 
         text-align: right;
         background: $gray-200;
         height: 80px;
@@ -194,4 +199,9 @@
     .col:first-child{
         border: none;
     } 
+}
+
+.stat-total{
+    @extend %heading-base;
+    color: $theme-1;
 }

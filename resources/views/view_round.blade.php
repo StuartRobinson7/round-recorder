@@ -31,7 +31,13 @@
             <br />
 
 
+            
+
+        <section class="round-section scorecard">
+
             <h2>Scorecard</h2>
+
+            <br />
 
             <div class="row round-row round-row-score round-key">
                     
@@ -566,6 +572,7 @@
             <!--/.row -->            
             
             <br />
+            <br />
             
             <div class="row round-row round-header-hole">
                 
@@ -1054,6 +1061,8 @@
             <!--/.row --> 
 
             <br />
+            <br />
+            <br />
 
             <div class="row text-center">
 
@@ -1066,7 +1075,7 @@
                         </div>
 
                         <div class="col round-total">
-                            <span class="counter">{{ $course_totals->total_par }}</span>
+                            <span class="counter" data-to="{{ $course_totals->total_par }}" data-speed="500"></span>
                         </div>                        
 
                     </div>
@@ -1083,7 +1092,7 @@
                         </div>
 
                         <div class="col round-total">
-                            <span>{{ $round_result->total_score }}</span>
+                            <span class="counter" data-to="{{ $round_result->total_score }}" data-speed="500"></span>
                         </div>                        
 
                     </div>
@@ -1101,16 +1110,16 @@
                         </div>
 
                         <div class="col round-total">
-                            <span>
-                                @if($round_result->plus_minus > 0)
+                            @if($round_result->plus_minus > 0)
 
-                                    +{{ $round_result->plus_minus }}
+                                <span>+</span>
 
-                                @else
+                            @else
 
-                                    {{ $round_result->plus_minus }}
 
-                                @endif 
+                            @endif                         
+                            <span class="counter" data-to="{{ $round_result->plus_minus }}" data-speed="500">
+
                             </span>
                         </div>                        
 
@@ -1142,33 +1151,29 @@
                 </div>                    
                 <!-- /.row -->                
 
-                <br />
+
+        </section>
+        <!--/.scorecard -->
 
 
-
-            <br />
+        <section class="round-section round-stats">
 
             <h2>Round Stats</h2>
 
-            <div class="row text-center">
+            <div class="row text-center align-items-center">
 
                 <div class="col">
-                    <h4><span class="counter">{{ number_format($round_result->fir_percentage, 2) }}<span>0%</h4>
+                    <div class="stat-total" data-percent="{{ number_format($round_result->fir_percentage, 2) }}"></div>
                     <p>Fairways in regulation</p>                    
                 </div>
 
                 <div class="col">
-                    <h4>{{ number_format($round_result->gir_percentage, 2) }}%</h4>
+                    <div class="stat-total" data-percent="{{ number_format($round_result->gir_percentage, 2) }}"></div>
                     <p>Greens in regulation</p>                    
                 </div> 
 
                 <div class="col">
-                    <h4>{{ number_format($round_result->putts_per_hole, 2) }}</h4>
-                    <p>Putts per hole</p>                    
-                </div> 
-
-                <div class="col">
-                    <h4>{{ number_format($round_result->scrambling, 2) }}%</h4>
+                    <div class="stat-total" data-percent="{{ number_format($round_result->scrambling, 2) }}"></div>
                     <p>Scrambling</p>                    
                 </div>                                                              
 
@@ -1176,6 +1181,67 @@
             <!--/.row -->
 
             <br />
+
+            <div class="row text-center">
+
+                <div class="col">
+
+                    <div class="row round-total-row no-gutters">
+
+                        <div class="col round-total-label">
+                            <h4>Total Putts:</h4>
+                        </div>
+
+                        <div class="col round-total">
+                            <span class="counter" data-to="{{ $round_result->total_putts }}" data-speed="500"></span>
+                        </div>                        
+
+                    </div>
+                    <!--/.row -->
+
+                </div>   
+
+                <div class="col">
+
+                    <div class="row round-total-row no-gutters">
+
+                        <div class="col round-total-label">
+                            <h4>Putts per hole:</h4>
+                        </div>
+
+                        <div class="col round-total">
+                            <span class="putt-counter" data-to="{{ $round_result->putts_per_hole }}" data-speed="500"></span>
+                        </div>                        
+
+                    </div>
+                    <!--/.row -->
+
+                </div>  
+                
+                <div class="col">
+
+                    <div class="row round-total-row no-gutters">
+
+                        <div class="col round-total-label">
+                            <h4>Drops:</h4>
+                        </div>
+
+                        <div class="col round-total">
+                            <span class="counter" data-to="{{ $round_result->total_drops }}" data-speed="500"></span>
+                        </div>                        
+
+                    </div>
+                    <!--/.row -->
+
+                </div>                   
+
+            </div>
+            <!--/.row -->                          
+
+        </section>
+        <!--/.round-stats-->
+
+        <section class="round-section round-breakdown">
 
                 <h2>Hole by Hole Breakdown</h2>
 
@@ -2917,6 +2983,9 @@
 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
                     </table>                        
+
+        </section>
+        <!--/.round-breakdown -->
 
 
             </div>

@@ -16,12 +16,8 @@
     }
 
     tr:nth-child(even){
-        background: tint($theme-1, 90%);
-    }
-
-    tr:nth-child(odd){
-        background: $white;
-    }    
+        background: shade($gray-100, 3%);
+    }   
 
     .fa-check{
         color:$theme-1; 

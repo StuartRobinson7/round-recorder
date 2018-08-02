@@ -24,6 +24,10 @@
                 @if (count($rounds) > 0)
 
                         <div class="row text-center">
+
+
+
+                        
                                 <div class="col-6 col-md">
                                         <h4>{{ number_format($career_fir_total, 2) }}%</h4>
                                         <p>Fairways in regulation</p>
