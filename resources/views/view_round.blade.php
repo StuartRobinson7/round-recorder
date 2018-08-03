@@ -1156,13 +1156,14 @@
         <!--/.scorecard -->
 
 
-        <section class="round-section round-stats">
+        <section id="round-stats" class="round-section round-stats">
 
             <h2>Round Stats</h2>
 
+            <!--
             <div class="row text-center align-items-center">
 
-                <div class="col">
+                <div class="col">                    
                     <div class="stat-total" data-percent="{{ number_format($round_result->fir_percentage, 2) }}"></div>
                     <p>Fairways in regulation</p>                    
                 </div>
@@ -1178,7 +1179,44 @@
                 </div>                                                              
 
             </div>
+            /.row -->
+
+
+            <br />
+
+            <div class="row text-center align-items-center">
+
+                <div class="col">
+                    <h3 class="percent-counter" data-to="{{ number_format($round_result->fir_percentage, 2) }}" data-speed="500"></h3>
+                    <div class="ct-chart ct-minor-seventh" id="chart-round-fir"></div>
+                    <p>Fairways in regulation</p>                    
+                </div>
+
+                <div class="col">
+                    <h3 class="percent-counter" data-to="{{ number_format($round_result->gir_percentage, 2) }}" data-speed="500"></h3>
+                    <div class="ct-chart ct-minor-seventh" id="chart-round-gir"></div>
+                    <p>Greens in regulation</p>                    
+                </div> 
+
+                <div class="col">
+                    <h3 class="percent-counter" data-to="{{ number_format($round_result->scrambling, 2) }}" data-speed="500"></h3>
+                    <div class="ct-chart ct-minor-seventh" id="chart-round-scrambling"></div>
+                    <p>Scrambling</p>                    
+                </div>                                                              
+
+            </div>
             <!--/.row -->
+            
+
+            <script>    
+                var round_firs = {!! json_encode($round_result->fir_percentage) !!};
+                var round_firs_leftover = {!! json_encode(100 - $round_result->fir_percentage) !!};
+                var round_girs = {!! json_encode($round_result->gir_percentage) !!};
+                var round_girs_leftover = {!! json_encode(100 - $round_result->gir_percentage) !!};
+                var round_scrambling = {!! json_encode($round_result->scrambling) !!};
+                var round_scrambling_leftover = {!! json_encode(100 - $round_result->scrambling) !!};                                
+            </script>            
+
 
             <br />
 
@@ -2988,6 +3026,6 @@
         <!--/.round-breakdown -->
 
 
-            </div>
-            <!--/.container -->
+        </div>
+        <!--/.container -->
 @endsection

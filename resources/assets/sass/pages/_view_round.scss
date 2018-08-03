@@ -2,6 +2,41 @@
 // View Round -----------------------------
 // ========================================
 
+$ct-series-names: (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o) !default;
+$ct-series-colors: (
+  $theme-1,
+  $gray-200,
+  #f4c63d,
+  #d17905,
+  #453d3f,
+  #59922b,
+  #0544d3,
+  #6b0392,
+  #f05b4f,
+  #dda458,
+  #eacf7d,
+  #86797d,
+  #b2c326,
+  #6188e2,
+  #a748ca
+) !default;
+
+.percent-counter{ 
+
+    @include vertical-align(absolute);
+    @include font-size(36px);
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: -18px 0 0;
+    color: $theme-1;
+
+    &:after{
+        content:'%'
+    }
+}
+
+
 
 .round-section{
     padding: 2rem 0;
@@ -200,6 +235,7 @@
         border: none;
     } 
 }
+
 
 .stat-total{
     @extend %heading-base;
