@@ -191,11 +191,10 @@ $(document).ready(function () {
     // ======================================================================================
 
 
-    var waypoints = $('#round-stats').waypoint({
-        handler: function handler() {
-            console.log('Scrolled to waypoint!'), chart_round_fir.update(), chart_round_gir.update(), chart_round_scrambling.update();
-        }
-    });
+    //    chart_round_fir.update(),
+    //    chart_round_gir.update(),
+    //    chart_round_scrambling.update();  
+
 });
 
 /***/ }),

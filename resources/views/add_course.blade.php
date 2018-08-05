@@ -21,15 +21,192 @@
                     <form method="POST" action="{{ route('courses.store') }}" aria-label="{{ __('Add Course') }}">
                         @csrf
 
+                        <div class="row">
 
-                        <label>Property Name</label>
-                        <input id="property_name" type="text" class="form-control{{ $errors->has('property_name') ? ' is-invalid' : '' }}" name="property_name" value="{{ old('property_name') }}">
+                            <div class="col-12 col-md">
 
-                        <label>Course Name</label>
-                        <input id="course_name" type="text" class="form-control{{ $errors->has('course_name') ? ' is-invalid' : '' }}" name="course_name" value="{{ old('course_name') }}">
+                                <div class="form-group">
+                                    <label>Property Name</label>
+                                    <input id="property_name" type="text" class="form-control{{ $errors->has('property_name') ? ' is-invalid' : '' }}" name="property_name" value="{{ old('property_name') }}">
+                                </div>
 
-                        <label>SSS</label>
-                        <input id="sss" type="text" class="form-control{{ $errors->has('sss') ? ' is-invalid' : '' }}" name="sss" value="{{ old('sss') }}"> 
+                            </div>
+
+                            <div class="col-12 col-md">
+
+                                <div class="form-group">
+                                    <label>Course Name</label>
+                                    <input id="course_name" type="text" class="form-control{{ $errors->has('course_name') ? ' is-invalid' : '' }}" name="course_name" value="{{ old('course_name') }}">
+                                </div>
+
+                            </div>                            
+
+                        </div>
+                        <!-- /.row -->
+
+                        <div class="row">
+
+                            <div class="col-12 col-lg-1">
+
+                                <div class="form-group">
+                                    <label>SSS</label>
+                                    <input id="sss" type="text" class="form-control{{ $errors->has('sss') ? ' is-invalid' : '' }}" name="sss" value="{{ old('sss') }}"> 
+                                </div>
+
+                            </div>
+
+                            <div class="col align-self-end">
+
+                                <div class="alert alert-info">
+
+                                    <p>Description of SSS goes here.</p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <!-- /.row -->
+
+
+                        <div class="row">
+
+                            <div class="col-lg-2">
+                                <h4>Hole</h4>
+                            </div>
+
+                            <div class="col">
+                                <span>1</span>
+                            </div>
+
+                            <div class="col">
+                                <span>2</span>
+                            </div>
+
+                            <div class="col">
+                                <span>3</span>
+                            </div>
+
+                            <div class="col">
+                                <span>4</span>
+                            </div>
+
+                            <div class="col">
+                                <span>5</span>
+                            </div>
+
+                            <div class="col">
+                                <span>6</span>
+                            </div>
+
+                            <div class="col">
+                                <span>7</span>
+                            </div>
+
+                            <div class="col">
+                                <span>8</span>
+                            </div>
+
+                            <div class="col">
+                                <span>9</span>
+                            </div>                                                                                                                                                                                                                                                          
+
+
+                        </div>
+                        <!-- /.row -->
+
+                        <div class="row">
+
+                            <div class="col-lg-2">
+                                <h4>Whites</h4>
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_1_whites" type="text" class="form-control{{ $errors->has('hole_1_whites') ? ' is-invalid' : '' }}" name="hole_1_whites" value="{{ old('hole_1_whites') }}">
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_2_whites" type="text" class="form-control{{ $errors->has('hole_2_whites') ? ' is-invalid' : '' }}" name="hole_2_whites" value="{{ old('hole_2_whites') }}">
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_3_whites" type="text" class="form-control{{ $errors->has('hole_3_whites') ? ' is-invalid' : '' }}" name="hole_3_whites" value="{{ old('hole_3_whites') }}">
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_4_whites" type="text" class="form-control{{ $errors->has('hole_4_whites') ? ' is-invalid' : '' }}" name="hole_4_whites" value="{{ old('hole_4_whites') }}">
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_5_whites" type="text" class="form-control{{ $errors->has('hole_5_whites') ? ' is-invalid' : '' }}" name="hole_5_whites" value="{{ old('hole_5_whites') }}">
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_6_whites" type="text" class="form-control{{ $errors->has('hole_6_whites') ? ' is-invalid' : '' }}" name="hole_6_whites" value="{{ old('hole_6_whites') }}">
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_7_whites" type="text" class="form-control{{ $errors->has('hole_7_whites') ? ' is-invalid' : '' }}" name="hole_7_whites" value="{{ old('hole_7_whites') }}">
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_8_whites" type="text" class="form-control{{ $errors->has('hole_8_whites') ? ' is-invalid' : '' }}" name="hole_8_whites" value="{{ old('hole_8_whites') }}">
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_9_whites" type="text" class="form-control{{ $errors->has('hole_9_whites') ? ' is-invalid' : '' }}" name="hole_9_whites" value="{{ old('hole_9_whites') }}">
+                            </div>                                                                                                                                                                                                                                                          
+
+
+                        </div>
+                        <!-- /.row --> 
+
+                        <div class="row">
+
+                            <div class="col-lg-2">
+                                <h4>Par</h4>
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_1_white_par" type="text" class="form-control{{ $errors->has('hole_1_white_par') ? ' is-invalid' : '' }}" name="hole_1_white_par" value="{{ old('hole_1_white_par') }}">
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_2_white_par" type="text" class="form-control{{ $errors->has('hole_2_white_par') ? ' is-invalid' : '' }}" name="hole_2_white_par" value="{{ old('hole_2_white_par') }}">
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_3_white_par" type="text" class="form-control{{ $errors->has('hole_3_white_par') ? ' is-invalid' : '' }}" name="hole_3_white_par" value="{{ old('hole_3_white_par') }}">
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_4_white_par" type="text" class="form-control{{ $errors->has('hole_4_white_par') ? ' is-invalid' : '' }}" name="hole_4_white_par" value="{{ old('hole_4_white_par') }}">
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_5_white_par" type="text" class="form-control{{ $errors->has('hole_5_white_par') ? ' is-invalid' : '' }}" name="hole_5_white_par" value="{{ old('hole_5_white_par') }}">
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_6_white_par" type="text" class="form-control{{ $errors->has('hole_6_white_par') ? ' is-invalid' : '' }}" name="hole_6_white_par" value="{{ old('hole_6_white_par') }}">
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_7_white_par" type="text" class="form-control{{ $errors->has('hole_7_white_par') ? ' is-invalid' : '' }}" name="hole_7_white_par" value="{{ old('hole_7_white_par') }}">
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_8_white_par" type="text" class="form-control{{ $errors->has('hole_8_white_par') ? ' is-invalid' : '' }}" name="hole_8_white_par" value="{{ old('hole_8_white_par') }}">
+                            </div>
+
+                            <div class="col">
+                                <input id="hole_9_white_par" type="text" class="form-control{{ $errors->has('hole_9_white_par') ? ' is-invalid' : '' }}" name="hole_9_white_par" value="{{ old('hole_9_white_par') }}">
+                            </div>                                                                                                                                                                                                                                                          
+
+
+                        </div>
+                        <!-- /.row -->                                                
 
 
 
