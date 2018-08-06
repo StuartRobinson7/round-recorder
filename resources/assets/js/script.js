@@ -57,6 +57,32 @@ $(document).ready(function () {
         refreshInterval: 2,
     });     
      
+
+    
+    $('.btn-collapse').each(function(){
+        if($(this).hasClass('collapsed')) {
+            $(this).find('i').addClass('fa-plus-circle')
+        }
+        else{
+            $(this).find('i').addClass('fa-minus-circle');
+        }                 
+    });    
+
+    $('.btn-collapse').click(function(){
+        $(this).find('i').toggleClass('fa-minus-circle').toggleClass('fa-plus-circle');                 
+    }); 
+
+    //$('.btn-collapse').click(function(){
+    //    if($(this).hasClass('collapsed')) {
+    //        $(this).find('i').removeClass('fa-minus-circle').addClass('fa-plus-circle');
+    //    }
+    //    else{
+    //        $(this).find('i').addClass('fa-minus-circle').removeClass('fa-plus-circle');
+    //    }        
+   // });    
+
+
+
  
     chart_round_fir = new Chartist.Pie('#chart-round-fir', { series: [round_firs, round_firs_leftover] }, {
         donut: true,
@@ -133,8 +159,6 @@ $(document).ready(function () {
         //    chart_round_gir.update(),
         //    chart_round_scrambling.update();  
      
-
-
 
 
 

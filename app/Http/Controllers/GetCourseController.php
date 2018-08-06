@@ -27,4 +27,28 @@ class GetCourseController extends Controller
         return response()->json($view);
 
     }
+
+
+    public function GetCourseHoles(Request $request){
+
+        $requested_holes = $request->selected_holes;
+
+        if ($requested_holes == 9){
+            $view = view('/ajax_9_holes')->render();
+        }
+
+        elseif($requested_holes == 27){
+            $view = view('/ajax_27_holes')->render();
+        }
+
+        else{
+            $view = view('/ajax_18_holes')->render();
+        }   
+        
+        $view = trim(preg_replace('/\r\n/', ' ', $view)); 
+
+        return response()->json($view);
+
+    }    
+
 }

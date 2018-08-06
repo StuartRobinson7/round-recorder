@@ -1,0 +1,147 @@
+// ========================================
+// Add Course ----------------------------
+// ========================================
+
+
+.hole-select{
+    padding:  0.4rem 0 0;
+
+    .form-check-inline{
+        margin-right: 2rem;        
+    }
+
+    label{
+        @include font-size(19px);
+        padding-left: 0.3rem;
+    }
+}
+
+
+.add-tee-box{
+
+    button{
+        @include font-size(24px);
+        line-height: 1.5rem;
+        padding: 1rem;
+        border-radius :0;
+        text-align: left;
+        text-transform: none;
+        margin-top: $vertical-rhythm;
+        color: $body-color;
+    }
+
+    .collapse, .collapsing{
+        background: $white;
+        padding: 1.5rem;
+        border-radius: 0;
+        margin: 0 0 $vertical-rhythm;
+    }
+
+
+
+    .add-course-row{
+        @extend .align-items-center;
+        @extend %number;
+        margin: 0;
+        text-align: center;
+        background: $white;
+        border-bottom: 1px solid $gray-200;
+        line-height: 36px;
+    
+        h4{
+            margin: 0;
+        }
+    
+        .col{
+            padding: 0.5rem;    
+        }
+
+        .col:first-child{
+            text-align: right;
+        }
+    
+    }
+
+    .add-course-row:last-child{
+        border-bottom: none;
+    }
+
+
+    .add-course-hole{
+        font-weight: bold;
+        background: shade($white, 5);
+        //color:$white;
+    }
+
+
+}
+
+
+.white-tees{
+    button{
+        background: $white;
+        
+        &:hover, &:active{
+            border: 1px solid transparent;
+            background: shade($white, 10);
+        }
+        &:focus{
+            border: 1px solid transparent;
+            background: $white;
+            color: $body-color;
+            box-shadow: none;
+        }
+    }
+}
+
+.yellow-tees{
+    button{
+        background: $warning;
+        
+        &:hover, &:active{
+            border: 1px solid transparent;
+            background: shade($warning, 10);
+        }   
+        &:focus{
+            border: 1px solid transparent;
+            background: $warning;
+            color: $body-color;            
+            box-shadow: none;
+        }             
+    }
+
+    .add-course-hole{
+        background: $warning;
+    }        
+}
+
+.red-tees{
+    button{
+        background: $danger;
+
+        &:hover, &:active{
+            border: 1px solid transparent;
+            background: shade($danger, 10);
+        }   
+        &:focus{
+            border: 1px solid transparent;
+            background: $danger;
+            color: $body-color;            
+            box-shadow: none;
+        }              
+    }
+    
+    .add-course-hole{
+        background: $danger;       
+    }          
+}
+
+
+
+
+
+
+
+
+
+
