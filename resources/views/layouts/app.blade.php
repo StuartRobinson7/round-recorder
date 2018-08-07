@@ -11,14 +11,16 @@
     <title>{{ config('app.name', 'Round Recorder') }} - @yield('title')</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/jquery.min.js') }}"></script>   
+    <script src="{{ asset('js/jquery.min.js') }}" defer></script>   
     <script src="{{ asset('js/bootstrap.js') }}" defer></script>
-    <script src="{{ asset('js/waypoint.js') }}" defer></script>
     <script src="{{ asset('js/bundle.js') }}" defer></script>
+    @yield('page-specific-js')
     <script src="{{ asset('js/script.js') }}" defer></script>   
 
     <!-- Styles -->
+    @yield('page-specific-css')
     <link href="{{ asset('css/mainstyle.css') }}" rel="stylesheet">
+    
 </head>
 <body>
     <div id="app">
