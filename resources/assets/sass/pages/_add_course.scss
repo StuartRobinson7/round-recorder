@@ -79,14 +79,15 @@
 
 .white-tees{
     button{
+        border: 1px solid $gray-400; 
         background: $white;
         
         &:hover, &:active{
-            border: 1px solid transparent;
+            border: 1px solid $gray-400;
             background: shade($white, 10);
         }
         &:focus{
-            border: 1px solid transparent;
+            border: 1px solid $gray-400;
             background: $white;
             color: $body-color;
             box-shadow: none;

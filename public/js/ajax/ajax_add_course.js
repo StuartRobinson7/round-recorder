@@ -78,6 +78,7 @@ module.exports = __webpack_require__(14);
 
 $(document).ready(function () {
 
+    // bring back selected holes
     function selectHoles() {
 
         var selected_holes = $(this).val();
@@ -94,8 +95,11 @@ $(document).ready(function () {
             method: 'get',
             data: { selected_holes: selected_holes },
             success: function success(response) {
+
+                // return holes
                 $("#get-holes").html(response);
 
+                // show plus/minus icons
                 $('.btn-collapse').each(function () {
                     if ($(this).hasClass('collapsed')) {
                         $(this).find('i').addClass('fa-plus-circle');
@@ -104,6 +108,7 @@ $(document).ready(function () {
                     }
                 });
 
+                // toggle icons on click
                 $('.btn-collapse').click(function () {
                     $(this).find('i').toggleClass('fa-minus-circle').toggleClass('fa-plus-circle');
                 });
@@ -114,16 +119,11 @@ $(document).ready(function () {
         });
     }
 
-    //selectHoles( $('input:radio[name=holes]') ); //this calls it on load
+    // run on page load
     $('input:radio[name=holes]').each(selectHoles);
-    $('input:radio[name=holes]').change(selectHoles);
 
-    /*
-    var url = "<?php echo route('courses.store')?>";
-        $('input:radio[name=holes]').on('change', function() {
-         
-      });
-    */
+    // run on radio change
+    $('input:radio[name=holes]').change(selectHoles);
 });
 
 /***/ })
