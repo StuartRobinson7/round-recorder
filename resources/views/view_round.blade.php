@@ -2,6 +2,22 @@
 
 @section('title', 'View Round')
 
+@section('page-specific-js')
+
+    <script src="{{ asset('js/charts/chartist.min.js') }}" defer></script>
+    <script src="{{ asset('js/charts/view_round_charts.js') }}" defer></script>
+
+    <script>    
+        var round_firs = {!! json_encode($round_result->fir_percentage) !!};
+        var round_firs_leftover = {!! json_encode(100 - $round_result->fir_percentage) !!};
+        var round_girs = {!! json_encode($round_result->gir_percentage) !!};
+        var round_girs_leftover = {!! json_encode(100 - $round_result->gir_percentage) !!};
+        var round_scrambling = {!! json_encode($round_result->scrambling) !!};
+        var round_scrambling_leftover = {!! json_encode(100 - $round_result->scrambling) !!};                                
+    </script> 
+
+@endsection
+
 @section('content')
 
             <div class="container">
@@ -1205,17 +1221,7 @@
                 </div>                                                              
 
             </div>
-            <!--/.row -->
-            
-
-            <script>    
-                var round_firs = {!! json_encode($round_result->fir_percentage) !!};
-                var round_firs_leftover = {!! json_encode(100 - $round_result->fir_percentage) !!};
-                var round_girs = {!! json_encode($round_result->gir_percentage) !!};
-                var round_girs_leftover = {!! json_encode(100 - $round_result->gir_percentage) !!};
-                var round_scrambling = {!! json_encode($round_result->scrambling) !!};
-                var round_scrambling_leftover = {!! json_encode(100 - $round_result->scrambling) !!};                                
-            </script>            
+            <!--/.row -->           
 
 
             <br />

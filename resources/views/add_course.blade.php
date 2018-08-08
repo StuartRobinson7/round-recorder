@@ -2,6 +2,12 @@
 
 @section('title', 'Add Course')
 
+@section('page-specific-js')
+
+    <script src="{{ asset('js/ajax/ajax_add_course.js') }}" defer></script>
+
+@endsection
+
 @section('content')
 
             <div class="container">
@@ -87,8 +93,8 @@
                         <!-- /.row -->
 
 
-
-                       
+                        <div id="get-holes"></div>
+                        <!-- /.get-holes -->
 
                     <br />
 
@@ -99,13 +105,6 @@
                         </button>
 
                     </div>
-
-
-
-                        <div id="get-holes"></div>
-                        <!-- /.get-holes -->
-
-
 
 
                     <br />
@@ -335,51 +334,6 @@
 
             </div>
             <!--/.container -->
-
-
-
-
-
-<script>
-
-
-$(document).ready(function(){
-    
-    
-    var url = "<?php echo route('courses.store')?>";
-
-
-    $('input:radio[name=holes]').on('change', function() {
-
-        var selected_holes = $(this).val();
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }          
-        })
-
-        $.ajax({         
-            url: '/ajax_getholes',
-            dataType: "json",
-            method: 'get',
-            data: {selected_holes: selected_holes},      
-            success: function (response) {
-                $("#get-holes").html(response)  
-            },
-            error:function(error){ 
-                console.log(error)
-            }            
-        });       
-
-    });
-        
-    
-
-});
-
-</script>
-
 
 
 @endsection
