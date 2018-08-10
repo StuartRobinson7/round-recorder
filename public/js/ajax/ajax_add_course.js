@@ -81,7 +81,7 @@ $(document).ready(function () {
     // bring back selected holes
     function selectHoles() {
 
-        var selected_holes = $(this).val();
+        var selected_holes = $('input[name=holes]:checked').val();
 
         $.ajaxSetup({
             headers: {

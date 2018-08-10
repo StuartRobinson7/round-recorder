@@ -209,9 +209,6 @@
 
                     <div class="collapse show" id="yellowTees">
 
-
-                    <h3>Front 9</h3>
-
                         <div class="row add-course-row add-course-hole">
 
                             <div class="col col-lg-2">
@@ -411,8 +408,6 @@
                     </button>
 
                     <div class="collapse" id="redTees">
-
-                    <h3>Front 9</h3>
 
                     <div class="row add-course-row add-course-hole">
 

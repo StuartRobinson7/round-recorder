@@ -40,42 +40,7 @@ class CourseController extends Controller
         $validator = Validator::make($request->all(), [      
             'property_name' => 'required|string',
             'course_name' => 'required|string',
-            'hole_1_par' => 'required|integer|max:5|min:3',
-            'hole_2_par' => 'required|integer|max:5|min:3',
-            'hole_3_par' => 'required|integer|max:5|min:3',
-            'hole_4_par' => 'required|integer|max:5|min:3',
-            'hole_5_par' => 'required|integer|max:5|min:3',
-            'hole_6_par' => 'required|integer|max:5|min:3',
-            'hole_7_par' => 'required|integer|max:5|min:3',
-            'hole_8_par' => 'required|integer|max:5|min:3',
-            'hole_9_par' => 'required|integer|max:5|min:3',
-            'hole_10_par' => 'required|integer|max:5|min:3',
-            'hole_11_par' => 'required|integer|max:5|min:3',
-            'hole_12_par' => 'required|integer|max:5|min:3',
-            'hole_13_par' => 'required|integer|max:5|min:3',
-            'hole_14_par' => 'required|integer|max:5|min:3',
-            'hole_15_par' => 'required|integer|max:5|min:3',
-            'hole_16_par' => 'required|integer|max:5|min:3',
-            'hole_17_par' => 'required|integer|max:5|min:3',
-            'hole_18_par' => 'required|integer|max:5|min:3',
-            'hole_1_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_2_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_3_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_4_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_5_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_6_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_7_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_8_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_9_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_10_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_11_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_12_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_13_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_14_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_15_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_16_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_17_stroke_index' => 'required|integer|max:18|min:1',
-            'hole_18_stroke_index' => 'required|integer|max:18|min:1'           
+            'holes' => 'required|integer',          
         ]);
 
         if ($validator->fails()) {
@@ -85,6 +50,7 @@ class CourseController extends Controller
                 ->withInput();
         } 
 
+        // Add round to database
         $course = Course::create($request->all());
 
         return redirect()->route('profile');           
