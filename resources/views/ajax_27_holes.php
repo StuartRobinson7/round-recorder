@@ -7,10 +7,15 @@
 
                     <div class="collapse" id="whiteTees">
 
-                        <div class="form-group">
-                            <label>First Nine Name</label>
-                            <input id="first_nine_name" type="text" class="form-control {{ $errors->has('first_nine_name') ? ' is-invalid' : '' }}" name="first_nine_name" value="">
+                        <div class="row">
+                            <div class="col-12 col-lg-6 col-xl-4">
+                                <div class="form-group">
+                                    <label>First Nine Name</label>
+                                    <input id="first_nine_name" type="text" class="form-control {{ $errors->has('first_nine_name') ? ' is-invalid' : '' }}" name="first_nine_name" value="">
+                                </div>
+                            </div>
                         </div>
+                        <!--/.row -->
 
                         <div class="row add-course-row add-course-hole">
 
