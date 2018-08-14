@@ -63,6 +63,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 Route::get('ajax_getcourse', 'GetCourseController@GetCourseId')->name('getcourse');
+Route::get('ajax_getcourseyards', 'GetCourseController@GetCourseYards')->name('getcourseyards');
+Route::get('ajax_getcourselist', 'GetCourseController@GetCourseList')->name('getcourselist');
+Route::get('ajax_getcoursenines', 'GetCourseController@GetCourseNines')->name('getcoursenines');
 Route::get('ajax_getholes', 'GetCourseController@GetCourseHoles')->name('getholes');
 
 

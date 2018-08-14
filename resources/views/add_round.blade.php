@@ -37,47 +37,80 @@
 
                         <input id="player_id" type="hidden" class="hidden" name="player_id" value="{{ Auth::user()->id }}">
 
-                        <label>Course</label>
+                        <div class="row">
+                        
+                            <div class="col-12 col-md">
 
-                        <select id="course_id" name="course_id" class="form-control">
-                            <option value="" disabled selected>Please Select</option>
-                        @foreach($course as $key => $data)
+                                <label>Date</label>
 
-                            <option value="{{$data->id}}" {{ (old("course_id") == $data->id ? "selected":"") }}>{{$data->property_name}} - {{$data->course_name}}</option>
+                                <div class="input-group date">
+                                    <input type="text" class="form-control{{ $errors->has('round_date') ? ' is-invalid' : '' }}" id="round_date" placeholder="DD/MM/YYYY" name="round_date" value="{{ old('round_date') }}">
+                                </div>
 
-                        @endforeach
-                        </select>
+                            </div>
+
+                            <div class="col-12 col-md">
+
+                                <label>Round Size</label><br />
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="size" id="half" value="half">
+                                    <label class="form-check-label" for="half">9 Holes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="size" id="full" value="full" checked>
+                                    <label class="form-check-label" for="full">18 Holes</label>
+                                </div>   
+                                                         
+
+                            </div>
+
+                            <div class="col-12 col-md">
+
+
+                                <label>Tees Used</label><br />
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="yards" id="yards-white" value="white">
+                                    <label class="form-check-label" for="yards-white">Whites</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="yards" id="yards-yellow" value="yellow" checked>
+                                    <label class="form-check-label" for="yards-yellow">Yellows</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="yards" id="yards-red" value="red">
+                                    <label class="form-check-label" for="yards-reds">Reds</label>
+                                </div>
+                            
+                            </div>                                                        
+                        
+                        </div>
+                        <!--/.row -->
+
+
 
 
                         <br />
 
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="yards" id="yards-white" value="white">
-                            <label class="form-check-label" for="yards-white">Whites</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="yards" id="yards-yellow" value="yellow" checked>
-                            <label class="form-check-label" for="yards-yellow">Yellows</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="yards" id="yards-red" value="red">
-                            <label class="form-check-label" for="yards-reds">Reds</label>
-                        </div>
+                        <label>Course</label>
+
+                        <select id="course_id" name="course_id" class="form-control"></select>
+
+                        <br />
+
+                        <div id="select_nines"></div>                     
+
+
 
                         <div class="clearfix"></div>
 
                         <br />
 
-                        <label>Date</label>
-
-                        <div class="input-group date">
-                            <input type="text" class="form-control{{ $errors->has('round_date') ? ' is-invalid' : '' }}" id="round_date" placeholder="DD/MM/YYYY" name="round_date" value="{{ old('round_date') }}">
-                        </div>
 
 
-                        <div id="add_round_form"></div>
-                        <!-- /.add_round_form -->
 
+                        <div id="selected_course"></div>
 
 
 

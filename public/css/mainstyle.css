@@ -7238,6 +7238,7 @@ footer .on2net {
 .cart-item,
 .cart-total,
 .add-tee-box .add-course-row,
+.add-round-row,
 .round-total-row {
   -webkit-box-align: center !important;
       -ms-flex-align: center !important;
@@ -10218,6 +10219,7 @@ footer .on2net,
 .style-guide-colour span,
 .number,
 .add-tee-box .add-course-row,
+.add-round-row,
 .round-total-row,
 .round-row {
   -webkit-font-feature-settings: "lnum" 1;
@@ -10240,6 +10242,7 @@ footer .on2net,
   .style-guide-colour span,
   .number,
   .add-tee-box .add-course-row,
+  .add-round-row,
   .round-total-row,
   .round-row {
     -webkit-font-feature-settings: normal;
@@ -11252,6 +11255,44 @@ footer .title.on2net span {
 }
 
 .red-tees .add-course-hole {
+  background: #dc3545;
+}
+
+.add-round-row {
+  margin: 0;
+  text-align: center;
+  background: #fff;
+  border-bottom: 1px solid #e9ecef;
+  line-height: 36px;
+}
+
+.add-round-row h5 {
+  margin: 0;
+}
+
+.add-round-row .col {
+  padding: 0.5rem;
+}
+
+.add-round-row .col:first-child {
+  text-align: right;
+}
+
+.add-round-row:last-child {
+  border-bottom: none;
+}
+
+.add-round-hole {
+  font-weight: bold;
+  background: #018f6e;
+  color: #fff;
+}
+
+.add-round-yards.yellow {
+  background: #ffc107;
+}
+
+.add-round-yards.red {
   background: #dc3545;
 }
 

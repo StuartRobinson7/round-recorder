@@ -1,0 +1,47 @@
+// ========================================
+// Add Round ----------------------------
+// ========================================
+
+
+
+.add-round-row{
+    @extend .align-items-center;
+    @extend %number;
+    margin: 0;
+    text-align: center;
+    background: $white;
+    border-bottom: 1px solid $gray-200;
+    line-height: 36px;
+
+    h5{
+        margin: 0;
+    }
+
+    .col{
+        padding: 0.5rem;    
+    }
+
+    .col:first-child{
+        text-align: right;
+    }
+
+}
+
+.add-round-row:last-child{
+    border-bottom: none;
+}
+
+
+.add-round-hole{
+    font-weight: bold;
+    background: $theme-1; 
+    color:$white;
+}
+
+.add-round-yards.yellow{
+    background: $warning;
+}
+
+.add-round-yards.red{
+    background: $danger;
+}

@@ -78,12 +78,10 @@ module.exports = __webpack_require__(12);
 
 $(document).ready(function () {
 
-    var url = "<?php echo route('rounds.store')?>";
+    // Find out if full or half round    
+    function roundSize() {
 
-    $('#course_id').on('change', function () {
-
-        var selected_yards = $('input:radio[name=yards]:checked').val();
-        var selected_course_id = $(this).val();
+        var selected_size = $(this).val();
 
         $.ajaxSetup({
             headers: {
@@ -92,22 +90,48 @@ $(document).ready(function () {
         });
 
         $.ajax({
-            url: '/ajax_getcourse',
+            url: '/ajax_getcourselist',
             dataType: "json",
             method: 'get',
-            data: { selected_course_id: selected_course_id, selected_yards: selected_yards },
+            data: { selected_size: selected_size },
             success: function success(response) {
-                $("#add_round_form").html(response);
+                $("#course_id").html(response), $("#selected_course").html(""), $("#select_nines").html("");
             },
             error: function error(_error) {
                 console.log(_error);
             }
         });
-    });
+    }
 
-    $('input:radio[name=yards]').on('change', function () {
+    // Find out Tee boxes used
+    function selectYards() {
 
         var selected_yards = $(this).val();
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            url: '/ajax_getcourseyards',
+            dataType: "json",
+            method: 'get',
+            data: { selected_yards: selected_yards },
+            success: function success(response) {
+                $("#selected_course").html("response");
+            },
+            error: function error(_error2) {
+                console.log(_error2);
+            }
+        });
+    }
+
+    // Find out which set of nine holes have been played
+    function selectNines() {
+
+        var selected_size = $('input:radio[name=size]:checked').val();
         var selected_course_id = $('#course_id').val();
 
         $.ajaxSetup({
@@ -117,19 +141,73 @@ $(document).ready(function () {
         });
 
         $.ajax({
+            url: '/ajax_getcoursenines',
+            dataType: "json",
+            method: 'get',
+            data: { selected_course_id: selected_course_id, selected_size: selected_size },
+            success: function success(response) {
+                $("#select_nines").html(response), $('input:radio[name=nine]').each(selectCourse), $('input:radio[name=nine]').change(selectCourse);
+            },
+            error: function error(_error3) {
+                console.log(_error3);
+            }
+        });
+    }
+
+    //$('#course_id').change(selectCourse);    
+
+    // Find course
+    function selectCourse() {
+
+        var selected_course_id = $('#course_id').val();
+        var selected_yards = $('input:radio[name=yards]:checked').val();
+        var selected_size = $('input:radio[name=size]:checked').val();
+        var selected_nine = $('input:radio[name=nine]:checked').val();
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
             url: '/ajax_getcourse',
             dataType: "json",
             method: 'get',
-            data: { selected_course_id: selected_course_id, selected_yards: selected_yards },
+            data: { selected_course_id: selected_course_id, selected_yards: selected_yards, selected_size: selected_size, selected_nine: selected_nine },
             success: function success(response) {
-                $("#add_round_form").html(response);
+                $("#selected_course").html(response);
             },
-            error: function error(_error2) {
-                console.log(_error2);
+            error: function error(_error4) {
+                console.log(_error4);
             }
         });
-    });
+    }
 
+    $('input:radio[name=size]').each(roundSize);
+    $('input:radio[name=size]').change(roundSize);
+    //$('input:radio[name=size]').change(selectNines);
+    //$('input:radio[name=size]').change(selectCourse);
+
+    //$('input:radio[name=size]').each(selectNines);
+    //$('input:radio[name=size]').change(selectNines);     
+
+    //$('input:radio[name=yards]').each(selectYards);
+    $('input:radio[name=yards]').change(selectYards);
+    $('input:radio[name=yards]').change(selectCourse);
+
+    $('#course_id').change(selectNines);
+
+    //$('input:radio[name=nine]').each(selectCourse);
+    $('input:radio[name=nine]').change(selectCourse);
+
+    // run on page load
+
+
+    // run on radio change
+
+
+    // Submit Round
     $('#add_round').on('submit', function (e) {
 
         e.preventDefault();
@@ -152,8 +230,8 @@ $(document).ready(function () {
                     $('input[name="' + key + '"], select[name="' + key + '"]').addClass('is-invalid');
                 });
             },
-            error: function error(_error3) {
-                console.log(_error3);
+            error: function error(_error5) {
+                console.log(_error5);
             }
 
         });
