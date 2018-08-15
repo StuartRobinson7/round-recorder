@@ -1,3 +1,5 @@
+window.Vue = require('vue');
+
 $(document).ready(function(){
     
 
@@ -48,7 +50,7 @@ $(document).ready(function(){
             method: 'get',
             data: {selected_yards: selected_yards},      
             success: function (response) {
-                $("#selected_course").html("response")  
+                $("#selected_course").html("response")                  
             },
             error:function(error){ 
                 console.log(error)
@@ -111,30 +113,24 @@ $(document).ready(function(){
                 method: 'get',
                 data: {selected_course_id: selected_course_id, selected_yards: selected_yards, selected_size: selected_size, selected_nine: selected_nine},      
                 success: function (response) {
-                    $("#selected_course").html(response)
+                    $("#selected_course").html(response),
                     new Vue({
                         el: '#app',
                         data: {
-                            first_nine_1: '',
-                            first_nine_2: '',
-                            first_nine_3: '',
-                            first_nine_4: '',
-                            first_nine_5: '',
-                            first_nine_6: '',
-                            first_nine_7: '',
-                            first_nine_8: '',
-                            first_nine_9: ''
+                            holes: [{first_nine_1: '', first_nine_2: '', first_nine_3: '', first_nine_4: '', first_nine_5: '', first_nine_6: '', first_nine_7: '', first_nine_8: '', first_nine_9: ''}]
                         },
                         computed: {
                             firstNineTotal: function() {
-                             
-
-                                var firstNine = (sum([this.first_nine_1 , this.first_nine_2 , this.first_nine_3 , this.first_nine_4 , this.first_nine_5 , this.first_nine_6 , this.first_nine_7 , this.first_nine_8 , this.first_nine_9]));
-
-                                return firstNine
+                                if (!this.values) {
+                                    return 0;
+                                }
+                    
+                                return this.holes.reduce(function (firstNineTotal, hole) {
+                                    return firstNineTotal + Number(hole.firstNineTotal);
+                                }, 0);
                             }
                         }
-                    });                    
+                    });                                        
                 },
                 error:function(error){ 
                     console.log(error)
@@ -198,3 +194,4 @@ $(document).ready(function(){
     }               
 
 });
+

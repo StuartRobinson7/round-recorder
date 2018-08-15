@@ -85,7 +85,7 @@ $(document).ready(function () {
 });   
 
 
-window.Vue = require('vue');
+
 
 
 

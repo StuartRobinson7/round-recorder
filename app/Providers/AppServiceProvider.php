@@ -21,9 +21,9 @@ class AppServiceProvider extends ServiceProvider
 
 
 
-            //$model->first_nine_name = ($model->first_nine_name) ?: 'First Nine';
-            //$model->second_nine_name = ($model->second_nine_name) ?: 'Second Nine';
-            //$model->third_nine_name = ($model->third_nine_name) ?: 'Third Nine';
+            $model->first_nine_name = ($model->first_nine_name) ?: 'First Nine';
+            $model->second_nine_name = ($model->second_nine_name) ?: 'Second Nine';
+            $model->third_nine_name = ($model->third_nine_name) ?: 'Third Nine';
 
             $model->hole_1_white = ($model->hole_1_white) ?: '0';
             $model->hole_1_white_par = ($model->hole_1_white_par) ?: '0';

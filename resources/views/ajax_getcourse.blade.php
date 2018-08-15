@@ -416,63 +416,61 @@
 
             <div class="col">
 
-                <input id="hole_1_score" type="number" class="form-control {{ $errors->has('hole_1_score') ? ' is-invalid' : '' }}" name="hole_1_score" value="{{ old('hole_1_score') }}" v-model="first_nine_1">
+                <input id="hole_1_score" type="number" class="form-control {{ $errors->has('hole_1_score') ? ' is-invalid' : '' }}" name="hole_1_score" value="{{ old('hole_1_score') }}" v-model.number="first_nine_1">
 
             </div>
 
             <div class="col">
 
-                <input id="hole_2_score" type="number" class="form-control {{ $errors->has('hole_2_score') ? ' is-invalid' : '' }}" name="hole_2_score" value="{{ old('hole_2_score') }}" v-model="first_nine_2">
+                <input id="hole_2_score" type="number" class="form-control {{ $errors->has('hole_2_score') ? ' is-invalid' : '' }}" name="hole_2_score" value="{{ old('hole_2_score') }}" v-model.number="first_nine_2">
 
             </div>            
 
             <div class="col">
 
-                <input id="hole_3_score" type="number" class="form-control {{ $errors->has('hole_3_score') ? ' is-invalid' : '' }}" name="hole_3_score" value="{{ old('hole_3_score') }}" v-model="first_nine_3">
+                <input id="hole_3_score" type="number" class="form-control {{ $errors->has('hole_3_score') ? ' is-invalid' : '' }}" name="hole_3_score" value="{{ old('hole_3_score') }}" v-model.number="first_nine_3">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_4_score" type="number" class="form-control {{ $errors->has('hole_4_score') ? ' is-invalid' : '' }}" name="hole_4_score" value="{{ old('hole_4_score') }}" v-model="first_nine_4">
+                <input id="hole_4_score" type="number" class="form-control {{ $errors->has('hole_4_score') ? ' is-invalid' : '' }}" name="hole_4_score" value="{{ old('hole_4_score') }}" v-model.number="first_nine_4">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_5_score" type="number" class="form-control {{ $errors->has('hole_5_score') ? ' is-invalid' : '' }}" name="hole_5_score" value="{{ old('hole_5_score') }}" v-model="first_nine_5">
+                <input id="hole_5_score" type="number" class="form-control {{ $errors->has('hole_5_score') ? ' is-invalid' : '' }}" name="hole_5_score" value="{{ old('hole_5_score') }}" v-model.number="first_nine_5">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_6_score" type="number" class="form-control {{ $errors->has('hole_6_score') ? ' is-invalid' : '' }}" name="hole_6_score" value="{{ old('hole_6_score') }}" v-model="first_nine_6">
+                <input id="hole_6_score" type="number" class="form-control {{ $errors->has('hole_6_score') ? ' is-invalid' : '' }}" name="hole_6_score" value="{{ old('hole_6_score') }}" v-model.number="first_nine_6">
 
             </div> 
 
             <div class="col">
 
-                <input id="hole_7_score" type="number" class="form-control {{ $errors->has('hole_7_score') ? ' is-invalid' : '' }}" name="hole_7_score" value="{{ old('hole_7_score') }}" v-model="first_nine_7">
+                <input id="hole_7_score" type="number" class="form-control {{ $errors->has('hole_7_score') ? ' is-invalid' : '' }}" name="hole_7_score" value="{{ old('hole_7_score') }}" v-model.number="first_nine_7">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_8_score" type="number" class="form-control {{ $errors->has('hole_8_score') ? ' is-invalid' : '' }}" name="hole_8_score" value="{{ old('hole_8_score') }}" v-model="first_nine_8">
+                <input id="hole_8_score" type="number" class="form-control {{ $errors->has('hole_8_score') ? ' is-invalid' : '' }}" name="hole_8_score" value="{{ old('hole_8_score') }}" v-model.number="first_nine_8">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_9_score" type="number" class="form-control {{ $errors->has('hole_9_score') ? ' is-invalid' : '' }}" name="hole_9_score" value="{{ old('hole_9_score') }}" v-model="first_nine_9">
+                <input id="hole_9_score" type="number" class="form-control {{ $errors->has('hole_9_score') ? ' is-invalid' : '' }}" name="hole_9_score" value="{{ old('hole_9_score') }}" v-model.number="first_nine_9">
 
             </div> 
 
             <div class="col">
 
                 <span>@{{firstNineTotal}}</span>
-                <input type="number" class="form-control" v-model="firstNineTotal">
-
 
             </div>                                                   
 
