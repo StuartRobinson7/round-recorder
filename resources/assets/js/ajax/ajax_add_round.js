@@ -1,7 +1,7 @@
 $(document).ready(function(){
     
 
-// Find out if full or half round    
+// Set round as half(9 holes) or full(18 holes)    
     function roundSize() {
 
         var selected_size = $(this).val();
@@ -31,7 +31,7 @@ $(document).ready(function(){
     }            
 
 
-// Find out Tee boxes used
+// Get selected tee's to display correct colour/yardage 
     function selectYards() {
 
         var selected_yards = $(this).val();
@@ -89,10 +89,9 @@ $(document).ready(function(){
     }
 
 
-    
-    //$('#course_id').change(selectCourse);    
+       
 
-// Find course
+// Find selected courses data
     function selectCourse() {
         
             var selected_course_id = $('#course_id').val();
@@ -112,7 +111,30 @@ $(document).ready(function(){
                 method: 'get',
                 data: {selected_course_id: selected_course_id, selected_yards: selected_yards, selected_size: selected_size, selected_nine: selected_nine},      
                 success: function (response) {
-                    $("#selected_course").html(response)  
+                    $("#selected_course").html(response)
+                    new Vue({
+                        el: '#app',
+                        data: {
+                            first_nine_1: '',
+                            first_nine_2: '',
+                            first_nine_3: '',
+                            first_nine_4: '',
+                            first_nine_5: '',
+                            first_nine_6: '',
+                            first_nine_7: '',
+                            first_nine_8: '',
+                            first_nine_9: ''
+                        },
+                        computed: {
+                            firstNineTotal: function() {
+                             
+
+                                var firstNine = (sum([this.first_nine_1 , this.first_nine_2 , this.first_nine_3 , this.first_nine_4 , this.first_nine_5 , this.first_nine_6 , this.first_nine_7 , this.first_nine_8 , this.first_nine_9]));
+
+                                return firstNine
+                            }
+                        }
+                    });                    
                 },
                 error:function(error){ 
                     console.log(error)
@@ -121,35 +143,21 @@ $(document).ready(function(){
 
     }
 
-
+// Call the functions
     $('input:radio[name=size]').each(roundSize);    
     $('input:radio[name=size]').change(roundSize);
-    //$('input:radio[name=size]').change(selectNines);
-    //$('input:radio[name=size]').change(selectCourse);
 
-    //$('input:radio[name=size]').each(selectNines);
-    //$('input:radio[name=size]').change(selectNines);     
-
-    //$('input:radio[name=yards]').each(selectYards);
     $('input:radio[name=yards]').change(selectYards);
     $('input:radio[name=yards]').change(selectCourse); 
 
     $('#course_id').change(selectNines);
 
-    //$('input:radio[name=nine]').each(selectCourse);
+
     $('input:radio[name=nine]').change(selectCourse);
 
-    // run on page load
-
-
-    // run on radio change
-   
 
     
-
-    
-    
-    // Submit Round
+    // Submit the Round
     $('#add_round').on('submit', function (e) {
 
         e.preventDefault();

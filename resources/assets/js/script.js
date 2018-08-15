@@ -58,7 +58,6 @@ $(document).ready(function () {
     });     
      
 
-    
 
 
     //$('.btn-collapse').click(function(){
@@ -69,12 +68,6 @@ $(document).ready(function () {
     //        $(this).find('i').addClass('fa-minus-circle').removeClass('fa-plus-circle');
     //    }        
    // });    
-
-
-
- 
-
-
 
 
     //=======================================================================================
@@ -89,19 +82,10 @@ $(document).ready(function () {
      
 
 
-
-
-
-
-
-
-
-
-
 });   
 
 
-
+window.Vue = require('vue');
 
 
 
