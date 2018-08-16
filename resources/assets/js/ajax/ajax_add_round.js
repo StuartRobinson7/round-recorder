@@ -113,15 +113,20 @@ $(document).ready(function(){
                 method: 'get',
                 data: {selected_course_id: selected_course_id, selected_yards: selected_yards, selected_size: selected_size, selected_nine: selected_nine},      
                 success: function (response) {
-                    $("#selected_course").html(response),
+                    $("#selected_course").html(response);
+
+
+                    var $frontNineInputs = $('#first9Firs input').length;
+                    var $frontNineDisabled = $('#first9Firs input:disabled').length;
+                    var frontNineFirTotal = $frontNineInputs - $frontNineDisabled
+                    
+                    $('#FirstNineFirCount').after('/' + frontNineFirTotal);
 
 
                     $(document).on("change", ".FirstNineFir", function () {
 
                         var $fircount = $('#first9Firs input:checked').length;
-
-                        console.log('why you no work?' + $fircount);
-                               
+      
                         $('#FirstNineFirCount').html($fircount);
 
                     }),
