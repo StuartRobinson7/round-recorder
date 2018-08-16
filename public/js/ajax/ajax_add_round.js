@@ -11632,13 +11632,15 @@ $(document).ready(function () {
                 var $frontNineDisabled = $('#first9Firs input:disabled').length;
                 var frontNineFirTotal = $frontNineInputs - $frontNineDisabled;
 
+                $firstNineFirCount = 0;
+                $('#FirstNineFirCount').html($firstNineFirCount);
                 $('#FirstNineFirCount').after('/' + frontNineFirTotal);
 
                 $(document).on("change", ".FirstNineFir", function () {
 
-                    var $fircount = $('#first9Firs input:checked').length;
+                    var $firstNineFirCount = $('#first9Firs input:checked').length;
 
-                    $('#FirstNineFirCount').html($fircount);
+                    $('#FirstNineFirCount').html($firstNineFirCount);
                 }),
 
                 /*
