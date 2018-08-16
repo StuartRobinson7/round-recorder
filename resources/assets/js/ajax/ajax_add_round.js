@@ -1,7 +1,7 @@
 window.Vue = require('vue');
 
 $(document).ready(function(){
-    
+ 
 
 // Set round as half(9 holes) or full(18 holes)    
     function roundSize() {
@@ -114,24 +114,67 @@ $(document).ready(function(){
                 data: {selected_course_id: selected_course_id, selected_yards: selected_yards, selected_size: selected_size, selected_nine: selected_nine},      
                 success: function (response) {
                     $("#selected_course").html(response),
+
+
+                    $(document).on("change", ".FirstNineFir", function () {
+
+                        var $fircount = $('#first9Firs input:checked').length;
+
+                        console.log('why you no work?' + $fircount);
+                               
+                        $('#FirstNineFirCount').html($fircount);
+
+                    }),
+
+                    /*
+                    $(document).on("change", ".FirstNineGir", function () {
+
+                        var $gircount = $(".FirstNineGir[type='checkbox']:checked").length;
+                               
+                        $('#FirstNineGirCount').html($gircount);
+
+                    }),                  
+                    */
+                    //$("input[type='checkbox']").on('change', function(){
+                
+                    //    var $fircount = $("input[type='checkbox']").length;
+                    //        console.log($fircount);
+                    //        $('#firCount').append($fircount);
+                    //}); 
+
+
+
                     new Vue({
                         el: '#app',
                         data: {
-                            holes: [{first_nine_1: '', first_nine_2: '', first_nine_3: '', first_nine_4: '', first_nine_5: '', first_nine_6: '', first_nine_7: '', first_nine_8: '', first_nine_9: ''}]
+                            checkedFir: [],
+                            first_nine_1: '', first_nine_2: '', first_nine_3: '', first_nine_4: '', first_nine_5: '', first_nine_6: '', first_nine_7: '', first_nine_8: '',first_nine_9: '',
+                            first_nine_1_putts: '', first_nine_2_putts: '', first_nine_3_putts: '', first_nine_4_putts: '', first_nine_5_putts: '', first_nine_6_putts: '', first_nine_7_putts: '', first_nine_8_putts: '',first_nine_9_putts: '',  
+                            first_nine_1_drops: '', first_nine_2_drops: '', first_nine_3_drops: '', first_nine_4_drops: '', first_nine_5_drops: '', first_nine_6_drops: '', first_nine_7_drops: '', first_nine_8_drops: '',first_nine_9_drops: ''                           
                         },
                         computed: {
-                            firstNineTotal: function() {
-                                if (!this.values) {
-                                    return 0;
-                                }
-                    
-                                return this.holes.reduce(function (firstNineTotal, hole) {
-                                    return firstNineTotal + Number(hole.firstNineTotal);
-                                }, 0);
+
+                            firstNineTotal: function() {  
+                                total = Number(this.first_nine_1) + Number(this.first_nine_2) + Number(this.first_nine_3) + Number(this.first_nine_4) + Number(this.first_nine_5) + Number(this.first_nine_6) + Number(this.first_nine_7) + Number(this.first_nine_8) + Number(this.first_nine_9) || 0;                                
+                                return total;                                                                
+                            },
+                            firstNineTotalPutts: function() {  
+                                total = Number(this.first_nine_1_putts) + Number(this.first_nine_2_putts) + Number(this.first_nine_3_putts) + Number(this.first_nine_4_putts) + Number(this.first_nine_5_putts) + Number(this.first_nine_6_putts) + Number(this.first_nine_7_putts) + Number(this.first_nine_8_putts) + Number(this.first_nine_9_putts) || 0;                                
+                                return total;                                                                
+                            },
+                            firstNineTotalDrops: function() {  
+                                total = Number(this.first_nine_1_drops) + Number(this.first_nine_2_drops) + Number(this.first_nine_3_drops) + Number(this.first_nine_4_drops) + Number(this.first_nine_5_drops) + Number(this.first_nine_6_drops) + Number(this.first_nine_7_drops) + Number(this.first_nine_8_drops) + Number(this.first_nine_9_drops) || 0;                                
+                                return total;                                                                
+                            },
+                            firstNineTotalFir: function() {
+
                             }
+
                         }
-                    });                                        
+                    });                    
+
                 },
+                
                 error:function(error){ 
                     console.log(error)
                 }            
@@ -178,7 +221,6 @@ $(document).ready(function(){
                         $('.alert-danger').show();
                         $('.alert-danger').append('<p>' + value + '</p>');
                         $('input[name="' + key + '"], select[name="' + key + '"]').addClass('is-invalid');
-
                     });
             },
             error: function (error) {
@@ -191,7 +233,8 @@ $(document).ready(function(){
 
     function resetErrors() {
         $('form input, form select').removeClass('is-invalid');
-    }               
+    }     
+           
 
 });
 

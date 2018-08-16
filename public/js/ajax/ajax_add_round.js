@@ -91,7 +91,10 @@ module.exports = g;
 
 
 /***/ }),
-/* 1 */
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11054,10 +11057,10 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(2).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(5).setImmediate))
 
 /***/ }),
-/* 2 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -11113,7 +11116,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(3);
+__webpack_require__(6);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -11127,7 +11130,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 3 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -11317,10 +11320,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(7)))
 
 /***/ }),
-/* 4 */
+/* 7 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -11510,9 +11513,6 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 5 */,
-/* 6 */,
-/* 7 */,
 /* 8 */,
 /* 9 */,
 /* 10 */,
@@ -11526,7 +11526,7 @@ module.exports = __webpack_require__(12);
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-window.Vue = __webpack_require__(1);
+window.Vue = __webpack_require__(4);
 
 $(document).ready(function () {
 
@@ -11626,24 +11626,58 @@ $(document).ready(function () {
             method: 'get',
             data: { selected_course_id: selected_course_id, selected_yards: selected_yards, selected_size: selected_size, selected_nine: selected_nine },
             success: function success(response) {
-                $("#selected_course").html(response), new Vue({
+                $("#selected_course").html(response), $(document).on("change", ".FirstNineFir", function () {
+
+                    var $fircount = $('#first9Firs input:checked').length;
+
+                    console.log('why you no work?' + $fircount);
+
+                    $('#FirstNineFirCount').html($fircount);
+                }),
+
+                /*
+                $(document).on("change", ".FirstNineGir", function () {
+                      var $gircount = $(".FirstNineGir[type='checkbox']:checked").length;
+                           
+                    $('#FirstNineGirCount').html($gircount);
+                  }),                  
+                */
+                //$("input[type='checkbox']").on('change', function(){
+
+                //    var $fircount = $("input[type='checkbox']").length;
+                //        console.log($fircount);
+                //        $('#firCount').append($fircount);
+                //}); 
+
+
+                new Vue({
                     el: '#app',
                     data: {
-                        holes: [{ first_nine_1: '', first_nine_2: '', first_nine_3: '', first_nine_4: '', first_nine_5: '', first_nine_6: '', first_nine_7: '', first_nine_8: '', first_nine_9: '' }]
+                        checkedFir: [],
+                        first_nine_1: '', first_nine_2: '', first_nine_3: '', first_nine_4: '', first_nine_5: '', first_nine_6: '', first_nine_7: '', first_nine_8: '', first_nine_9: '',
+                        first_nine_1_putts: '', first_nine_2_putts: '', first_nine_3_putts: '', first_nine_4_putts: '', first_nine_5_putts: '', first_nine_6_putts: '', first_nine_7_putts: '', first_nine_8_putts: '', first_nine_9_putts: '',
+                        first_nine_1_drops: '', first_nine_2_drops: '', first_nine_3_drops: '', first_nine_4_drops: '', first_nine_5_drops: '', first_nine_6_drops: '', first_nine_7_drops: '', first_nine_8_drops: '', first_nine_9_drops: ''
                     },
                     computed: {
-                        firstNineTotal: function firstNineTotal() {
-                            if (!this.values) {
-                                return 0;
-                            }
 
-                            return this.holes.reduce(function (firstNineTotal, hole) {
-                                return firstNineTotal + Number(hole.firstNineTotal);
-                            }, 0);
-                        }
+                        firstNineTotal: function firstNineTotal() {
+                            total = Number(this.first_nine_1) + Number(this.first_nine_2) + Number(this.first_nine_3) + Number(this.first_nine_4) + Number(this.first_nine_5) + Number(this.first_nine_6) + Number(this.first_nine_7) + Number(this.first_nine_8) + Number(this.first_nine_9) || 0;
+                            return total;
+                        },
+                        firstNineTotalPutts: function firstNineTotalPutts() {
+                            total = Number(this.first_nine_1_putts) + Number(this.first_nine_2_putts) + Number(this.first_nine_3_putts) + Number(this.first_nine_4_putts) + Number(this.first_nine_5_putts) + Number(this.first_nine_6_putts) + Number(this.first_nine_7_putts) + Number(this.first_nine_8_putts) + Number(this.first_nine_9_putts) || 0;
+                            return total;
+                        },
+                        firstNineTotalDrops: function firstNineTotalDrops() {
+                            total = Number(this.first_nine_1_drops) + Number(this.first_nine_2_drops) + Number(this.first_nine_3_drops) + Number(this.first_nine_4_drops) + Number(this.first_nine_5_drops) + Number(this.first_nine_6_drops) + Number(this.first_nine_7_drops) + Number(this.first_nine_8_drops) + Number(this.first_nine_9_drops) || 0;
+                            return total;
+                        },
+                        firstNineTotalFir: function firstNineTotalFir() {}
+
                     }
                 });
             },
+
             error: function error(_error4) {
                 console.log(_error4);
             }
