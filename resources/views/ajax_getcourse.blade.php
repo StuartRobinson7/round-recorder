@@ -225,7 +225,21 @@
             </div>   
 
             <div class="col">
-                tbd
+
+                @if ($selected_yards === 'white')
+
+                    {{ $first_nine_white }}
+
+                @elseif ($selected_yards === 'yellow')
+
+                    {{ $first_nine_yellow }}        
+
+                @elseif ($selected_yards === 'red')
+
+                    {{ $first_nine_red }}  
+
+                @endif
+
             </div>                                    
 
         </div>
@@ -400,7 +414,9 @@
             </div>   
 
             <div class="col">
-                tbd
+                
+                tbd                    
+
             </div>                                    
 
         </div>
@@ -757,7 +773,7 @@
         </div>    
         <!--/.row -->
 
-        <div class="row add-round-row add-round-gir">
+        <div id="firstNineGirs" class="row add-round-row add-round-gir">
 
             <div class="col">
 
@@ -767,61 +783,61 @@
 
             <div class="col">
 
-                <input id="hole_1_gir" type="checkbox" class="form-control" name="hole_1_gir" value="1">
+                <input id="hole_1_gir" type="checkbox" class="form-control FirstNineGir" name="hole_1_gir" value="1">
 
             </div>
 
             <div class="col">
 
-                <input id="hole_2_gir" type="checkbox" class="form-control" name="hole_2_gir" value="1">
+                <input id="hole_2_gir" type="checkbox" class="form-control FirstNineGir" name="hole_2_gir" value="1">
 
             </div>            
 
             <div class="col">
 
-                <input id="hole_3_gir" type="checkbox" class="form-control" name="hole_3_gir" value="1">
+                <input id="hole_3_gir" type="checkbox" class="form-control FirstNineGir" name="hole_3_gir" value="1">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_4_gir" type="checkbox" class="form-control" name="hole_4_gir" value="1">
+                <input id="hole_4_gir" type="checkbox" class="form-control FirstNineGir" name="hole_4_gir" value="1">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_5_gir" type="checkbox" class="form-control" name="hole_5_gir" value="1">
+                <input id="hole_5_gir" type="checkbox" class="form-control FirstNineGir" name="hole_5_gir" value="1">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_6_gir" type="checkbox" class="form-control" name="hole_6_gir" value="1">
+                <input id="hole_6_gir" type="checkbox" class="form-control FirstNineGir" name="hole_6_gir" value="1">
 
             </div> 
 
             <div class="col">
 
-                <input id="hole_7_gir" type="checkbox" class="form-control" name="hole_7_gir" value="1">
+                <input id="hole_7_gir" type="checkbox" class="form-control FirstNineGir" name="hole_7_gir" value="1">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_8_gir" type="checkbox" class="form-control" name="hole_8_gir" value="1">
+                <input id="hole_8_gir" type="checkbox" class="form-control FirstNineGir" name="hole_8_gir" value="1">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_9_gir" type="checkbox" class="form-control" name="hole_9_gir" value="1">
+                <input id="hole_9_gir" type="checkbox" class="form-control FirstNineGir" name="hole_9_gir" value="1">
 
             </div> 
 
             <div class="col">
 
-                tbd
+                <span id="FirstNineGirCount"></span>
 
             </div>                                                   
 

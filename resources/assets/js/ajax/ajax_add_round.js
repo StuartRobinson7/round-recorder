@@ -113,42 +113,7 @@ $(document).ready(function(){
                 method: 'get',
                 data: {selected_course_id: selected_course_id, selected_yards: selected_yards, selected_size: selected_size, selected_nine: selected_nine},      
                 success: function (response) {
-                    $("#selected_course").html(response);
-
-
-                    var $frontNineInputs = $('#first9Firs input').length;
-                    var $frontNineDisabled = $('#first9Firs input:disabled').length;
-                    var frontNineFirTotal = $frontNineInputs - $frontNineDisabled
-                    
-                    $firstNineFirCount = 0;
-                    $('#FirstNineFirCount').html($firstNineFirCount);
-                    $('#FirstNineFirCount').after('/' + frontNineFirTotal);                    
-
-                    $(document).on("change", ".FirstNineFir", function () {
-
-                        var $firstNineFirCount = $('#first9Firs input:checked').length;
-      
-                        $('#FirstNineFirCount').html($firstNineFirCount);
-
-                    }),
-
-                    /*
-                    $(document).on("change", ".FirstNineGir", function () {
-
-                        var $gircount = $(".FirstNineGir[type='checkbox']:checked").length;
-                               
-                        $('#FirstNineGirCount').html($gircount);
-
-                    }),                  
-                    */
-                    //$("input[type='checkbox']").on('change', function(){
-                
-                    //    var $fircount = $("input[type='checkbox']").length;
-                    //        console.log($fircount);
-                    //        $('#firCount').append($fircount);
-                    //}); 
-
-
+                    $("#selected_course").html(response),                 
 
                     new Vue({
                         el: '#app',
@@ -171,11 +136,7 @@ $(document).ready(function(){
                             firstNineTotalDrops: function() {  
                                 total = Number(this.first_nine_1_drops) + Number(this.first_nine_2_drops) + Number(this.first_nine_3_drops) + Number(this.first_nine_4_drops) + Number(this.first_nine_5_drops) + Number(this.first_nine_6_drops) + Number(this.first_nine_7_drops) + Number(this.first_nine_8_drops) + Number(this.first_nine_9_drops) || 0;                                
                                 return total;                                                                
-                            },
-                            firstNineTotalFir: function() {
-
                             }
-
                         }
                     });                    
 
@@ -244,3 +205,40 @@ $(document).ready(function(){
 
 });
 
+
+
+
+$(document).ajaxSuccess(function () {
+
+    // First 9 Fairways
+    var $firstNineInputs = $('#first9Firs input').length;
+    var $firstNineDisabled = $('#first9Firs input:disabled').length;
+    var firstNineFirTotal = $firstNineInputs - $firstNineDisabled;
+
+    $firstNineFirCount = 0;
+    $('#FirstNineFirCount').html($firstNineFirCount);
+    $('#FirstNineFirCount').after('/' + firstNineFirTotal);
+
+    // First 9 Greens
+    var $firstNineGirTotal = 9;
+
+    $firstNineGirCount = 0;
+    $('#FirstNineGirCount').html($firstNineGirCount);
+    $('#FirstNineGirCount').after('/' + $firstNineGirTotal);    
+
+    // Update on change
+    $(document).on("change", ".FirstNineFir, .FirstNineGir", function () {
+
+        var $firstNineFirCount = $('#first9Firs input:checked').length;
+        var $firstNineGirCount = $("#firstNineGirs input:checked").length;
+
+        $('#FirstNineFirCount').html($firstNineFirCount);
+        $('#FirstNineGirCount').html($firstNineGirCount);
+
+    });
+
+
+
+
+
+});
