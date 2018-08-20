@@ -91,10 +91,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11057,10 +11054,10 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(5).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(2).setImmediate))
 
 /***/ }),
-/* 5 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -11116,7 +11113,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(6);
+__webpack_require__(3);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -11130,7 +11127,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 6 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -11320,10 +11317,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(4)))
 
 /***/ }),
-/* 7 */
+/* 4 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -11513,6 +11510,9 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
+/* 5 */,
+/* 6 */,
+/* 7 */,
 /* 8 */,
 /* 9 */,
 /* 10 */,
@@ -11526,34 +11526,37 @@ module.exports = __webpack_require__(12);
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-window.Vue = __webpack_require__(4);
+window.Vue = __webpack_require__(1);
+
+// Set round as half(9 holes) or full(18 holes)    
+function roundSize() {
+
+    var selected_size = $('input:radio[name=size]:checked').val();
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $.ajax({
+        url: '/ajax_getcourselist',
+        dataType: "json",
+        method: 'get',
+        data: { selected_size: selected_size },
+        success: function success(response) {
+            console.log('size has changed');
+            $("#course_id").html(response);
+            $("#selected_course").html("");
+            $("#select_nines").html("");
+        },
+        error: function error(_error) {
+            console.log(_error);
+        }
+    });
+}
 
 $(document).ready(function () {
-
-    // Set round as half(9 holes) or full(18 holes)    
-    function roundSize() {
-
-        var selected_size = $(this).val();
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $.ajax({
-            url: '/ajax_getcourselist',
-            dataType: "json",
-            method: 'get',
-            data: { selected_size: selected_size },
-            success: function success(response) {
-                $("#course_id").html(response), $("#selected_course").html(""), $("#select_nines").html("");
-            },
-            error: function error(_error) {
-                console.log(_error);
-            }
-        });
-    }
 
     // Get selected tee's to display correct colour/yardage 
     function selectYards() {
@@ -11598,7 +11601,9 @@ $(document).ready(function () {
             method: 'get',
             data: { selected_course_id: selected_course_id, selected_size: selected_size },
             success: function success(response) {
-                $("#select_nines").html(response), $('input:radio[name=nine]').each(selectCourse), $('input:radio[name=nine]').change(selectCourse);
+                $("#select_nines").html(response);
+                $('input:radio[name=nine]').each(selectCourse);
+                $('input:radio[name=nine]').change(selectCourse);
             },
             error: function error(_error3) {
                 console.log(_error3);
@@ -11626,7 +11631,20 @@ $(document).ready(function () {
             method: 'get',
             data: { selected_course_id: selected_course_id, selected_yards: selected_yards, selected_size: selected_size, selected_nine: selected_nine },
             success: function success(response) {
-                $("#selected_course").html(response), new Vue({
+                $("#selected_course").html(response);
+
+                $('input:radio[name=size]').on('change', selectCourse());
+
+                //$('input:radio[name=size]').change(roundSize);
+                //$('input:radio[name=yards]').change(selectYards);
+                //$('input:radio[name=yards]').change(selectCourse); 
+
+                //$('#course_id').change(selectNines);
+
+                //$('input:radio[name=nine]').change(selectCourse);                    
+
+
+                new Vue({
                     el: '#app',
                     data: {
                         checkedFir: [],
@@ -11659,6 +11677,8 @@ $(document).ready(function () {
     }
 
     // Call the functions
+
+
     $('input:radio[name=size]').each(roundSize);
     $('input:radio[name=size]').change(roundSize);
 

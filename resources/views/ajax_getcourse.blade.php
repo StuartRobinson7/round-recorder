@@ -228,15 +228,15 @@
 
                 @if ($selected_yards === 'white')
 
-                    {{ $first_nine_white }}
+                    {{ $course_totals->first_nine_white }}
 
                 @elseif ($selected_yards === 'yellow')
 
-                    {{ $first_nine_yellow }}        
+                    {{ $course_totals->first_nine_yellow }}        
 
                 @elseif ($selected_yards === 'red')
 
-                    {{ $first_nine_red }}  
+                    {{ $course_totals->first_nine_red }}  
 
                 @endif
 
@@ -415,7 +415,19 @@
 
             <div class="col">
                 
-                tbd                    
+            @if ($selected_yards === 'white')
+
+                {{ $course_totals->first_nine_white_par }}
+
+            @elseif ($selected_yards === 'yellow')
+
+                {{ $course_totals->first_nine_yellow_par }}        
+
+            @elseif ($selected_yards === 'red')
+
+                {{ $course_totals->first_nine_red_par }}  
+
+            @endif                   
 
             </div>                                    
 

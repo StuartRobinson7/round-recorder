@@ -1,9 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/mainstyle.css": "/css/mainstyle.css",
+    "/js/ajax/ajax_add_round.js": "/js/ajax/ajax_add_round.js",
     "/js/script.js": "/js/script.js",
     "/js/charts/view_round_charts.js": "/js/charts/view_round_charts.js",
-    "/js/ajax/ajax_add_round.js": "/js/ajax/ajax_add_round.js",
     "/js/ajax/ajax_add_course.js": "/js/ajax/ajax_add_course.js",
     "/js/bootstrap.js": "/js/bootstrap.js",
     "/js/bundle.js": "/js/bundle.js"

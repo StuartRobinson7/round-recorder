@@ -1,36 +1,44 @@
 window.Vue = require('vue');
 
+// Set round as half(9 holes) or full(18 holes)    
+function roundSize() {
+
+    var selected_size = $('input:radio[name=size]:checked').val();
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({         
+            url: '/ajax_getcourselist',
+            dataType: "json",
+            method: 'get',
+            data: {selected_size: selected_size},      
+            success: function (response) {
+                console.log('size has changed');
+                $("#course_id").html(response);
+                $("#selected_course").html("");
+                $("#select_nines").html("");
+                  
+            },
+            error:function(error){ 
+                console.log(error) 
+            }            
+        });           
+
+} 
+
+
+
+
 $(document).ready(function(){
  
 
-// Set round as half(9 holes) or full(18 holes)    
-    function roundSize() {
+         
 
-        var selected_size = $(this).val();
-    
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-    
-            $.ajax({         
-                url: '/ajax_getcourselist',
-                dataType: "json",
-                method: 'get',
-                data: {selected_size: selected_size},      
-                success: function (response) {
-                    $("#course_id").html(response),
-                    $("#selected_course").html(""),
-                    $("#select_nines").html("") 
-                      
-                }, 
-                error:function(error){ 
-                    console.log(error) 
-                }            
-            });           
-
-    }            
+           
 
 
 // Get selected tee's to display correct colour/yardage 
@@ -50,15 +58,14 @@ $(document).ready(function(){
             method: 'get',
             data: {selected_yards: selected_yards},      
             success: function (response) {
-                $("#selected_course").html("response")                  
+                $("#selected_course").html("response");                  
             },
             error:function(error){ 
                 console.log(error)
             }            
         });          
 
-    }
-
+    }       
 
 
 // Find out which set of nine holes have been played
@@ -79,9 +86,9 @@ $(document).ready(function(){
             method: 'get',
             data: {selected_course_id: selected_course_id, selected_size: selected_size},      
             success: function (response) {
-                $("#select_nines").html(response), 
-                $('input:radio[name=nine]').each(selectCourse),
-                $('input:radio[name=nine]').change(selectCourse)       
+                $("#select_nines").html(response); 
+                $('input:radio[name=nine]').each(selectCourse);
+                $('input:radio[name=nine]').change(selectCourse) ;      
             },
             error:function(error){ 
                 console.log(error)
@@ -113,7 +120,18 @@ $(document).ready(function(){
                 method: 'get',
                 data: {selected_course_id: selected_course_id, selected_yards: selected_yards, selected_size: selected_size, selected_nine: selected_nine},      
                 success: function (response) {
-                    $("#selected_course").html(response),                 
+                    $("#selected_course").html(response); 
+  
+                    $('input:radio[name=size]').on('change', selectCourse());
+                    
+                        //$('input:radio[name=size]').change(roundSize);
+                        //$('input:radio[name=yards]').change(selectYards);
+                        //$('input:radio[name=yards]').change(selectCourse); 
+                    
+                        //$('#course_id').change(selectNines);
+                    
+                        //$('input:radio[name=nine]').change(selectCourse);                    
+                                         
 
                     new Vue({
                         el: '#app',
@@ -150,6 +168,11 @@ $(document).ready(function(){
     }
 
 // Call the functions
+
+
+
+
+
     $('input:radio[name=size]').each(roundSize);    
     $('input:radio[name=size]').change(roundSize);
 
@@ -160,6 +183,9 @@ $(document).ready(function(){
 
 
     $('input:radio[name=nine]').change(selectCourse);
+
+
+   
 
 
     
@@ -236,9 +262,5 @@ $(document).ajaxSuccess(function () {
         $('#FirstNineGirCount').html($firstNineGirCount);
 
     });
-
-
-
-
 
 });
