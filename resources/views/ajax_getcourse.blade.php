@@ -444,61 +444,62 @@
 
             <div class="col">
 
-                <input id="hole_1_score" type="number" class="form-control {{ $errors->has('hole_1_score') ? ' is-invalid' : '' }}" name="hole_1_score" value="{{ old('hole_1_score') }}" v-model.number="first_nine_1">
+                <input id="hole_1_score" type="number" class="form-control first-nine-score {{ $errors->has('hole_1_score') ? ' is-invalid' : '' }}" name="hole_1_score" value="{{ old('hole_1_score') }}">
 
             </div>
 
             <div class="col">
 
-                <input id="hole_2_score" type="number" class="form-control {{ $errors->has('hole_2_score') ? ' is-invalid' : '' }}" name="hole_2_score" value="{{ old('hole_2_score') }}" v-model.number="first_nine_2">
+                <input id="hole_2_score" type="number" class="form-control first-nine-score {{ $errors->has('hole_2_score') ? ' is-invalid' : '' }}" name="hole_2_score" value="{{ old('hole_2_score') }}">
 
             </div>            
 
             <div class="col">
 
-                <input id="hole_3_score" type="number" class="form-control {{ $errors->has('hole_3_score') ? ' is-invalid' : '' }}" name="hole_3_score" value="{{ old('hole_3_score') }}" v-model.number="first_nine_3">
+                <input id="hole_3_score" type="number" class="form-control first-nine-score {{ $errors->has('hole_3_score') ? ' is-invalid' : '' }}" name="hole_3_score" value="{{ old('hole_3_score') }}">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_4_score" type="number" class="form-control {{ $errors->has('hole_4_score') ? ' is-invalid' : '' }}" name="hole_4_score" value="{{ old('hole_4_score') }}" v-model.number="first_nine_4">
+                <input id="hole_4_score" type="number" class="form-control first-nine-score {{ $errors->has('hole_4_score') ? ' is-invalid' : '' }}" name="hole_4_score" value="{{ old('hole_4_score') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_5_score" type="number" class="form-control {{ $errors->has('hole_5_score') ? ' is-invalid' : '' }}" name="hole_5_score" value="{{ old('hole_5_score') }}" v-model.number="first_nine_5">
+                <input id="hole_5_score" type="number" class="form-control first-nine-score {{ $errors->has('hole_5_score') ? ' is-invalid' : '' }}" name="hole_5_score" value="{{ old('hole_5_score') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_6_score" type="number" class="form-control {{ $errors->has('hole_6_score') ? ' is-invalid' : '' }}" name="hole_6_score" value="{{ old('hole_6_score') }}" v-model.number="first_nine_6">
+                <input id="hole_6_score" type="number" class="form-control first-nine-score {{ $errors->has('hole_6_score') ? ' is-invalid' : '' }}" name="hole_6_score" value="{{ old('hole_6_score') }}">
 
             </div> 
 
             <div class="col">
 
-                <input id="hole_7_score" type="number" class="form-control {{ $errors->has('hole_7_score') ? ' is-invalid' : '' }}" name="hole_7_score" value="{{ old('hole_7_score') }}" v-model.number="first_nine_7">
+                <input id="hole_7_score" type="number" class="form-control first-nine-score {{ $errors->has('hole_7_score') ? ' is-invalid' : '' }}" name="hole_7_score" value="{{ old('hole_7_score') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_8_score" type="number" class="form-control {{ $errors->has('hole_8_score') ? ' is-invalid' : '' }}" name="hole_8_score" value="{{ old('hole_8_score') }}" v-model.number="first_nine_8">
+                <input id="hole_8_score" type="number" class="form-control first-nine-score {{ $errors->has('hole_8_score') ? ' is-invalid' : '' }}" name="hole_8_score" value="{{ old('hole_8_score') }}">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_9_score" type="number" class="form-control {{ $errors->has('hole_9_score') ? ' is-invalid' : '' }}" name="hole_9_score" value="{{ old('hole_9_score') }}" v-model.number="first_nine_9">
+                <input id="hole_9_score" type="number" class="form-control first-nine-score {{ $errors->has('hole_9_score') ? ' is-invalid' : '' }}" name="hole_9_score" value="{{ old('hole_9_score') }}">
 
             </div> 
 
             <div class="col">
 
-                <span>@{{firstNineTotal}}</span>
+                <span id="firstNineScore"></span>
+                <!-- @{{firstNineTotal}} -->
 
             </div>                                                   
 
@@ -516,61 +517,61 @@
 
             <div class="col">
 
-                <input id="hole_1_putts" type="number" class="form-control {{ $errors->has('hole_1_putts') ? ' is-invalid' : '' }}" name="hole_1_putts" value="{{ old('hole_1_putts') }}" v-model.number="first_nine_1_putts">
+                <input id="hole_1_putts" type="number" class="form-control first-nine-putts {{ $errors->has('hole_1_putts') ? ' is-invalid' : '' }}" name="hole_1_putts" value="{{ old('hole_1_putts') }}">
 
             </div>
 
             <div class="col">
 
-                <input id="hole_2_putts" type="number" class="form-control {{ $errors->has('hole_2_putts') ? ' is-invalid' : '' }}" name="hole_2_putts" value="{{ old('hole_2_putts') }}" v-model.number="first_nine_2_putts">
+                <input id="hole_2_putts" type="number" class="form-control first-nine-putts {{ $errors->has('hole_2_putts') ? ' is-invalid' : '' }}" name="hole_2_putts" value="{{ old('hole_2_putts') }}">
 
             </div>            
 
             <div class="col">
 
-                <input id="hole_3_putts" type="number" class="form-control {{ $errors->has('hole_3_putts') ? ' is-invalid' : '' }}" name="hole_3_putts" value="{{ old('hole_3_putts') }}" v-model.number="first_nine_3_putts">
+                <input id="hole_3_putts" type="number" class="form-control first-nine-putts {{ $errors->has('hole_3_putts') ? ' is-invalid' : '' }}" name="hole_3_putts" value="{{ old('hole_3_putts') }}">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_4_putts" type="number" class="form-control {{ $errors->has('hole_4_putts') ? ' is-invalid' : '' }}" name="hole_4_putts" value="{{ old('hole_4_putts') }}" v-model.number="first_nine_4_putts">
+                <input id="hole_4_putts" type="number" class="form-control first-nine-putts {{ $errors->has('hole_4_putts') ? ' is-invalid' : '' }}" name="hole_4_putts" value="{{ old('hole_4_putts') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_5_putts" type="number" class="form-control {{ $errors->has('hole_5_putts') ? ' is-invalid' : '' }}" name="hole_5_putts" value="{{ old('hole_5_putts') }}" v-model.number="first_nine_5_putts">
+                <input id="hole_5_putts" type="number" class="form-control first-nine-putts {{ $errors->has('hole_5_putts') ? ' is-invalid' : '' }}" name="hole_5_putts" value="{{ old('hole_5_putts') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_6_putts" type="number" class="form-control {{ $errors->has('hole_6_putts') ? ' is-invalid' : '' }}" name="hole_6_putts" value="{{ old('hole_6_putts') }}" v-model.number="first_nine_6_putts">
+                <input id="hole_6_putts" type="number" class="form-control first-nine-putts {{ $errors->has('hole_6_putts') ? ' is-invalid' : '' }}" name="hole_6_putts" value="{{ old('hole_6_putts') }}">
 
             </div> 
 
             <div class="col">
 
-                <input id="hole_7_putts" type="number" class="form-control {{ $errors->has('hole_7_putts') ? ' is-invalid' : '' }}" name="hole_7_putts" value="{{ old('hole_7_putts') }}" v-model.number="first_nine_7_putts">
+                <input id="hole_7_putts" type="number" class="form-control first-nine-putts {{ $errors->has('hole_7_putts') ? ' is-invalid' : '' }}" name="hole_7_putts" value="{{ old('hole_7_putts') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_8_putts" type="number" class="form-control {{ $errors->has('hole_8_putts') ? ' is-invalid' : '' }}" name="hole_8_putts" value="{{ old('hole_8_putts') }}" v-model.number="first_nine_8_putts">
+                <input id="hole_8_putts" type="number" class="form-control first-nine-putts {{ $errors->has('hole_8_putts') ? ' is-invalid' : '' }}" name="hole_8_putts" value="{{ old('hole_8_putts') }}">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_9_putts" type="number" class="form-control {{ $errors->has('hole_9_putts') ? ' is-invalid' : '' }}" name="hole_9_putts" value="{{ old('hole_9_putts') }}" v-model.number="first_nine_9_putts">
+                <input id="hole_9_putts" type="number" class="form-control first-nine-putts {{ $errors->has('hole_9_putts') ? ' is-invalid' : '' }}" name="hole_9_putts" value="{{ old('hole_9_putts') }}">
 
             </div> 
 
             <div class="col">
 
-                <span>@{{firstNineTotalPutts}}</span>
+                <span id="firstNinePutts"></span>
 
             </div>                                                   
 
@@ -588,61 +589,61 @@
 
             <div class="col">
 
-                <input id="hole_1_drops" type="number" class="form-control {{ $errors->has('hole_1_drops') ? ' is-invalid' : '' }}" name="hole_1_drops" value="{{ old('hole_1_drops') }}" v-model.number="first_nine_1_drops">
+                <input id="hole_1_drops" type="number" class="form-control first-nine-drops {{ $errors->has('hole_1_drops') ? ' is-invalid' : '' }}" name="hole_1_drops" value="{{ old('hole_1_drops') }}">
 
             </div>
 
             <div class="col">
 
-                <input id="hole_2_drops" type="number" class="form-control {{ $errors->has('hole_2_drops') ? ' is-invalid' : '' }}" name="hole_2_drops" value="{{ old('hole_2_drops') }}" v-model.number="first_nine_2_drops">
+                <input id="hole_2_drops" type="number" class="form-control first-nine-drops {{ $errors->has('hole_2_drops') ? ' is-invalid' : '' }}" name="hole_2_drops" value="{{ old('hole_2_drops') }}">
 
             </div>            
 
             <div class="col">
 
-                <input id="hole_3_drops" type="number" class="form-control {{ $errors->has('hole_3_drops') ? ' is-invalid' : '' }}" name="hole_3_drops" value="{{ old('hole_3_drops') }}" v-model.number="first_nine_3_drops">
+                <input id="hole_3_drops" type="number" class="form-control first-nine-drops {{ $errors->has('hole_3_drops') ? ' is-invalid' : '' }}" name="hole_3_drops" value="{{ old('hole_3_drops') }}">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_4_drops" type="number" class="form-control {{ $errors->has('hole_4_drops') ? ' is-invalid' : '' }}" name="hole_4_drops" value="{{ old('hole_4_drops') }}" v-model.number="first_nine_4_drops">
+                <input id="hole_4_drops" type="number" class="form-control first-nine-drops {{ $errors->has('hole_4_drops') ? ' is-invalid' : '' }}" name="hole_4_drops" value="{{ old('hole_4_drops') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_5_drops" type="number" class="form-control {{ $errors->has('hole_5_drops') ? ' is-invalid' : '' }}" name="hole_5_drops" value="{{ old('hole_5_drops') }}" v-model.number="first_nine_5_drops">
+                <input id="hole_5_drops" type="number" class="form-control first-nine-drops {{ $errors->has('hole_5_drops') ? ' is-invalid' : '' }}" name="hole_5_drops" value="{{ old('hole_5_drops') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_6_drops" type="number" class="form-control {{ $errors->has('hole_6_drops') ? ' is-invalid' : '' }}" name="hole_6_drops" value="{{ old('hole_6_drops') }}" v-model.number="first_nine_6_drops">
+                <input id="hole_6_drops" type="number" class="form-control first-nine-drops {{ $errors->has('hole_6_drops') ? ' is-invalid' : '' }}" name="hole_6_drops" value="{{ old('hole_6_drops') }}">
 
             </div> 
 
             <div class="col">
 
-                <input id="hole_7_drops" type="number" class="form-control {{ $errors->has('hole_7_drops') ? ' is-invalid' : '' }}" name="hole_7_drops" value="{{ old('hole_7_drops') }}" v-model.number="first_nine_7_drops">
+                <input id="hole_7_drops" type="number" class="form-control first-nine-drops {{ $errors->has('hole_7_drops') ? ' is-invalid' : '' }}" name="hole_7_drops" value="{{ old('hole_7_drops') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_8_drops" type="number" class="form-control {{ $errors->has('hole_8_drops') ? ' is-invalid' : '' }}" name="hole_8_drops" value="{{ old('hole_8_drops') }}" v-model.number="first_nine_8_drops">
+                <input id="hole_8_drops" type="number" class="form-control first-nine-drops {{ $errors->has('hole_8_drops') ? ' is-invalid' : '' }}" name="hole_8_drops" value="{{ old('hole_8_drops') }}">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_9_drops" type="number" class="form-control {{ $errors->has('hole_9_drops') ? ' is-invalid' : '' }}" name="hole_9_drops" value="{{ old('hole_9_drops') }}" v-model.number="first_nine_9_drops">
+                <input id="hole_9_drops" type="number" class="form-control first-nine-drops {{ $errors->has('hole_9_drops') ? ' is-invalid' : '' }}" name="hole_9_drops" value="{{ old('hole_9_drops') }}">
 
             </div> 
 
             <div class="col">
 
-                <span>@{{firstNineTotalDrops}}</span>
+                <span id="firstNineDrops"></span>
 
             </div>                                                   
 
@@ -1082,7 +1083,21 @@
             </div>   
 
             <div class="col">
-                tbd
+
+                @if ($selected_yards === 'white')
+
+                    {{ $course_totals->second_nine_white }}
+
+                @elseif ($selected_yards === 'yellow')
+
+                    {{ $course_totals->second_nine_yellow }}        
+
+                @elseif ($selected_yards === 'red')
+
+                    {{ $course_totals->second_nine_red }}  
+
+                @endif
+
             </div>                                    
 
         </div>
@@ -1257,7 +1272,21 @@
             </div>   
 
             <div class="col">
-                tbd
+                
+            @if ($selected_yards === 'white')
+
+                {{ $course_totals->second_nine_white_par }}
+
+            @elseif ($selected_yards === 'yellow')
+
+                {{ $course_totals->second_nine_yellow_par }}        
+
+            @elseif ($selected_yards === 'red')
+
+                {{ $course_totals->second_nine_red_par }}  
+
+            @endif                   
+
             </div>                                    
 
         </div>
@@ -1273,61 +1302,62 @@
 
             <div class="col">
 
-                <input id="hole_10_score" type="number" class="form-control {{ $errors->has('hole_10_score') ? ' is-invalid' : '' }}" name="hole_10_score" value="{{ old('hole_10_score') }}">
+                <input id="hole_10_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_10_score') ? ' is-invalid' : '' }}" name="hole_10_score" value="{{ old('hole_10_score') }}">
 
             </div>
 
             <div class="col">
 
-                <input id="hole_11_score" type="number" class="form-control {{ $errors->has('hole_11_score') ? ' is-invalid' : '' }}" name="hole_11_score" value="{{ old('hole_11_score') }}">
+                <input id="hole_11_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_11_score') ? ' is-invalid' : '' }}" name="hole_11_score" value="{{ old('hole_11_score') }}">
 
             </div>            
 
             <div class="col">
 
-                <input id="hole_12_score" type="number" class="form-control {{ $errors->has('hole_12_score') ? ' is-invalid' : '' }}" name="hole_12_score" value="{{ old('hole_12_score') }}">
+                <input id="hole_12_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_12_score') ? ' is-invalid' : '' }}" name="hole_12_score" value="{{ old('hole_12_score') }}">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_13_score" type="number" class="form-control {{ $errors->has('hole_13_score') ? ' is-invalid' : '' }}" name="hole_13_score" value="{{ old('hole_13_score') }}">
+                <input id="hole_13_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_13_score') ? ' is-invalid' : '' }}" name="hole_13_score" value="{{ old('hole_13_score') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_14_score" type="number" class="form-control {{ $errors->has('hole_14_score') ? ' is-invalid' : '' }}" name="hole_14_score" value="{{ old('hole_14_score') }}">
+                <input id="hole_14_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_14_score') ? ' is-invalid' : '' }}" name="hole_14_score" value="{{ old('hole_14_score') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_15_score" type="number" class="form-control {{ $errors->has('hole_15_score') ? ' is-invalid' : '' }}" name="hole_15_score" value="{{ old('hole_15_score') }}">
+                <input id="hole_15_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_15_score') ? ' is-invalid' : '' }}" name="hole_15_score" value="{{ old('hole_15_score') }}">
 
             </div> 
 
             <div class="col">
 
-                <input id="hole_16_score" type="number" class="form-control {{ $errors->has('hole_16_score') ? ' is-invalid' : '' }}" name="hole_16_score" value="{{ old('hole_16_score') }}">
+                <input id="hole_16_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_16_score') ? ' is-invalid' : '' }}" name="hole_16_score" value="{{ old('hole_16_score') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_17_score" type="number" class="form-control {{ $errors->has('hole_17_score') ? ' is-invalid' : '' }}" name="hole_17_score" value="{{ old('hole_17_score') }}">
+                <input id="hole_17_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_17_score') ? ' is-invalid' : '' }}" name="hole_17_score" value="{{ old('hole_17_score') }}">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_18_score" type="number" class="form-control {{ $errors->has('hole_18_score') ? ' is-invalid' : '' }}" name="hole_18_score" value="{{ old('hole_18_score') }}">
+                <input id="hole_18_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_18_score') ? ' is-invalid' : '' }}" name="hole_18_score" value="{{ old('hole_18_score') }}">
 
             </div> 
 
             <div class="col">
 
-                tbd
+                <span id="secondNineScore"></span>
+                <!-- @{{secondNineTotal}} -->
 
             </div>                                                   
 
@@ -1345,61 +1375,61 @@
 
             <div class="col">
 
-                <input id="hole_10_putts" type="number" class="form-control {{ $errors->has('hole_10_putts') ? ' is-invalid' : '' }}" name="hole_10_putts" value="{{ old('hole_10_putts') }}">
+                <input id="hole_10_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_10_putts') ? ' is-invalid' : '' }}" name="hole_10_putts" value="{{ old('hole_10_putts') }}">
 
             </div>
 
             <div class="col">
 
-                <input id="hole_11_putts" type="number" class="form-control {{ $errors->has('hole_11_putts') ? ' is-invalid' : '' }}" name="hole_11_putts" value="{{ old('hole_11_putts') }}">
+                <input id="hole_11_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_11_putts') ? ' is-invalid' : '' }}" name="hole_11_putts" value="{{ old('hole_1_putts') }}">
 
             </div>            
 
             <div class="col">
 
-                <input id="hole_12_putts" type="number" class="form-control {{ $errors->has('hole_12_putts') ? ' is-invalid' : '' }}" name="hole_12_putts" value="{{ old('hole_12_putts') }}">
+                <input id="hole_12_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_12_putts') ? ' is-invalid' : '' }}" name="hole_12_putts" value="{{ old('hole_12_putts') }}">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_13_putts" type="number" class="form-control {{ $errors->has('hole_13_putts') ? ' is-invalid' : '' }}" name="hole_13_putts" value="{{ old('hole_13_putts') }}">
+                <input id="hole_13_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_13_putts') ? ' is-invalid' : '' }}" name="hole_13_putts" value="{{ old('hole_13_putts') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_14_putts" type="number" class="form-control {{ $errors->has('hole_14_putts') ? ' is-invalid' : '' }}" name="hole_14_putts" value="{{ old('hole_14_putts') }}">
+                <input id="hole_14_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_14_putts') ? ' is-invalid' : '' }}" name="hole_14_putts" value="{{ old('hole_14_putts') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_15_putts" type="number" class="form-control {{ $errors->has('hole_15_putts') ? ' is-invalid' : '' }}" name="hole_15_putts" value="{{ old('hole_15_putts') }}">
+                <input id="hole_15_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_15_putts') ? ' is-invalid' : '' }}" name="hole_15_putts" value="{{ old('hole_15_putts') }}">
 
             </div> 
 
             <div class="col">
 
-                <input id="hole_16_putts" type="number" class="form-control {{ $errors->has('hole_16_putts') ? ' is-invalid' : '' }}" name="hole_16_putts" value="{{ old('hole_16_putts') }}">
+                <input id="hole_16_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_16_putts') ? ' is-invalid' : '' }}" name="hole_16_putts" value="{{ old('hole_16_putts') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_17_putts" type="number" class="form-control {{ $errors->has('hole_17_putts') ? ' is-invalid' : '' }}" name="hole_17_putts" value="{{ old('hole_17_putts') }}">
+                <input id="hole_17_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_17_putts') ? ' is-invalid' : '' }}" name="hole_17_putts" value="{{ old('hole_17_putts') }}">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_18_putts" type="number" class="form-control {{ $errors->has('hole_18_putts') ? ' is-invalid' : '' }}" name="hole_18_putts" value="{{ old('hole_18_putts') }}">
+                <input id="hole_18_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_18_putts') ? ' is-invalid' : '' }}" name="hole_18_putts" value="{{ old('hole_18_putts') }}">
 
             </div> 
 
             <div class="col">
 
-                tbd
+                <span id="secondNinePutts"></span>
 
             </div>                                                   
 
@@ -1417,61 +1447,61 @@
 
             <div class="col">
 
-                <input id="hole_10_drops" type="number" class="form-control {{ $errors->has('hole_10_drops') ? ' is-invalid' : '' }}" name="hole_10_drops" value="{{ old('hole_10_drops') }}">
+                <input id="hole_10_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_10_drops') ? ' is-invalid' : '' }}" name="hole_10_drops" value="{{ old('hole_10_drops') }}">
 
             </div>
 
             <div class="col">
 
-                <input id="hole_11_drops" type="number" class="form-control {{ $errors->has('hole_11_drops') ? ' is-invalid' : '' }}" name="hole_11_drops" value="{{ old('hole_11_drops') }}">
+                <input id="hole_11_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_11_drops') ? ' is-invalid' : '' }}" name="hole_11_drops" value="{{ old('hole_11_drops') }}">
 
             </div>            
 
             <div class="col">
 
-                <input id="hole_12_drops" type="number" class="form-control {{ $errors->has('hole_12_drops') ? ' is-invalid' : '' }}" name="hole_12_drops" value="{{ old('hole_12_drops') }}">
+                <input id="hole_12_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_12_drops') ? ' is-invalid' : '' }}" name="hole_12_drops" value="{{ old('hole_12_drops') }}">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_13_drops" type="number" class="form-control {{ $errors->has('hole_13_drops') ? ' is-invalid' : '' }}" name="hole_13_drops" value="{{ old('hole_13_drops') }}">
+                <input id="hole_13_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_13_drops') ? ' is-invalid' : '' }}" name="hole_13_drops" value="{{ old('hole_13_drops') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_14_drops" type="number" class="form-control {{ $errors->has('hole_14_drops') ? ' is-invalid' : '' }}" name="hole_14_drops" value="{{ old('hole_14_drops') }}">
+                <input id="hole_14_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_14_drops') ? ' is-invalid' : '' }}" name="hole_14_drops" value="{{ old('hole_14_drops') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_15_drops" type="number" class="form-control {{ $errors->has('hole_15_drops') ? ' is-invalid' : '' }}" name="hole_15_drops" value="{{ old('hole_15_drops') }}">
+                <input id="hole_15_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_15_drops') ? ' is-invalid' : '' }}" name="hole_15_drops" value="{{ old('hole_15_drops') }}">
 
             </div> 
 
             <div class="col">
 
-                <input id="hole_16_drops" type="number" class="form-control {{ $errors->has('hole_16_drops') ? ' is-invalid' : '' }}" name="hole_16_drops" value="{{ old('hole_16_drops') }}">
+                <input id="hole_16_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_16_drops') ? ' is-invalid' : '' }}" name="hole_16_drops" value="{{ old('hole_16_drops') }}">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_17_drops" type="number" class="form-control {{ $errors->has('hole_17_drops') ? ' is-invalid' : '' }}" name="hole_17_drops" value="{{ old('hole_17_drops') }}">
+                <input id="hole_17_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_17_drops') ? ' is-invalid' : '' }}" name="hole_17_drops" value="{{ old('hole_17_drops') }}">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_18_drops" type="number" class="form-control {{ $errors->has('hole_18_drops') ? ' is-invalid' : '' }}" name="hole_18_drops" value="{{ old('hole_18_drops') }}">
+                <input id="hole_18_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_18_drops') ? ' is-invalid' : '' }}" name="hole_18_drops" value="{{ old('hole_18_drops') }}">
 
             </div> 
 
             <div class="col">
 
-                tbd
+                <span id="secondNineDrops"></span>
 
             </div>                                                   
 
@@ -1479,7 +1509,7 @@
         </div>         
         <!--/.row -->
 
-        <div class="row add-round-row add-round-fir">
+        <div id="second9Firs" class="row add-round-row add-round-fir">
 
             <div class="col">
 
@@ -1487,11 +1517,11 @@
 
             </div>
 
-            <div class="col">
-
-                <input id="hole_10_fir" type="checkbox" class="form-control" name="hole_10_fir" value="1"
+            <div class="col">            
+                        
+                <input id="hole_10_fir" type="checkbox" class="form-control secondNineFir" name="hole_10_fir" value="1"
                     @if ($selected_yards === 'white')
-                        {{ ($par->hole_10_white_par < 4 ? "disabled":"") }}
+                        {{ ($par->hole_10_white_par < 4 ? "disabled":"") }}                       
                     @elseif ($selected_yards === 'yellow')
                         {{ ($par->hole_10_yellow_par < 4 ? "disabled":"") }}
                     @elseif ($selected_yards === 'red')
@@ -1502,7 +1532,7 @@
 
             <div class="col">
 
-                <input id="hole_11_fir" type="checkbox" class="form-control" name="hole_11_fir" value="1"
+                <input id="hole_11_fir" type="checkbox" class="form-control secondNineFir" name="hole_11_fir" value="1"
                     @if ($selected_yards === 'white')
                         {{ ($par->hole_11_white_par < 4 ? "disabled":"") }}
                     @elseif ($selected_yards === 'yellow')
@@ -1515,7 +1545,7 @@
 
             <div class="col">
 
-                <input id="hole_12_fir" type="checkbox" class="form-control" name="hole_12_fir" value="1"
+                <input id="hole_12_fir" type="checkbox" class="form-control secondNineFir" name="hole_12_fir" value="1"
                     @if ($selected_yards === 'white')
                         {{ ($par->hole_12_white_par < 4 ? "disabled":"") }}
                     @elseif ($selected_yards === 'yellow')
@@ -1528,7 +1558,7 @@
 
             <div class="col">
 
-                <input id="hole_13_fir" type="checkbox" class="form-control" name="hole_13_fir" value="1"
+                <input id="hole_13_fir" type="checkbox" class="form-control secondNineFir" name="hole_13_fir" value="1"
                     @if ($selected_yards === 'white')
                         {{ ($par->hole_13_white_par < 4 ? "disabled":"") }}
                     @elseif ($selected_yards === 'yellow')
@@ -1541,7 +1571,7 @@
 
             <div class="col">
 
-                <input id="hole_14_fir" type="checkbox" class="form-control" name="hole_14_fir" value="1"
+                <input id="hole_14_fir" type="checkbox" class="form-control secondNineFir" name="hole_14_fir" value="1"
                     @if ($selected_yards === 'white')
                         {{ ($par->hole_14_white_par < 4 ? "disabled":"") }}
                     @elseif ($selected_yards === 'yellow')
@@ -1554,7 +1584,7 @@
 
             <div class="col">
 
-                <input id="hole_15_fir" type="checkbox" class="form-control" name="hole_15_fir" value="1"
+                <input id="hole_15_fir" type="checkbox" class="form-control secondNineFir" name="hole_15_fir" value="1"
                     @if ($selected_yards === 'white')
                         {{ ($par->hole_15_white_par < 4 ? "disabled":"") }}
                     @elseif ($selected_yards === 'yellow')
@@ -1567,7 +1597,7 @@
 
             <div class="col">
 
-                <input id="hole_16_fir" type="checkbox" class="form-control" name="hole_16_fir" value="1"
+                <input id="hole_16_fir" type="checkbox" class="form-control secondNineFir" name="hole_16_fir" value="1"
                     @if ($selected_yards === 'white')
                         {{ ($par->hole_16_white_par < 4 ? "disabled":"") }}
                     @elseif ($selected_yards === 'yellow')
@@ -1580,7 +1610,7 @@
 
             <div class="col">
 
-                <input id="hole_17_fir" type="checkbox" class="form-control" name="hole_17_fir" value="1"
+                <input id="hole_17_fir" type="checkbox" class="form-control secondNineFir" name="hole_17_fir" value="1"
                     @if ($selected_yards === 'white')
                         {{ ($par->hole_17_white_par < 4 ? "disabled":"") }}
                     @elseif ($selected_yards === 'yellow')
@@ -1593,7 +1623,7 @@
 
             <div class="col">
 
-                <input id="hole_18_fir" type="checkbox" class="form-control" name="hole_18_fir" value="1"
+                <input id="hole_18_fir" type="checkbox" class="form-control secondNineFir" name="hole_18_fir" value="1"
                     @if ($selected_yards === 'white')
                         {{ ($par->hole_18_white_par < 4 ? "disabled":"") }}
                     @elseif ($selected_yards === 'yellow')
@@ -1606,15 +1636,15 @@
 
             <div class="col">
 
-                tbd
+                <span id="secondNineFirCount"></span>
 
             </div>                                                   
 
 
-        </div>    
+         </div>    
         <!--/.row -->
 
-        <div class="row add-round-row add-round-gir">
+        <div id="secondNineGirs" class="row add-round-row add-round-gir">
 
             <div class="col">
 
@@ -1624,66 +1654,66 @@
 
             <div class="col">
 
-                <input id="hole_10_gir" type="checkbox" class="form-control" name="hole_10_gir" value="1">
+                <input id="hole_10_gir" type="checkbox" class="form-control secondNineGir" name="hole_10_gir" value="1">
 
             </div>
 
             <div class="col">
 
-                <input id="hole_11_gir" type="checkbox" class="form-control" name="hole_11_gir" value="1">
+                <input id="hole_11_gir" type="checkbox" class="form-control secondNineGir" name="hole_11_gir" value="1">
 
             </div>            
 
             <div class="col">
 
-                <input id="hole_12_gir" type="checkbox" class="form-control" name="hole_12_gir" value="1">
+                <input id="hole_12_gir" type="checkbox" class="form-control secondNineGir" name="hole_12_gir" value="1">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_13_gir" type="checkbox" class="form-control" name="hole_13_gir" value="1">
+                <input id="hole_13_gir" type="checkbox" class="form-control secondNineGir" name="hole_13_gir" value="1">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_14_gir" type="checkbox" class="form-control" name="hole_14_gir" value="1">
+                <input id="hole_14_gir" type="checkbox" class="form-control secondNineGir" name="hole_14_gir" value="1">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_15_gir" type="checkbox" class="form-control" name="hole_15_gir" value="1">
+                <input id="hole_15_gir" type="checkbox" class="form-control secondNineGir" name="hole_15_gir" value="1">
 
             </div> 
 
             <div class="col">
 
-                <input id="hole_16_gir" type="checkbox" class="form-control" name="hole_16_gir" value="1">
+                <input id="hole_16_gir" type="checkbox" class="form-control secondNineGir" name="hole_16_gir" value="1">
 
             </div>   
 
             <div class="col">
 
-                <input id="hole_17_gir" type="checkbox" class="form-control" name="hole_17_gir" value="1">
+                <input id="hole_17_gir" type="checkbox" class="form-control secondNineGir" name="hole_17_gir" value="1">
 
             </div>  
 
             <div class="col">
 
-                <input id="hole_18_gir" type="checkbox" class="form-control" name="hole_18_gir" value="1">
+                <input id="hole_18_gir" type="checkbox" class="form-control secondNineGir" name="hole_18_gir" value="1">
 
             </div> 
 
             <div class="col">
 
-                tbd
+                <span id="secondNineGirCount"></span>
 
             </div>                                                   
 
 
-        </div>  
+        </div>                                
         <!--/.row -->
 
     @endif

@@ -1,4 +1,6 @@
-window.Vue = require('vue');
+
+$(document).ready(function(){
+ 
 
 // Set round as half(9 holes) or full(18 holes)    
 function roundSize() {
@@ -17,9 +19,9 @@ function roundSize() {
             method: 'get',
             data: {selected_size: selected_size},      
             success: function (response) {
-                console.log('size has changed');
-                $("#course_id").html(response);
-                $("#selected_course").html("");
+                console.log('size has changed'),
+                $("#course_id").html(response),
+                $("#selected_course").html(""),
                 $("#select_nines").html("");
                   
             },
@@ -28,15 +30,7 @@ function roundSize() {
             }            
         });           
 
-} 
-
-
-
-
-$(document).ready(function(){
- 
-
-         
+}          
 
            
 
@@ -88,7 +82,7 @@ $(document).ready(function(){
             success: function (response) {
                 $("#select_nines").html(response); 
                 $('input:radio[name=nine]').each(selectCourse);
-                $('input:radio[name=nine]').change(selectCourse) ;      
+                $('input:radio[name=nine]').change(selectCourse);      
             },
             error:function(error){ 
                 console.log(error)
@@ -122,7 +116,7 @@ $(document).ready(function(){
                 success: function (response) {
                     $("#selected_course").html(response); 
   
-                    $('input:radio[name=size]').on('change', selectCourse());
+                    //$('input:radio[name=size]').on('change', selectSize());
                     
                         //$('input:radio[name=size]').change(roundSize);
                         //$('input:radio[name=yards]').change(selectYards);
@@ -130,33 +124,9 @@ $(document).ready(function(){
                     
                         //$('#course_id').change(selectNines);
                     
-                        //$('input:radio[name=nine]').change(selectCourse);                    
-                                         
+                        //$('input:radio[name=nine]').change(selectCourse);                                           
 
-                    new Vue({
-                        el: '#app',
-                        data: {
-                            checkedFir: [],
-                            first_nine_1: '', first_nine_2: '', first_nine_3: '', first_nine_4: '', first_nine_5: '', first_nine_6: '', first_nine_7: '', first_nine_8: '',first_nine_9: '',
-                            first_nine_1_putts: '', first_nine_2_putts: '', first_nine_3_putts: '', first_nine_4_putts: '', first_nine_5_putts: '', first_nine_6_putts: '', first_nine_7_putts: '', first_nine_8_putts: '',first_nine_9_putts: '',  
-                            first_nine_1_drops: '', first_nine_2_drops: '', first_nine_3_drops: '', first_nine_4_drops: '', first_nine_5_drops: '', first_nine_6_drops: '', first_nine_7_drops: '', first_nine_8_drops: '',first_nine_9_drops: ''                           
-                        },
-                        computed: {
 
-                            firstNineTotal: function() {  
-                                total = Number(this.first_nine_1) + Number(this.first_nine_2) + Number(this.first_nine_3) + Number(this.first_nine_4) + Number(this.first_nine_5) + Number(this.first_nine_6) + Number(this.first_nine_7) + Number(this.first_nine_8) + Number(this.first_nine_9) || 0;                                
-                                return total;                                                                
-                            },
-                            firstNineTotalPutts: function() {  
-                                total = Number(this.first_nine_1_putts) + Number(this.first_nine_2_putts) + Number(this.first_nine_3_putts) + Number(this.first_nine_4_putts) + Number(this.first_nine_5_putts) + Number(this.first_nine_6_putts) + Number(this.first_nine_7_putts) + Number(this.first_nine_8_putts) + Number(this.first_nine_9_putts) || 0;                                
-                                return total;                                                                
-                            },
-                            firstNineTotalDrops: function() {  
-                                total = Number(this.first_nine_1_drops) + Number(this.first_nine_2_drops) + Number(this.first_nine_3_drops) + Number(this.first_nine_4_drops) + Number(this.first_nine_5_drops) + Number(this.first_nine_6_drops) + Number(this.first_nine_7_drops) + Number(this.first_nine_8_drops) + Number(this.first_nine_9_drops) || 0;                                
-                                return total;                                                                
-                            }
-                        }
-                    });                    
 
                 },
                 
@@ -263,4 +233,146 @@ $(document).ajaxSuccess(function () {
 
     });
 
+
+    // First Nine Score
+    var $firstNineScore = 0;
+
+    $("#firstNineScore").html($firstNineScore);
+
+    $(document).on("change", ".first-nine-score", function() {
+
+        var $firstNineScore = 0;
+
+        $(".first-nine-score").each(function(){
+            if($(this).val() != "")
+            $firstNineScore += parseInt($(this).val());   
+        });
+        
+        $("#firstNineScore").html($firstNineScore);
+    })  
+    
+    // First Nine Putts
+    var $firstNinePutts = 0;
+
+    $("#firstNinePutts").html($firstNinePutts);
+
+    $(document).on("change", ".first-nine-putts", function() {
+
+        var $firstNinePutts = 0;
+
+        $(".first-nine-putts").each(function(){
+            if($(this).val() != "")
+            $firstNinePutts += parseInt($(this).val());   
+        });
+        
+        $("#firstNinePutts").html($firstNinePutts);
+    })    
+    
+    // First Nine Drops
+    var $firstNineDrops = 0;
+
+    $("#firstNineDrops").html($firstNineDrops);
+
+    $(document).on("change", ".first-nine-drops", function() {
+
+        var $firstNineDrops = 0;
+
+        $(".first-nine-drops").each(function(){
+            if($(this).val() != "")
+            $firstNineDrops += parseInt($(this).val());   
+        });
+        
+        $("#firstNineDrops").html($firstNineDrops);
+    })         
+
+
+
+    // second 9 Fairways
+    var $secondNineInputs = $('#second9Firs input').length;
+    var $secondNineDisabled = $('#second9Firs input:disabled').length;
+    var secondNineFirTotal = $secondNineInputs - $secondNineDisabled;
+
+    $secondNineFirCount = 0;
+    $('#secondNineFirCount').html($secondNineFirCount);
+    $('#secondNineFirCount').after('/' + secondNineFirTotal);
+
+    // second 9 Greens
+    var $secondNineGirTotal = 9;
+
+    $secondNineGirCount = 0;
+    $('#secondNineGirCount').html($secondNineGirCount);
+    $('#secondNineGirCount').after('/' + $secondNineGirTotal);    
+
+    // Update on change
+    $(document).on("change", ".secondNineFir, .secondNineGir", function () {
+
+        var $secondNineFirCount = $('#second9Firs input:checked').length;
+        var $secondNineGirCount = $("#secondNineGirs input:checked").length;
+
+        $('#secondNineFirCount').html($secondNineFirCount);
+        $('#secondNineGirCount').html($secondNineGirCount);
+
+    });
+
+    // second Nine Score
+    var $secondNineScore = 0;
+
+    $("#secondNineScore").html($secondNineScore);
+
+    $(document).on("change", ".second-nine-score", function() {
+
+        var $secondNineScore = 0;
+
+        $(".second-nine-score").each(function(){
+            if($(this).val() != "")
+            $secondNineScore += parseInt($(this).val());   
+        });
+        
+        $("#secondNineScore").html($secondNineScore);
+    })  
+    
+    // second Nine Putts
+    var $secondNinePutts = 0;
+
+    $("#secondNinePutts").html($secondNinePutts);
+
+    $(document).on("change", ".second-nine-putts", function() {
+
+        var $secondNinePutts = 0;
+
+        $(".second-nine-putts").each(function(){
+            if($(this).val() != "")
+            $secondNinePutts += parseInt($(this).val());   
+        });
+        
+        $("#secondNinePutts").html($secondNinePutts);
+    })    
+    
+    // second Nine Drops
+    var $secondNineDrops = 0;
+
+    $("#secondNineDrops").html($secondNineDrops);
+
+    $(document).on("change", ".second-nine-drops", function() {
+
+        var $secondNineDrops = 0;
+
+        $(".second-nine-drops").each(function(){
+            if($(this).val() != "")
+            $secondNineDrops += parseInt($(this).val());   
+        });
+        
+        $("#secondNineDrops").html($secondNineDrops);
+    })  
+
+
+
+
+
+
+    
+
 });
+
+
+
