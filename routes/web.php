@@ -67,6 +67,7 @@ Route::get('ajax_getcourseyards', 'GetCourseController@GetCourseYards')->name('g
 Route::get('ajax_getcourselist', 'GetCourseController@GetCourseList')->name('getcourselist');
 Route::get('ajax_getcoursenines', 'GetCourseController@GetCourseNines')->name('getcoursenines');
 Route::get('ajax_getholes', 'GetCourseController@GetCourseHoles')->name('getholes');
+Route::get('ajax_editholes', 'GetCourseController@GetCourseHolesEdit')->name('editholes');
 
 
 

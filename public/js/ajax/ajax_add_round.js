@@ -222,7 +222,7 @@ $(document).ready(function () {
         });
 
         $.ajax({
-            url: url,
+            url: '/rounds',
             method: 'post',
             data: $(this).serialize(),
             success: function success(data) {
@@ -393,6 +393,80 @@ $(document).ajaxSuccess(function () {
         });
 
         $("#secondNineDrops").html($secondNineDrops);
+    });
+
+    // third 9 Fairways
+    var $thirdNineInputs = $('#third9Firs input').length;
+    var $thirdNineDisabled = $('#third9Firs input:disabled').length;
+    var thirdNineFirTotal = $thirdNineInputs - $thirdNineDisabled;
+
+    $thirdNineFirCount = 0;
+    $('#thirdNineFirCount').html($thirdNineFirCount);
+    $('#thirdNineFirCount').after('/' + thirdNineFirTotal);
+
+    // third 9 Greens
+    var $thirdNineGirTotal = 9;
+
+    $thirdNineGirCount = 0;
+    $('#thirdNineGirCount').html($thirdNineGirCount);
+    $('#thirdNineGirCount').after('/' + $thirdNineGirTotal);
+
+    // Update on change
+    $(document).on("change", ".thirdNineFir, .thirdNineGir", function () {
+
+        var $thirdNineFirCount = $('#third9Firs input:checked').length;
+        var $thirdNineGirCount = $("#thirdNineGirs input:checked").length;
+
+        $('#thirdNineFirCount').html($thirdNineFirCount);
+        $('#thirdNineGirCount').html($thirdNineGirCount);
+    });
+
+    // third Nine Score
+    var $thirdNineScore = 0;
+
+    $("#thirdNineScore").html($thirdNineScore);
+
+    $(document).on("change", ".third-nine-score", function () {
+
+        var $thirdNineScore = 0;
+
+        $(".third-nine-score").each(function () {
+            if ($(this).val() != "") $thirdNineScore += parseInt($(this).val());
+        });
+
+        $("#thirdNineScore").html($thirdNineScore);
+    });
+
+    // third Nine Putts
+    var $thirdNinePutts = 0;
+
+    $("#thirdNinePutts").html($thirdNinePutts);
+
+    $(document).on("change", ".third-nine-putts", function () {
+
+        var $thirdNinePutts = 0;
+
+        $(".third-nine-putts").each(function () {
+            if ($(this).val() != "") $thirdNinePutts += parseInt($(this).val());
+        });
+
+        $("#thirdNinePutts").html($thirdNinePutts);
+    });
+
+    // third Nine Drops
+    var $thirdNineDrops = 0;
+
+    $("#thirdNineDrops").html($thirdNineDrops);
+
+    $(document).on("change", ".third-nine-drops", function () {
+
+        var $thirdNineDrops = 0;
+
+        $(".third-nine-drops").each(function () {
+            if ($(this).val() != "") $thirdNineDrops += parseInt($(this).val());
+        });
+
+        $("#thirdNineDrops").html($thirdNineDrops);
     });
 });
 

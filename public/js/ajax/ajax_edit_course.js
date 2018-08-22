@@ -60,83 +60,73 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 17);
+/******/ 	return __webpack_require__(__webpack_require__.s = 15);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 17:
+/***/ 15:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(18);
+module.exports = __webpack_require__(16);
 
 
 /***/ }),
 
-/***/ 18:
+/***/ 16:
 /***/ (function(module, exports) {
 
+$(document).ready(function () {
 
-chart_round_fir = new Chartist.Pie('#chart-round-fir', { series: [round_firs, round_firs_leftover] }, {
-    donut: true,
-    donutWidth: 10,
-    startAngle: 270,
-    total: 100,
-    showLabel: false
-});
+    //var course_id = json_encode($id);
 
-chart_round_gir = new Chartist.Pie('#chart-round-gir', { series: [round_girs, round_girs_leftover] }, {
-    donut: true,
-    donutWidth: 10,
-    startAngle: 270,
-    total: 100,
-    showLabel: false
-});
+    // bring back selected holes
+    function selectHoles() {
 
-chart_round_scrambling = new Chartist.Pie('#chart-round-scrambling', { series: [round_scrambling, round_scrambling_leftover] }, {
-    donut: true,
-    donutWidth: 10,
-    startAngle: 270,
-    total: 100,
-    showLabel: false
-});
+        var selected_holes = $('input[name=holes]:checked').val();
 
-function drawHandler(data) {
-
-    if (data.type === 'slice') {
-
-        var pathLength = data.element._node.getTotalLength();
-
-        data.element.attr({
-            'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
-        });
-
-        var animationDefinition = {
-            'stroke-dashoffset': {
-                id: 'anim' + data.index,
-                dur: 1000,
-                from: -pathLength + 'px',
-                to: '0px',
-                easing: Chartist.Svg.Easing.easeOut,
-                fill: 'freeze'
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
-        };
-
-        if (data.index !== 0) {
-            animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
-        }
-
-        data.element.attr({
-            'stroke-dashoffset': -pathLength + 'px'
         });
 
-        data.element.animate(animationDefinition, false);
-    }
-}
+        $.ajax({
+            url: '/ajax_editholes',
+            dataType: "json",
+            method: 'get',
+            data: { selected_holes: selected_holes, course_id: course_id },
+            success: function success(response) {
 
-chart_round_fir.on('draw', drawHandler);
-chart_round_gir.on('draw', drawHandler);
-chart_round_scrambling.on('draw', drawHandler);
+                // return holes
+                $("#get-holes").html(response);
+
+                // show plus/minus icons
+                $('.btn-collapse').each(function () {
+                    if ($(this).hasClass('collapsed')) {
+                        $(this).find('i').addClass('fa-plus-circle');
+                    } else {
+                        $(this).find('i').addClass('fa-minus-circle');
+                    }
+                });
+
+                // toggle icons on click
+                $('.btn-collapse').click(function () {
+                    $(this).find('i').toggleClass('fa-minus-circle').toggleClass('fa-plus-circle');
+                });
+            },
+            error: function error(_error) {
+                console.log(_error);
+            }
+        });
+    }
+
+    // run on page load
+    $('input:radio[name=holes]').each(selectHoles);
+
+    // run on radio change
+    $('input:radio[name=holes]').change(selectHoles);
+});
 
 /***/ })
 

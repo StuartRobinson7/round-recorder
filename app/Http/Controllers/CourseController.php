@@ -83,8 +83,8 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        $course = \App\Course::find($id);        
-        return view('edit_course',compact('course','id'));
+        $course_info = \App\Course::find($id);        
+        return view('edit_course',compact('course_info','id'));
     }
 
     /**

@@ -15,7 +15,7 @@ class Round extends Model
      * @var array
      */
     protected $fillable = [
-        'round_date', 'yards', 'player_id', 'course_id', 'round_notes',
+        'round_date', 'yards', 'nine', 'size', 'player_id', 'course_id', 'round_notes',
         'hole_1_score', 'hole_1_drops', 'hole_1_putts', 'hole_1_fir', 'hole_1_gir',
         'hole_2_score', 'hole_2_drops', 'hole_2_putts', 'hole_2_fir', 'hole_2_gir',
         'hole_3_score', 'hole_3_drops', 'hole_3_putts', 'hole_3_fir', 'hole_3_gir',

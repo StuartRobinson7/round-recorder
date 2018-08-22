@@ -45,26 +45,11 @@ class RoundController extends Controller
         // Validate input
         $validator = Validator::make($request->all(), [     
             'round_date' => 'required|date_format:d/m/Y',
-            'course_id' => 'required',
-            'player_id' => 'required',          
-            'hole_1_score' => 'required|integer',
-            'hole_2_score' => 'required|integer',
-            'hole_3_score' => 'required|integer',
-            'hole_4_score' => 'required|integer',
-            'hole_5_score' => 'required|integer',
-            'hole_6_score' => 'required|integer',
-            'hole_7_score' => 'required|integer',
-            'hole_8_score' => 'required|integer',
-            'hole_9_score' => 'required|integer',
-            'hole_10_score' => 'required|integer',
-            'hole_11_score' => 'required|integer',
-            'hole_12_score' => 'required|integer',
-            'hole_13_score' => 'required|integer',
-            'hole_14_score' => 'required|integer',
-            'hole_15_score' => 'required|integer',
-            'hole_16_score' => 'required|integer',
-            'hole_17_score' => 'required|integer',
-            'hole_18_score' => 'required|integer'                       
+            'course_id' => 'required|integer',
+            'player_id' => 'required|integer', 
+            'size' => 'required|string',
+            'yards' => 'required|string', 
+            'nine' => 'required|string'                     
         ]);
 
         // Return Validation Errors            
@@ -233,25 +218,7 @@ class RoundController extends Controller
         {
         // Validate input
         $validator = Validator::make($request->all(), [     
-            'round_date' => 'required|date_format:d/m/Y',         
-            'hole_1_score' => 'required|integer',
-            'hole_2_score' => 'required|integer',
-            'hole_3_score' => 'required|integer',
-            'hole_4_score' => 'required|integer',
-            'hole_5_score' => 'required|integer',
-            'hole_6_score' => 'required|integer',
-            'hole_7_score' => 'required|integer',
-            'hole_8_score' => 'required|integer',
-            'hole_9_score' => 'required|integer',
-            'hole_10_score' => 'required|integer',
-            'hole_11_score' => 'required|integer',
-            'hole_12_score' => 'required|integer',
-            'hole_13_score' => 'required|integer',
-            'hole_14_score' => 'required|integer',
-            'hole_15_score' => 'required|integer',
-            'hole_16_score' => 'required|integer',
-            'hole_17_score' => 'required|integer',
-            'hole_18_score' => 'required|integer'                       
+            'round_date' => 'required|date_format:d/m/Y',                               
         ]);
     
             if ($validator->fails()) {

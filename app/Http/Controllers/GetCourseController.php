@@ -66,6 +66,7 @@ class GetCourseController extends Controller
         $course_data = Course::where('id', $selected_id)->get();
 
         $course_totals = Course::where('id', $selected_id)
+
             ->selectRaw("SUM(hole_1_white + hole_2_white + hole_3_white + hole_4_white + hole_5_white + hole_6_white + hole_7_white + hole_8_white + hole_9_white) as first_nine_white")
             ->selectRaw("SUM(hole_1_yellow + hole_2_yellow + hole_3_yellow + hole_4_yellow + hole_5_yellow + hole_6_yellow + hole_7_yellow + hole_8_yellow + hole_9_yellow) as first_nine_yellow")
             ->selectRaw("SUM(hole_1_red + hole_2_red + hole_3_red + hole_4_red + hole_5_red + hole_6_red + hole_7_red + hole_8_red + hole_9_red) as first_nine_red") 
@@ -78,14 +79,17 @@ class GetCourseController extends Controller
             ->selectRaw("SUM(hole_10_red + hole_11_red + hole_12_red + hole_13_red + hole_14_red + hole_15_red + hole_16_red + hole_17_red + hole_18_red) as second_nine_red") 
             ->selectRaw("SUM(hole_10_white_par + hole_11_white_par + hole_12_white_par + hole_13_white_par + hole_14_white_par + hole_15_white_par + hole_16_white_par + hole_17_white_par + hole_18_white_par) as second_nine_white_par")
             ->selectRaw("SUM(hole_10_yellow_par + hole_11_yellow_par + hole_12_yellow_par + hole_13_yellow_par + hole_14_yellow_par + hole_15_yellow_par + hole_16_yellow_par + hole_17_yellow_par + hole_18_yellow_par) as second_nine_yellow_par")
-            ->selectRaw("SUM(hole_10_red_par + hole_11_red_par + hole_12_red_par + hole_13_red_par + hole_14_red_par + hole_15_red_par + hole_16_red_par + hole_17_red_par + hole_18_red_par) as second_nine_red_par")             
-
+            ->selectRaw("SUM(hole_10_red_par + hole_11_red_par + hole_12_red_par + hole_13_red_par + hole_14_red_par + hole_15_red_par + hole_16_red_par + hole_17_red_par + hole_18_red_par) as second_nine_red_par")   
+            
+            ->selectRaw("SUM(hole_19_white + hole_20_white + hole_21_white + hole_22_white + hole_23_white + hole_24_white + hole_25_white + hole_26_white + hole_27_white) as third_nine_white")
+            ->selectRaw("SUM(hole_19_yellow + hole_20_yellow + hole_21_yellow + hole_22_yellow + hole_23_yellow + hole_24_yellow + hole_25_yellow + hole_26_yellow + hole_27_yellow) as third_nine_yellow")
+            ->selectRaw("SUM(hole_19_red + hole_20_red + hole_21_red + hole_22_red + hole_23_red + hole_24_red + hole_25_red + hole_26_red + hole_27_red) as third_nine_red") 
+            ->selectRaw("SUM(hole_19_white_par + hole_20_white_par + hole_21_white_par + hole_22_white_par + hole_23_white_par + hole_24_white_par + hole_25_white_par + hole_26_white_par + hole_27_white_par) as third_nine_white_par")
+            ->selectRaw("SUM(hole_19_yellow_par + hole_20_yellow_par + hole_21_yellow_par + hole_22_yellow_par + hole_23_yellow_par + hole_24_yellow_par + hole_25_yellow_par + hole_26_yellow_par + hole_27_yellow_par) as third_nine_yellow_par")
+            ->selectRaw("SUM(hole_19_red_par + hole_20_red_par + hole_21_red_par + hole_22_red_par + hole_23_red_par + hole_24_red_par + hole_25_red_par + hole_26_red_par + hole_27_red_par) as third_nine_red_par")             
+            
             ->first();
 
-        //$first_nine_yellow = intval($first_nine_yellow);
-        //$first_nine_white = str_replace(array('[', ']'), '' , $first_nine_white);
-        //$first_nine_white = str_replace(array('[', ']'), '' , $first_nine_yellow);
-        //$first_nine_white = str_replace(array('[', ']'), '' , $first_nine_red);
 
         $view = view('/ajax_getcourse', ['course_data' => $course_data, 'course_totals' => $course_totals, 'selected_yards' => $selected_yards, 'selected_size' => $selected_size, 'selected_nine' => $selected_nine])->render(); 
 
@@ -135,6 +139,38 @@ class GetCourseController extends Controller
 
         return response()->json($view);
 
-    }    
+    } 
+    
+    public function GetCourseHolesEdit(Request $request){
+
+        $course_id = $request->course_id;
+        $requested_holes = $request->selected_holes;
+
+        $course_info = Course::where('id', $course_id)->first(); 
+        //$course_info = trim(preg_replace('/\r\n/', ' ', $course_info));
+
+        if($requested_holes === '9'){
+            $view = view('/ajax_9_holes', compact('course_info'))->render();
+            $view = trim(preg_replace('/\r\n/', ' ', $view));
+        }
+
+        elseif($requested_holes === '18'){
+            $view = view('/ajax_18_holes', compact('course_info'))->render();
+            $view = trim(preg_replace('/\r\n/', ' ', $view));
+        }  
+
+        elseif($requested_holes === '27'){
+            $view = view('/ajax_27_holes', compact('course_info'))->render();
+            $view = trim(preg_replace('/\r\n/', ' ', $view));
+        } 
+
+        else{
+            $view = view('/ajax_18_holes', compact('course_info'))->render();
+            $view = trim(preg_replace('/\r\n/', ' ', $view));
+        }
+
+        return response()->json($view);
+
+    }     
 
 }

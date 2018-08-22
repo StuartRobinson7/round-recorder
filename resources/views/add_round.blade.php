@@ -53,13 +53,13 @@
 
                                 <label>Round Size</label><br />
 
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="size" id="half" value="half">
-                                    <label class="form-check-label" for="half">9 Holes</label>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="custom-control-input" type="radio" name="size" id="half" value="half">
+                                    <label class="custom-control-label" for="half">9 Holes</label>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="size" id="full" value="full" checked>
-                                    <label class="form-check-label" for="full">18 Holes</label>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="custom-control-input" type="radio" name="size" id="full" value="full" checked>
+                                    <label class="custom-control-label" for="full">18 Holes</label>
                                 </div>   
                                                          
 
@@ -70,17 +70,17 @@
 
                                 <label>Tees Used</label><br />
 
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="yards" id="yards-white" value="white">
-                                    <label class="form-check-label" for="yards-white">Whites</label>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="custom-control-input" type="radio" name="yards" id="yards-white" value="white">
+                                    <label class="custom-control-label" for="yards-white">Whites</label>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="yards" id="yards-yellow" value="yellow" checked>
-                                    <label class="form-check-label" for="yards-yellow">Yellows</label>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="custom-control-input" type="radio" name="yards" id="yards-yellow" value="yellow" checked>
+                                    <label class="custom-control-label" for="yards-yellow">Yellows</label>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="yards" id="yards-red" value="red">
-                                    <label class="form-check-label" for="yards-reds">Reds</label>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="custom-control-input" type="radio" name="yards" id="yards-red" value="red">
+                                    <label class="custom-control-label" for="yards-red">Reds</label>
                                 </div>
                             
                             </div>                                                        

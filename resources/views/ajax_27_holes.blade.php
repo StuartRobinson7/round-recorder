@@ -757,7 +757,7 @@
                         </div>
 
                         <div class="col">
-                            <input id="hole_1_yellow_par" type="text" class="form-control {{ $errors->has('hole_1_yellow_par') ? ' is-invalid' : '' }}" name="hole_1_yellow_par" value="">
+                            <input id="hole_1_yellow_par" type="text" class="form-control {{ $errors->has('hole_1_yellow_par') ? ' is-invalid' : '' }}" name="hole_1_yellow_par" value="{{ $course_info->hole_1_yellow_par }}">
                         </div>
 
                         <div class="col">
