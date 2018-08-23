@@ -48,7 +48,11 @@
 
                             <div class="col">
                                 <span>9</span>
-                            </div>                                                                                                                                                                                                                                                          
+                            </div> 
+
+                            <div class="col">
+                                <span>Total</span>
+                            </div>                                                                                                                                                                                                                                                         
 
 
                         </div>
@@ -61,40 +65,44 @@
                             </div>
 
                             <div class="col">
-                                <input id="hole_1_white" type="text" class="form-control {{ $errors->has('hole_1_white') ? ' is-invalid' : '' }}" name="hole_1_white" value="">
+                                <input id="hole_1_white" type="text" class="form-control first-white-yards {{ $errors->has('hole_1_white') ? ' is-invalid' : '' }}" name="hole_1_white" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_2_white" type="text" class="form-control {{ $errors->has('hole_2_white') ? ' is-invalid' : '' }}" name="hole_2_white" value="">
+                                <input id="hole_2_white" type="text" class="form-control first-white-yards {{ $errors->has('hole_2_white') ? ' is-invalid' : '' }}" name="hole_2_white" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_3_white" type="text" class="form-control {{ $errors->has('hole_3_white') ? ' is-invalid' : '' }}" name="hole_3_white" value="">
+                                <input id="hole_3_white" type="text" class="form-control first-white-yards {{ $errors->has('hole_3_white') ? ' is-invalid' : '' }}" name="hole_3_white" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_4_white" type="text" class="form-control {{ $errors->has('hole_4_white') ? ' is-invalid' : '' }}" name="hole_4_white" value="">
+                                <input id="hole_4_white" type="text" class="form-control first-white-yards {{ $errors->has('hole_4_white') ? ' is-invalid' : '' }}" name="hole_4_white" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_5_white" type="text" class="form-control {{ $errors->has('hole_5_white') ? ' is-invalid' : '' }}" name="hole_5_white" value="">
+                                <input id="hole_5_white" type="text" class="form-control first-white-yards {{ $errors->has('hole_5_white') ? ' is-invalid' : '' }}" name="hole_5_white" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_6_white" type="text" class="form-control {{ $errors->has('hole_6_white') ? ' is-invalid' : '' }}" name="hole_6_white" value="">
+                                <input id="hole_6_white" type="text" class="form-control first-white-yards {{ $errors->has('hole_6_white') ? ' is-invalid' : '' }}" name="hole_6_white" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_7_white" type="text" class="form-control {{ $errors->has('hole_7_white') ? ' is-invalid' : '' }}" name="hole_7_white" value="">
+                                <input id="hole_7_white" type="text" class="form-control first-white-yards {{ $errors->has('hole_7_white') ? ' is-invalid' : '' }}" name="hole_7_white" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_8_white" type="text" class="form-control {{ $errors->has('hole_8_white') ? ' is-invalid' : '' }}" name="hole_8_white" value="">
+                                <input id="hole_8_white" type="text" class="form-control first-white-yards {{ $errors->has('hole_8_white') ? ' is-invalid' : '' }}" name="hole_8_white" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_9_white" type="text" class="form-control {{ $errors->has('hole_9_white') ? ' is-invalid' : '' }}" name="hole_9_white" value="">
-                            </div>                                                                                                                                                                                                                                                          
+                                <input id="hole_9_white" type="text" class="form-control first-white-yards {{ $errors->has('hole_9_white') ? ' is-invalid' : '' }}" name="hole_9_white" value="">
+                            </div>  
+
+                            <div class="col">
+                                <span id="firstWhiteYards"></span>
+                            </div>                                                                                                                                                                                                                                                                                      
 
 
                         </div>
@@ -107,40 +115,44 @@
                             </div>
 
                             <div class="col">
-                                <input id="hole_1_white_par" type="text" class="form-control {{ $errors->has('hole_1_white_par') ? ' is-invalid' : '' }}" name="hole_1_white_par" value="">
+                                <input id="hole_1_white_par" type="text" class="form-control first-white-par {{ $errors->has('hole_1_white_par') ? ' is-invalid' : '' }}" name="hole_1_white_par" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_2_white_par" type="text" class="form-control {{ $errors->has('hole_2_white_par') ? ' is-invalid' : '' }}" name="hole_2_white_par" value="">
+                                <input id="hole_2_white_par" type="text" class="form-control first-white-par {{ $errors->has('hole_2_white_par') ? ' is-invalid' : '' }}" name="hole_2_white_par" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_3_white_par" type="text" class="form-control {{ $errors->has('hole_3_white_par') ? ' is-invalid' : '' }}" name="hole_3_white_par" value="">
+                                <input id="hole_3_white_par" type="text" class="form-control first-white-par {{ $errors->has('hole_3_white_par') ? ' is-invalid' : '' }}" name="hole_3_white_par" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_4_white_par" type="text" class="form-control {{ $errors->has('hole_4_white_par') ? ' is-invalid' : '' }}" name="hole_4_white_par" value="">
+                                <input id="hole_4_white_par" type="text" class="form-control first-white-par {{ $errors->has('hole_4_white_par') ? ' is-invalid' : '' }}" name="hole_4_white_par" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_5_white_par" type="text" class="form-control {{ $errors->has('hole_5_white_par') ? ' is-invalid' : '' }}" name="hole_5_white_par" value="">
+                                <input id="hole_5_white_par" type="text" class="form-control first-white-par {{ $errors->has('hole_5_white_par') ? ' is-invalid' : '' }}" name="hole_5_white_par" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_6_white_par" type="text" class="form-control {{ $errors->has('hole_6_white_par') ? ' is-invalid' : '' }}" name="hole_6_white_par" value="">
+                                <input id="hole_6_white_par" type="text" class="form-control first-white-par {{ $errors->has('hole_6_white_par') ? ' is-invalid' : '' }}" name="hole_6_white_par" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_7_white_par" type="text" class="form-control {{ $errors->has('hole_7_white_par') ? ' is-invalid' : '' }}" name="hole_7_white_par" value="">
+                                <input id="hole_7_white_par" type="text" class="form-control first-white-par {{ $errors->has('hole_7_white_par') ? ' is-invalid' : '' }}" name="hole_7_white_par" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_8_white_par" type="text" class="form-control {{ $errors->has('hole_8_white_par') ? ' is-invalid' : '' }}" name="hole_8_white_par" value="">
+                                <input id="hole_8_white_par" type="text" class="form-control first-white-par {{ $errors->has('hole_8_white_par') ? ' is-invalid' : '' }}" name="hole_8_white_par" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_9_white_par" type="text" class="form-control {{ $errors->has('hole_9_white_par') ? ' is-invalid' : '' }}" name="hole_9_white_par" value="">
-                            </div>                                                                                                                                                                                                                                                          
+                                <input id="hole_9_white_par" type="text" class="form-control first-white-par {{ $errors->has('hole_9_white_par') ? ' is-invalid' : '' }}" name="hole_9_white_par" value="">
+                            </div>   
+
+                            <div class="col">
+                                <span id="firstWhitePar"></span>
+                            </div>                                                                                                                                                                                                                                                                                     
 
 
                         </div>
@@ -188,6 +200,9 @@
                                 <input id="hole_9_white_stroke_index" type="text" class="form-control {{ $errors->has('hole_9_white_stroke_index') ? ' is-invalid' : '' }}" name="hole_9_white_stroke_index" value="">
                             </div>                                                                                                                                                                                                                                                          
 
+                            <div class="col">
+                                <span>-</span>
+                            </div> 
 
                         </div>
                         <!-- /.row -->                                                                   
@@ -251,6 +266,9 @@
                                 <span>9</span>
                             </div>                                                                                                                                                                                                                                                          
 
+                            <div class="col">
+                                <span>Total</span>
+                            </div>   
 
                         </div>
                         <!-- /.row -->
@@ -262,41 +280,44 @@
                             </div>
 
                             <div class="col">
-                                <input id="hole_1_yellow" type="text" class="form-control {{ $errors->has('hole_1_yellow') ? ' is-invalid' : '' }}" name="hole_1_yellow" value="">
+                                <input id="hole_1_yellow" type="text" class="form-control first-yellow-yards {{ $errors->has('hole_1_yellow') ? ' is-invalid' : '' }}" name="hole_1_yellow" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_2_yellow" type="text" class="form-control {{ $errors->has('hole_2_yellow') ? ' is-invalid' : '' }}" name="hole_2_yellow" value="">
+                                <input id="hole_2_yellow" type="text" class="form-control first-yellow-yards {{ $errors->has('hole_2_yellow') ? ' is-invalid' : '' }}" name="hole_2_yellow" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_3_yellow" type="text" class="form-control {{ $errors->has('hole_3_yellow') ? ' is-invalid' : '' }}" name="hole_3_yellow" value="">
+                                <input id="hole_3_yellow" type="text" class="form-control first-yellow-yards {{ $errors->has('hole_3_yellow') ? ' is-invalid' : '' }}" name="hole_3_yellow" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_4_yellow" type="text" class="form-control {{ $errors->has('hole_4_yellow') ? ' is-invalid' : '' }}" name="hole_4_yellow" value="">
+                                <input id="hole_4_yellow" type="text" class="form-control first-yellow-yards {{ $errors->has('hole_4_yellow') ? ' is-invalid' : '' }}" name="hole_4_yellow" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_5_yellow" type="text" class="form-control {{ $errors->has('hole_5_yellow') ? ' is-invalid' : '' }}" name="hole_5_yellow" value="">
+                                <input id="hole_5_yellow" type="text" class="form-control first-yellow-yards {{ $errors->has('hole_5_yellow') ? ' is-invalid' : '' }}" name="hole_5_yellow" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_6_yellow" type="text" class="form-control {{ $errors->has('hole_6_yellow') ? ' is-invalid' : '' }}" name="hole_6_yellow" value="">
+                                <input id="hole_6_yellow" type="text" class="form-control first-yellow-yards {{ $errors->has('hole_6_yellow') ? ' is-invalid' : '' }}" name="hole_6_yellow" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_7_yellow" type="text" class="form-control {{ $errors->has('hole_7_yellow') ? ' is-invalid' : '' }}" name="hole_7_yellow" value="">
+                                <input id="hole_7_yellow" type="text" class="form-control first-yellow-yards {{ $errors->has('hole_7_yellow') ? ' is-invalid' : '' }}" name="hole_7_yellow" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_8_yellow" type="text" class="form-control {{ $errors->has('hole_8_yellow') ? ' is-invalid' : '' }}" name="hole_8_yellow" value="">
+                                <input id="hole_8_yellow" type="text" class="form-control first-yellow-yards {{ $errors->has('hole_8_yellow') ? ' is-invalid' : '' }}" name="hole_8_yellow" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_9_yellow" type="text" class="form-control {{ $errors->has('hole_9_yellow') ? ' is-invalid' : '' }}" name="hole_9_yellow" value="">
+                                <input id="hole_9_yellow" type="text" class="form-control first-yellow-yards {{ $errors->has('hole_9_yellow') ? ' is-invalid' : '' }}" name="hole_9_yellow" value="">
                             </div>                                                                                                                                                                                                                                                          
 
+                            <div class="col">
+                                <span id="firstYellowYards"></span>
+                            </div>  
 
                         </div>
                         <!-- /.row --> 
@@ -308,41 +329,44 @@
                             </div>
 
                             <div class="col">
-                                <input id="hole_1_yellow_par" type="text" class="form-control {{ $errors->has('hole_1_yellow_par') ? ' is-invalid' : '' }}" name="hole_1_yellow_par" value="">
+                                <input id="hole_1_yellow_par" type="text" class="form-control first-yellow-par {{ $errors->has('hole_1_yellow_par') ? ' is-invalid' : '' }}" name="hole_1_yellow_par" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_2_yellow_par" type="text" class="form-control {{ $errors->has('hole_2_yellow_par') ? ' is-invalid' : '' }}" name="hole_2_yellow_par" value="">
+                                <input id="hole_2_yellow_par" type="text" class="form-control first-yellow-par {{ $errors->has('hole_2_yellow_par') ? ' is-invalid' : '' }}" name="hole_2_yellow_par" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_3_yellow_par" type="text" class="form-control {{ $errors->has('hole_3_yellow_par') ? ' is-invalid' : '' }}" name="hole_3_yellow_par" value="">
+                                <input id="hole_3_yellow_par" type="text" class="form-control first-yellow-par {{ $errors->has('hole_3_yellow_par') ? ' is-invalid' : '' }}" name="hole_3_yellow_par" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_4_yellow_par" type="text" class="form-control {{ $errors->has('hole_4_yellow_par') ? ' is-invalid' : '' }}" name="hole_4_yellow_par" value="">
+                                <input id="hole_4_yellow_par" type="text" class="form-control first-yellow-par {{ $errors->has('hole_4_yellow_par') ? ' is-invalid' : '' }}" name="hole_4_yellow_par" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_5_yellow_par" type="text" class="form-control {{ $errors->has('hole_5_yellow_par') ? ' is-invalid' : '' }}" name="hole_5_yellow_par" value="">
+                                <input id="hole_5_yellow_par" type="text" class="form-control first-yellow-par {{ $errors->has('hole_5_yellow_par') ? ' is-invalid' : '' }}" name="hole_5_yellow_par" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_6_yellow_par" type="text" class="form-control {{ $errors->has('hole_6_yellow_par') ? ' is-invalid' : '' }}" name="hole_6_yellow_par" value="">
+                                <input id="hole_6_yellow_par" type="text" class="form-control first-yellow-par {{ $errors->has('hole_6_yellow_par') ? ' is-invalid' : '' }}" name="hole_6_yellow_par" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_7_yellow_par" type="text" class="form-control {{ $errors->has('hole_7_yellow_par') ? ' is-invalid' : '' }}" name="hole_7_yellow_par" value="">
+                                <input id="hole_7_yellow_par" type="text" class="form-control first-yellow-par {{ $errors->has('hole_7_yellow_par') ? ' is-invalid' : '' }}" name="hole_7_yellow_par" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_8_yellow_par" type="text" class="form-control {{ $errors->has('hole_8_yellow_par') ? ' is-invalid' : '' }}" name="hole_8_yellow_par" value="">
+                                <input id="hole_8_yellow_par" type="text" class="form-control first-yellow-par {{ $errors->has('hole_8_yellow_par') ? ' is-invalid' : '' }}" name="hole_8_yellow_par" value="">
                             </div>
 
                             <div class="col">
-                                <input id="hole_9_yellow_par" type="text" class="form-control {{ $errors->has('hole_9_yellow_par') ? ' is-invalid' : '' }}" name="hole_9_yellow_par" value="">
+                                <input id="hole_9_yellow_par" type="text" class="form-control first-yellow-par {{ $errors->has('hole_9_yellow_par') ? ' is-invalid' : '' }}" name="hole_9_yellow_par" value="">
                             </div>                                                                                                                                                                                                                                                          
 
+                            <div class="col">
+                                <span id="firstYellowPar"></span>
+                            </div>  
 
                         </div>
                         <!-- /.row -->       
@@ -389,6 +413,9 @@
                                 <input id="hole_9_yellow_stroke_index" type="text" class="form-control {{ $errors->has('hole_9_yellow_stroke_index') ? ' is-invalid' : '' }}" name="hole_9_yellow_stroke_index" value="">
                             </div>                                                                                                                                                                                                                                                          
 
+                            <div class="col">
+                                <span>-</span>
+                            </div>   
 
                         </div>
                         <!-- /.row -->                                                                   
@@ -451,6 +478,9 @@
                             <span>9</span>
                         </div>                                                                                                                                                                                                                                                          
 
+                        <div class="col">
+                            <span>Total</span>
+                        </div>   
 
                     </div>
                     <!-- /.row -->
@@ -462,40 +492,44 @@
                         </div>
 
                         <div class="col">
-                            <input id="hole_1_red" type="text" class="form-control {{ $errors->has('hole_1_red') ? ' is-invalid' : '' }}" name="hole_1_red" value="">
+                            <input id="hole_1_red" type="text" class="form-control first-red-yards {{ $errors->has('hole_1_red') ? ' is-invalid' : '' }}" name="hole_1_red" value="">
                         </div>
 
                         <div class="col">
-                            <input id="hole_2_red" type="text" class="form-control {{ $errors->has('hole_2_red') ? ' is-invalid' : '' }}" name="hole_2_red" value="">
+                            <input id="hole_2_red" type="text" class="form-control first-red-yards {{ $errors->has('hole_2_red') ? ' is-invalid' : '' }}" name="hole_2_red" value="">
                         </div>
 
                         <div class="col">
-                            <input id="hole_3_red" type="text" class="form-control {{ $errors->has('hole_3_red') ? ' is-invalid' : '' }}" name="hole_3_red" value="">
+                            <input id="hole_3_red" type="text" class="form-control first-red-yards {{ $errors->has('hole_3_red') ? ' is-invalid' : '' }}" name="hole_3_red" value="">
                         </div>
 
                         <div class="col">
-                            <input id="hole_4_red" type="text" class="form-control {{ $errors->has('hole_4_red') ? ' is-invalid' : '' }}" name="hole_4_red" value="">
+                            <input id="hole_4_red" type="text" class="form-control first-red-yards {{ $errors->has('hole_4_red') ? ' is-invalid' : '' }}" name="hole_4_red" value="">
                         </div>
 
                         <div class="col">
-                            <input id="hole_5_red" type="text" class="form-control {{ $errors->has('hole_5_red') ? ' is-invalid' : '' }}" name="hole_5_red" value="">
+                            <input id="hole_5_red" type="text" class="form-control first-red-yards {{ $errors->has('hole_5_red') ? ' is-invalid' : '' }}" name="hole_5_red" value="">
                         </div>
 
                         <div class="col">
-                            <input id="hole_6_red" type="text" class="form-control {{ $errors->has('hole_6_red') ? ' is-invalid' : '' }}" name="hole_6_red" value="">
+                            <input id="hole_6_red" type="text" class="form-control first-red-yards {{ $errors->has('hole_6_red') ? ' is-invalid' : '' }}" name="hole_6_red" value="">
                         </div>
 
                         <div class="col">
-                            <input id="hole_7_red" type="text" class="form-control {{ $errors->has('hole_7_red') ? ' is-invalid' : '' }}" name="hole_7_red" value="">
+                            <input id="hole_7_red" type="text" class="form-control first-red-yards {{ $errors->has('hole_7_red') ? ' is-invalid' : '' }}" name="hole_7_red" value="">
                         </div>
 
                         <div class="col">
-                            <input id="hole_8_red" type="text" class="form-control {{ $errors->has('hole_8_red') ? ' is-invalid' : '' }}" name="hole_8_red" value="">
+                            <input id="hole_8_red" type="text" class="form-control first-red-yards {{ $errors->has('hole_8_red') ? ' is-invalid' : '' }}" name="hole_8_red" value="">
                         </div>
 
                         <div class="col">
-                            <input id="hole_9_red" type="text" class="form-control {{ $errors->has('hole_9_red') ? ' is-invalid' : '' }}" name="hole_9_red" value="">
-                        </div>                                                                                                                                                                                                                                                          
+                            <input id="hole_9_red" type="text" class="form-control first-red-yards {{ $errors->has('hole_9_red') ? ' is-invalid' : '' }}" name="hole_9_red" value="">
+                        </div>   
+
+                        <div class="col">
+                            <span id="firstRedYards"></span>
+                        </div>                                                                                                                                                                                                                                                                                 
 
 
                     </div>
@@ -508,41 +542,44 @@
                         </div>
 
                         <div class="col">
-                            <input id="hole_1_red_par" type="text" class="form-control {{ $errors->has('hole_1_red_par') ? ' is-invalid' : '' }}" name="hole_1_red_par" value="">
+                            <input id="hole_1_red_par" type="text" class="form-control first-red-par {{ $errors->has('hole_1_red_par') ? ' is-invalid' : '' }}" name="hole_1_red_par" value="">
                         </div>
 
                         <div class="col">
-                            <input id="hole_2_red_par" type="text" class="form-control {{ $errors->has('hole_2_red_par') ? ' is-invalid' : '' }}" name="hole_2_red_par" value="">
+                            <input id="hole_2_red_par" type="text" class="form-control first-red-par {{ $errors->has('hole_2_red_par') ? ' is-invalid' : '' }}" name="hole_2_red_par" value="">
                         </div>
 
                         <div class="col">
-                            <input id="hole_3_red_par" type="text" class="form-control {{ $errors->has('hole_3_red_par') ? ' is-invalid' : '' }}" name="hole_3_red_par" value="">
+                            <input id="hole_3_red_par" type="text" class="form-control first-red-par {{ $errors->has('hole_3_red_par') ? ' is-invalid' : '' }}" name="hole_3_red_par" value="">
                         </div>
 
                         <div class="col">
-                            <input id="hole_4_red_par" type="text" class="form-control {{ $errors->has('hole_4_red_par') ? ' is-invalid' : '' }}" name="hole_4_red_par" value="">
+                            <input id="hole_4_red_par" type="text" class="form-control first-red-par {{ $errors->has('hole_4_red_par') ? ' is-invalid' : '' }}" name="hole_4_red_par" value="">
                         </div>
 
                         <div class="col">
-                            <input id="hole_5_red_par" type="text" class="form-control {{ $errors->has('hole_5_red_par') ? ' is-invalid' : '' }}" name="hole_5_red_par" value="">
+                            <input id="hole_5_red_par" type="text" class="form-control first-red-par {{ $errors->has('hole_5_red_par') ? ' is-invalid' : '' }}" name="hole_5_red_par" value="">
                         </div>
 
                         <div class="col">
-                            <input id="hole_6_red_par" type="text" class="form-control {{ $errors->has('hole_6_red_par') ? ' is-invalid' : '' }}" name="hole_6_red_par" value="">
+                            <input id="hole_6_red_par" type="text" class="form-control first-red-par {{ $errors->has('hole_6_red_par') ? ' is-invalid' : '' }}" name="hole_6_red_par" value="">
                         </div>
 
                         <div class="col">
-                            <input id="hole_7_red_par" type="text" class="form-control {{ $errors->has('hole_7_red_par') ? ' is-invalid' : '' }}" name="hole_7_red_par" value="">
+                            <input id="hole_7_red_par" type="text" class="form-control first-red-par {{ $errors->has('hole_7_red_par') ? ' is-invalid' : '' }}" name="hole_7_red_par" value="">
                         </div>
 
                         <div class="col">
-                            <input id="hole_8_red_par" type="text" class="form-control {{ $errors->has('hole_8_red_par') ? ' is-invalid' : '' }}" name="hole_8_red_par" value="">
+                            <input id="hole_8_red_par" type="text" class="form-control first-red-par {{ $errors->has('hole_8_red_par') ? ' is-invalid' : '' }}" name="hole_8_red_par" value="">
                         </div>
 
                         <div class="col">
-                            <input id="hole_9_red_par" type="text" class="form-control {{ $errors->has('hole_9_red_par') ? ' is-invalid' : '' }}" name="hole_9_red_par" value="">
+                            <input id="hole_9_red_par" type="text" class="form-control first-red-par {{ $errors->has('hole_9_red_par') ? ' is-invalid' : '' }}" name="hole_9_red_par" value="">
                         </div>                                                                                                                                                                                                                                                          
 
+                        <div class="col">
+                            <span id="firstRedPar"></span>
+                        </div>    
 
                     </div>
                     <!-- /.row -->       
@@ -589,6 +626,9 @@
                             <input id="hole_9_red_stroke_index" type="text" class="form-control {{ $errors->has('hole_9_red_stroke_index') ? ' is-invalid' : '' }}" name="hole_9_red_stroke_index" value="">
                         </div>                                                                                                                                                                                                                                                          
 
+                        <div class="col">
+                            <span>-</span>
+                        </div>   
 
                     </div>
                     <!-- /.row -->                                                                   

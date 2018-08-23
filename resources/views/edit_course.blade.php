@@ -76,17 +76,17 @@
                                 <label>Number of holes</label>
                                 <div class="form-group hole-select">
                                     
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="holes" id="holes-9" value="9" @if($course_info->holes === 9) checked @endif>
-                                        <label class="form-check-label" for="holes-9">9 Holes</label>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" name="holes" id="holes-9" value="9" @if($course_info->holes === 9) checked @endif>
+                                        <label class="custom-control-label" for="holes-9">9 Holes</label>
                                     </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="holes" id="holes-18" value="18" @if($course_info->holes === 18) checked @endif>
-                                        <label class="form-check-label" for="holes-18">18 Holes</label>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" name="holes" id="holes-18" value="18" @if($course_info->holes === 18) checked @endif>
+                                        <label class="custom-control-label" for="holes-18">18 Holes</label>
                                     </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="holes" id="holes-27" value="27" @if($course_info->holes === 27) checked @endif>
-                                        <label class="form-check-label" for="holes-27">27 Holes</label>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" name="holes" id="holes-27" value="27" @if($course_info->holes === 27) checked @endif>
+                                        <label class="custom-control-label" for="holes-27">27 Holes</label>
                                     </div>
 
                                 </div>

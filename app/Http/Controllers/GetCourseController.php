@@ -114,28 +114,10 @@ class GetCourseController extends Controller
 
     public function GetCourseHoles(Request $request){
 
-        $requested_holes = $request->selected_holes;
+        $selected_size = $request->selected_holes;
 
-        if($requested_holes === '9'){
-            $view = view('/ajax_9_holes')->render();
-            $view = trim(preg_replace('/\r\n/', ' ', $view));
-        }
-
-        elseif($requested_holes === '18'){
-            $view = view('/ajax_18_holes')->render();
-            $view = trim(preg_replace('/\r\n/', ' ', $view));
-        }  
-
-        elseif($requested_holes === '27'){
-            $view = view('/ajax_27_holes')->render();
-            $view = trim(preg_replace('/\r\n/', ' ', $view));
-        } 
-
-        else{
-            $view = view('/ajax_18_holes')->render();
-            $view = trim(preg_replace('/\r\n/', ' ', $view));
-        }
-               
+        $view = view('/ajax_holes', compact('selected_size'))->render();
+        $view = trim(preg_replace('/\r\n/', ' ', $view));              
 
         return response()->json($view);
 
@@ -144,30 +126,12 @@ class GetCourseController extends Controller
     public function GetCourseHolesEdit(Request $request){
 
         $course_id = $request->course_id;
-        $requested_holes = $request->selected_holes;
+        $selected_size = $request->selected_holes;
 
         $course_info = Course::where('id', $course_id)->first(); 
-        //$course_info = trim(preg_replace('/\r\n/', ' ', $course_info));
-
-        if($requested_holes === '9'){
-            $view = view('/ajax_9_holes', compact('course_info'))->render();
-            $view = trim(preg_replace('/\r\n/', ' ', $view));
-        }
-
-        elseif($requested_holes === '18'){
-            $view = view('/ajax_18_holes', compact('course_info'))->render();
-            $view = trim(preg_replace('/\r\n/', ' ', $view));
-        }  
-
-        elseif($requested_holes === '27'){
-            $view = view('/ajax_27_holes', compact('course_info'))->render();
-            $view = trim(preg_replace('/\r\n/', ' ', $view));
-        } 
-
-        else{
-            $view = view('/ajax_18_holes', compact('course_info'))->render();
-            $view = trim(preg_replace('/\r\n/', ' ', $view));
-        }
+        
+        $view = view('/ajax_edit_holes', compact('selected_size', 'course_info'))->render();
+        $view = trim(preg_replace('/\r\n/', ' ', $view)); 
 
         return response()->json($view);
 
