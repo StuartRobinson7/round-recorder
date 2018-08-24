@@ -18,8 +18,6 @@
 
                 <h1>{{ __('Edit Course') }}</h1>
 
-                {{ $id }}
-
                         @if ($errors->any())
                             <div class="alert alert-danger">
                                 <ul>
@@ -30,7 +28,7 @@
                             </div>
                         @endif
 
-                    <form method="post" action="{{ route('courses.update', $id) }}" aria-label="{{ __('Edit Course') }}">
+                    <form method="post" id="edit_course"  action="{{ route('courses.update', $id) }}">
                         
                         @method('put')
 
@@ -42,7 +40,7 @@
 
                                 <div class="form-group">
                                     <label>Property Name</label>
-                                    <input id="property_name" type="text" class="form-control {{ $errors->has('property_name') ? ' is-invalid' : '' }}" name="property_name" value="{{ $course_info->property_name }}">
+                                    <input id="property_name" type="text" class="form-control {{ $errors->has('property_name') ? ' is-invalid' : '' }}" name="property_name" value="{{ old('property_name', $course_info->property_name) }}">
                                 </div>
 
                             </div>
@@ -51,7 +49,7 @@
 
                                 <div class="form-group">
                                     <label>Course Name</label>
-                                    <input id="course_name" type="text" class="form-control {{ $errors->has('course_name') ? ' is-invalid' : '' }}" name="course_name" value="{{ $course_info->course_name }}">
+                                    <input id="course_name" type="text" class="form-control {{ $errors->has('course_name') ? ' is-invalid' : '' }}" name="course_name" value="{{ old('course_name', $course_info->course_name) }}">
                                 </div>
 
                             </div>                            
@@ -65,7 +63,7 @@
 
                                 <div class="form-group">
                                     <label>SSS</label>
-                                    <input id="sss" type="text" class="form-control {{ $errors->has('sss') ? ' is-invalid' : '' }}" name="sss" value="{{ $course_info->sss }}"> 
+                                    <input id="sss" type="text" class="form-control {{ $errors->has('sss') ? ' is-invalid' : '' }}" name="sss" value="{{ old('sss', $course_info->sss) }}"> 
                                 </div>
 
                             </div>
@@ -106,15 +104,11 @@
 
                             <div class="text-right">
 
-                            <button type="submit" class="btn btn-cta btn-lg">
-                                <span>{{ __('Save Changes') }}</span>
-                            </button>
+                                <button id="submit" type="submit" class="btn btn-cta btn-lg">
+                                    <span>{{ __('Save Changes') }}</span>
+                                </button>
 
                             </div>
-
-                        <button type="submit" class="btn btn-cta">
-                            <span>{{ __('Save Changes') }}</span>
-                        </button>
 
                     </form>
 
