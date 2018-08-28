@@ -2,6 +2,87 @@
 // Tables ---------------------------------
 // ========================================
 
+.rr-head-row{
+    div{
+        border-top: 1px solid transparent; 
+    }
+}
+
+.rr-row, .rr-head-row{
+    @extend %number;
+    margin: 0;
+    text-align: center;
+    //border-bottom: 1px solid $gray-300;
+    line-height: 36px;
+
+    h4{
+        margin: 0;
+        line-height: 36px;
+    }    
+
+    div{
+        border-bottom:1px solid transparent;
+        border-left:1px solid transparent;
+    }
+
+
+    .rr-head{
+        background: shade($theme-1, 20);
+        color:$white;
+        border-color: shade($theme-1, 30);
+    }
+
+    div:first-child{
+        border-left: none;
+    }
+
+    .white{
+        background: $white;
+        color:$body-color;
+        border-color: shade($white, 10%);
+    }
+
+    .yellow{
+        background: $warning;
+        color:$body-color;
+        border-color: shade($warning, 10%);
+    }
+
+    .red{
+        background: $danger;
+        color: $white;
+        border-color: shade($danger, 10%);
+    }
+
+}
+
+
+.view-course{
+
+    .rr-row{
+        @include font-size(14px);
+        line-height: 20px;
+
+        h4{
+            @include font-size(14px);
+            line-height: 20px;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .rr-table{
     text-align: center;
 

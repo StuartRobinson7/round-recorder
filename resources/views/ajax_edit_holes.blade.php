@@ -583,7 +583,7 @@
                             </div>
 
                             <div class="col">
-                                <input id="hole_22_white" type="text" class="form-control third-white-yards {{ $errors->has('hole_22_white') ? ' is-invalid' : '' }}" name="hole_22_white" value="{{ old('hole_21_white', $course_info->hole_21_white) }}">
+                                <input id="hole_21_white" type="text" class="form-control third-white-yards {{ $errors->has('hole_21_white') ? ' is-invalid' : '' }}" name="hole_21_white" value="{{ old('hole_21_white', $course_info->hole_21_white) }}">
                             </div>
 
                             <div class="col">
@@ -633,7 +633,7 @@
                             </div>
 
                             <div class="col">
-                                <input id="hole_22_white_par" type="text" class="form-control third-white-par {{ $errors->has('hole_22_white_par') ? ' is-invalid' : '' }}" name="hole_22_white_par" value="{{ old('hole_21_white_par', $course_info->hole_21_white_par) }}">
+                                <input id="hole_21_white_par" type="text" class="form-control third-white-par {{ $errors->has('hole_21_white_par') ? ' is-invalid' : '' }}" name="hole_21_white_par" value="{{ old('hole_21_white_par', $course_info->hole_21_white_par) }}">
                             </div>
 
                             <div class="col">
@@ -683,7 +683,7 @@
                             </div>
 
                             <div class="col">
-                                <input id="hole_22_white_stroke_index_front" type="text" class="form-control {{ $errors->has('hole_22_white_stroke_index_front') ? ' is-invalid' : '' }}" name="hole_22_white_stroke_index_front" value="{{ old('hole_21_white_stroke_index_front', $course_info->hole_21_white_stroke_index_front) }}">
+                                <input id="hole_21_white_stroke_index_front" type="text" class="form-control {{ $errors->has('hole_21_white_stroke_index_front') ? ' is-invalid' : '' }}" name="hole_21_white_stroke_index_front" value="{{ old('hole_21_white_stroke_index_front', $course_info->hole_21_white_stroke_index_front) }}">
                             </div>
 
                             <div class="col">
@@ -732,7 +732,7 @@
                             </div>
 
                             <div class="col">
-                                <input id="hole_22_white_stroke_index_back" type="text" class="form-control {{ $errors->has('hole_22_white_stroke_index_back') ? ' is-invalid' : '' }}" name="hole_22_white_stroke_index_back" value="{{ old('hole_21_white_stroke_index_back', $course_info->hole_21_white_stroke_index_back) }}">
+                                <input id="hole_21_white_stroke_index_back" type="text" class="form-control {{ $errors->has('hole_21_white_stroke_index_back') ? ' is-invalid' : '' }}" name="hole_21_white_stroke_index_back" value="{{ old('hole_21_white_stroke_index_back', $course_info->hole_21_white_stroke_index_back) }}">
                             </div>
 
                             <div class="col">
@@ -1327,7 +1327,7 @@
                         </div>
 
                         <div class="col">
-                            <input id="hole_22_yellow" type="text" class="form-control third-yellow-yards {{ $errors->has('hole_22_yellow') ? ' is-invalid' : '' }}" name="hole_22_yellow" value="{{ old('hole_21_yellow', $course_info->hole_21_yellow) }}">
+                            <input id="hole_21_yellow" type="text" class="form-control third-yellow-yards {{ $errors->has('hole_21_yellow') ? ' is-invalid' : '' }}" name="hole_21_yellow" value="{{ old('hole_21_yellow', $course_info->hole_21_yellow) }}">
                         </div>
 
                         <div class="col">
@@ -1377,7 +1377,7 @@
                         </div>
 
                         <div class="col">
-                            <input id="hole_22_yellow_par" type="text" class="form-control third-yellow-par {{ $errors->has('hole_22_yellow_par') ? ' is-invalid' : '' }}" name="hole_22_yellow_par" value="{{ old('hole_21_yellow_par', $course_info->hole_21_yellow_par) }}">
+                            <input id="hole_21_yellow_par" type="text" class="form-control third-yellow-par {{ $errors->has('hole_21_yellow_par') ? ' is-invalid' : '' }}" name="hole_21_yellow_par" value="{{ old('hole_21_yellow_par', $course_info->hole_21_yellow_par) }}">
                         </div>
 
                         <div class="col">
@@ -1427,7 +1427,7 @@
                         </div>
 
                         <div class="col">
-                            <input id="hole_22_yellow_stroke_index_front" type="text" class="form-control {{ $errors->has('hole_22_yellow_stroke_index_front') ? ' is-invalid' : '' }}" name="hole_22_yellow_stroke_index_front" value="{{ old('hole_21_yellow_stroke_index_front', $course_info->hole_21_yellow_stroke_index_front) }}">
+                            <input id="hole_21_yellow_stroke_index_front" type="text" class="form-control {{ $errors->has('hole_21_yellow_stroke_index_front') ? ' is-invalid' : '' }}" name="hole_21_yellow_stroke_index_front" value="{{ old('hole_21_yellow_stroke_index_front', $course_info->hole_21_yellow_stroke_index_front) }}">
                         </div>
 
                         <div class="col">
@@ -1476,7 +1476,7 @@
                         </div>
 
                         <div class="col">
-                            <input id="hole_22_yellow_stroke_index_back" type="text" class="form-control {{ $errors->has('hole_22_yellow_stroke_index_back') ? ' is-invalid' : '' }}" name="hole_22_yellow_stroke_index_back" value="{{ old('hole_21_yellow_stroke_index_back', $course_info->hole_21_yellow_stroke_index_back) }}">
+                            <input id="hole_21_yellow_stroke_index_back" type="text" class="form-control {{ $errors->has('hole_21_yellow_stroke_index_back') ? ' is-invalid' : '' }}" name="hole_21_yellow_stroke_index_back" value="{{ old('hole_21_yellow_stroke_index_back', $course_info->hole_21_yellow_stroke_index_back) }}">
                         </div>
 
                         <div class="col">
@@ -2067,7 +2067,7 @@
                         </div>
 
                         <div class="col">
-                            <input id="hole_22_red" type="text" class="form-control third-red-yards {{ $errors->has('hole_22_red') ? ' is-invalid' : '' }}" name="hole_22_red" value="{{ old('hole_21_red', $course_info->hole_21_red) }}">
+                            <input id="hole_21_red" type="text" class="form-control third-red-yards {{ $errors->has('hole_21_red') ? ' is-invalid' : '' }}" name="hole_21_red" value="{{ old('hole_21_red', $course_info->hole_21_red) }}">
                         </div>
 
                         <div class="col">
@@ -2117,7 +2117,7 @@
                         </div>
 
                         <div class="col">
-                            <input id="hole_22_red_par" type="text" class="form-control third-red-par {{ $errors->has('hole_22_red_par') ? ' is-invalid' : '' }}" name="hole_22_red_par" value="{{ old('hole_21_red_par', $course_info->hole_21_red_par) }}">
+                            <input id="hole_21_red_par" type="text" class="form-control third-red-par {{ $errors->has('hole_21_red_par') ? ' is-invalid' : '' }}" name="hole_21_red_par" value="{{ old('hole_21_red_par', $course_info->hole_21_red_par) }}">
                         </div>
 
                         <div class="col">
@@ -2167,7 +2167,7 @@
                         </div>
 
                         <div class="col">
-                            <input id="hole_22_red_stroke_index_front" type="text" class="form-control {{ $errors->has('hole_22_red_stroke_index_front') ? ' is-invalid' : '' }}" name="hole_22_red_stroke_index_front" value="{{ old('hole_21_red_stroke_index_front', $course_info->hole_21_red_stroke_index_front) }}">
+                            <input id="hole_21_red_stroke_index_front" type="text" class="form-control {{ $errors->has('hole_21_red_stroke_index_front') ? ' is-invalid' : '' }}" name="hole_21_red_stroke_index_front" value="{{ old('hole_21_red_stroke_index_front', $course_info->hole_21_red_stroke_index_front) }}">
                         </div>
 
                         <div class="col">
@@ -2216,7 +2216,7 @@
                         </div>
 
                         <div class="col">
-                            <input id="hole_22_red_stroke_index_back" type="text" class="form-control {{ $errors->has('hole_22_red_stroke_index_back') ? ' is-invalid' : '' }}" name="hole_22_red_stroke_index_back" value="{{ old('hole_21_red_stroke_index_back', $course_info->hole_21_red_stroke_index_back) }}">
+                            <input id="hole_21_red_stroke_index_back" type="text" class="form-control {{ $errors->has('hole_21_red_stroke_index_back') ? ' is-invalid' : '' }}" name="hole_21_red_stroke_index_back" value="{{ old('hole_21_red_stroke_index_back', $course_info->hole_21_red_stroke_index_back) }}">
                         </div>
 
                         <div class="col">

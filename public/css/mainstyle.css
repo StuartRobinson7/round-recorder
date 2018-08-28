@@ -10214,6 +10214,8 @@ address,
 .breadcrumb,
 footer .on2net,
 .alert,
+.rr-row,
+.rr-head-row,
 .cart,
 .order-table-item,
 .style-guide-colour span,
@@ -10237,6 +10239,8 @@ footer .on2net,
   .breadcrumb,
   footer .on2net,
   .alert,
+  .rr-row,
+  .rr-head-row,
   .cart,
   .order-table-item,
   .style-guide-colour span,
@@ -10754,6 +10758,74 @@ footer .on2net {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   right: 0;
+}
+
+.rr-head-row div {
+  border-top: 1px solid transparent;
+}
+
+.rr-row,
+.rr-head-row {
+  margin: 0;
+  text-align: center;
+  line-height: 36px;
+}
+
+.rr-row h4,
+.rr-head-row h4 {
+  margin: 0;
+  line-height: 36px;
+}
+
+.rr-row div,
+.rr-head-row div {
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+
+.rr-row .rr-head,
+.rr-head-row .rr-head {
+  background: #017258;
+  color: #fff;
+  border-color: #01644d;
+}
+
+.rr-row div:first-child,
+.rr-head-row div:first-child {
+  border-left: none;
+}
+
+.rr-row .white,
+.rr-head-row .white {
+  background: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  border-color: #e6e6e6;
+}
+
+.rr-row .yellow,
+.rr-head-row .yellow {
+  background: #ffc107;
+  color: rgba(0, 0, 0, 0.87);
+  border-color: #e6ae06;
+}
+
+.rr-row .red,
+.rr-head-row .red {
+  background: #dc3545;
+  color: #fff;
+  border-color: #c6303e;
+}
+
+.view-course .rr-row {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 20px;
+}
+
+.view-course .rr-row h4 {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 20px;
 }
 
 .rr-table {
