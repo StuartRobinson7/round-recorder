@@ -61,4 +61,5 @@ class Course extends Model
     protected $hidden = [
 
     ];
+
 }

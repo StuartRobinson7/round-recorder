@@ -499,11 +499,11 @@
                     </div>
 
                     <div class="col white">
-                        {{ $first_nine_white }}
+                        {{ $course->first_nine_white }}
                     </div>  
 
                     <div class="col white">
-                    {{ $first_nine_white_par }}
+                    {{ $course->first_nine_white_par }}
                     </div>
 
                     <div class="col">
@@ -511,11 +511,11 @@
                     </div>    
 
                     <div class="col yellow">
-                        {{ $first_nine_yellow }}
+                        {{ $course->first_nine_yellow }}
                     </div>  
 
                     <div class="col yellow">
-                        {{ $first_nine_yellow_par }}  
+                        {{ $course->first_nine_yellow_par }}  
                     </div>
 
                     <div class="col">
@@ -523,11 +523,11 @@
                     </div>        
 
                     <div class="col red">
-                        {{ $first_nine_red }}                        
+                        {{ $course->first_nine_red }}                        
                     </div>  
 
                     <div class="col red">
-                        {{ $first_nine_red_par }} 
+                        {{ $course->first_nine_red_par }} 
                     </div>
 
                     <div class="col">
@@ -1008,11 +1008,11 @@
                     </div>
 
                     <div class="col white">
-                        {{ $second_nine_white }}
+                        {{ $course->second_nine_white }}
                     </div>  
 
                     <div class="col white">
-                    {{ $second_nine_white_par }}
+                    {{ $course->second_nine_white_par }}
                     </div>
 
                     <div class="col">
@@ -1020,11 +1020,11 @@
                     </div>    
 
                     <div class="col yellow">
-                        {{ $second_nine_yellow }}
+                        {{ $course->second_nine_yellow }}
                     </div>  
 
                     <div class="col yellow">
-                        {{ $second_nine_yellow_par }}  
+                        {{ $course->second_nine_yellow_par }}  
                     </div>
 
                     <div class="col">
@@ -1032,11 +1032,11 @@
                     </div>        
 
                     <div class="col red">
-                        {{ $second_nine_red }}                        
+                        {{ $course->second_nine_red }}                        
                     </div>  
 
                     <div class="col red">
-                        {{ $second_nine_red_par }} 
+                        {{ $course->second_nine_red_par }} 
                     </div>
 
                     <div class="col">
@@ -1515,11 +1515,11 @@
                     </div>
 
                     <div class="col white">
-                        {{ $third_nine_white }}
+                        {{ $course->third_nine_white }}
                     </div>  
 
                     <div class="col white">
-                    {{ $third_nine_white_par }}
+                        {{ $course->third_nine_white_par }}
                     </div>
 
                     <div class="col">
@@ -1527,11 +1527,11 @@
                     </div>    
 
                     <div class="col yellow">
-                        {{ $third_nine_yellow }}
+                        {{ $course->third_nine_yellow }}
                     </div>  
 
                     <div class="col yellow">
-                        {{ $third_nine_yellow_par }}  
+                        {{ $course->third_nine_yellow_par }}  
                     </div>
 
                     <div class="col">
@@ -1539,11 +1539,11 @@
                     </div>        
 
                     <div class="col red">
-                        {{ $third_nine_red }}                        
+                        {{ $course->third_nine_red }}                        
                     </div>  
 
                     <div class="col red">
-                        {{ $third_nine_red_par }} 
+                        {{ $course->third_nine_red_par }} 
                     </div>
 
                     <div class="col">
