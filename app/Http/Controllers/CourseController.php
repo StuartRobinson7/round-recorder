@@ -50,14 +50,14 @@ class CourseController extends Controller
         );
         */
 
-        $array = array_merge($course->toArray(), $first_nine_white->toArray(), $first_nine_white_par->toArray(), $first_nine_yellow->toArray(), $first_nine_yellow_par->toArray(), $first_nine_red->toArray(), $first_nine_red_par->toArray(),
-        $second_nine_white->toArray(), $second_nine_white_par->toArray(), $second_nine_yellow->toArray(), $second_nine_yellow_par->toArray(), $second_nine_red->toArray(), $second_nine_red_par->toArray(),
-        $third_nine_white->toArray(), $third_nine_white_par->toArray(), $third_nine_yellow->toArray(), $third_nine_yellow_par->toArray(), $third_nine_red->toArray(), $third_nine_red_par->toArray());
+        //$array = array_merge($course->toArray(), $first_nine_white[]->toArray(), $first_nine_white_par[]->toArray(), $first_nine_yellow[]->toArray(), $first_nine_yellow_par[]->toArray(), $first_nine_red[]->toArray(), $first_nine_red_par[]->toArray(),
+        //$second_nine_white[]->toArray(), $second_nine_white_par[]->toArray(), $second_nine_yellow[]->toArray(), $second_nine_yellow_par[]->toArray(), $second_nine_red[]->toArray(), $second_nine_red_par[]->toArray(),
+        //$third_nine_white[]->toArray(), $third_nine_white_par[]->toArray(), $third_nine_yellow[]->toArray(), $third_nine_yellow_par[]->toArray(), $third_nine_red[]->toArray(), $third_nine_red_par[]->toArray());
         
-        return Response::json($array);
+        //return Response::json($course);
 
 
-        //return $course_info;
+        return $course;
 
     }
 
