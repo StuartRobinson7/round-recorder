@@ -1,3 +1,5 @@
+                    @if($selected_size === '27')
+
                     <div class="row">
                     
                         <div class="col">
@@ -23,8 +25,9 @@
                     
                     
                     </div>
-                    <!--/.row -->                    
-                    
+                    <!--/.row -->  
+
+                    @endif
                     
                     <div class="add-tee-box white-tees">
                     

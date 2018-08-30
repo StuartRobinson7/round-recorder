@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Round;
 use App\Course;
+use App\Updates\UpdateCourseInfo;
 use App\Events\RoundAdd;
 use App\Http\Controllers;
 use Illuminate\Http\Request;
@@ -13,6 +14,19 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RoundController extends Controller
 {
+
+    /**
+     * Set variables for queries and updates
+     * Used for 'show' and 'update'
+     */
+    protected $GetCourseTotals;
+
+ 
+    public function __construct(GetCourseTotals $GetCourseTotals) {
+        $this->GetCourseTotals = $GetCourseTotals;
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -79,13 +93,16 @@ class RoundController extends Controller
      */
     public function show($id)
     {
-        $round = \App\Round::find($id);
+        $round = Round::find($id);
 
         $course_id = $round->course_id;
 
         $yards = $round->yards;
 
-        $course = \App\Course::find($course_id);
+        $course = $this->GetCourseTotals->courseTotals($course_id);
+
+        //$course = \App\Course::find($course_id);
+        
 
 
         if($yards === "red"){
