@@ -79,70 +79,74 @@ module.exports = __webpack_require__(18);
 
 $(document).ready(function () {
 
-    function roundTotals($class, $id) {
+        function roundTotals($class, $id) {
 
-        var $total = 0;
+                var $total = 0;
 
-        $($class).each(function () {
-            $total += parseInt($(this).val());
-        });
+                $($class).each(function () {
+                        $total += parseInt($(this).val());
+                });
 
-        $($id).html($total);
-    }
+                $($id).html($total);
+        }
 
-    roundTotals(".first-nine-score", "#firstNineScore");
-    roundTotals(".first-nine-putts", "#firstNinePutts");
-    roundTotals(".first-nine-drops", "#firstNineDrops");
+        roundTotals(".first-nine-score", "#firstNineScore");
+        roundTotals(".first-nine-putts", "#firstNinePutts");
+        roundTotals(".first-nine-drops", "#firstNineDrops");
 
-    roundTotals(".second-nine-score", "#secondNineScore");
-    roundTotals(".second-nine-putts", "#secondNinePutts");
-    roundTotals(".second-nine-drops", "#secondNineDrops");
+        roundTotals(".second-nine-score", "#secondNineScore");
+        roundTotals(".second-nine-putts", "#secondNinePutts");
+        roundTotals(".second-nine-drops", "#secondNineDrops");
 
-    roundTotals(".third-nine-score", "#thirdNineScore");
-    roundTotals(".third-nine-putts", "#thirdNinePutts");
-    roundTotals(".third-nine-drops", "#thirdNineDrops");
+        roundTotals(".third-nine-score", "#thirdNineScore");
+        roundTotals(".third-nine-putts", "#thirdNinePutts");
+        roundTotals(".third-nine-drops", "#thirdNineDrops");
 
-    function fairwaysTotals($class, $id) {
+        function fairwaysTotals($class, $rowId, $id) {
 
-        var $inputs = $($class).length;
-        var $inputsDisabled = $($class + 'input:disabled').length;
-        var $total = $inputs - $inputsDisabled;
+                //var $disabledId = 
 
-        $count = 0;
-        $($id).html($count);
-        $($id).after('/' + $total);
+                var $inputs = $($class).length;
+                var $inputsDisabled = $($rowId + ' ' + 'input:disabled').length;
+                var $total = $inputs - $inputsDisabled;
 
-        $(document).on("change", $class, function () {
+                //console.log($disabledId);
 
-            var $count = $($class + 'input:checked').length;
+                $count = 0;
+                $($id).html($count);
+                $($id).after('/' + $total);
 
-            $('#' + $id).html($count);
-        });
-    }
+                $(document).on("change", $class, function () {
 
-    fairwaysTotals(".FirstNineFir", "#FirstNineFirCount");
-    fairwaysTotals(".SecondtNineFir", "#SecondNineFirCount");
-    fairwaysTotals(".ThirdNineFir", "#ThirdNineFirCount");
+                        var $count = $($rowId + ' ' + 'input:checked').length;
 
-    function greensTotals($class, $inputId, $id) {
+                        $($id).html($count);
+                });
+        }
 
-        var $total = 9;
+        fairwaysTotals(".FirstNineFir", "#first9Firs", "#FirstNineFirCount");
+        fairwaysTotals(".SecondNineFir", "#second9Firs", "#SecondNineFirCount");
+        fairwaysTotals(".ThirdNineFir", "#third9Firs", "#ThirdNineFirCount");
 
-        $count = 0;
-        $($id).html($count);
-        $($id).after('/' + $total);
+        function greensTotals($class, $inputId, $id) {
 
-        $(document).on("change", $class, function () {
+                var $total = 9;
 
-            var $count = $('#' + $inputId + 'input:checked').length;
+                $count = 0;
+                $($id).html($count);
+                $($id).after('/' + $total);
 
-            $($id).html($count);
-        });
-    }
+                $(document).on("change", $class, function () {
 
-    greensTotals(".FirstNineGir", "firstNineGirs", "#FirstNineGirCount");
-    greensTotals(".SecondtNineGir", "second9Girs", "#SecondNineGirCount");
-    greensTotals(".ThirdNineGir", "third9Girs", "#ThirdNineGirCount");
+                        var $count = $('#' + $inputId + 'input:checked').length;
+
+                        $($id).html($count);
+                });
+        }
+
+        greensTotals(".FirstNineGir", "firstNineGirs", "#FirstNineGirCount");
+        greensTotals(".SecondtNineGir", "second9Girs", "#SecondNineGirCount");
+        greensTotals(".ThirdNineGir", "third9Girs", "#ThirdNineGirCount");
 });
 
 /***/ })

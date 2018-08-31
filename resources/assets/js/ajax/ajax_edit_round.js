@@ -27,11 +27,15 @@ $(document).ready(function(){
 
 
 
-    function fairwaysTotals($class, $id){
+    function fairwaysTotals($class, $rowId, $id){
+
+        //var $disabledId = 
 
         var $inputs = $($class).length;
-        var $inputsDisabled = $($class  + 'input:disabled').length;
+        var $inputsDisabled = $($rowId + ' ' + 'input:disabled').length;
         var $total = $inputs - $inputsDisabled;
+
+        //console.log($disabledId);
 
         $count = 0;
         $($id).html($count);
@@ -39,17 +43,17 @@ $(document).ready(function(){
 
         $(document).on("change", $class, function () {
 
-            var $count = $($class + 'input:checked').length;
+            var $count = $($rowId + ' ' + 'input:checked').length;
     
-            $('#' + $id).html($count);
+            $($id).html($count);
     
         });
 
     }
 
-    fairwaysTotals(".FirstNineFir", "#FirstNineFirCount");
-    fairwaysTotals(".SecondtNineFir", "#SecondNineFirCount");
-    fairwaysTotals(".ThirdNineFir", "#ThirdNineFirCount");
+    fairwaysTotals(".FirstNineFir","#first9Firs", "#FirstNineFirCount");
+    fairwaysTotals(".SecondNineFir","#second9Firs", "#SecondNineFirCount");
+    fairwaysTotals(".ThirdNineFir","#third9Firs", "#ThirdNineFirCount");
 
 
     function greensTotals($class, $inputId, $id){
