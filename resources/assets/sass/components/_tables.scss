@@ -15,10 +15,10 @@
     //border-bottom: 1px solid $gray-300;
     line-height: 36px;
 
-    h4{
+    h4, h5{
         margin: 0;
         line-height: 36px;
-    }    
+    }       
 
     div{
         border-bottom:1px solid transparent;
@@ -27,6 +27,7 @@
 
 
     .rr-head{
+        height: 100%;
         background: shade($theme-1, 20);
         color:$white;
         border-color: shade($theme-1, 30);
@@ -54,7 +55,23 @@
         border-color: shade($danger, 10%);
     }
 
+    .fa-check{
+        color:$theme-1; 
+    }
+
+    .fa-times{
+        color: $danger;
+    }
+
+    .fa-minus{
+        color: $gray-500;
+    }    
+
 }
+
+div.rr-row:nth-child(even){
+    background: shade($gray-100, 3%);
+}   
 
 
 .view-course{
@@ -71,7 +88,13 @@
 
 }
 
+.view-round{
 
+    .rr-head{
+        border-left-color: transparent;
+    }
+
+}
 
 
 

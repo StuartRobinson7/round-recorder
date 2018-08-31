@@ -69,7 +69,10 @@ $ct-series-colors: (
     .round-total-label{
         border: 1px solid $gray-200; 
         text-align: right;
+        //background: $gray-200;
+        background-size: 6px 6px !important;
         background: $gray-200;
+        background-image:(linear-gradient(-45deg, transparent 46%, $gray-300 49%, $gray-300 51%, transparent 55%));
         height: 80px;
 
         h4{

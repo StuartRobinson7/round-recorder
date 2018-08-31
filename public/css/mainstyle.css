@@ -10772,7 +10772,9 @@ footer .on2net {
 }
 
 .rr-row h4,
-.rr-head-row h4 {
+.rr-row h5,
+.rr-head-row h4,
+.rr-head-row h5 {
   margin: 0;
   line-height: 36px;
 }
@@ -10785,6 +10787,7 @@ footer .on2net {
 
 .rr-row .rr-head,
 .rr-head-row .rr-head {
+  height: 100%;
   background: #017258;
   color: #fff;
   border-color: #01644d;
@@ -10816,6 +10819,25 @@ footer .on2net {
   border-color: #c6303e;
 }
 
+.rr-row .fa-check,
+.rr-head-row .fa-check {
+  color: #018f6e;
+}
+
+.rr-row .fa-times,
+.rr-head-row .fa-times {
+  color: #dc3545;
+}
+
+.rr-row .fa-minus,
+.rr-head-row .fa-minus {
+  color: #adb5bd;
+}
+
+div.rr-row:nth-child(even) {
+  background: #f1f2f3;
+}
+
 .view-course .rr-row {
   font-size: 14px;
   font-size: 0.875rem;
@@ -10826,6 +10848,10 @@ footer .on2net {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 20px;
+}
+
+.view-round .rr-head {
+  border-left-color: transparent;
 }
 
 .rr-table {
@@ -11416,7 +11442,9 @@ footer .title.on2net span {
 .round-total-row .round-total-label {
   border: 1px solid #e9ecef;
   text-align: right;
+  background-size: 6px 6px !important;
   background: #e9ecef;
+  background-image: linear-gradient(-45deg, transparent 46%, #dee2e6 49%, #dee2e6 51%, transparent 55%);
   height: 80px;
 }
 

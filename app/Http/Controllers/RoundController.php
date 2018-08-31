@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Round;
 use App\Course;
-use App\Updates\UpdateCourseInfo;
+use App\Queries\GetCourseInfo;
+use App\Queries\GetCourseTotals;
+use App\Queries\GetRoundResult;
 use App\Events\RoundAdd;
 use App\Http\Controllers;
 use Illuminate\Http\Request;
@@ -20,10 +22,13 @@ class RoundController extends Controller
      * Used for 'show' and 'update'
      */
     protected $GetCourseTotals;
-
+    protected $GetRoundResults;
+    protected $GetCourseInfo;
  
-    public function __construct(GetCourseTotals $GetCourseTotals) {
+    public function __construct(GetCourseTotals $GetCourseTotals, GetRoundResult $GetRoundResult, GetCourseInfo $GetCourseInfo) {
         $this->GetCourseTotals = $GetCourseTotals;
+        $this->GetRoundResult = $GetRoundResult;
+        $this->GetCourseInfo = $GetCourseInfo;
     }
 
 
@@ -93,115 +98,19 @@ class RoundController extends Controller
      */
     public function show($id)
     {
-        $round = Round::find($id);
+        $round = \App\Round::find($id);
 
         $course_id = $round->course_id;
 
         $yards = $round->yards;
 
-        $course = $this->GetCourseTotals->courseTotals($course_id);
+        $course = $this->GetCourseInfo->courseInfo($course_id);
 
-        //$course = \App\Course::find($course_id);
+        $course_totals = $this->GetCourseTotals->courseTotals($course_id);
         
+        $round = $this->GetRoundResult->roundResult($id);
 
-
-        if($yards === "red"){
-
-            $course_totals = \App\Course::where('courses.id', $course_id)        
-                ->selectRaw("SUM(hole_1_ladies_par + hole_2_ladies_par + hole_3_ladies_par + hole_4_ladies_par + hole_5_ladies_par + hole_6_ladies_par + hole_7_ladies_par + hole_8_ladies_par + hole_9_ladies_par + hole_10_ladies_par + hole_11_ladies_par + hole_12_ladies_par + hole_13_ladies_par + hole_14_ladies_par + hole_15_ladies_par + hole_16_ladies_par + hole_17_ladies_par + hole_18_ladies_par) as total_par")
-                ->selectRaw("SUM(hole_1_ladies_par + hole_2_ladies_par + hole_3_ladies_par + hole_4_ladies_par + hole_5_ladies_par + hole_6_ladies_par + hole_7_ladies_par + hole_8_ladies_par + hole_9_ladies_par) as front_par")
-                ->selectRaw("SUM(hole_10_ladies_par + hole_11_ladies_par + hole_12_ladies_par + hole_13_ladies_par + hole_14_ladies_par + hole_15_ladies_par + hole_16_ladies_par + hole_17_ladies_par + hole_18_ladies_par) as back_par")
-                ->selectRaw("SUM(hole_1_whites + hole_2_whites + hole_3_whites + hole_4_whites + hole_5_whites + hole_6_whites + hole_7_whites + hole_8_whites + hole_9_whites + hole_10_whites + hole_11_whites + hole_12_whites + hole_13_whites + hole_14_whites + hole_15_whites + hole_16_whites + hole_17_whites + hole_18_whites) as total_whites")
-                ->selectRaw("SUM(hole_1_yellows + hole_2_yellows + hole_3_yellows + hole_4_yellows + hole_5_yellows + hole_6_yellows + hole_7_yellows + hole_8_yellows + hole_9_yellows + hole_10_yellows + hole_11_yellows + hole_12_yellows + hole_13_yellows + hole_14_yellows + hole_15_yellows + hole_16_yellows + hole_17_yellows + hole_18_yellows) as total_yellows")
-                ->selectRaw("SUM(hole_1_reds + hole_2_reds + hole_3_reds + hole_4_reds + hole_5_reds + hole_6_reds + hole_7_reds + hole_8_reds + hole_9_reds + hole_10_reds + hole_11_reds + hole_12_reds + hole_13_reds + hole_14_reds + hole_15_reds + hole_16_reds + hole_17_reds + hole_18_reds) as total_reds")                
-                ->first();
-
-            $round_result = \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')        
-                ->selectRaw("SUM(hole_1_ladies_par + hole_2_ladies_par + hole_3_ladies_par + hole_4_ladies_par + hole_5_ladies_par + hole_6_ladies_par + hole_7_ladies_par + hole_8_ladies_par + hole_9_ladies_par + hole_10_ladies_par + hole_11_ladies_par + hole_12_ladies_par + hole_13_ladies_par + hole_14_ladies_par + hole_15_ladies_par + hole_16_ladies_par + hole_17_ladies_par + hole_18_ladies_par) as total_ladies_par")                              
-                ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as total_score")  
-                ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score) as front_score") 
-                ->selectRaw("SUM(hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as back_score")                         
-                ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score - hole_1_ladies_par - hole_2_ladies_par - hole_3_ladies_par - hole_4_ladies_par - hole_5_ladies_par - hole_6_ladies_par - hole_7_ladies_par - hole_8_ladies_par - hole_9_ladies_par - hole_10_ladies_par - hole_11_ladies_par - hole_12_ladies_par - hole_13_ladies_par - hole_14_ladies_par - hole_15_ladies_par - hole_16_ladies_par - hole_17_ladies_par - hole_18_ladies_par) as plus_minus")                
-                ->selectRaw("SUM(hole_1_putts + hole_2_putts + hole_3_putts + hole_4_putts + hole_5_putts + hole_6_putts + hole_7_putts + hole_8_putts + hole_9_putts + hole_10_putts + hole_11_putts + hole_12_putts + hole_13_putts + hole_14_putts + hole_15_putts + hole_16_putts + hole_17_putts + hole_18_putts) as total_putts")                
-                ->selectRaw("SUM(hole_1_putts + hole_2_putts + hole_3_putts + hole_4_putts + hole_5_putts + hole_6_putts + hole_7_putts + hole_8_putts + hole_9_putts + hole_10_putts + hole_11_putts + hole_12_putts + hole_13_putts + hole_14_putts + hole_15_putts + hole_16_putts + hole_17_putts + hole_18_putts) / 18 as putts_per_hole")                       
-                ->selectRaw("SUM(if(hole_1_fir > 0, 1, 0) + if(hole_2_fir > 0, 1, 0) + if(hole_3_fir > 0, 1, 0) + if(hole_4_fir > 0, 1, 0) + if(hole_5_fir > 0, 1, 0) + if(hole_6_fir > 0, 1, 0) + if(hole_7_fir > 0, 1, 0) + if(hole_8_fir > 0, 1, 0) + if(hole_9_fir > 0, 1, 0) + if(hole_10_fir > 0, 1, 0) + if(hole_11_fir > 0, 1, 0) + if(hole_12_fir > 0, 1, 0) + if(hole_13_fir > 0, 1, 0) + if(hole_14_fir > 0, 1, 0) + if(hole_15_fir > 0, 1, 0) + if(hole_16_fir > 0, 1, 0) + if(hole_17_fir > 0, 1, 0) + if(hole_18_fir > 0, 1, 0) ) / (if(hole_1_ladies_par > 3, 1, 0) + if(hole_2_ladies_par > 3, 1, 0) + if(hole_3_ladies_par > 3, 1, 0) + if(hole_4_ladies_par > 3, 1, 0) + if(hole_5_ladies_par > 3, 1, 0) + if(hole_6_ladies_par > 3, 1, 0) + if(hole_7_ladies_par > 3, 1, 0) + if(hole_8_ladies_par > 3, 1, 0) + if(hole_9_ladies_par > 3, 1, 0) + if(hole_10_ladies_par > 3, 1, 0) + if(hole_11_ladies_par > 3, 1, 0) + if(hole_12_ladies_par > 3, 1, 0) + if(hole_13_ladies_par > 3, 1, 0) + if(hole_14_ladies_par > 3, 1, 0) + if(hole_15_ladies_par > 3, 1, 0) + if(hole_16_ladies_par > 3, 1, 0) + if(hole_17_ladies_par > 3, 1, 0) + if(hole_18_ladies_par > 3, 1, 0)) * 100 as fir_percentage")
-                ->selectRaw("SUM(if(hole_1_gir > 0, 1, 0) + if(hole_2_gir > 0, 1, 0) + if(hole_3_gir > 0, 1, 0) + if(hole_4_gir > 0, 1, 0) + if(hole_5_gir > 0, 1, 0) + if(hole_6_gir > 0, 1, 0) + if(hole_7_gir > 0, 1, 0) + if(hole_8_gir > 0, 1, 0) + if(hole_9_gir > 0, 1, 0) + if(hole_10_gir > 0, 1, 0) + if(hole_11_gir > 0, 1, 0) + if(hole_12_gir > 0, 1, 0) + if(hole_13_gir > 0, 1, 0) + if(hole_14_gir > 0, 1, 0) + if(hole_15_gir > 0, 1, 0) + if(hole_16_gir > 0, 1, 0) + if(hole_17_gir > 0, 1, 0) + if(hole_18_gir > 0, 1, 0)) / 18 * 100 as gir_percentage")                      
-                ->selectRaw("SUM(hole_1_drops + hole_2_drops + hole_3_drops + hole_4_drops + hole_5_drops + hole_6_drops + hole_7_drops + hole_8_drops + hole_9_drops + hole_10_drops + hole_11_drops + hole_12_drops + hole_13_drops + hole_14_drops + hole_15_drops + hole_16_drops + hole_17_drops + hole_18_drops) as total_drops")               
-                ->selectRaw("SUM(if(hole_1_score <= hole_1_ladies_par and hole_1_gir < 1, 1, 0) + if(hole_2_score <= hole_2_ladies_par and hole_2_gir < 1, 1, 0) + if(hole_3_score <= hole_3_ladies_par and hole_3_gir < 1, 1, 0) + if(hole_4_score <= hole_4_ladies_par and hole_4_gir < 1, 1, 0) + if(hole_5_score <= hole_5_ladies_par and hole_5_gir < 1, 1, 0) + if(hole_6_score <= hole_6_ladies_par and hole_6_gir < 1, 1, 0) + if(hole_7_score <= hole_7_ladies_par and hole_7_gir < 1, 1, 0) + if(hole_8_score <= hole_8_ladies_par and hole_8_gir < 1, 1, 0) + if(hole_9_score <= hole_9_ladies_par and hole_9_gir < 1, 1, 0) + if(hole_10_score <= hole_10_ladies_par and hole_10_gir < 1, 1, 0) + if(hole_11_score <= hole_11_ladies_par and hole_11_gir < 1, 1, 0) + if(hole_12_score <= hole_12_ladies_par and hole_12_gir < 1, 1, 0) + if(hole_13_score <= hole_13_ladies_par and hole_13_gir < 1, 1, 0) + if(hole_14_score <= hole_14_ladies_par and hole_14_gir < 1, 1, 0) + if(hole_15_score <= hole_15_ladies_par and hole_15_gir < 1, 1, 0) + if(hole_16_score <= hole_16_ladies_par and hole_16_gir < 1, 1, 0) + if(hole_17_score <= hole_17_ladies_par and hole_17_gir < 1, 1, 0) + if(hole_17_score <= hole_18_ladies_par and hole_18_gir < 1, 1, 0) ) / (if(hole_1_gir < 1, 1, 0) + if(hole_2_gir < 1, 1, 0) + if(hole_3_gir < 1, 1, 0) + if(hole_4_gir < 1, 1, 0) + if(hole_5_gir < 1, 1, 0) + if(hole_6_gir < 1, 1, 0) + if(hole_7_gir < 1, 1, 0) + if(hole_8_gir < 1, 1, 0) + if(hole_9_gir < 1, 1, 0) + if(hole_10_gir < 1, 1, 0) + if(hole_11_gir < 1, 1, 0) + if(hole_12_gir < 1, 1, 0) + if(hole_13_gir < 1, 1, 0) + if(hole_14_gir < 1, 1, 0) + if(hole_15_gir < 1, 1, 0) + if(hole_16_gir < 1, 1, 0) + if(hole_17_gir < 1, 1, 0) + if(hole_18_gir < 1, 1, 0) ) * 100 as scrambling")             
-                ->addSelect('round_date', 'property_name', 'course_name', 'rounds.id')
-                ->selectRaw("SUM(hole_1_ladies_par - hole_1_score) as hole_1_plus_minus")
-                ->selectRaw("SUM(hole_2_ladies_par - hole_2_score) as hole_2_plus_minus")  
-                ->selectRaw("SUM(hole_3_ladies_par - hole_3_score) as hole_3_plus_minus")  
-                ->selectRaw("SUM(hole_4_ladies_par - hole_4_score) as hole_4_plus_minus")   
-                ->selectRaw("SUM(hole_5_ladies_par - hole_5_score) as hole_5_plus_minus")      
-                ->selectRaw("SUM(hole_6_ladies_par - hole_6_score) as hole_6_plus_minus")
-                ->selectRaw("SUM(hole_7_ladies_par - hole_7_score) as hole_7_plus_minus") 
-                ->selectRaw("SUM(hole_8_ladies_par - hole_8_score) as hole_8_plus_minus")
-                ->selectRaw("SUM(hole_9_ladies_par - hole_9_score) as hole_9_plus_minus")
-                ->selectRaw("SUM(hole_10_ladies_par - hole_10_score) as hole_10_plus_minus") 
-                ->selectRaw("SUM(hole_11_ladies_par - hole_11_score) as hole_11_plus_minus")     
-                ->selectRaw("SUM(hole_12_ladies_par - hole_12_score) as hole_12_plus_minus")         
-                ->selectRaw("SUM(hole_13_ladies_par - hole_13_score) as hole_13_plus_minus") 
-                ->selectRaw("SUM(hole_14_ladies_par - hole_14_score) as hole_14_plus_minus")  
-                ->selectRaw("SUM(hole_15_ladies_par - hole_15_score) as hole_15_plus_minus")   
-                ->selectRaw("SUM(hole_16_ladies_par - hole_16_score) as hole_16_plus_minus")
-                ->selectRaw("SUM(hole_17_ladies_par - hole_17_score) as hole_17_plus_minus")
-                ->selectRaw("SUM(hole_18_ladies_par - hole_18_score) as hole_18_plus_minus")                
-                ->first();                
-
-        }
-
-        else{
-
-            $course_totals = \App\Course::where('courses.id', $course_id)        
-                ->selectRaw("SUM(hole_1_par + hole_2_par + hole_3_par + hole_4_par + hole_5_par + hole_6_par + hole_7_par + hole_8_par + hole_9_par + hole_10_par + hole_11_par + hole_12_par + hole_13_par + hole_14_par + hole_15_par + hole_16_par + hole_17_par + hole_18_par) as total_par")
-                ->selectRaw("SUM(hole_1_par + hole_2_par + hole_3_par + hole_4_par + hole_5_par + hole_6_par + hole_7_par + hole_8_par + hole_9_par) as front_par") 
-                ->selectRaw("SUM(hole_10_par + hole_11_par + hole_12_par + hole_13_par + hole_14_par + hole_15_par + hole_16_par + hole_17_par + hole_18_par) as back_par")               
-                ->selectRaw("SUM(hole_1_whites + hole_2_whites + hole_3_whites + hole_4_whites + hole_5_whites + hole_6_whites + hole_7_whites + hole_8_whites + hole_9_whites + hole_10_whites + hole_11_whites + hole_12_whites + hole_13_whites + hole_14_whites + hole_15_whites + hole_16_whites + hole_17_whites + hole_18_whites) as total_whites")
-                ->selectRaw("SUM(hole_1_yellows + hole_2_yellows + hole_3_yellows + hole_4_yellows + hole_5_yellows + hole_6_yellows + hole_7_yellows + hole_8_yellows + hole_9_yellows + hole_10_yellows + hole_11_yellows + hole_12_yellows + hole_13_yellows + hole_14_yellows + hole_15_yellows + hole_16_yellows + hole_17_yellows + hole_18_yellows) as total_yellows")
-                ->selectRaw("SUM(hole_1_reds + hole_2_reds + hole_3_reds + hole_4_reds + hole_5_reds + hole_6_reds + hole_7_reds + hole_8_reds + hole_9_reds + hole_10_reds + hole_11_reds + hole_12_reds + hole_13_reds + hole_14_reds + hole_15_reds + hole_16_reds + hole_17_reds + hole_18_reds) as total_reds")                
-                ->first(); 
-
-            $round_result = \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')        
-                ->selectRaw("SUM(hole_1_par + hole_2_par + hole_3_par + hole_4_par + hole_5_par + hole_6_par + hole_7_par + hole_8_par + hole_9_par + hole_10_par + hole_11_par + hole_12_par + hole_13_par + hole_14_par + hole_15_par + hole_16_par + hole_17_par + hole_18_par) as total_par")                              
-                ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as total_score")  
-                ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score) as front_score") 
-                ->selectRaw("SUM(hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as back_score")                         
-                ->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score - hole_1_par - hole_2_par - hole_3_par - hole_4_par - hole_5_par - hole_6_par - hole_7_par - hole_8_par - hole_9_par - hole_10_par - hole_11_par - hole_12_par - hole_13_par - hole_14_par - hole_15_par - hole_16_par - hole_17_par - hole_18_par) as plus_minus")                
-                ->selectRaw("SUM(hole_1_putts + hole_2_putts + hole_3_putts + hole_4_putts + hole_5_putts + hole_6_putts + hole_7_putts + hole_8_putts + hole_9_putts + hole_10_putts + hole_11_putts + hole_12_putts + hole_13_putts + hole_14_putts + hole_15_putts + hole_16_putts + hole_17_putts + hole_18_putts) as total_putts")                
-                ->selectRaw("SUM(hole_1_putts + hole_2_putts + hole_3_putts + hole_4_putts + hole_5_putts + hole_6_putts + hole_7_putts + hole_8_putts + hole_9_putts + hole_10_putts + hole_11_putts + hole_12_putts + hole_13_putts + hole_14_putts + hole_15_putts + hole_16_putts + hole_17_putts + hole_18_putts) / 18 as putts_per_hole")                       
-                ->selectRaw("SUM(if(hole_1_fir > 0, 1, 0) + if(hole_2_fir > 0, 1, 0) + if(hole_3_fir > 0, 1, 0) + if(hole_4_fir > 0, 1, 0) + if(hole_5_fir > 0, 1, 0) + if(hole_6_fir > 0, 1, 0) + if(hole_7_fir > 0, 1, 0) + if(hole_8_fir > 0, 1, 0) + if(hole_9_fir > 0, 1, 0) + if(hole_10_fir > 0, 1, 0) + if(hole_11_fir > 0, 1, 0) + if(hole_12_fir > 0, 1, 0) + if(hole_13_fir > 0, 1, 0) + if(hole_14_fir > 0, 1, 0) + if(hole_15_fir > 0, 1, 0) + if(hole_16_fir > 0, 1, 0) + if(hole_17_fir > 0, 1, 0) + if(hole_18_fir > 0, 1, 0) ) / (if(hole_1_par > 3, 1, 0) + if(hole_2_par > 3, 1, 0) + if(hole_3_par > 3, 1, 0) + if(hole_4_par > 3, 1, 0) + if(hole_5_par > 3, 1, 0) + if(hole_6_par > 3, 1, 0) + if(hole_7_par > 3, 1, 0) + if(hole_8_par > 3, 1, 0) + if(hole_9_par > 3, 1, 0) + if(hole_10_par > 3, 1, 0) + if(hole_11_par > 3, 1, 0) + if(hole_12_par > 3, 1, 0) + if(hole_13_par > 3, 1, 0) + if(hole_14_par > 3, 1, 0) + if(hole_15_par > 3, 1, 0) + if(hole_16_par > 3, 1, 0) + if(hole_17_par > 3, 1, 0) + if(hole_18_par > 3, 1, 0)) * 100 as fir_percentage")
-                ->selectRaw("SUM(if(hole_1_gir > 0, 1, 0) + if(hole_2_gir > 0, 1, 0) + if(hole_3_gir > 0, 1, 0) + if(hole_4_gir > 0, 1, 0) + if(hole_5_gir > 0, 1, 0) + if(hole_6_gir > 0, 1, 0) + if(hole_7_gir > 0, 1, 0) + if(hole_8_gir > 0, 1, 0) + if(hole_9_gir > 0, 1, 0) + if(hole_10_gir > 0, 1, 0) + if(hole_11_gir > 0, 1, 0) + if(hole_12_gir > 0, 1, 0) + if(hole_13_gir > 0, 1, 0) + if(hole_14_gir > 0, 1, 0) + if(hole_15_gir > 0, 1, 0) + if(hole_16_gir > 0, 1, 0) + if(hole_17_gir > 0, 1, 0) + if(hole_18_gir > 0, 1, 0)) / 18 * 100 as gir_percentage")                      
-                ->selectRaw("SUM(hole_1_drops + hole_2_drops + hole_3_drops + hole_4_drops + hole_5_drops + hole_6_drops + hole_7_drops + hole_8_drops + hole_9_drops + hole_10_drops + hole_11_drops + hole_12_drops + hole_13_drops + hole_14_drops + hole_15_drops + hole_16_drops + hole_17_drops + hole_18_drops) as total_drops")               
-                ->selectRaw("SUM(if(hole_1_score <= hole_1_par and hole_1_gir < 1, 1, 0) + if(hole_2_score <= hole_2_par and hole_2_gir < 1, 1, 0) + if(hole_3_score <= hole_3_par and hole_3_gir < 1, 1, 0) + if(hole_4_score <= hole_4_par and hole_4_gir < 1, 1, 0) + if(hole_5_score <= hole_5_par and hole_5_gir < 1, 1, 0) + if(hole_6_score <= hole_6_par and hole_6_gir < 1, 1, 0) + if(hole_7_score <= hole_7_par and hole_7_gir < 1, 1, 0) + if(hole_8_score <= hole_8_par and hole_8_gir < 1, 1, 0) + if(hole_9_score <= hole_9_par and hole_9_gir < 1, 1, 0) + if(hole_10_score <= hole_10_par and hole_10_gir < 1, 1, 0) + if(hole_11_score <= hole_11_par and hole_11_gir < 1, 1, 0) + if(hole_12_score <= hole_12_par and hole_12_gir < 1, 1, 0) + if(hole_13_score <= hole_13_par and hole_13_gir < 1, 1, 0) + if(hole_14_score <= hole_14_par and hole_14_gir < 1, 1, 0) + if(hole_15_score <= hole_15_par and hole_15_gir < 1, 1, 0) + if(hole_16_score <= hole_16_par and hole_16_gir < 1, 1, 0) + if(hole_17_score <= hole_17_par and hole_17_gir < 1, 1, 0) + if(hole_17_score <= hole_18_par and hole_18_gir < 1, 1, 0) ) / (if(hole_1_gir < 1, 1, 0) + if(hole_2_gir < 1, 1, 0) + if(hole_3_gir < 1, 1, 0) + if(hole_4_gir < 1, 1, 0) + if(hole_5_gir < 1, 1, 0) + if(hole_6_gir < 1, 1, 0) + if(hole_7_gir < 1, 1, 0) + if(hole_8_gir < 1, 1, 0) + if(hole_9_gir < 1, 1, 0) + if(hole_10_gir < 1, 1, 0) + if(hole_11_gir < 1, 1, 0) + if(hole_12_gir < 1, 1, 0) + if(hole_13_gir < 1, 1, 0) + if(hole_14_gir < 1, 1, 0) + if(hole_15_gir < 1, 1, 0) + if(hole_16_gir < 1, 1, 0) + if(hole_17_gir < 1, 1, 0) + if(hole_18_gir < 1, 1, 0) ) * 100 as scrambling")             
-                ->selectRaw("SUM(hole_1_par - hole_1_score) as hole_1_plus_minus")
-                ->selectRaw("SUM(hole_2_par - hole_2_score) as hole_2_plus_minus")  
-                ->selectRaw("SUM(hole_3_par - hole_3_score) as hole_3_plus_minus")  
-                ->selectRaw("SUM(hole_4_par - hole_4_score) as hole_4_plus_minus")   
-                ->selectRaw("SUM(hole_5_par - hole_5_score) as hole_5_plus_minus")      
-                ->selectRaw("SUM(hole_6_par - hole_6_score) as hole_6_plus_minus")
-                ->selectRaw("SUM(hole_7_par - hole_7_score) as hole_7_plus_minus") 
-                ->selectRaw("SUM(hole_8_par - hole_8_score) as hole_8_plus_minus")
-                ->selectRaw("SUM(hole_9_par - hole_9_score) as hole_9_plus_minus")
-                ->selectRaw("SUM(hole_10_par - hole_10_score) as hole_10_plus_minus") 
-                ->selectRaw("SUM(hole_11_par - hole_11_score) as hole_11_plus_minus")     
-                ->selectRaw("SUM(hole_12_par - hole_12_score) as hole_12_plus_minus")         
-                ->selectRaw("SUM(hole_13_par - hole_13_score) as hole_13_plus_minus") 
-                ->selectRaw("SUM(hole_14_par - hole_14_score) as hole_14_plus_minus")  
-                ->selectRaw("SUM(hole_15_par - hole_15_score) as hole_15_plus_minus")   
-                ->selectRaw("SUM(hole_16_par - hole_16_score) as hole_16_plus_minus")
-                ->selectRaw("SUM(hole_17_par - hole_17_score) as hole_17_plus_minus")
-                ->selectRaw("SUM(hole_18_par - hole_18_score) as hole_18_plus_minus")                
-                ->addSelect('round_date', 'property_name', 'course_name', 'rounds.id')
-                ->first();
-
-        }
-
-        return view('view_round',compact('round', 'course', 'course_totals', 'round_result', 'id'));
+        return view('view_round',compact('round', 'course', 'course_totals', 'id'));
     }
 
     /**
@@ -214,13 +123,17 @@ class RoundController extends Controller
     {
         $round = \App\Round::find($id);
 
-        $course_id = $round->course_id;
+        $course_id = $round->course_id;    
         
-        $course = \App\Course::select('property_name', 'course_name', 'hole_1_par', 'hole_2_par',  'hole_3_par', 'hole_4_par', 'hole_5_par', 'hole_6_par', 'hole_7_par', 'hole_8_par', 'hole_9_par', 'hole_10_par', 'hole_11_par', 'hole_12_par', 'hole_13_par', 'hole_14_par', 'hole_15_par', 'hole_16_par', 'hole_17_par', 'hole_18_par', 'hole_1_ladies_par', 'hole_2_ladies_par',  'hole_3_ladies_par', 'hole_4_ladies_par', 'hole_5_ladies_par', 'hole_6_ladies_par', 'hole_7_ladies_par', 'hole_8_ladies_par', 'hole_9_ladies_par', 'hole_10_ladies_par', 'hole_11_ladies_par', 'hole_12_ladies_par', 'hole_13_ladies_par', 'hole_14_ladies_par', 'hole_15_ladies_par', 'hole_16_ladies_par', 'hole_17_ladies_par', 'hole_18_ladies_par' )      
-        ->where('courses.id', $course_id)
-        ->first();
+        $course = $this->GetCourseInfo->courseInfo($course_id);
 
-        return view('edit_round',compact('round', 'course', 'id'));
+        $course_totals = $this->GetCourseTotals->courseTotals($course_id);
+
+        //$course = \App\Course::select('property_name', 'course_name', 'hole_1_par', 'hole_2_par',  'hole_3_par', 'hole_4_par', 'hole_5_par', 'hole_6_par', 'hole_7_par', 'hole_8_par', 'hole_9_par', 'hole_10_par', 'hole_11_par', 'hole_12_par', 'hole_13_par', 'hole_14_par', 'hole_15_par', 'hole_16_par', 'hole_17_par', 'hole_18_par', 'hole_1_ladies_par', 'hole_2_ladies_par',  'hole_3_ladies_par', 'hole_4_ladies_par', 'hole_5_ladies_par', 'hole_6_ladies_par', 'hole_7_ladies_par', 'hole_8_ladies_par', 'hole_9_ladies_par', 'hole_10_ladies_par', 'hole_11_ladies_par', 'hole_12_ladies_par', 'hole_13_ladies_par', 'hole_14_ladies_par', 'hole_15_ladies_par', 'hole_16_ladies_par', 'hole_17_ladies_par', 'hole_18_ladies_par' )      
+        //->where('courses.id', $course_id)
+        //->first();
+
+        return view('edit_round',compact('round', 'course', 'course_totals', 'id'));
     }
 
     /**

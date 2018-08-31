@@ -60,83 +60,90 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 19);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 19:
+/***/ 17:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(20);
+module.exports = __webpack_require__(18);
 
 
 /***/ }),
 
-/***/ 20:
+/***/ 18:
 /***/ (function(module, exports) {
 
 
-chart_round_fir = new Chartist.Pie('#chart-round-fir', { series: [round_firs, round_firs_leftover] }, {
-    donut: true,
-    donutWidth: 10,
-    startAngle: 270,
-    total: 100,
-    showLabel: false
-});
+$(document).ready(function () {
 
-chart_round_gir = new Chartist.Pie('#chart-round-gir', { series: [round_girs, round_girs_leftover] }, {
-    donut: true,
-    donutWidth: 10,
-    startAngle: 270,
-    total: 100,
-    showLabel: false
-});
+    function roundTotals($class, $id) {
 
-chart_round_scrambling = new Chartist.Pie('#chart-round-scrambling', { series: [round_scrambling, round_scrambling_leftover] }, {
-    donut: true,
-    donutWidth: 10,
-    startAngle: 270,
-    total: 100,
-    showLabel: false
-});
+        var $total = 0;
 
-function drawHandler(data) {
-
-    if (data.type === 'slice') {
-
-        var pathLength = data.element._node.getTotalLength();
-
-        data.element.attr({
-            'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+        $($class).each(function () {
+            $total += parseInt($(this).val());
         });
 
-        var animationDefinition = {
-            'stroke-dashoffset': {
-                id: 'anim' + data.index,
-                dur: 1000,
-                from: -pathLength + 'px',
-                to: '0px',
-                easing: Chartist.Svg.Easing.easeOut,
-                fill: 'freeze'
-            }
-        };
-
-        if (data.index !== 0) {
-            animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
-        }
-
-        data.element.attr({
-            'stroke-dashoffset': -pathLength + 'px'
-        });
-
-        data.element.animate(animationDefinition, false);
+        $($id).html($total);
     }
-}
 
-chart_round_fir.on('draw', drawHandler);
-chart_round_gir.on('draw', drawHandler);
-chart_round_scrambling.on('draw', drawHandler);
+    roundTotals(".first-nine-score", "#firstNineScore");
+    roundTotals(".first-nine-putts", "#firstNinePutts");
+    roundTotals(".first-nine-drops", "#firstNineDrops");
+
+    roundTotals(".second-nine-score", "#secondNineScore");
+    roundTotals(".second-nine-putts", "#secondNinePutts");
+    roundTotals(".second-nine-drops", "#secondNineDrops");
+
+    roundTotals(".third-nine-score", "#thirdNineScore");
+    roundTotals(".third-nine-putts", "#thirdNinePutts");
+    roundTotals(".third-nine-drops", "#thirdNineDrops");
+
+    function fairwaysTotals($class, $id) {
+
+        var $inputs = $($class).length;
+        var $inputsDisabled = $($class + 'input:disabled').length;
+        var $total = $inputs - $inputsDisabled;
+
+        $count = 0;
+        $($id).html($count);
+        $($id).after('/' + $total);
+
+        $(document).on("change", $class, function () {
+
+            var $count = $($class + 'input:checked').length;
+
+            $('#' + $id).html($count);
+        });
+    }
+
+    fairwaysTotals(".FirstNineFir", "#FirstNineFirCount");
+    fairwaysTotals(".SecondtNineFir", "#SecondNineFirCount");
+    fairwaysTotals(".ThirdNineFir", "#ThirdNineFirCount");
+
+    function greensTotals($class, $inputId, $id) {
+
+        var $total = 9;
+
+        $count = 0;
+        $($id).html($count);
+        $($id).after('/' + $total);
+
+        $(document).on("change", $class, function () {
+
+            var $count = $('#' + $inputId + 'input:checked').length;
+
+            $($id).html($count);
+        });
+    }
+
+    greensTotals(".FirstNineGir", "firstNineGirs", "#FirstNineGirCount");
+    greensTotals(".SecondtNineGir", "second9Girs", "#SecondNineGirCount");
+    greensTotals(".ThirdNineGir", "third9Girs", "#ThirdNineGirCount");
+});
 
 /***/ })
 

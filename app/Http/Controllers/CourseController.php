@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Course;
 use App\Queries\GetCourseTotals;
+use App\Queries\GetCourseInfo;
 use App\Updates\UpdateCourseInfo;
 use App\Validation\ValidateCourse;
 use Illuminate\Http\Request;
@@ -22,11 +23,13 @@ class CourseController extends Controller
     protected $GetCourseTotals;
     protected $UpdateCourseInfo;
     protected $ValidateCourse;
+    protected $GetCourseInfo;
  
-    public function __construct(GetCourseTotals $GetCourseTotals, UpdateCourseInfo $UpdateCourseInfo, ValidateCourse $ValidateCourse) {
+    public function __construct(GetCourseTotals $GetCourseTotals, UpdateCourseInfo $UpdateCourseInfo, ValidateCourse $ValidateCourse, GetCourseInfo $GetCourseInfo) {
         $this->GetCourseTotals = $GetCourseTotals;
         $this->UpdateCourseInfo = $UpdateCourseInfo;
         $this->ValidateCourse = $ValidateCourse;
+        $this->GetCourseInfo = $GetCourseInfo;
     }
 
 

@@ -15,9 +15,11 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .js('resources/assets/js/script.js', 'public/js')
 
    // Ajax
-   .js('resources/assets/js/ajax/ajax_add_round.js', 'public/js/ajax')
+ 
    .js('resources/assets/js/ajax/ajax_add_course.js', 'public/js/ajax')
    .js('resources/assets/js/ajax/ajax_edit_course.js', 'public/js/ajax')
+   .js('resources/assets/js/ajax/ajax_add_round.js', 'public/js/ajax')
+   .js('resources/assets/js/ajax/ajax_edit_round.js', 'public/js/ajax')
 
    // Charts
    .js('resources/assets/js/charts/view_round_charts.js', 'public/js/charts')
