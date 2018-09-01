@@ -1798,7 +1798,7 @@
                         </div>
 
                         <div class="col round-total">
-                            <span class="counter" data-to="{{ $course_totals->total_par }}" data-speed="500"></span>
+                            <span class="counter" data-to="{{ $round->total_par }}" data-speed="500"></span>
                         </div>                        
 
                     </div>
