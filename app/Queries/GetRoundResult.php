@@ -1342,261 +1342,782 @@ class GetRoundResult {
 
         // calculate scrambling
 
-        if($round_result->nine === 'first-nine'){
+        if($round_result->yards === 'white'){
 
-            $scrambles= \App\Round::where('rounds.id', $id)
-            ->groupBy('rounds.id')
-            ->join('courses', 'courses.id', '=', 'course_id')
-            ->selectRaw("SUM(
-                if(hole_1_score <= hole_1_white_par and hole_1_gir < 1, 1, 0) + 
-                if(hole_2_score <= hole_2_white_par and hole_2_gir < 1, 1, 0) + 
-                if(hole_3_score <= hole_3_white_par and hole_3_gir < 1, 1, 0) + 
-                if(hole_4_score <= hole_4_white_par and hole_4_gir < 1, 1, 0) + 
-                if(hole_5_score <= hole_5_white_par and hole_5_gir < 1, 1, 0) + 
-                if(hole_6_score <= hole_6_white_par and hole_6_gir < 1, 1, 0) + 
-                if(hole_7_score <= hole_7_white_par and hole_7_gir < 1, 1, 0) + 
-                if(hole_8_score <= hole_8_white_par and hole_8_gir < 1, 1, 0) + 
-                if(hole_9_score <= hole_9_white_par and hole_9_gir < 1, 1, 0) 
+            if($round_result->nine === 'first-nine'){
 
-            ) / (
-                if(hole_1_gir < 1, 1, 0) + 
-                if(hole_2_gir < 1, 1, 0) + 
-                if(hole_3_gir < 1, 1, 0) + 
-                if(hole_4_gir < 1, 1, 0) + 
-                if(hole_5_gir < 1, 1, 0) + 
-                if(hole_6_gir < 1, 1, 0) + 
-                if(hole_7_gir < 1, 1, 0) + 
-                if(hole_8_gir < 1, 1, 0) + 
-                if(hole_9_gir < 1, 1, 0) 
-            ) * 100 as scrambling")             
-                       
-            ->first();
-
-            $scrambling = $scrambles->scrambling;              
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_1_score <= hole_1_white_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_score <= hole_2_white_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_score <= hole_3_white_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_score <= hole_4_white_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_score <= hole_5_white_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_score <= hole_6_white_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_score <= hole_7_white_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_score <= hole_8_white_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_score <= hole_9_white_par and hole_9_gir < 1, 1, 0) 
+    
+                ) / (
+                    if(hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_gir < 1, 1, 0) 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;              
+    
+            }
+    
+            if($round_result->nine === 'second-nine'){
+    
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_10_score <= hole_1_white_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_11_score <= hole_2_white_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_12_score <= hole_3_white_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_13_score <= hole_4_white_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_14_score <= hole_5_white_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_15_score <= hole_6_white_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_16_score <= hole_7_white_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_17_score <= hole_8_white_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_18_score <= hole_9_white_par and hole_9_gir < 1, 1, 0) 
+    
+                ) / (
+                    if(hole_10_gir < 1, 1, 0) + 
+                    if(hole_11_gir < 1, 1, 0) + 
+                    if(hole_12_gir < 1, 1, 0) + 
+                    if(hole_13_gir < 1, 1, 0) + 
+                    if(hole_14_gir < 1, 1, 0) + 
+                    if(hole_15_gir < 1, 1, 0) + 
+                    if(hole_16_gir < 1, 1, 0) + 
+                    if(hole_17_gir < 1, 1, 0) + 
+                    if(hole_18_gir < 1, 1, 0) 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;              
+    
+            }
+            
+            if($round_result->nine === 'third-nine'){
+    
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_19_score <= hole_1_white_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_20_score <= hole_2_white_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_21_score <= hole_3_white_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_22_score <= hole_4_white_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_23_score <= hole_5_white_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_24_score <= hole_6_white_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_25_score <= hole_7_white_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_26_score <= hole_8_white_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_27_score <= hole_9_white_par and hole_9_gir < 1, 1, 0) 
+    
+                ) / (
+                    if(hole_19_gir < 1, 1, 0) + 
+                    if(hole_20_gir < 1, 1, 0) + 
+                    if(hole_21_gir < 1, 1, 0) + 
+                    if(hole_22_gir < 1, 1, 0) + 
+                    if(hole_23_gir < 1, 1, 0) + 
+                    if(hole_24_gir < 1, 1, 0) + 
+                    if(hole_25_gir < 1, 1, 0) + 
+                    if(hole_26_gir < 1, 1, 0) + 
+                    if(hole_27_gir < 1, 1, 0) 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;             
+    
+            }        
+    
+            if($round_result->nine === 'first-nine-second-nine'){
+    
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_1_score <= hole_1_white_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_score <= hole_2_white_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_score <= hole_3_white_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_score <= hole_4_white_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_score <= hole_5_white_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_score <= hole_6_white_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_score <= hole_7_white_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_score <= hole_8_white_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_score <= hole_9_white_par and hole_9_gir < 1, 1, 0) +
+                    if(hole_10_score <= hole_10_white_par and hole_10_gir < 1, 1, 0) +
+                    if(hole_11_score <= hole_11_white_par and hole_11_gir < 1, 1, 0) +
+                    if(hole_12_score <= hole_12_white_par and hole_12_gir < 1, 1, 0) +
+                    if(hole_13_score <= hole_13_white_par and hole_13_gir < 1, 1, 0) +
+                    if(hole_14_score <= hole_14_white_par and hole_14_gir < 1, 1, 0) +
+                    if(hole_15_score <= hole_15_white_par and hole_15_gir < 1, 1, 0) +
+                    if(hole_16_score <= hole_16_white_par and hole_16_gir < 1, 1, 0) +
+                    if(hole_17_score <= hole_17_white_par and hole_17_gir < 1, 1, 0) +
+                    if(hole_18_score <= hole_18_white_par and hole_18_gir < 1, 1, 0)
+                ) / (
+                    if(hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_gir < 1, 1, 0) +
+                    if(hole_10_gir < 1, 1, 0) + 
+                    if(hole_11_gir < 1, 1, 0) + 
+                    if(hole_12_gir < 1, 1, 0) + 
+                    if(hole_13_gir < 1, 1, 0) + 
+                    if(hole_14_gir < 1, 1, 0) + 
+                    if(hole_15_gir < 1, 1, 0) + 
+                    if(hole_16_gir < 1, 1, 0) + 
+                    if(hole_17_gir < 1, 1, 0) + 
+                    if(hole_18_gir < 1, 1, 0)                 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;               
+    
+            }
+    
+            if($round_result->nine === 'second-nine-third-nine'){
+    
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_10_score <= hole_10_white_par and hole_10_gir < 1, 1, 0) +
+                    if(hole_11_score <= hole_11_white_par and hole_11_gir < 1, 1, 0) +
+                    if(hole_12_score <= hole_12_white_par and hole_12_gir < 1, 1, 0) +
+                    if(hole_13_score <= hole_13_white_par and hole_13_gir < 1, 1, 0) +
+                    if(hole_14_score <= hole_14_white_par and hole_14_gir < 1, 1, 0) +
+                    if(hole_15_score <= hole_15_white_par and hole_15_gir < 1, 1, 0) +
+                    if(hole_16_score <= hole_16_white_par and hole_16_gir < 1, 1, 0) +
+                    if(hole_17_score <= hole_17_white_par and hole_17_gir < 1, 1, 0) +
+                    if(hole_18_score <= hole_18_white_par and hole_18_gir < 1, 1, 0) +
+                    if(hole_19_score <= hole_19_white_par and hole_19_gir < 1, 1, 0) + 
+                    if(hole_20_score <= hole_20_white_par and hole_20_gir < 1, 1, 0) + 
+                    if(hole_21_score <= hole_21_white_par and hole_21_gir < 1, 1, 0) + 
+                    if(hole_22_score <= hole_22_white_par and hole_22_gir < 1, 1, 0) + 
+                    if(hole_23_score <= hole_23_white_par and hole_23_gir < 1, 1, 0) + 
+                    if(hole_24_score <= hole_24_white_par and hole_24_gir < 1, 1, 0) + 
+                    if(hole_25_score <= hole_25_white_par and hole_25_gir < 1, 1, 0) + 
+                    if(hole_26_score <= hole_26_white_par and hole_26_gir < 1, 1, 0) + 
+                    if(hole_27_score <= hole_27_white_par and hole_27_gir < 1, 1, 0)                 
+                ) / (
+                    if(hole_10_gir < 1, 1, 0) + 
+                    if(hole_11_gir < 1, 1, 0) + 
+                    if(hole_12_gir < 1, 1, 0) + 
+                    if(hole_13_gir < 1, 1, 0) + 
+                    if(hole_14_gir < 1, 1, 0) + 
+                    if(hole_15_gir < 1, 1, 0) + 
+                    if(hole_16_gir < 1, 1, 0) + 
+                    if(hole_17_gir < 1, 1, 0) + 
+                    if(hole_18_gir < 1, 1, 0) +
+                    if(hole_19_gir < 1, 1, 0) + 
+                    if(hole_20_gir < 1, 1, 0) + 
+                    if(hole_21_gir < 1, 1, 0) + 
+                    if(hole_22_gir < 1, 1, 0) + 
+                    if(hole_23_gir < 1, 1, 0) + 
+                    if(hole_24_gir < 1, 1, 0) + 
+                    if(hole_25_gir < 1, 1, 0) + 
+                    if(hole_26_gir < 1, 1, 0) + 
+                    if(hole_27_gir < 1, 1, 0)                                 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;                 
+    
+            }  
+            
+            if($round_result->nine === 'first-nine-third-nine'){
+    
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_1_score <= hole_1_white_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_score <= hole_2_white_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_score <= hole_3_white_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_score <= hole_4_white_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_score <= hole_5_white_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_score <= hole_6_white_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_score <= hole_7_white_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_score <= hole_8_white_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_score <= hole_9_white_par and hole_9_gir < 1, 1, 0) +
+                    if(hole_19_score <= hole_19_white_par and hole_19_gir < 1, 1, 0) +
+                    if(hole_20_score <= hole_11_white_par and hole_20_gir < 1, 1, 0) +
+                    if(hole_21_score <= hole_21_white_par and hole_21_gir < 1, 1, 0) +
+                    if(hole_22_score <= hole_22_white_par and hole_22_gir < 1, 1, 0) +
+                    if(hole_23_score <= hole_23_white_par and hole_23_gir < 1, 1, 0) +
+                    if(hole_24_score <= hole_24_white_par and hole_24_gir < 1, 1, 0) +
+                    if(hole_25_score <= hole_25_white_par and hole_25_gir < 1, 1, 0) +
+                    if(hole_26_score <= hole_26_white_par and hole_26_gir < 1, 1, 0) +
+                    if(hole_27_score <= hole_27_white_par and hole_27_gir < 1, 1, 0)
+                ) / (
+                    if(hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_gir < 1, 1, 0) +
+                    if(hole_19_gir < 1, 1, 0) + 
+                    if(hole_20_gir < 1, 1, 0) + 
+                    if(hole_21_gir < 1, 1, 0) + 
+                    if(hole_22_gir < 1, 1, 0) + 
+                    if(hole_23_gir < 1, 1, 0) + 
+                    if(hole_24_gir < 1, 1, 0) + 
+                    if(hole_25_gir < 1, 1, 0) + 
+                    if(hole_26_gir < 1, 1, 0) + 
+                    if(hole_27_gir < 1, 1, 0)                 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;               
+    
+            }      
 
         }
 
-        if($round_result->nine === 'second-nine'){
+        if($round_result->yards === 'yellow'){
 
-            $scrambles= \App\Round::where('rounds.id', $id)
-            ->groupBy('rounds.id')
-            ->join('courses', 'courses.id', '=', 'course_id')
-            ->selectRaw("SUM(
-                if(hole_10_score <= hole_1_white_par and hole_1_gir < 1, 1, 0) + 
-                if(hole_11_score <= hole_2_white_par and hole_2_gir < 1, 1, 0) + 
-                if(hole_12_score <= hole_3_white_par and hole_3_gir < 1, 1, 0) + 
-                if(hole_13_score <= hole_4_white_par and hole_4_gir < 1, 1, 0) + 
-                if(hole_14_score <= hole_5_white_par and hole_5_gir < 1, 1, 0) + 
-                if(hole_15_score <= hole_6_white_par and hole_6_gir < 1, 1, 0) + 
-                if(hole_16_score <= hole_7_white_par and hole_7_gir < 1, 1, 0) + 
-                if(hole_17_score <= hole_8_white_par and hole_8_gir < 1, 1, 0) + 
-                if(hole_18_score <= hole_9_white_par and hole_9_gir < 1, 1, 0) 
+            if($round_result->nine === 'first-nine'){
 
-            ) / (
-                if(hole_10_gir < 1, 1, 0) + 
-                if(hole_11_gir < 1, 1, 0) + 
-                if(hole_12_gir < 1, 1, 0) + 
-                if(hole_13_gir < 1, 1, 0) + 
-                if(hole_14_gir < 1, 1, 0) + 
-                if(hole_15_gir < 1, 1, 0) + 
-                if(hole_16_gir < 1, 1, 0) + 
-                if(hole_17_gir < 1, 1, 0) + 
-                if(hole_18_gir < 1, 1, 0) 
-            ) * 100 as scrambling")             
-                       
-            ->first();
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_1_score <= hole_1_yellow_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_score <= hole_2_yellow_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_score <= hole_3_yellow_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_score <= hole_4_yellow_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_score <= hole_5_yellow_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_score <= hole_6_yellow_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_score <= hole_7_yellow_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_score <= hole_8_yellow_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_score <= hole_9_yellow_par and hole_9_gir < 1, 1, 0) 
+    
+                ) / (
+                    if(hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_gir < 1, 1, 0) 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;              
+    
+            }
+    
+            if($round_result->nine === 'second-nine'){
+    
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_10_score <= hole_1_yellow_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_11_score <= hole_2_yellow_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_12_score <= hole_3_yellow_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_13_score <= hole_4_yellow_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_14_score <= hole_5_yellow_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_15_score <= hole_6_yellow_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_16_score <= hole_7_yellow_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_17_score <= hole_8_yellow_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_18_score <= hole_9_yellow_par and hole_9_gir < 1, 1, 0) 
+    
+                ) / (
+                    if(hole_10_gir < 1, 1, 0) + 
+                    if(hole_11_gir < 1, 1, 0) + 
+                    if(hole_12_gir < 1, 1, 0) + 
+                    if(hole_13_gir < 1, 1, 0) + 
+                    if(hole_14_gir < 1, 1, 0) + 
+                    if(hole_15_gir < 1, 1, 0) + 
+                    if(hole_16_gir < 1, 1, 0) + 
+                    if(hole_17_gir < 1, 1, 0) + 
+                    if(hole_18_gir < 1, 1, 0) 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;              
+    
+            }
+            
+            if($round_result->nine === 'third-nine'){
+    
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_19_score <= hole_1_yellow_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_20_score <= hole_2_yellow_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_21_score <= hole_3_yellow_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_22_score <= hole_4_yellow_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_23_score <= hole_5_yellow_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_24_score <= hole_6_yellow_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_25_score <= hole_7_yellow_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_26_score <= hole_8_yellow_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_27_score <= hole_9_yellow_par and hole_9_gir < 1, 1, 0) 
+    
+                ) / (
+                    if(hole_19_gir < 1, 1, 0) + 
+                    if(hole_20_gir < 1, 1, 0) + 
+                    if(hole_21_gir < 1, 1, 0) + 
+                    if(hole_22_gir < 1, 1, 0) + 
+                    if(hole_23_gir < 1, 1, 0) + 
+                    if(hole_24_gir < 1, 1, 0) + 
+                    if(hole_25_gir < 1, 1, 0) + 
+                    if(hole_26_gir < 1, 1, 0) + 
+                    if(hole_27_gir < 1, 1, 0) 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;             
+    
+            }        
+    
+            if($round_result->nine === 'first-nine-second-nine'){
+    
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_1_score <= hole_1_yellow_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_score <= hole_2_yellow_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_score <= hole_3_yellow_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_score <= hole_4_yellow_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_score <= hole_5_yellow_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_score <= hole_6_yellow_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_score <= hole_7_yellow_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_score <= hole_8_yellow_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_score <= hole_9_yellow_par and hole_9_gir < 1, 1, 0) +
+                    if(hole_10_score <= hole_10_yellow_par and hole_10_gir < 1, 1, 0) +
+                    if(hole_11_score <= hole_11_yellow_par and hole_11_gir < 1, 1, 0) +
+                    if(hole_12_score <= hole_12_yellow_par and hole_12_gir < 1, 1, 0) +
+                    if(hole_13_score <= hole_13_yellow_par and hole_13_gir < 1, 1, 0) +
+                    if(hole_14_score <= hole_14_yellow_par and hole_14_gir < 1, 1, 0) +
+                    if(hole_15_score <= hole_15_yellow_par and hole_15_gir < 1, 1, 0) +
+                    if(hole_16_score <= hole_16_yellow_par and hole_16_gir < 1, 1, 0) +
+                    if(hole_17_score <= hole_17_yellow_par and hole_17_gir < 1, 1, 0) +
+                    if(hole_18_score <= hole_18_yellow_par and hole_18_gir < 1, 1, 0)
+                ) / (
+                    if(hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_gir < 1, 1, 0) +
+                    if(hole_10_gir < 1, 1, 0) + 
+                    if(hole_11_gir < 1, 1, 0) + 
+                    if(hole_12_gir < 1, 1, 0) + 
+                    if(hole_13_gir < 1, 1, 0) + 
+                    if(hole_14_gir < 1, 1, 0) + 
+                    if(hole_15_gir < 1, 1, 0) + 
+                    if(hole_16_gir < 1, 1, 0) + 
+                    if(hole_17_gir < 1, 1, 0) + 
+                    if(hole_18_gir < 1, 1, 0)                 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;               
+    
+            }
+    
+            if($round_result->nine === 'second-nine-third-nine'){
+    
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_10_score <= hole_10_yellow_par and hole_10_gir < 1, 1, 0) +
+                    if(hole_11_score <= hole_11_yellow_par and hole_11_gir < 1, 1, 0) +
+                    if(hole_12_score <= hole_12_yellow_par and hole_12_gir < 1, 1, 0) +
+                    if(hole_13_score <= hole_13_yellow_par and hole_13_gir < 1, 1, 0) +
+                    if(hole_14_score <= hole_14_yellow_par and hole_14_gir < 1, 1, 0) +
+                    if(hole_15_score <= hole_15_yellow_par and hole_15_gir < 1, 1, 0) +
+                    if(hole_16_score <= hole_16_yellow_par and hole_16_gir < 1, 1, 0) +
+                    if(hole_17_score <= hole_17_yellow_par and hole_17_gir < 1, 1, 0) +
+                    if(hole_18_score <= hole_18_yellow_par and hole_18_gir < 1, 1, 0) +
+                    if(hole_19_score <= hole_19_yellow_par and hole_19_gir < 1, 1, 0) + 
+                    if(hole_20_score <= hole_20_yellow_par and hole_20_gir < 1, 1, 0) + 
+                    if(hole_21_score <= hole_21_yellow_par and hole_21_gir < 1, 1, 0) + 
+                    if(hole_22_score <= hole_22_yellow_par and hole_22_gir < 1, 1, 0) + 
+                    if(hole_23_score <= hole_23_yellow_par and hole_23_gir < 1, 1, 0) + 
+                    if(hole_24_score <= hole_24_yellow_par and hole_24_gir < 1, 1, 0) + 
+                    if(hole_25_score <= hole_25_yellow_par and hole_25_gir < 1, 1, 0) + 
+                    if(hole_26_score <= hole_26_yellow_par and hole_26_gir < 1, 1, 0) + 
+                    if(hole_27_score <= hole_27_yellow_par and hole_27_gir < 1, 1, 0)                 
+                ) / (
+                    if(hole_10_gir < 1, 1, 0) + 
+                    if(hole_11_gir < 1, 1, 0) + 
+                    if(hole_12_gir < 1, 1, 0) + 
+                    if(hole_13_gir < 1, 1, 0) + 
+                    if(hole_14_gir < 1, 1, 0) + 
+                    if(hole_15_gir < 1, 1, 0) + 
+                    if(hole_16_gir < 1, 1, 0) + 
+                    if(hole_17_gir < 1, 1, 0) + 
+                    if(hole_18_gir < 1, 1, 0) +
+                    if(hole_19_gir < 1, 1, 0) + 
+                    if(hole_20_gir < 1, 1, 0) + 
+                    if(hole_21_gir < 1, 1, 0) + 
+                    if(hole_22_gir < 1, 1, 0) + 
+                    if(hole_23_gir < 1, 1, 0) + 
+                    if(hole_24_gir < 1, 1, 0) + 
+                    if(hole_25_gir < 1, 1, 0) + 
+                    if(hole_26_gir < 1, 1, 0) + 
+                    if(hole_27_gir < 1, 1, 0)                                 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;                 
+    
+            }  
+            
+            if($round_result->nine === 'first-nine-third-nine'){
+    
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_1_score <= hole_1_yellow_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_score <= hole_2_yellow_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_score <= hole_3_yellow_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_score <= hole_4_yellow_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_score <= hole_5_yellow_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_score <= hole_6_yellow_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_score <= hole_7_yellow_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_score <= hole_8_yellow_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_score <= hole_9_yellow_par and hole_9_gir < 1, 1, 0) +
+                    if(hole_19_score <= hole_19_yellow_par and hole_19_gir < 1, 1, 0) +
+                    if(hole_20_score <= hole_11_yellow_par and hole_20_gir < 1, 1, 0) +
+                    if(hole_21_score <= hole_21_yellow_par and hole_21_gir < 1, 1, 0) +
+                    if(hole_22_score <= hole_22_yellow_par and hole_22_gir < 1, 1, 0) +
+                    if(hole_23_score <= hole_23_yellow_par and hole_23_gir < 1, 1, 0) +
+                    if(hole_24_score <= hole_24_yellow_par and hole_24_gir < 1, 1, 0) +
+                    if(hole_25_score <= hole_25_yellow_par and hole_25_gir < 1, 1, 0) +
+                    if(hole_26_score <= hole_26_yellow_par and hole_26_gir < 1, 1, 0) +
+                    if(hole_27_score <= hole_27_yellow_par and hole_27_gir < 1, 1, 0)
+                ) / (
+                    if(hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_gir < 1, 1, 0) +
+                    if(hole_19_gir < 1, 1, 0) + 
+                    if(hole_20_gir < 1, 1, 0) + 
+                    if(hole_21_gir < 1, 1, 0) + 
+                    if(hole_22_gir < 1, 1, 0) + 
+                    if(hole_23_gir < 1, 1, 0) + 
+                    if(hole_24_gir < 1, 1, 0) + 
+                    if(hole_25_gir < 1, 1, 0) + 
+                    if(hole_26_gir < 1, 1, 0) + 
+                    if(hole_27_gir < 1, 1, 0)                 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;               
+    
+            }             
 
-            $scrambling = $scrambles->scrambling;              
-
-        }
+        }    
         
-        if($round_result->nine === 'third-nine'){
+        if($round_result->yards === 'red'){
 
-            $scrambles= \App\Round::where('rounds.id', $id)
-            ->groupBy('rounds.id')
-            ->join('courses', 'courses.id', '=', 'course_id')
-            ->selectRaw("SUM(
-                if(hole_19_score <= hole_1_white_par and hole_1_gir < 1, 1, 0) + 
-                if(hole_20_score <= hole_2_white_par and hole_2_gir < 1, 1, 0) + 
-                if(hole_21_score <= hole_3_white_par and hole_3_gir < 1, 1, 0) + 
-                if(hole_22_score <= hole_4_white_par and hole_4_gir < 1, 1, 0) + 
-                if(hole_23_score <= hole_5_white_par and hole_5_gir < 1, 1, 0) + 
-                if(hole_24_score <= hole_6_white_par and hole_6_gir < 1, 1, 0) + 
-                if(hole_25_score <= hole_7_white_par and hole_7_gir < 1, 1, 0) + 
-                if(hole_26_score <= hole_8_white_par and hole_8_gir < 1, 1, 0) + 
-                if(hole_27_score <= hole_9_white_par and hole_9_gir < 1, 1, 0) 
+            if($round_result->nine === 'first-nine'){
 
-            ) / (
-                if(hole_19_gir < 1, 1, 0) + 
-                if(hole_20_gir < 1, 1, 0) + 
-                if(hole_21_gir < 1, 1, 0) + 
-                if(hole_22_gir < 1, 1, 0) + 
-                if(hole_23_gir < 1, 1, 0) + 
-                if(hole_24_gir < 1, 1, 0) + 
-                if(hole_25_gir < 1, 1, 0) + 
-                if(hole_26_gir < 1, 1, 0) + 
-                if(hole_27_gir < 1, 1, 0) 
-            ) * 100 as scrambling")             
-                       
-            ->first();
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_1_score <= hole_1_red_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_score <= hole_2_red_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_score <= hole_3_red_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_score <= hole_4_red_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_score <= hole_5_red_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_score <= hole_6_red_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_score <= hole_7_red_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_score <= hole_8_red_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_score <= hole_9_red_par and hole_9_gir < 1, 1, 0) 
+    
+                ) / (
+                    if(hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_gir < 1, 1, 0) 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;              
+    
+            }
+    
+            if($round_result->nine === 'second-nine'){
+    
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_10_score <= hole_1_red_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_11_score <= hole_2_red_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_12_score <= hole_3_red_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_13_score <= hole_4_red_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_14_score <= hole_5_red_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_15_score <= hole_6_red_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_16_score <= hole_7_red_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_17_score <= hole_8_red_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_18_score <= hole_9_red_par and hole_9_gir < 1, 1, 0) 
+    
+                ) / (
+                    if(hole_10_gir < 1, 1, 0) + 
+                    if(hole_11_gir < 1, 1, 0) + 
+                    if(hole_12_gir < 1, 1, 0) + 
+                    if(hole_13_gir < 1, 1, 0) + 
+                    if(hole_14_gir < 1, 1, 0) + 
+                    if(hole_15_gir < 1, 1, 0) + 
+                    if(hole_16_gir < 1, 1, 0) + 
+                    if(hole_17_gir < 1, 1, 0) + 
+                    if(hole_18_gir < 1, 1, 0) 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;              
+    
+            }
+            
+            if($round_result->nine === 'third-nine'){
+    
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_19_score <= hole_1_red_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_20_score <= hole_2_red_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_21_score <= hole_3_red_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_22_score <= hole_4_red_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_23_score <= hole_5_red_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_24_score <= hole_6_red_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_25_score <= hole_7_red_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_26_score <= hole_8_red_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_27_score <= hole_9_red_par and hole_9_gir < 1, 1, 0) 
+    
+                ) / (
+                    if(hole_19_gir < 1, 1, 0) + 
+                    if(hole_20_gir < 1, 1, 0) + 
+                    if(hole_21_gir < 1, 1, 0) + 
+                    if(hole_22_gir < 1, 1, 0) + 
+                    if(hole_23_gir < 1, 1, 0) + 
+                    if(hole_24_gir < 1, 1, 0) + 
+                    if(hole_25_gir < 1, 1, 0) + 
+                    if(hole_26_gir < 1, 1, 0) + 
+                    if(hole_27_gir < 1, 1, 0) 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;             
+    
+            }        
+    
+            if($round_result->nine === 'first-nine-second-nine'){
+    
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_1_score <= hole_1_red_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_score <= hole_2_red_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_score <= hole_3_red_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_score <= hole_4_red_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_score <= hole_5_red_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_score <= hole_6_red_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_score <= hole_7_red_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_score <= hole_8_red_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_score <= hole_9_red_par and hole_9_gir < 1, 1, 0) +
+                    if(hole_10_score <= hole_10_red_par and hole_10_gir < 1, 1, 0) +
+                    if(hole_11_score <= hole_11_red_par and hole_11_gir < 1, 1, 0) +
+                    if(hole_12_score <= hole_12_red_par and hole_12_gir < 1, 1, 0) +
+                    if(hole_13_score <= hole_13_red_par and hole_13_gir < 1, 1, 0) +
+                    if(hole_14_score <= hole_14_red_par and hole_14_gir < 1, 1, 0) +
+                    if(hole_15_score <= hole_15_red_par and hole_15_gir < 1, 1, 0) +
+                    if(hole_16_score <= hole_16_red_par and hole_16_gir < 1, 1, 0) +
+                    if(hole_17_score <= hole_17_red_par and hole_17_gir < 1, 1, 0) +
+                    if(hole_18_score <= hole_18_red_par and hole_18_gir < 1, 1, 0)
+                ) / (
+                    if(hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_gir < 1, 1, 0) +
+                    if(hole_10_gir < 1, 1, 0) + 
+                    if(hole_11_gir < 1, 1, 0) + 
+                    if(hole_12_gir < 1, 1, 0) + 
+                    if(hole_13_gir < 1, 1, 0) + 
+                    if(hole_14_gir < 1, 1, 0) + 
+                    if(hole_15_gir < 1, 1, 0) + 
+                    if(hole_16_gir < 1, 1, 0) + 
+                    if(hole_17_gir < 1, 1, 0) + 
+                    if(hole_18_gir < 1, 1, 0)                 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;               
+    
+            }
+    
+            if($round_result->nine === 'second-nine-third-nine'){
+    
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_10_score <= hole_10_red_par and hole_10_gir < 1, 1, 0) +
+                    if(hole_11_score <= hole_11_red_par and hole_11_gir < 1, 1, 0) +
+                    if(hole_12_score <= hole_12_red_par and hole_12_gir < 1, 1, 0) +
+                    if(hole_13_score <= hole_13_red_par and hole_13_gir < 1, 1, 0) +
+                    if(hole_14_score <= hole_14_red_par and hole_14_gir < 1, 1, 0) +
+                    if(hole_15_score <= hole_15_red_par and hole_15_gir < 1, 1, 0) +
+                    if(hole_16_score <= hole_16_red_par and hole_16_gir < 1, 1, 0) +
+                    if(hole_17_score <= hole_17_red_par and hole_17_gir < 1, 1, 0) +
+                    if(hole_18_score <= hole_18_red_par and hole_18_gir < 1, 1, 0) +
+                    if(hole_19_score <= hole_19_red_par and hole_19_gir < 1, 1, 0) + 
+                    if(hole_20_score <= hole_20_red_par and hole_20_gir < 1, 1, 0) + 
+                    if(hole_21_score <= hole_21_red_par and hole_21_gir < 1, 1, 0) + 
+                    if(hole_22_score <= hole_22_red_par and hole_22_gir < 1, 1, 0) + 
+                    if(hole_23_score <= hole_23_red_par and hole_23_gir < 1, 1, 0) + 
+                    if(hole_24_score <= hole_24_red_par and hole_24_gir < 1, 1, 0) + 
+                    if(hole_25_score <= hole_25_red_par and hole_25_gir < 1, 1, 0) + 
+                    if(hole_26_score <= hole_26_red_par and hole_26_gir < 1, 1, 0) + 
+                    if(hole_27_score <= hole_27_red_par and hole_27_gir < 1, 1, 0)                 
+                ) / (
+                    if(hole_10_gir < 1, 1, 0) + 
+                    if(hole_11_gir < 1, 1, 0) + 
+                    if(hole_12_gir < 1, 1, 0) + 
+                    if(hole_13_gir < 1, 1, 0) + 
+                    if(hole_14_gir < 1, 1, 0) + 
+                    if(hole_15_gir < 1, 1, 0) + 
+                    if(hole_16_gir < 1, 1, 0) + 
+                    if(hole_17_gir < 1, 1, 0) + 
+                    if(hole_18_gir < 1, 1, 0) +
+                    if(hole_19_gir < 1, 1, 0) + 
+                    if(hole_20_gir < 1, 1, 0) + 
+                    if(hole_21_gir < 1, 1, 0) + 
+                    if(hole_22_gir < 1, 1, 0) + 
+                    if(hole_23_gir < 1, 1, 0) + 
+                    if(hole_24_gir < 1, 1, 0) + 
+                    if(hole_25_gir < 1, 1, 0) + 
+                    if(hole_26_gir < 1, 1, 0) + 
+                    if(hole_27_gir < 1, 1, 0)                                 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;                 
+    
+            }  
+            
+            if($round_result->nine === 'first-nine-third-nine'){
+    
+                $scrambles= \App\Round::where('rounds.id', $id)
+                ->groupBy('rounds.id')
+                ->join('courses', 'courses.id', '=', 'course_id')
+                ->selectRaw("SUM(
+                    if(hole_1_score <= hole_1_red_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_score <= hole_2_red_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_score <= hole_3_red_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_score <= hole_4_red_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_score <= hole_5_red_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_score <= hole_6_red_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_score <= hole_7_red_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_score <= hole_8_red_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_score <= hole_9_red_par and hole_9_gir < 1, 1, 0) +
+                    if(hole_19_score <= hole_19_red_par and hole_19_gir < 1, 1, 0) +
+                    if(hole_20_score <= hole_11_red_par and hole_20_gir < 1, 1, 0) +
+                    if(hole_21_score <= hole_21_red_par and hole_21_gir < 1, 1, 0) +
+                    if(hole_22_score <= hole_22_red_par and hole_22_gir < 1, 1, 0) +
+                    if(hole_23_score <= hole_23_red_par and hole_23_gir < 1, 1, 0) +
+                    if(hole_24_score <= hole_24_red_par and hole_24_gir < 1, 1, 0) +
+                    if(hole_25_score <= hole_25_red_par and hole_25_gir < 1, 1, 0) +
+                    if(hole_26_score <= hole_26_red_par and hole_26_gir < 1, 1, 0) +
+                    if(hole_27_score <= hole_27_red_par and hole_27_gir < 1, 1, 0)
+                ) / (
+                    if(hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_gir < 1, 1, 0) +
+                    if(hole_19_gir < 1, 1, 0) + 
+                    if(hole_20_gir < 1, 1, 0) + 
+                    if(hole_21_gir < 1, 1, 0) + 
+                    if(hole_22_gir < 1, 1, 0) + 
+                    if(hole_23_gir < 1, 1, 0) + 
+                    if(hole_24_gir < 1, 1, 0) + 
+                    if(hole_25_gir < 1, 1, 0) + 
+                    if(hole_26_gir < 1, 1, 0) + 
+                    if(hole_27_gir < 1, 1, 0)                 
+                ) * 100 as scrambling")             
+                           
+                ->first();
+    
+                $scrambling = $scrambles->scrambling;               
+    
+            }             
 
-            $scrambling = $scrambles->scrambling;             
-
-        }        
-
-        if($round_result->nine === 'first-nine-second-nine'){
-
-            $scrambles= \App\Round::where('rounds.id', $id)
-            ->groupBy('rounds.id')
-            ->join('courses', 'courses.id', '=', 'course_id')
-            ->selectRaw("SUM(
-                if(hole_1_score <= hole_1_white_par and hole_1_gir < 1, 1, 0) + 
-                if(hole_2_score <= hole_2_white_par and hole_2_gir < 1, 1, 0) + 
-                if(hole_3_score <= hole_3_white_par and hole_3_gir < 1, 1, 0) + 
-                if(hole_4_score <= hole_4_white_par and hole_4_gir < 1, 1, 0) + 
-                if(hole_5_score <= hole_5_white_par and hole_5_gir < 1, 1, 0) + 
-                if(hole_6_score <= hole_6_white_par and hole_6_gir < 1, 1, 0) + 
-                if(hole_7_score <= hole_7_white_par and hole_7_gir < 1, 1, 0) + 
-                if(hole_8_score <= hole_8_white_par and hole_8_gir < 1, 1, 0) + 
-                if(hole_9_score <= hole_9_white_par and hole_9_gir < 1, 1, 0) +
-                if(hole_10_score <= hole_10_white_par and hole_10_gir < 1, 1, 0) +
-                if(hole_11_score <= hole_11_white_par and hole_11_gir < 1, 1, 0) +
-                if(hole_12_score <= hole_12_white_par and hole_12_gir < 1, 1, 0) +
-                if(hole_13_score <= hole_13_white_par and hole_13_gir < 1, 1, 0) +
-                if(hole_14_score <= hole_14_white_par and hole_14_gir < 1, 1, 0) +
-                if(hole_15_score <= hole_15_white_par and hole_15_gir < 1, 1, 0) +
-                if(hole_16_score <= hole_16_white_par and hole_16_gir < 1, 1, 0) +
-                if(hole_17_score <= hole_17_white_par and hole_17_gir < 1, 1, 0) +
-                if(hole_18_score <= hole_18_white_par and hole_18_gir < 1, 1, 0)
-            ) / (
-                if(hole_1_gir < 1, 1, 0) + 
-                if(hole_2_gir < 1, 1, 0) + 
-                if(hole_3_gir < 1, 1, 0) + 
-                if(hole_4_gir < 1, 1, 0) + 
-                if(hole_5_gir < 1, 1, 0) + 
-                if(hole_6_gir < 1, 1, 0) + 
-                if(hole_7_gir < 1, 1, 0) + 
-                if(hole_8_gir < 1, 1, 0) + 
-                if(hole_9_gir < 1, 1, 0) +
-                if(hole_10_gir < 1, 1, 0) + 
-                if(hole_11_gir < 1, 1, 0) + 
-                if(hole_12_gir < 1, 1, 0) + 
-                if(hole_13_gir < 1, 1, 0) + 
-                if(hole_14_gir < 1, 1, 0) + 
-                if(hole_15_gir < 1, 1, 0) + 
-                if(hole_16_gir < 1, 1, 0) + 
-                if(hole_17_gir < 1, 1, 0) + 
-                if(hole_18_gir < 1, 1, 0)                 
-            ) * 100 as scrambling")             
-                       
-            ->first();
-
-            $scrambling = $scrambles->scrambling;               
-
-        }
-
-        if($round_result->nine === 'second-nine-third-nine'){
-
-            $scrambles= \App\Round::where('rounds.id', $id)
-            ->groupBy('rounds.id')
-            ->join('courses', 'courses.id', '=', 'course_id')
-            ->selectRaw("SUM(
-                if(hole_10_score <= hole_10_white_par and hole_10_gir < 1, 1, 0) +
-                if(hole_11_score <= hole_11_white_par and hole_11_gir < 1, 1, 0) +
-                if(hole_12_score <= hole_12_white_par and hole_12_gir < 1, 1, 0) +
-                if(hole_13_score <= hole_13_white_par and hole_13_gir < 1, 1, 0) +
-                if(hole_14_score <= hole_14_white_par and hole_14_gir < 1, 1, 0) +
-                if(hole_15_score <= hole_15_white_par and hole_15_gir < 1, 1, 0) +
-                if(hole_16_score <= hole_16_white_par and hole_16_gir < 1, 1, 0) +
-                if(hole_17_score <= hole_17_white_par and hole_17_gir < 1, 1, 0) +
-                if(hole_18_score <= hole_18_white_par and hole_18_gir < 1, 1, 0) +
-                if(hole_19_score <= hole_19_white_par and hole_19_gir < 1, 1, 0) + 
-                if(hole_20_score <= hole_20_white_par and hole_20_gir < 1, 1, 0) + 
-                if(hole_21_score <= hole_21_white_par and hole_21_gir < 1, 1, 0) + 
-                if(hole_22_score <= hole_22_white_par and hole_22_gir < 1, 1, 0) + 
-                if(hole_23_score <= hole_23_white_par and hole_23_gir < 1, 1, 0) + 
-                if(hole_24_score <= hole_24_white_par and hole_24_gir < 1, 1, 0) + 
-                if(hole_25_score <= hole_25_white_par and hole_25_gir < 1, 1, 0) + 
-                if(hole_26_score <= hole_26_white_par and hole_26_gir < 1, 1, 0) + 
-                if(hole_27_score <= hole_27_white_par and hole_27_gir < 1, 1, 0)                 
-            ) / (
-                if(hole_10_gir < 1, 1, 0) + 
-                if(hole_11_gir < 1, 1, 0) + 
-                if(hole_12_gir < 1, 1, 0) + 
-                if(hole_13_gir < 1, 1, 0) + 
-                if(hole_14_gir < 1, 1, 0) + 
-                if(hole_15_gir < 1, 1, 0) + 
-                if(hole_16_gir < 1, 1, 0) + 
-                if(hole_17_gir < 1, 1, 0) + 
-                if(hole_18_gir < 1, 1, 0) +
-                if(hole_19_gir < 1, 1, 0) + 
-                if(hole_20_gir < 1, 1, 0) + 
-                if(hole_21_gir < 1, 1, 0) + 
-                if(hole_22_gir < 1, 1, 0) + 
-                if(hole_23_gir < 1, 1, 0) + 
-                if(hole_24_gir < 1, 1, 0) + 
-                if(hole_25_gir < 1, 1, 0) + 
-                if(hole_26_gir < 1, 1, 0) + 
-                if(hole_27_gir < 1, 1, 0)                                 
-            ) * 100 as scrambling")             
-                       
-            ->first();
-
-            $scrambling = $scrambles->scrambling;                 
-
-        }  
-        
-        if($round_result->nine === 'first-nine-third-nine'){
-
-            $scrambles= \App\Round::where('rounds.id', $id)
-            ->groupBy('rounds.id')
-            ->join('courses', 'courses.id', '=', 'course_id')
-            ->selectRaw("SUM(
-                if(hole_1_score <= hole_1_white_par and hole_1_gir < 1, 1, 0) + 
-                if(hole_2_score <= hole_2_white_par and hole_2_gir < 1, 1, 0) + 
-                if(hole_3_score <= hole_3_white_par and hole_3_gir < 1, 1, 0) + 
-                if(hole_4_score <= hole_4_white_par and hole_4_gir < 1, 1, 0) + 
-                if(hole_5_score <= hole_5_white_par and hole_5_gir < 1, 1, 0) + 
-                if(hole_6_score <= hole_6_white_par and hole_6_gir < 1, 1, 0) + 
-                if(hole_7_score <= hole_7_white_par and hole_7_gir < 1, 1, 0) + 
-                if(hole_8_score <= hole_8_white_par and hole_8_gir < 1, 1, 0) + 
-                if(hole_9_score <= hole_9_white_par and hole_9_gir < 1, 1, 0) +
-                if(hole_19_score <= hole_19_white_par and hole_19_gir < 1, 1, 0) +
-                if(hole_20_score <= hole_11_white_par and hole_20_gir < 1, 1, 0) +
-                if(hole_21_score <= hole_21_white_par and hole_21_gir < 1, 1, 0) +
-                if(hole_22_score <= hole_22_white_par and hole_22_gir < 1, 1, 0) +
-                if(hole_23_score <= hole_23_white_par and hole_23_gir < 1, 1, 0) +
-                if(hole_24_score <= hole_24_white_par and hole_24_gir < 1, 1, 0) +
-                if(hole_25_score <= hole_25_white_par and hole_25_gir < 1, 1, 0) +
-                if(hole_26_score <= hole_26_white_par and hole_26_gir < 1, 1, 0) +
-                if(hole_27_score <= hole_27_white_par and hole_27_gir < 1, 1, 0)
-            ) / (
-                if(hole_1_gir < 1, 1, 0) + 
-                if(hole_2_gir < 1, 1, 0) + 
-                if(hole_3_gir < 1, 1, 0) + 
-                if(hole_4_gir < 1, 1, 0) + 
-                if(hole_5_gir < 1, 1, 0) + 
-                if(hole_6_gir < 1, 1, 0) + 
-                if(hole_7_gir < 1, 1, 0) + 
-                if(hole_8_gir < 1, 1, 0) + 
-                if(hole_9_gir < 1, 1, 0) +
-                if(hole_19_gir < 1, 1, 0) + 
-                if(hole_20_gir < 1, 1, 0) + 
-                if(hole_21_gir < 1, 1, 0) + 
-                if(hole_22_gir < 1, 1, 0) + 
-                if(hole_23_gir < 1, 1, 0) + 
-                if(hole_24_gir < 1, 1, 0) + 
-                if(hole_25_gir < 1, 1, 0) + 
-                if(hole_26_gir < 1, 1, 0) + 
-                if(hole_27_gir < 1, 1, 0)                 
-            ) * 100 as scrambling")             
-                       
-            ->first();
-
-            $scrambling = $scrambles->scrambling;               
-
-        }         
-
+        } 
 
         $round_result->scrambling = $scrambling;
 
@@ -1666,44 +2187,7 @@ class GetRoundResult {
 
         }         
 
-
         $round_result->round_yards = $round_yards;
-
-
-        //->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as total_score")  
-        //->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score) as front_score") 
-        //->selectRaw("SUM(hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score) as back_score")                         
-        
-        //->selectRaw("SUM(hole_1_score + hole_2_score + hole_3_score + hole_4_score + hole_5_score + hole_6_score + hole_7_score + hole_8_score + hole_9_score + hole_10_score + hole_11_score + hole_12_score + hole_13_score + hole_14_score + hole_15_score + hole_16_score + hole_17_score + hole_18_score - hole_1_ladies_par - hole_2_ladies_par - hole_3_ladies_par - hole_4_ladies_par - hole_5_ladies_par - hole_6_ladies_par - hole_7_ladies_par - hole_8_ladies_par - hole_9_ladies_par - hole_10_ladies_par - hole_11_ladies_par - hole_12_ladies_par - hole_13_ladies_par - hole_14_ladies_par - hole_15_ladies_par - hole_16_ladies_par - hole_17_ladies_par - hole_18_ladies_par) as plus_minus")                
-        //->selectRaw("SUM(hole_1_putts + hole_2_putts + hole_3_putts + hole_4_putts + hole_5_putts + hole_6_putts + hole_7_putts + hole_8_putts + hole_9_putts + hole_10_putts + hole_11_putts + hole_12_putts + hole_13_putts + hole_14_putts + hole_15_putts + hole_16_putts + hole_17_putts + hole_18_putts) as total_putts")                
-        //->selectRaw("SUM(hole_1_putts + hole_2_putts + hole_3_putts + hole_4_putts + hole_5_putts + hole_6_putts + hole_7_putts + hole_8_putts + hole_9_putts + hole_10_putts + hole_11_putts + hole_12_putts + hole_13_putts + hole_14_putts + hole_15_putts + hole_16_putts + hole_17_putts + hole_18_putts) / 18 as putts_per_hole")                       
-        //->selectRaw("SUM(if(hole_1_fir > 0, 1, 0) + if(hole_2_fir > 0, 1, 0) + if(hole_3_fir > 0, 1, 0) + if(hole_4_fir > 0, 1, 0) + if(hole_5_fir > 0, 1, 0) + if(hole_6_fir > 0, 1, 0) + if(hole_7_fir > 0, 1, 0) + if(hole_8_fir > 0, 1, 0) + if(hole_9_fir > 0, 1, 0) + if(hole_10_fir > 0, 1, 0) + if(hole_11_fir > 0, 1, 0) + if(hole_12_fir > 0, 1, 0) + if(hole_13_fir > 0, 1, 0) + if(hole_14_fir > 0, 1, 0) + if(hole_15_fir > 0, 1, 0) + if(hole_16_fir > 0, 1, 0) + if(hole_17_fir > 0, 1, 0) + if(hole_18_fir > 0, 1, 0) ) / (if(hole_1_ladies_par > 3, 1, 0) + if(hole_2_ladies_par > 3, 1, 0) + if(hole_3_ladies_par > 3, 1, 0) + if(hole_4_ladies_par > 3, 1, 0) + if(hole_5_ladies_par > 3, 1, 0) + if(hole_6_ladies_par > 3, 1, 0) + if(hole_7_ladies_par > 3, 1, 0) + if(hole_8_ladies_par > 3, 1, 0) + if(hole_9_ladies_par > 3, 1, 0) + if(hole_10_ladies_par > 3, 1, 0) + if(hole_11_ladies_par > 3, 1, 0) + if(hole_12_ladies_par > 3, 1, 0) + if(hole_13_ladies_par > 3, 1, 0) + if(hole_14_ladies_par > 3, 1, 0) + if(hole_15_ladies_par > 3, 1, 0) + if(hole_16_ladies_par > 3, 1, 0) + if(hole_17_ladies_par > 3, 1, 0) + if(hole_18_ladies_par > 3, 1, 0)) * 100 as fir_percentage")
-        //->selectRaw("SUM(if(hole_1_gir > 0, 1, 0) + if(hole_2_gir > 0, 1, 0) + if(hole_3_gir > 0, 1, 0) + if(hole_4_gir > 0, 1, 0) + if(hole_5_gir > 0, 1, 0) + if(hole_6_gir > 0, 1, 0) + if(hole_7_gir > 0, 1, 0) + if(hole_8_gir > 0, 1, 0) + if(hole_9_gir > 0, 1, 0) + if(hole_10_gir > 0, 1, 0) + if(hole_11_gir > 0, 1, 0) + if(hole_12_gir > 0, 1, 0) + if(hole_13_gir > 0, 1, 0) + if(hole_14_gir > 0, 1, 0) + if(hole_15_gir > 0, 1, 0) + if(hole_16_gir > 0, 1, 0) + if(hole_17_gir > 0, 1, 0) + if(hole_18_gir > 0, 1, 0)) / 18 * 100 as gir_percentage")                      
-        
-        //->selectRaw("SUM(hole_1_drops + hole_2_drops + hole_3_drops + hole_4_drops + hole_5_drops + hole_6_drops + hole_7_drops + hole_8_drops + hole_9_drops + hole_10_drops + hole_11_drops + hole_12_drops + hole_13_drops + hole_14_drops + hole_15_drops + hole_16_drops + hole_17_drops + hole_18_drops) as total_drops")               
-        //->selectRaw("SUM(if(hole_1_score <= hole_1_ladies_par and hole_1_gir < 1, 1, 0) + if(hole_2_score <= hole_2_ladies_par and hole_2_gir < 1, 1, 0) + if(hole_3_score <= hole_3_ladies_par and hole_3_gir < 1, 1, 0) + if(hole_4_score <= hole_4_ladies_par and hole_4_gir < 1, 1, 0) + if(hole_5_score <= hole_5_ladies_par and hole_5_gir < 1, 1, 0) + if(hole_6_score <= hole_6_ladies_par and hole_6_gir < 1, 1, 0) + if(hole_7_score <= hole_7_ladies_par and hole_7_gir < 1, 1, 0) + if(hole_8_score <= hole_8_ladies_par and hole_8_gir < 1, 1, 0) + if(hole_9_score <= hole_9_ladies_par and hole_9_gir < 1, 1, 0) + if(hole_10_score <= hole_10_ladies_par and hole_10_gir < 1, 1, 0) + if(hole_11_score <= hole_11_ladies_par and hole_11_gir < 1, 1, 0) + if(hole_12_score <= hole_12_ladies_par and hole_12_gir < 1, 1, 0) + if(hole_13_score <= hole_13_ladies_par and hole_13_gir < 1, 1, 0) + if(hole_14_score <= hole_14_ladies_par and hole_14_gir < 1, 1, 0) + if(hole_15_score <= hole_15_ladies_par and hole_15_gir < 1, 1, 0) + if(hole_16_score <= hole_16_ladies_par and hole_16_gir < 1, 1, 0) + if(hole_17_score <= hole_17_ladies_par and hole_17_gir < 1, 1, 0) + if(hole_17_score <= hole_18_ladies_par and hole_18_gir < 1, 1, 0) ) / (if(hole_1_gir < 1, 1, 0) + if(hole_2_gir < 1, 1, 0) + if(hole_3_gir < 1, 1, 0) + if(hole_4_gir < 1, 1, 0) + if(hole_5_gir < 1, 1, 0) + if(hole_6_gir < 1, 1, 0) + if(hole_7_gir < 1, 1, 0) + if(hole_8_gir < 1, 1, 0) + if(hole_9_gir < 1, 1, 0) + if(hole_10_gir < 1, 1, 0) + if(hole_11_gir < 1, 1, 0) + if(hole_12_gir < 1, 1, 0) + if(hole_13_gir < 1, 1, 0) + if(hole_14_gir < 1, 1, 0) + if(hole_15_gir < 1, 1, 0) + if(hole_16_gir < 1, 1, 0) + if(hole_17_gir < 1, 1, 0) + if(hole_18_gir < 1, 1, 0) ) * 100 as scrambling")             
-        
-        //->addSelect('round_date', 'property_name', 'course_name', 'rounds.id')
-        //->selectRaw("SUM(hole_1_ladies_par - hole_1_score) as hole_1_plus_minus")
-        //->selectRaw("SUM(hole_2_ladies_par - hole_2_score) as hole_2_plus_minus")  
-        //->selectRaw("SUM(hole_3_ladies_par - hole_3_score) as hole_3_plus_minus")  
-        //->selectRaw("SUM(hole_4_ladies_par - hole_4_score) as hole_4_plus_minus")   
-        //->selectRaw("SUM(hole_5_ladies_par - hole_5_score) as hole_5_plus_minus")      
-        //->selectRaw("SUM(hole_6_ladies_par - hole_6_score) as hole_6_plus_minus")
-        //->selectRaw("SUM(hole_7_ladies_par - hole_7_score) as hole_7_plus_minus") 
-        //->selectRaw("SUM(hole_8_ladies_par - hole_8_score) as hole_8_plus_minus")
-        //->selectRaw("SUM(hole_9_ladies_par - hole_9_score) as hole_9_plus_minus")
-        //->selectRaw("SUM(hole_10_ladies_par - hole_10_score) as hole_10_plus_minus") 
-        //->selectRaw("SUM(hole_11_ladies_par - hole_11_score) as hole_11_plus_minus")     
-        //->selectRaw("SUM(hole_12_ladies_par - hole_12_score) as hole_12_plus_minus")         
-        //->selectRaw("SUM(hole_13_ladies_par - hole_13_score) as hole_13_plus_minus") 
-        //->selectRaw("SUM(hole_14_ladies_par - hole_14_score) as hole_14_plus_minus")  
-        //->selectRaw("SUM(hole_15_ladies_par - hole_15_score) as hole_15_plus_minus")   
-        //->selectRaw("SUM(hole_16_ladies_par - hole_16_score) as hole_16_plus_minus")
-        //->selectRaw("SUM(hole_17_ladies_par - hole_17_score) as hole_17_plus_minus")
-        //->selectRaw("SUM(hole_18_ladies_par - hole_18_score) as hole_18_plus_minus")                
-        //->first();        
-
 
         return $round_result;
 

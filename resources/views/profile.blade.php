@@ -2,6 +2,22 @@
 
 @section('title', 'Profile')
 
+@section('page-specific-js')
+
+<script src="{{ asset('js/charts/chartist.min.js') }}" defer></script>
+<script src="{{ asset('js/charts/view_profile_charts.js') }}" defer></script>
+
+<script>    
+    var career_firs = {!! json_encode($career_stats->fir_percentage) !!};
+    var career_firs_leftover = {!! json_encode(100 - $career_stats->fir_percentage) !!};
+    var career_girs = {!! json_encode($career_stats->gir_percentage) !!};
+    var career_girs_leftover = {!! json_encode(100 - $career_stats->gir_percentage) !!};
+    var career_scrambling = {!! json_encode($career_stats->scrambling) !!};
+    var career_scrambling_leftover = {!! json_encode(100 - $career_stats->scrambling) !!};                                   
+</script> 
+
+@endsection
+
 @section('content')
     
         <div class="container">
@@ -20,31 +36,65 @@
                 <h2>{{ ucfirst(trans(Auth::user()->hand)) }} Handed</h2>
                 <h3>Playing off {{ Auth::user()->handicap / 10 }}</h3>
 
+
+                <div class="row">
+                
+                    <div class="col">
+                    
+                        <h4>Rounds Played</h4>
+                        {{ $career_stats->rounds_played }}
+                    
+                    </div>
+                
+                    <div class="col">
+                    
+                        <h4>Holes Played</h4>
+                        {{ $career_stats->holes_played }}
+                    
+                    </div>  
+
+                    <div class="col">
+                    
+                        <h4>Fairways Hit / Fairways Available</h4>
+                        {{ $career_stats->fairways_hit }} / {{ $career_stats->fairways_available }}
+                    
+                    </div>  
+
+                    <div class="col">
+                    
+                    <h4>Putts Per Hole</h4>
+                    {{ number_format($career_stats->putts_per_hole, 2) }}
+                
+                </div>                      
+
+                </div>
+                <!--/.row -->
+
+                <div class="row round-total-row">                     
+
+                    <div class="col">
+                        <h3 class="percent-counter" data-to="{{ number_format($career_stats->fir_percentage, 2) }}" data-speed="500"></h3>
+                        <div class="ct-chart ct-minor-seventh" id="chart-career-fir"></div>
+                        <p>Fairways in regulation</p>                    
+                    </div>
+
+                    <div class="col">
+                        <h3 class="percent-counter" data-to="{{ number_format($career_stats->gir_percentage, 2) }}" data-speed="500"></h3>
+                        <div class="ct-chart ct-minor-seventh" id="chart-career-gir"></div>
+                        <p>Greens in regulation</p>                    
+                    </div> 
+
+                    <div class="col">
+                        <h3 class="percent-counter" data-to="{{ number_format($career_stats->scrambling, 2) }}" data-speed="500"></h3>
+                        <div class="ct-chart ct-minor-seventh" id="chart-career-scrambling"></div>
+                        <p>Scrambling</p>                    
+                    </div> 
+                                                                
+                
+                </div>
+
                 
                 @if (count($rounds) > 0)
-
-                        <div class="row text-center">
-
-
-
-                        
-                                <div class="col-6 col-md">
-                                        <h4>{{ number_format($career_fir_total, 2) }}%</h4>
-                                        <p>Fairways in regulation</p>
-                                </div>   
-                                <div class="col-6 col-md">
-                                        <h4>{{ number_format($career_gir_total, 2) }}%</h4>
-                                        <p>Greens in regulation</p>
-                                </div> 
-                                <div class="col-6 col-md">
-                                        <h4>{{ number_format($career_pph_total, 2) }}</h4>
-                                        <p>Putts per hole</p>
-                                </div>   
-                                <div class="col-6 col-md">
-                                        <h4>{{ number_format($career_scramble_total, 2) }}%</h4>
-                                        <p>Scrambling</p>
-                                </div>                                                                                                                                                          
-                        </div>
 
 
                         <table class="table rr-table">
@@ -68,70 +118,43 @@
 
                                 <tr>
                                         <td><a href="{{action('RoundController@show', $round_result['id'])}}">{{ $round_result->round_date->format('d/m/Y') }}</a></td>
-                                        <td>{{ $round_result->property_name }} - {{ $round_result->course_name }}</td>
                                         <td>
-                                        @if ($round_result->yards === 'red')
-
-                                                {{ $round_result->total_ladies_par }}
-
-                                        @else
-
-                                                {{ $round_result->total_par }}  
-
-                                        @endif                                                
-                                                
+                                            {{ $round_result->property_name }} - {{ $round_result->course_name }}
                                         </td>
-                                        <td>{{ $round_result->total_score }}</td>
+                                        <td>
+                                            {{ $round_result->total_par }}                                                  
+                                        </td>
+                                        <td>
+                                            {{ $round_result->total_score }}
+                                        </td>
                                         <td>    
-                                                
-                                        @if ($round_result->yards === 'red')
-
-                                                @if($round_result->ladies_plus_minus > 0)
-                                                        +{{ $round_result->ladies_plus_minus }}
-                                                @else
-                                                        {{ $round_result->ladies_plus_minus }}
-                                                @endif 
-
-                                        @else
-
-                                                @if($round_result->plus_minus > 0)
-                                                        +{{ $round_result->plus_minus }}
-                                                @else
-                                                        {{ $round_result->plus_minus }}
-                                                @endif  
-
-                                        @endif                                           
-                                                                                                                       
+                                            @if($round_result->plus_minus > 0)
+                                                +{{ $round_result->plus_minus }}
+                                            @else
+                                                {{ $round_result->plus_minus }}
+                                            @endif                                                                             
                                         </td>
-                                        <td>{{ $round_result->total_putts }}</td>
-                                        <td>{{ number_format($round_result->putts_per_hole, 2) }}</td>
                                         <td>
-                                        @if ($round_result->yards === 'red')
-
-                                                {{ number_format($round_result->ladies_fir_percentage, 2) }}%
-
-                                        @else
-
-                                                {{ number_format($round_result->fir_percentage, 2) }}%  
-
-                                        @endif                                                                                                                         
+                                            {{ $round_result->total_putts }}
                                         </td>
-                                        <td>{{ number_format($round_result->gir_percentage, 2) }}%</td>
-                                        <td>{{ $round_result->total_drops }}</td>
                                         <td>
-                                        @if ($round_result->yards === 'red')
-
-                                                {{ number_format($round_result->ladies_scrambling, 2) }}%
-
-                                        @else
-
+                                            {{ number_format($round_result->putts_per_hole, 2) }}
+                                        </td>
+                                        <td>
+                                            {{ number_format($round_result->fir_percentage, 2) }}%                                                                                                                          
+                                        </td>
+                                        <td>
+                                            {{ number_format($round_result->gir_percentage, 2) }}%
+                                        </td>
+                                        <td>
+                                            {{ $round_result->total_drops }}
+                                        </td>
+                                        <td>
                                                 {{ number_format($round_result->scrambling, 2) }}%  
-
-                                        @endif                                                 
-                                        
-                                
-                                </td>
-                                        <td><a href="{{action('RoundController@edit', $round_result['id'])}}" class="btn btn-warning">Edit</a></td>
+                                        </td>
+                                        <td>
+                                                <a href="{{action('RoundController@edit', $round_result['id'])}}" class="btn btn-warning">Edit</a>
+                                        </td>
                                 </tr> 
 
                                 @endforeach

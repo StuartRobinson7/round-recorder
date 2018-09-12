@@ -732,15 +732,15 @@ class AppServiceProvider extends ServiceProvider
             $model->hole_16_score = ($model->hole_16_score) ?: '10';
             $model->hole_17_score = ($model->hole_17_score) ?: '10';
             $model->hole_18_score = ($model->hole_18_score) ?: '10';
-            $model->hole_19_score = ($model->hole_19_score) ?: '0';
-            $model->hole_20_score = ($model->hole_20_score) ?: '0';
-            $model->hole_21_score = ($model->hole_21_score) ?: '0';
-            $model->hole_22_score = ($model->hole_22_score) ?: '0';
-            $model->hole_23_score = ($model->hole_23_score) ?: '0';
-            $model->hole_24_score = ($model->hole_24_score) ?: '0';
-            $model->hole_25_score = ($model->hole_25_score) ?: '0';
-            $model->hole_26_score = ($model->hole_26_score) ?: '0';
-            $model->hole_27_score = ($model->hole_27_score) ?: '0';            
+            $model->hole_19_score = ($model->hole_19_score) ?: '10';
+            $model->hole_20_score = ($model->hole_20_score) ?: '10';
+            $model->hole_21_score = ($model->hole_21_score) ?: '10';
+            $model->hole_22_score = ($model->hole_22_score) ?: '10';
+            $model->hole_23_score = ($model->hole_23_score) ?: '10';
+            $model->hole_24_score = ($model->hole_24_score) ?: '10';
+            $model->hole_25_score = ($model->hole_25_score) ?: '10';
+            $model->hole_26_score = ($model->hole_26_score) ?: '10';
+            $model->hole_27_score = ($model->hole_27_score) ?: '10';            
 
             $model->hole_1_fir = ($model->hole_1_fir) ?: '0';
             $model->hole_2_fir = ($model->hole_2_fir) ?: '0';
@@ -803,6 +803,10 @@ class AppServiceProvider extends ServiceProvider
         });  
         
         \App\Round::updating(function($model){
+            $model->size = ($model->size) ?: 'full';
+            $model->yards = ($model->yards) ?: 'yellow';
+            //$model->nine = ($model->nine) ?: 'first-nine-second-nine';
+
             $model->hole_1_drops = ($model->hole_1_drops) ?: '0';
             $model->hole_2_drops = ($model->hole_2_drops) ?: '0';
             $model->hole_3_drops = ($model->hole_3_drops) ?: '0';
@@ -820,7 +824,16 @@ class AppServiceProvider extends ServiceProvider
             $model->hole_15_drops = ($model->hole_15_drops) ?: '0';
             $model->hole_16_drops = ($model->hole_16_drops) ?: '0';
             $model->hole_17_drops = ($model->hole_17_drops) ?: '0';
-            $model->hole_18_drops = ($model->hole_18_drops) ?: '0'; 
+            $model->hole_18_drops = ($model->hole_18_drops) ?: '0';          
+            $model->hole_19_drops = ($model->hole_19_drops) ?: '0';
+            $model->hole_20_drops = ($model->hole_20_drops) ?: '0';
+            $model->hole_21_drops = ($model->hole_21_drops) ?: '0';
+            $model->hole_22_drops = ($model->hole_22_drops) ?: '0';
+            $model->hole_23_drops = ($model->hole_23_drops) ?: '0';
+            $model->hole_24_drops = ($model->hole_24_drops) ?: '0';
+            $model->hole_25_drops = ($model->hole_25_drops) ?: '0';
+            $model->hole_26_drops = ($model->hole_26_drops) ?: '0';
+            $model->hole_27_drops = ($model->hole_27_drops) ?: '0';
 
             $model->hole_1_putts = ($model->hole_1_putts) ?: '0';
             $model->hole_2_putts = ($model->hole_2_putts) ?: '0';
@@ -839,8 +852,17 @@ class AppServiceProvider extends ServiceProvider
             $model->hole_15_putts = ($model->hole_15_putts) ?: '0';
             $model->hole_16_putts = ($model->hole_16_putts) ?: '0';
             $model->hole_17_putts = ($model->hole_17_putts) ?: '0';
-            $model->hole_18_putts = ($model->hole_18_putts) ?: '0'; 
-            
+            $model->hole_18_putts = ($model->hole_18_putts) ?: '0';            
+            $model->hole_19_putts = ($model->hole_19_putts) ?: '0';
+            $model->hole_20_putts = ($model->hole_20_putts) ?: '0';
+            $model->hole_21_putts = ($model->hole_21_putts) ?: '0';
+            $model->hole_22_putts = ($model->hole_22_putts) ?: '0';
+            $model->hole_23_putts = ($model->hole_23_putts) ?: '0';
+            $model->hole_24_putts = ($model->hole_24_putts) ?: '0';
+            $model->hole_25_putts = ($model->hole_25_putts) ?: '0';
+            $model->hole_26_putts = ($model->hole_26_putts) ?: '0';
+            $model->hole_27_putts = ($model->hole_27_putts) ?: '0';
+
             $model->hole_1_score = ($model->hole_1_score) ?: '10';
             $model->hole_2_score = ($model->hole_2_score) ?: '10';
             $model->hole_3_score = ($model->hole_3_score) ?: '10';
@@ -859,6 +881,15 @@ class AppServiceProvider extends ServiceProvider
             $model->hole_16_score = ($model->hole_16_score) ?: '10';
             $model->hole_17_score = ($model->hole_17_score) ?: '10';
             $model->hole_18_score = ($model->hole_18_score) ?: '10';
+            $model->hole_19_score = ($model->hole_19_score) ?: '10';
+            $model->hole_20_score = ($model->hole_20_score) ?: '10';
+            $model->hole_21_score = ($model->hole_21_score) ?: '10';
+            $model->hole_22_score = ($model->hole_22_score) ?: '10';
+            $model->hole_23_score = ($model->hole_23_score) ?: '10';
+            $model->hole_24_score = ($model->hole_24_score) ?: '10';
+            $model->hole_25_score = ($model->hole_25_score) ?: '10';
+            $model->hole_26_score = ($model->hole_26_score) ?: '10';
+            $model->hole_27_score = ($model->hole_27_score) ?: '10';            
 
             $model->hole_1_fir = ($model->hole_1_fir) ?: '0';
             $model->hole_2_fir = ($model->hole_2_fir) ?: '0';
@@ -877,7 +908,16 @@ class AppServiceProvider extends ServiceProvider
             $model->hole_15_fir = ($model->hole_15_fir) ?: '0';
             $model->hole_16_fir = ($model->hole_16_fir) ?: '0';
             $model->hole_17_fir = ($model->hole_17_fir) ?: '0';
-            $model->hole_18_fir = ($model->hole_18_fir) ?: '0';            
+            $model->hole_18_fir = ($model->hole_18_fir) ?: '0';             
+            $model->hole_19_fir = ($model->hole_19_fir) ?: '0';
+            $model->hole_20_fir = ($model->hole_20_fir) ?: '0';
+            $model->hole_21_fir = ($model->hole_21_fir) ?: '0';
+            $model->hole_22_fir = ($model->hole_22_fir) ?: '0';
+            $model->hole_23_fir = ($model->hole_23_fir) ?: '0';
+            $model->hole_24_fir = ($model->hole_24_fir) ?: '0';
+            $model->hole_25_fir = ($model->hole_25_fir) ?: '0';
+            $model->hole_26_fir = ($model->hole_26_fir) ?: '0';
+            $model->hole_27_fir = ($model->hole_27_fir) ?: '0';            
             
             $model->hole_1_gir = ($model->hole_1_gir) ?: '0';
             $model->hole_2_gir = ($model->hole_2_gir) ?: '0';
@@ -897,6 +937,15 @@ class AppServiceProvider extends ServiceProvider
             $model->hole_16_gir = ($model->hole_16_gir) ?: '0';
             $model->hole_17_gir = ($model->hole_17_gir) ?: '0';
             $model->hole_18_gir = ($model->hole_18_gir) ?: '0';
+            $model->hole_19_gir = ($model->hole_19_gir) ?: '0';
+            $model->hole_20_gir = ($model->hole_20_gir) ?: '0';
+            $model->hole_21_gir = ($model->hole_21_gir) ?: '0';
+            $model->hole_22_gir = ($model->hole_22_gir) ?: '0';
+            $model->hole_23_gir = ($model->hole_23_gir) ?: '0';
+            $model->hole_24_gir = ($model->hole_24_gir) ?: '0';
+            $model->hole_25_gir = ($model->hole_25_gir) ?: '0';
+            $model->hole_26_gir = ($model->hole_26_gir) ?: '0';
+            $model->hole_27_gir = ($model->hole_27_gir) ?: '0';            
             
             $model->round_notes = ($model->round_notes) ?: '';
                                          

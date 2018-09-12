@@ -706,7 +706,7 @@
                             </div>         
                             <!--/.row -->
 
-                            <div id="first9Firs" class="row add-round-row add-round-fir">
+                            <div id="FirstNineFirs" class="row add-round-row add-round-fir">
 
                                 <div class="col">
 
@@ -725,7 +725,14 @@
                                                 {{ ($course->hole_1_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_1_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_1_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >
+
                                         <label class="custom-control-label" for="hole_1_fir"></label>
 
                                     </div>
@@ -743,7 +750,13 @@
                                                 {{ ($course->hole_2_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_2_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif
+
+                                            @if($round->hole_2_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                            
                                         <label class="custom-control-label" for="hole_2_fir"></label>
 
                                     </div>
@@ -761,7 +774,13 @@
                                                 {{ ($course->hole_3_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_3_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_3_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                            
                                         <label class="custom-control-label" for="hole_3_fir"></label>
 
                                     </div>                    
@@ -779,7 +798,13 @@
                                                 {{ ($course->hole_4_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_4_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_4_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                            
                                         <label class="custom-control-label" for="hole_4_fir"></label>
 
                                     </div>                    
@@ -797,7 +822,13 @@
                                                 {{ ($course->hole_5_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_5_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_5_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                            
                                         <label class="custom-control-label" for="hole_5_fir"></label>
 
                                     </div>                    
@@ -815,7 +846,13 @@
                                                 {{ ($course->hole_6_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_6_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_6_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                            
                                         <label class="custom-control-label" for="hole_6_fir"></label>
 
                                     </div>                    
@@ -833,7 +870,13 @@
                                                 {{ ($course->hole_7_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_7_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_7_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                            
                                         <label class="custom-control-label" for="hole_7_fir"></label>
 
                                     </div>                    
@@ -851,7 +894,13 @@
                                                 {{ ($course->hole_8_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_8_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_8_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                            
                                         <label class="custom-control-label" for="hole_8_fir"></label>
 
                                     </div>                    
@@ -869,7 +918,13 @@
                                                 {{ ($course->hole_9_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_9_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_9_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                            
                                         <label class="custom-control-label" for="hole_9_fir"></label>
 
                                     </div>                    
@@ -886,7 +941,7 @@
                             </div>    
                             <!--/.row -->
 
-                            <div id="firstNineGirs" class="row add-round-row add-round-gir">
+                            <div id="FirstNineGirs" class="row add-round-row add-round-gir">
 
                                 <div class="col">
 
@@ -898,7 +953,7 @@
 
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_1_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_1_gir" value="1">
+                                        <input id="hole_1_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_1_gir" value="1" @if($round->hole_1_gir === 1) checked @endif >                                        
                                         <label class="custom-control-label" for="hole_1_gir"></label>
                                     </div>
 
@@ -907,7 +962,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_2_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_2_gir" value="1">
+                                        <input id="hole_2_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_2_gir" value="1" @if($round->hole_2_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_2_gir"></label>
                                     </div>
 
@@ -916,7 +971,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_3_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_3_gir" value="1">
+                                        <input id="hole_3_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_3_gir" value="1" @if($round->hole_3_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_3_gir"></label>
                                     </div>
 
@@ -925,7 +980,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_4_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_4_gir" value="1">
+                                        <input id="hole_4_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_4_gir" value="1" @if($round->hole_4_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_4_gir"></label>
                                     </div>
 
@@ -934,7 +989,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_5_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_5_gir" value="1">
+                                        <input id="hole_5_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_5_gir" value="1" @if($round->hole_5_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_5_gir"></label>
                                     </div>
 
@@ -943,7 +998,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_6_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_6_gir" value="1">
+                                        <input id="hole_6_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_6_gir" value="1" @if($round->hole_6_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_6_gir"></label>
                                     </div>
 
@@ -952,7 +1007,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_7_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_7_gir" value="1">
+                                        <input id="hole_7_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_7_gir" value="1" @if($round->hole_7_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_7_gir"></label>
                                     </div>
 
@@ -961,7 +1016,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_8_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_8_gir" value="1">
+                                        <input id="hole_8_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_8_gir" value="1" @if($round->hole_8_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_8_gir"></label>
                                     </div>
 
@@ -970,7 +1025,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_9_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_9_gir" value="1">
+                                        <input id="hole_9_gir" type="checkbox" class="form-control FirstNineGir custom-control-input" name="hole_9_gir" value="1" @if($round->hole_9_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_9_gir"></label>
                                     </div>
 
@@ -1492,55 +1547,55 @@
 
                                 <div class="col">
 
-                                    <input id="hole_10_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_10_score') ? ' is-invalid' : '' }}" name="hole_10_score" value="{{ old('hole_10_score') }}">
+                                    <input id="hole_10_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_10_score') ? ' is-invalid' : '' }}" name="hole_10_score" value="{{ old('hole_10_score', $round->hole_10_score) }}">
 
                                 </div>
 
                                 <div class="col">
 
-                                    <input id="hole_11_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_11_score') ? ' is-invalid' : '' }}" name="hole_11_score" value="{{ old('hole_11_score') }}">
+                                    <input id="hole_11_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_11_score') ? ' is-invalid' : '' }}" name="hole_11_score" value="{{ old('hole_11_score', $round->hole_11_score) }}">
 
                                 </div>            
 
                                 <div class="col">
 
-                                    <input id="hole_12_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_12_score') ? ' is-invalid' : '' }}" name="hole_12_score" value="{{ old('hole_12_score') }}">
+                                    <input id="hole_12_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_12_score') ? ' is-invalid' : '' }}" name="hole_12_score" value="{{ old('hole_12_score', $round->hole_12_score) }}">
 
                                 </div>  
 
                                 <div class="col">
 
-                                    <input id="hole_13_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_13_score') ? ' is-invalid' : '' }}" name="hole_13_score" value="{{ old('hole_13_score') }}">
+                                    <input id="hole_13_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_13_score') ? ' is-invalid' : '' }}" name="hole_13_score" value="{{ old('hole_13_score', $round->hole_13_score) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_14_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_14_score') ? ' is-invalid' : '' }}" name="hole_14_score" value="{{ old('hole_14_score') }}">
+                                    <input id="hole_14_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_14_score') ? ' is-invalid' : '' }}" name="hole_14_score" value="{{ old('hole_14_score', $round->hole_14_score) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_15_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_15_score') ? ' is-invalid' : '' }}" name="hole_15_score" value="{{ old('hole_15_score') }}">
+                                    <input id="hole_15_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_15_score') ? ' is-invalid' : '' }}" name="hole_15_score" value="{{ old('hole_15_score', $round->hole_15_score) }}">
 
                                 </div> 
 
                                 <div class="col">
 
-                                    <input id="hole_16_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_16_score') ? ' is-invalid' : '' }}" name="hole_16_score" value="{{ old('hole_16_score') }}">
+                                    <input id="hole_16_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_16_score') ? ' is-invalid' : '' }}" name="hole_16_score" value="{{ old('hole_16_score', $round->hole_16_score) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_17_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_17_score') ? ' is-invalid' : '' }}" name="hole_17_score" value="{{ old('hole_17_score') }}">
+                                    <input id="hole_17_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_17_score') ? ' is-invalid' : '' }}" name="hole_17_score" value="{{ old('hole_17_score', $round->hole_17_score) }}">
 
                                 </div>  
 
                                 <div class="col">
 
-                                    <input id="hole_18_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_18_score') ? ' is-invalid' : '' }}" name="hole_18_score" value="{{ old('hole_18_score') }}">
+                                    <input id="hole_18_score" type="number" class="form-control second-nine-score {{ $errors->has('hole_18_score') ? ' is-invalid' : '' }}" name="hole_18_score" value="{{ old('hole_18_score', $round->hole_18_score) }}">
 
                                 </div> 
 
@@ -1565,55 +1620,55 @@
 
                                 <div class="col">
 
-                                    <input id="hole_10_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_10_putts') ? ' is-invalid' : '' }}" name="hole_10_putts" value="{{ old('hole_10_putts') }}">
+                                    <input id="hole_10_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_10_putts') ? ' is-invalid' : '' }}" name="hole_10_putts" value="{{ old('hole_10_putts', $round->hole_10_putts) }}">
 
                                 </div>
 
                                 <div class="col">
 
-                                    <input id="hole_11_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_11_putts') ? ' is-invalid' : '' }}" name="hole_11_putts" value="{{ old('hole_11_putts') }}">
+                                    <input id="hole_11_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_11_putts') ? ' is-invalid' : '' }}" name="hole_11_putts" value="{{ old('hole_11_putts', $round->hole_11_putts) }}">
 
                                 </div>            
 
                                 <div class="col">
 
-                                    <input id="hole_12_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_12_putts') ? ' is-invalid' : '' }}" name="hole_12_putts" value="{{ old('hole_12_putts') }}">
+                                    <input id="hole_12_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_12_putts') ? ' is-invalid' : '' }}" name="hole_12_putts" value="{{ old('hole_12_putts', $round->hole_12_putts) }}">
 
                                 </div>  
 
                                 <div class="col">
 
-                                    <input id="hole_13_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_13_putts') ? ' is-invalid' : '' }}" name="hole_13_putts" value="{{ old('hole_13_putts') }}">
+                                    <input id="hole_13_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_13_putts') ? ' is-invalid' : '' }}" name="hole_13_putts" value="{{ old('hole_13_putts', $round->hole_13_putts) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_14_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_14_putts') ? ' is-invalid' : '' }}" name="hole_14_putts" value="{{ old('hole_14_putts') }}">
+                                    <input id="hole_14_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_14_putts') ? ' is-invalid' : '' }}" name="hole_14_putts" value="{{ old('hole_14_putts', $round->hole_14_putts) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_15_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_15_putts') ? ' is-invalid' : '' }}" name="hole_15_putts" value="{{ old('hole_15_putts') }}">
+                                    <input id="hole_15_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_15_putts') ? ' is-invalid' : '' }}" name="hole_15_putts" value="{{ old('hole_15_putts', $round->hole_15_putts) }}">
 
                                 </div> 
 
                                 <div class="col">
 
-                                    <input id="hole_16_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_16_putts') ? ' is-invalid' : '' }}" name="hole_16_putts" value="{{ old('hole_16_putts') }}">
+                                    <input id="hole_16_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_16_putts') ? ' is-invalid' : '' }}" name="hole_16_putts" value="{{ old('hole_16_putts', $round->hole_16_putts) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_17_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_17_putts') ? ' is-invalid' : '' }}" name="hole_17_putts" value="{{ old('hole_17_putts') }}">
+                                    <input id="hole_17_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_17_putts') ? ' is-invalid' : '' }}" name="hole_17_putts" value="{{ old('hole_17_putts', $round->hole_17_putts) }}">
 
                                 </div>  
 
                                 <div class="col">
 
-                                    <input id="hole_18_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_18_putts') ? ' is-invalid' : '' }}" name="hole_18_putts" value="{{ old('hole_18_putts') }}">
+                                    <input id="hole_18_putts" type="number" class="form-control second-nine-putts {{ $errors->has('hole_18_putts') ? ' is-invalid' : '' }}" name="hole_18_putts" value="{{ old('hole_18_putts', $round->hole_18_putts) }}">
 
                                 </div> 
 
@@ -1637,55 +1692,55 @@
 
                                 <div class="col">
 
-                                    <input id="hole_10_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_10_drops') ? ' is-invalid' : '' }}" name="hole_10_drops" value="{{ old('hole_10_drops') }}">
+                                    <input id="hole_10_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_10_drops') ? ' is-invalid' : '' }}" name="hole_10_drops" value="{{ old('hole_10_drops', $round->hole_10_drops) }}">
 
                                 </div>
 
                                 <div class="col">
 
-                                    <input id="hole_11_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_11_drops') ? ' is-invalid' : '' }}" name="hole_11_drops" value="{{ old('hole_11_drops') }}">
+                                    <input id="hole_11_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_11_drops') ? ' is-invalid' : '' }}" name="hole_11_drops" value="{{ old('hole_11_drops', $round->hole_11_drops) }}">
 
                                 </div>            
 
                                 <div class="col">
 
-                                    <input id="hole_12_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_12_drops') ? ' is-invalid' : '' }}" name="hole_12_drops" value="{{ old('hole_12_drops') }}">
+                                    <input id="hole_12_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_12_drops') ? ' is-invalid' : '' }}" name="hole_12_drops" value="{{ old('hole_12_drops', $round->hole_12_drops) }}">
 
                                 </div>  
 
                                 <div class="col">
 
-                                    <input id="hole_13_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_13_drops') ? ' is-invalid' : '' }}" name="hole_13_drops" value="{{ old('hole_13_drops') }}">
+                                    <input id="hole_13_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_13_drops') ? ' is-invalid' : '' }}" name="hole_13_drops" value="{{ old('hole_13_drops', $round->hole_13_drops) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_14_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_14_drops') ? ' is-invalid' : '' }}" name="hole_14_drops" value="{{ old('hole_14_drops') }}">
+                                    <input id="hole_14_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_14_drops') ? ' is-invalid' : '' }}" name="hole_14_drops" value="{{ old('hole_14_drops', $round->hole_14_drops) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_15_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_15_drops') ? ' is-invalid' : '' }}" name="hole_15_drops" value="{{ old('hole_15_drops') }}">
+                                    <input id="hole_15_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_15_drops') ? ' is-invalid' : '' }}" name="hole_15_drops" value="{{ old('hole_15_drops', $round->hole_15_drops) }}">
 
                                 </div> 
 
                                 <div class="col">
 
-                                    <input id="hole_16_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_16_drops') ? ' is-invalid' : '' }}" name="hole_16_drops" value="{{ old('hole_16_drops') }}">
+                                    <input id="hole_16_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_16_drops') ? ' is-invalid' : '' }}" name="hole_16_drops" value="{{ old('hole_16_drops', $round->hole_16_drops) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_17_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_17_drops') ? ' is-invalid' : '' }}" name="hole_17_drops" value="{{ old('hole_17_drops') }}">
+                                    <input id="hole_17_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_17_drops') ? ' is-invalid' : '' }}" name="hole_17_drops" value="{{ old('hole_17_drops', $round->hole_17_drops) }}">
 
                                 </div>  
 
                                 <div class="col">
 
-                                    <input id="hole_18_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_18_drops') ? ' is-invalid' : '' }}" name="hole_18_drops" value="{{ old('hole_18_drops') }}">
+                                    <input id="hole_18_drops" type="number" class="form-control second-nine-drops {{ $errors->has('hole_18_drops') ? ' is-invalid' : '' }}" name="hole_18_drops" value="{{ old('hole_18_drops', $round->hole_18_drops) }}">
 
                                 </div> 
 
@@ -1699,7 +1754,7 @@
                             </div>         
                             <!--/.row -->
 
-                            <div id="second9Firs" class="row add-round-row add-round-fir">
+                            <div id="SecondNineFirs" class="row add-round-row add-round-fir">
 
                                 <div class="col">
 
@@ -1710,14 +1765,20 @@
                                 <div class="col">            
                                             
                                     <div class="custom-control custom-checkbox">                         
-                                        <input id="hole_10_fir" type="checkbox" class="form-control secondNineFir custom-control-input" name="hole_10_fir" value="1"
+                                        <input id="hole_10_fir" type="checkbox" class="form-control SecondNineFir custom-control-input" name="hole_10_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_10_white_par < 4 ? "disabled":"") }}                       
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_10_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_10_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_10_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                               
                                         <label class="custom-control-label" for="hole_10_fir"></label>
                                     </div>
 
@@ -1726,14 +1787,20 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">                         
-                                        <input id="hole_11_fir" type="checkbox" class="form-control secondNineFir custom-control-input" name="hole_11_fir" value="1"
+                                        <input id="hole_11_fir" type="checkbox" class="form-control SecondNineFir custom-control-input" name="hole_11_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_11_white_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_11_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_11_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_11_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                               
                                         <label class="custom-control-label" for="hole_11_fir"></label>
                                     </div>
 
@@ -1742,14 +1809,20 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">                         
-                                        <input id="hole_12_fir" type="checkbox" class="form-control secondNineFir custom-control-input" name="hole_12_fir" value="1"
+                                        <input id="hole_12_fir" type="checkbox" class="form-control SecondNineFir custom-control-input" name="hole_12_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_12_white_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_12_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_12_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_12_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                               
                                         <label class="custom-control-label" for="hole_12_fir"></label>
                                     </div>
 
@@ -1758,14 +1831,20 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">                         
-                                        <input id="hole_13_fir" type="checkbox" class="form-control secondNineFir custom-control-input" name="hole_13_fir" value="1"
+                                        <input id="hole_13_fir" type="checkbox" class="form-control SecondNineFir custom-control-input" name="hole_13_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_13_white_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_13_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_13_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_13_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                               
                                         <label class="custom-control-label" for="hole_13_fir"></label>
                                     </div>
 
@@ -1774,14 +1853,20 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">                         
-                                        <input id="hole_14_fir" type="checkbox" class="form-control secondNineFir custom-control-input" name="hole_14_fir" value="1"
+                                        <input id="hole_14_fir" type="checkbox" class="form-control SecondNineFir custom-control-input" name="hole_14_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_14_white_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_14_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_14_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_14_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                               
                                         <label class="custom-control-label" for="hole_14_fir"></label>
                                     </div>
 
@@ -1790,14 +1875,20 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">                         
-                                        <input id="hole_15_fir" type="checkbox" class="form-control secondNineFir custom-control-input" name="hole_15_fir" value="1"
+                                        <input id="hole_15_fir" type="checkbox" class="form-control SecondNineFir custom-control-input" name="hole_15_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_15_white_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_15_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_15_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_15_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                               
                                         <label class="custom-control-label" for="hole_15_fir"></label>
                                     </div>
 
@@ -1806,14 +1897,20 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">                         
-                                        <input id="hole_16_fir" type="checkbox" class="form-control secondNineFir custom-control-input" name="hole_16_fir" value="1"
+                                        <input id="hole_16_fir" type="checkbox" class="form-control SecondNineFir custom-control-input" name="hole_16_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_16_white_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_16_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_16_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_16_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                               
                                         <label class="custom-control-label" for="hole_16_fir"></label>
                                     </div>
 
@@ -1822,14 +1919,20 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">                         
-                                        <input id="hole_17_fir" type="checkbox" class="form-control secondNineFir custom-control-input" name="hole_17_fir" value="1"
+                                        <input id="hole_17_fir" type="checkbox" class="form-control SecondNineFir custom-control-input" name="hole_17_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_17_white_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_17_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_17_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_17_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                               
                                         <label class="custom-control-label" for="hole_17_fir"></label>
                                     </div>
 
@@ -1838,14 +1941,20 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">                         
-                                        <input id="hole_18_fir" type="checkbox" class="form-control secondNineFir custom-control-input" name="hole_18_fir" value="1"
+                                        <input id="hole_18_fir" type="checkbox" class="form-control SecondNineFir custom-control-input" name="hole_18_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_18_white_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_18_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_18_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+                                            @if($round->hole_18_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                               
                                         <label class="custom-control-label" for="hole_18_fir"></label>
                                     </div>
 
@@ -1853,7 +1962,7 @@
 
                                 <div class="col">
 
-                                    <span id="secondNineFirCount"></span>
+                                    <span id="SecondNineFirCount"></span>
 
                                 </div>                                                   
 
@@ -1861,7 +1970,7 @@
                             </div>    
                             <!--/.row -->
 
-                            <div id="secondNineGirs" class="row add-round-row add-round-gir">
+                            <div id="SecondNineGirs" class="row add-round-row add-round-gir">
 
                                 <div class="col">
 
@@ -1872,7 +1981,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_10_gir" type="checkbox" class="form-control secondNineGir custom-control-input" name="hole_10_gir" value="1">
+                                        <input id="hole_10_gir" type="checkbox" class="form-control SecondNineGir custom-control-input" name="hole_10_gir" value="1" @if($round->hole_10_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_10_gir"></label>
                                     </div>
 
@@ -1881,7 +1990,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_11_gir" type="checkbox" class="form-control secondNineGir custom-control-input" name="hole_11_gir" value="1">
+                                        <input id="hole_11_gir" type="checkbox" class="form-control SecondNineGir custom-control-input" name="hole_11_gir" value="1" @if($round->hole_11_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_11_gir"></label>
                                     </div>
 
@@ -1890,7 +1999,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_12_gir" type="checkbox" class="form-control secondNineGir custom-control-input" name="hole_12_gir" value="1">
+                                        <input id="hole_12_gir" type="checkbox" class="form-control SecondNineGir custom-control-input" name="hole_12_gir" value="1" @if($round->hole_12_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_12_gir"></label>
                                     </div>
 
@@ -1899,7 +2008,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_13_gir" type="checkbox" class="form-control secondNineGir custom-control-input" name="hole_13_gir" value="1">
+                                        <input id="hole_13_gir" type="checkbox" class="form-control SecondNineGir custom-control-input" name="hole_13_gir" value="1" @if($round->hole_13_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_13_gir"></label>
                                     </div>
 
@@ -1908,7 +2017,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_14_gir" type="checkbox" class="form-control secondNineGir custom-control-input" name="hole_14_gir" value="1">
+                                        <input id="hole_14_gir" type="checkbox" class="form-control SecondNineGir custom-control-input" name="hole_14_gir" value="1" @if($round->hole_14_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_14_gir"></label>
                                     </div>
 
@@ -1917,7 +2026,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_15_gir" type="checkbox" class="form-control secondNineGir custom-control-input" name="hole_15_gir" value="1">
+                                        <input id="hole_15_gir" type="checkbox" class="form-control SecondNineGir custom-control-input" name="hole_15_gir" value="1" @if($round->hole_15_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_15_gir"></label>
                                     </div>
 
@@ -1926,7 +2035,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_16_gir" type="checkbox" class="form-control secondNineGir custom-control-input" name="hole_16_gir" value="1">
+                                        <input id="hole_16_gir" type="checkbox" class="form-control SecondNineGir custom-control-input" name="hole_16_gir" value="1" @if($round->hole_16_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_16_gir"></label>
                                     </div>
 
@@ -1935,7 +2044,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_17_gir" type="checkbox" class="form-control secondNineGir custom-control-input" name="hole_17_gir" value="1">
+                                        <input id="hole_17_gir" type="checkbox" class="form-control SecondNineGir custom-control-input" name="hole_17_gir" value="1" @if($round->hole_17_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_17_gir"></label>
                                     </div>
 
@@ -1944,7 +2053,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_18_gir" type="checkbox" class="form-control secondNineGir custom-control-input" name="hole_18_gir" value="1">
+                                        <input id="hole_18_gir" type="checkbox" class="form-control SecondNineGir custom-control-input" name="hole_18_gir" value="1" @if($round->hole_18_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_18_gir"></label>
                                     </div>
 
@@ -1952,7 +2061,7 @@
 
                                 <div class="col">
 
-                                    <span id="secondNineGirCount"></span>
+                                    <span id="SecondNineGirCount"></span>
 
                                 </div>                                                   
 
@@ -2467,55 +2576,55 @@
 
                                 <div class="col">
 
-                                    <input id="hole_19_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_19_score') ? ' is-invalid' : '' }}" name="hole_19_score" value="{{ old('hole_19_score') }}">
+                                    <input id="hole_19_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_19_score') ? ' is-invalid' : '' }}" name="hole_19_score" value="{{ old('hole_19_score', $round->hole_19_score) }}">
 
                                 </div>
 
                                 <div class="col">
 
-                                    <input id="hole_20_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_20_score') ? ' is-invalid' : '' }}" name="hole_20_score" value="{{ old('hole_20_score') }}">
+                                    <input id="hole_20_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_20_score') ? ' is-invalid' : '' }}" name="hole_20_score" value="{{ old('hole_20_score', $round->hole_20_score) }}">
 
                                 </div>            
 
                                 <div class="col">
 
-                                    <input id="hole_21_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_21_score') ? ' is-invalid' : '' }}" name="hole_21_score" value="{{ old('hole_21_score') }}">
+                                    <input id="hole_21_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_21_score') ? ' is-invalid' : '' }}" name="hole_21_score" value="{{ old('hole_21_score', $round->hole_21_score) }}">
 
                                 </div>  
 
                                 <div class="col">
 
-                                    <input id="hole_22_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_22_score') ? ' is-invalid' : '' }}" name="hole_22_score" value="{{ old('hole_22_score') }}">
+                                    <input id="hole_22_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_22_score') ? ' is-invalid' : '' }}" name="hole_22_score" value="{{ old('hole_22_score', $round->hole_22_score) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_23_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_23_score') ? ' is-invalid' : '' }}" name="hole_23_score" value="{{ old('hole_23_score') }}">
+                                    <input id="hole_23_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_23_score') ? ' is-invalid' : '' }}" name="hole_23_score" value="{{ old('hole_23_score', $round->hole_23_score) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_24_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_24_score') ? ' is-invalid' : '' }}" name="hole_24_score" value="{{ old('hole_24_score') }}">
+                                    <input id="hole_24_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_24_score') ? ' is-invalid' : '' }}" name="hole_24_score" value="{{ old('hole_24_score', $round->hole_24_score) }}">
 
                                 </div> 
 
                                 <div class="col">
 
-                                    <input id="hole_25_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_25_score') ? ' is-invalid' : '' }}" name="hole_25_score" value="{{ old('hole_25_score') }}">
+                                    <input id="hole_25_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_25_score') ? ' is-invalid' : '' }}" name="hole_25_score" value="{{ old('hole_25_score', $round->hole_25_score) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_26_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_26_score') ? ' is-invalid' : '' }}" name="hole_26_score" value="{{ old('hole_26_score') }}">
+                                    <input id="hole_26_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_26_score') ? ' is-invalid' : '' }}" name="hole_26_score" value="{{ old('hole_26_score', $round->hole_26_score) }}">
 
                                 </div>  
 
                                 <div class="col">
 
-                                    <input id="hole_27_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_27_score') ? ' is-invalid' : '' }}" name="hole_27_score" value="{{ old('hole_27_score') }}">
+                                    <input id="hole_27_score" type="number" class="form-control third-nine-score {{ $errors->has('hole_27_score') ? ' is-invalid' : '' }}" name="hole_27_score" value="{{ old('hole_27_score', $round->hole_27_score) }}">
 
                                 </div> 
 
@@ -2540,55 +2649,55 @@
 
                                 <div class="col">
 
-                                    <input id="hole_19_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_19_putts') ? ' is-invalid' : '' }}" name="hole_19_putts" value="{{ old('hole_19_putts') }}">
+                                    <input id="hole_19_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_19_putts') ? ' is-invalid' : '' }}" name="hole_19_putts" value="{{ old('hole_19_putts', $round->hole_19_putts) }}">
 
                                 </div>
 
                                 <div class="col">
 
-                                    <input id="hole_20_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_20_putts') ? ' is-invalid' : '' }}" name="hole_20_putts" value="{{ old('hole_20_putts') }}">
+                                    <input id="hole_20_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_20_putts') ? ' is-invalid' : '' }}" name="hole_20_putts" value="{{ old('hole_20_putts', $round->hole_20_putts) }}">
 
                                 </div>            
 
                                 <div class="col">
 
-                                    <input id="hole_21_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_21_putts') ? ' is-invalid' : '' }}" name="hole_21_putts" value="{{ old('hole_21_putts') }}">
+                                    <input id="hole_21_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_21_putts') ? ' is-invalid' : '' }}" name="hole_21_putts" value="{{ old('hole_21_putts', $round->hole_21_putts) }}">
 
                                 </div>  
 
                                 <div class="col">
 
-                                    <input id="hole_22_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_22_putts') ? ' is-invalid' : '' }}" name="hole_22_putts" value="{{ old('hole_22_putts') }}">
+                                    <input id="hole_22_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_22_putts') ? ' is-invalid' : '' }}" name="hole_22_putts" value="{{ old('hole_22_putts', $round->hole_22_putts) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_23_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_23_putts') ? ' is-invalid' : '' }}" name="hole_23_putts" value="{{ old('hole_23_putts') }}">
+                                    <input id="hole_23_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_23_putts') ? ' is-invalid' : '' }}" name="hole_23_putts" value="{{ old('hole_23_putts', $round->hole_23_putts) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_24_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_24_putts') ? ' is-invalid' : '' }}" name="hole_24_putts" value="{{ old('hole_24_putts') }}">
+                                    <input id="hole_24_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_24_putts') ? ' is-invalid' : '' }}" name="hole_24_putts" value="{{ old('hole_24_putts', $round->hole_24_putts) }}">
 
                                 </div> 
 
                                 <div class="col">
 
-                                    <input id="hole_25_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_25_putts') ? ' is-invalid' : '' }}" name="hole_25_putts" value="{{ old('hole_25_putts') }}">
+                                    <input id="hole_25_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_25_putts') ? ' is-invalid' : '' }}" name="hole_25_putts" value="{{ old('hole_25_putts', $round->hole_25_putts) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_26_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_26_putts') ? ' is-invalid' : '' }}" name="hole_26_putts" value="{{ old('hole_26_putts') }}">
+                                    <input id="hole_26_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_26_putts') ? ' is-invalid' : '' }}" name="hole_26_putts" value="{{ old('hole_26_putts', $round->hole_26_putts) }}">
 
                                 </div>  
 
                                 <div class="col">
 
-                                    <input id="hole_27_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_27_putts') ? ' is-invalid' : '' }}" name="hole_27_putts" value="{{ old('hole_27_putts') }}">
+                                    <input id="hole_27_putts" type="number" class="form-control third-nine-putts {{ $errors->has('hole_27_putts') ? ' is-invalid' : '' }}" name="hole_27_putts" value="{{ old('hole_27_putts', $round->hole_27_putts) }}">
 
                                 </div> 
 
@@ -2612,55 +2721,55 @@
 
                                 <div class="col">
 
-                                    <input id="hole_19_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_19_drops') ? ' is-invalid' : '' }}" name="hole_19_drops" value="{{ old('hole_19_drops') }}">
+                                    <input id="hole_19_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_19_drops') ? ' is-invalid' : '' }}" name="hole_19_drops" value="{{ old('hole_19_drops', $round->hole_19_drops) }}">
 
                                 </div>
 
                                 <div class="col">
 
-                                    <input id="hole_20_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_20_drops') ? ' is-invalid' : '' }}" name="hole_20_drops" value="{{ old('hole_20_drops') }}">
+                                    <input id="hole_20_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_20_drops') ? ' is-invalid' : '' }}" name="hole_20_drops" value="{{ old('hole_20_drops', $round->hole_20_drops) }}">
 
                                 </div>            
 
                                 <div class="col">
 
-                                    <input id="hole_21_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_21_drops') ? ' is-invalid' : '' }}" name="hole_21_drops" value="{{ old('hole_21_drops') }}">
+                                    <input id="hole_21_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_21_drops') ? ' is-invalid' : '' }}" name="hole_21_drops" value="{{ old('hole_21_drops', $round->hole_21_drops) }}">
 
                                 </div>  
 
                                 <div class="col">
 
-                                    <input id="hole_22_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_22_drops') ? ' is-invalid' : '' }}" name="hole_22_drops" value="{{ old('hole_22_drops') }}">
+                                    <input id="hole_22_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_22_drops') ? ' is-invalid' : '' }}" name="hole_22_drops" value="{{ old('hole_22_drops', $round->hole_22_drops) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_23_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_23_drops') ? ' is-invalid' : '' }}" name="hole_23_drops" value="{{ old('hole_23_drops') }}">
+                                    <input id="hole_23_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_23_drops') ? ' is-invalid' : '' }}" name="hole_23_drops" value="{{ old('hole_23_drops', $round->hole_23_drops) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_24_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_24_drops') ? ' is-invalid' : '' }}" name="hole_24_drops" value="{{ old('hole_24_drops') }}">
+                                    <input id="hole_24_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_24_drops') ? ' is-invalid' : '' }}" name="hole_24_drops" value="{{ old('hole_24_drops', $round->hole_24_drops) }}">
 
                                 </div> 
 
                                 <div class="col">
 
-                                    <input id="hole_25_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_25_drops') ? ' is-invalid' : '' }}" name="hole_25_drops" value="{{ old('hole_25_drops') }}">
+                                    <input id="hole_25_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_25_drops') ? ' is-invalid' : '' }}" name="hole_25_drops" value="{{ old('hole_25_drops', $round->hole_25_drops) }}">
 
                                 </div>   
 
                                 <div class="col">
 
-                                    <input id="hole_26_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_26_drops') ? ' is-invalid' : '' }}" name="hole_26_drops" value="{{ old('hole_26_drops') }}">
+                                    <input id="hole_26_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_26_drops') ? ' is-invalid' : '' }}" name="hole_26_drops" value="{{ old('hole_26_drops', $round->hole_26_drops) }}">
 
                                 </div>  
 
                                 <div class="col">
 
-                                    <input id="hole_27_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_27_drops') ? ' is-invalid' : '' }}" name="hole_27_drops" value="{{ old('hole_27_drops') }}">
+                                    <input id="hole_27_drops" type="number" class="form-control third-nine-drops {{ $errors->has('hole_27_drops') ? ' is-invalid' : '' }}" name="hole_27_drops" value="{{ old('hole_27_drops', $round->hole_27_drops) }}">
 
                                 </div> 
 
@@ -2674,7 +2783,7 @@
                             </div>         
                             <!--/.row -->
 
-                            <div id="third9Firs" class="row add-round-row add-round-fir">
+                            <div id="ThirdNineFirs" class="row add-round-row add-round-fir">
 
                                 <div class="col">
 
@@ -2685,14 +2794,21 @@
                                 <div class="col">            
 
                                     <div class="custom-control custom-checkbox">                        
-                                        <input id="hole_19_fir" type="checkbox" class="form-control thirdNineFir custom-control-input" name="hole_19_fir" value="1"
+                                        <input id="hole_19_fir" type="checkbox" class="form-control ThirdNineFir custom-control-input" name="hole_19_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_19_white_par < 4 ? "disabled":"") }}                       
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_19_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_19_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+
+                                            @if($round->hole_19_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                             
                                         <label class="custom-control-label" for="hole_19_fir"></label>
                                     </div>
                                 </div>
@@ -2700,14 +2816,21 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_20_fir" type="checkbox" class="form-control thirdNineFir custom-control-input" name="hole_20_fir" value="1"
+                                        <input id="hole_20_fir" type="checkbox" class="form-control ThirdNineFir custom-control-input" name="hole_20_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_20_white_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_20_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_20_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+
+                                            @if($round->hole_20_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                             
                                         <label class="custom-control-label" for="hole_20_fir"></label>
                                     </div>
 
@@ -2716,14 +2839,21 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_21_fir" type="checkbox" class="form-control thirdNineFir custom-control-input" name="hole_21_fir" value="1"
+                                        <input id="hole_21_fir" type="checkbox" class="form-control ThirdNineFir custom-control-input" name="hole_21_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_21_white_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_21_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_21_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+
+                                            @if($round->hole_21_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                             
                                         <label class="custom-control-label" for="hole_21_fir"></label>
                                     </div>
 
@@ -2732,14 +2862,21 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_22_fir" type="checkbox" class="form-control thirdNineFir custom-control-input" name="hole_22_fir" value="1"
+                                        <input id="hole_22_fir" type="checkbox" class="form-control ThirdNineFir custom-control-input" name="hole_22_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_22_white_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_22_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_22_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+
+                                            @if($round->hole_22_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                             
                                         <label class="custom-control-label" for="hole_22_fir"></label>
                                     </div>
 
@@ -2748,14 +2885,21 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_23_fir" type="checkbox" class="form-control thirdNineFir custom-control-input" name="hole_23_fir" value="1"
+                                        <input id="hole_23_fir" type="checkbox" class="form-control ThirdNineFir custom-control-input" name="hole_23_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_23_white_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_23_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_23_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+
+                                            @if($round->hole_23_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                             
                                         <label class="custom-control-label" for="hole_23_fir"></label>
                                     </div>
 
@@ -2764,14 +2908,21 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_24_fir" type="checkbox" class="form-control thirdNineFir custom-control-input" name="hole_24_fir" value="1"
+                                        <input id="hole_24_fir" type="checkbox" class="form-control ThirdNineFir custom-control-input" name="hole_24_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_24_white_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_24_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_24_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+
+                                            @if($round->hole_24_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                             
                                         <label class="custom-control-label" for="hole_24_fir"></label>
                                     </div>
 
@@ -2780,14 +2931,21 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_25_fir" type="checkbox" class="form-control thirdNineFir custom-control-input" name="hole_25_fir" value="1"
+                                        <input id="hole_25_fir" type="checkbox" class="form-control ThirdNineFir custom-control-input" name="hole_25_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_25_white_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_25_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_25_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+
+                                            @if($round->hole_25_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                             
                                         <label class="custom-control-label" for="hole_25_fir"></label>
                                     </div>
 
@@ -2796,14 +2954,21 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_26_fir" type="checkbox" class="form-control thirdNineFir custom-control-input" name="hole_26_fir" value="1"
+                                        <input id="hole_26_fir" type="checkbox" class="form-control ThirdNineFir custom-control-input" name="hole_26_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_26_white_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_26_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_26_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+
+                                            @if($round->hole_26_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                             
                                         <label class="custom-control-label" for="hole_26_fir"></label>
                                     </div>
 
@@ -2812,14 +2977,21 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox"> 
-                                        <input id="hole_27_fir" type="checkbox" class="form-control thirdNineFir custom-control-input" name="hole_27_fir" value="1"
+                                        <input id="hole_27_fir" type="checkbox" class="form-control ThirdNineFir custom-control-input" name="hole_27_fir" value="1"
                                             @if ($round->yards === 'white')
                                                 {{ ($course->hole_27_white_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'yellow')
                                                 {{ ($course->hole_27_yellow_par < 4 ? "disabled":"") }}
                                             @elseif ($round->yards === 'red')
                                                 {{ ($course->hole_27_red_par < 4 ? "disabled":"") }}                   
-                                            @endif >
+                                            @endif 
+
+
+                                            @if($round->hole_27_fir === 1)
+                                                checked
+                                            @endif
+
+                                            >                                             
                                         <label class="custom-control-label" for="hole_27_fir"></label>
                                     </div>
 
@@ -2827,7 +2999,7 @@
 
                                 <div class="col">
 
-                                    <span id="thirdNineFirCount"></span>
+                                    <span id="ThirdNineFirCount"></span>
 
                                 </div>                                                   
 
@@ -2835,7 +3007,7 @@
                             </div>    
                             <!--/.row -->
 
-                            <div id="thirdNineGirs" class="row add-round-row add-round-gir">
+                            <div id="ThirdNineGirs" class="row add-round-row add-round-gir">
 
                                 <div class="col">
 
@@ -2846,7 +3018,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">
-                                        <input id="hole_19_gir" type="checkbox" class="form-control thirdNineGir custom-control-input" name="hole_19_gir" value="1">
+                                        <input id="hole_19_gir" type="checkbox" class="form-control ThirdNineGir custom-control-input" name="hole_19_gir" value="1" @if($round->hole_19_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_19_gir"></label>
                                     </div>
 
@@ -2855,7 +3027,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">
-                                        <input id="hole_20_gir" type="checkbox" class="form-control thirdNineGir custom-control-input" name="hole_20_gir" value="1">
+                                        <input id="hole_20_gir" type="checkbox" class="form-control ThirdNineGir custom-control-input" name="hole_20_gir" value="1" @if($round->hole_20_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_20_gir"></label>
                                     </div>
 
@@ -2864,7 +3036,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">
-                                        <input id="hole_21_gir" type="checkbox" class="form-control thirdNineGir custom-control-input" name="hole_21_gir" value="1">
+                                        <input id="hole_21_gir" type="checkbox" class="form-control ThirdNineGir custom-control-input" name="hole_21_gir" value="1" @if($round->hole_21_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_21_gir"></label>
                                     </div>
 
@@ -2873,7 +3045,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">
-                                        <input id="hole_22_gir" type="checkbox" class="form-control thirdNineGir custom-control-input" name="hole_22_gir" value="1">
+                                        <input id="hole_22_gir" type="checkbox" class="form-control ThirdNineGir custom-control-input" name="hole_22_gir" value="1" @if($round->hole_22_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_22_gir"></label>
                                     </div>
 
@@ -2882,7 +3054,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">
-                                        <input id="hole_23_gir" type="checkbox" class="form-control thirdNineGir custom-control-input" name="hole_23_gir" value="1">
+                                        <input id="hole_23_gir" type="checkbox" class="form-control ThirdNineGir custom-control-input" name="hole_23_gir" value="1" @if($round->hole_23_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_23_gir"></label>
                                     </div>
 
@@ -2891,7 +3063,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">
-                                        <input id="hole_24_gir" type="checkbox" class="form-control thirdNineGir custom-control-input" name="hole_24_gir" value="1">
+                                        <input id="hole_24_gir" type="checkbox" class="form-control ThirdNineGir custom-control-input" name="hole_24_gir" value="1" @if($round->hole_24_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_24_gir"></label>
                                     </div>
 
@@ -2900,7 +3072,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">
-                                        <input id="hole_25_gir" type="checkbox" class="form-control thirdNineGir custom-control-input" name="hole_25_gir" value="1">
+                                        <input id="hole_25_gir" type="checkbox" class="form-control ThirdNineGir custom-control-input" name="hole_25_gir" value="1" @if($round->hole_25_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_25_gir"></label>
                                     </div>
 
@@ -2909,7 +3081,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">
-                                        <input id="hole_26_gir" type="checkbox" class="form-control thirdNineGir custom-control-input" name="hole_26_gir" value="1">
+                                        <input id="hole_26_gir" type="checkbox" class="form-control ThirdNineGir custom-control-input" name="hole_26_gir" value="1" @if($round->hole_26_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_26_gir"></label>
                                     </div>
 
@@ -2918,7 +3090,7 @@
                                 <div class="col">
 
                                     <div class="custom-control custom-checkbox">
-                                        <input id="hole_27_gir" type="checkbox" class="form-control thirdNineGir custom-control-input" name="hole_27_gir" value="1">
+                                        <input id="hole_27_gir" type="checkbox" class="form-control ThirdNineGir custom-control-input" name="hole_27_gir" value="1" @if($round->hole_27_gir === 1) checked @endif >
                                         <label class="custom-control-label" for="hole_27_gir"></label>
                                     </div>
 
@@ -2926,7 +3098,7 @@
 
                                 <div class="col">
 
-                                    <span id="thirdNineGirCount"></span>
+                                    <span id="ThirdNineGirCount"></span>
 
                                 </div>                                                   
 
@@ -2937,394 +3109,8 @@
                         @endif
 
 
-
-
-
-
-
-                        <table>
-                        
-                            <tr>
-                                <th>Hole</th>
-                                <th>Par</th>
-                                <th>Score</th>
-                                <th>Puts</th>
-                                <th>Drops</th>
-                                <th>FIR</th>
-                                <th>GIR</th>
-                            </tr>
-                        
-                            
-                            <tr>
-                                <td>1</td>
-                                <td>
-                                @if($round->yards === 'red')
-
-                                    {{ $course->hole_1_ladies_par }}
-                                    
-                                @else
-                                
-                                    {{ $course->hole_1_par }} 
-                                
-                                @endif                                
-                                </td>
-                                <td><input id="hole_1_score" type="number" class="form-control{{ $errors->has('hole_1_score') ? ' is-invalid' : '' }}" name="hole_1_score" value="{{ $round->hole_1_score }}"></td>
-                                <td><input id="hole_1_putts" type="number" class="form-control{{ $errors->has('hole_1_putts') ? ' is-invalid' : '' }}" name="hole_1_putts" value="{{ $round->hole_1_putts }}"></td>
-                                <td><input id="hole_1_drops" type="number" class="form-control{{ $errors->has('hole_1_drops') ? ' is-invalid' : '' }}" name="hole_1_drops" value="{{ $round->hole_1_drops }}"></td>
-                                <td><input id="hole_1_fir" type="checkbox" class="form-control" name="hole_1_fir" value="1" @if( $round->yards === 'white'){{ ($course->hole_1_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_1_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_1_fir === 1) checked @endif></td>
-                                <td><input id="hole_1_gir" type="checkbox" class="form-control" name="hole_1_gir" value="1" @if( $round->hole_1_gir === 1) checked @endif></td>
-                            </tr>
-                        
-                        
-                            
-                            <tr>
-                                <td>2</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_2_ladies_par}}
-                                    
-                                @else
-                                
-                                    {{$course->hole_2_par}} 
-                                
-                                @endif                                
-                                </td>
-                                <td><input id="hole_2_score" type="number" class="form-control{{ $errors->has('hole_2_score') ? ' is-invalid' : '' }}" name="hole_2_score" value="{{ $round->hole_2_score }}"></td>
-                                <td><input id="hole_2_putts" type="number" class="form-control{{ $errors->has('hole_2_putts') ? ' is-invalid' : '' }}" name="hole_2_putts" value="{{ $round->hole_2_putts }}"></td>
-                                <td><input id="hole_2_drops" type="number" class="form-control{{ $errors->has('hole_2_drops') ? ' is-invalid' : '' }}" name="hole_2_drops" value="{{ $round->hole_2_drops }}"></td>
-                                <td><input id="hole_2_fir" type="checkbox" class="form-control" name="hole_2_fir" value="1" @if( $round->yards === 'white') {{ ($course->hole_2_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_2_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_2_fir === 1) checked @endif></td>
-                                <td><input id="hole_2_gir" type="checkbox" class="form-control" name="hole_2_gir" value="1" @if( $round->hole_2_gir == 1) checked @endif></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>3</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_3_ladies_par}}
-                                    
-                                @else
-                                
-                                    {{$course->hole_3_par}} 
-                                
-                                @endif                                
-                                </td>
-                                <td><input id="hole_3_score" type="number" class="form-control{{ $errors->has('hole_3_score') ? ' is-invalid' : '' }}" name="hole_3_score" value="{{ $round->hole_3_score }}"></td>
-                                <td><input id="hole_3_putts" type="number" class="form-control{{ $errors->has('hole_3_putts') ? ' is-invalid' : '' }}" name="hole_3_putts" value="{{ $round->hole_3_putts }}"></td>
-                                <td><input id="hole_3_drops" type="number" class="form-control{{ $errors->has('hole_3_drops') ? ' is-invalid' : '' }}" name="hole_3_drops" value="{{ $round->hole_3_drops }}"></td>
-                                <td><input id="hole_3_fir" type="checkbox" class="form-control" name="hole_3_fir" value="1" @if($round->yards === 'white') {{ ($course->hole_3_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_3_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_3_fir == 1) checked @endif></td>
-                                <td><input id="hole_3_gir" type="checkbox" class="form-control" name="hole_3_gir" value="1" @if( $round->hole_3_gir == 1) checked @endif></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>4</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_4_ladies_par}}
-                                    
-                                @else
-                                
-                                    {{$course->hole_4_par}} 
-                                
-                                @endif                                
-                                </td>
-                                <td><input id="hole_4_score" type="number" class="form-control{{ $errors->has('hole_4_score') ? ' is-invalid' : '' }}" name="hole_4_score" value="{{ $round->hole_4_score }}"></td>
-                                <td><input id="hole_4_putts" type="number" class="form-control{{ $errors->has('hole_4_putts') ? ' is-invalid' : '' }}" name="hole_4_putts" value="{{ $round->hole_4_putts }}"></td>
-                                <td><input id="hole_4_drops" type="number" class="form-control{{ $errors->has('hole_4_drops') ? ' is-invalid' : '' }}" name="hole_4_drops" value="{{ $round->hole_4_drops }}"></td>
-                                <td><input id="hole_4_fir" type="checkbox" class="form-control" name="hole_4_fir" value="1" @if($round->yards === 'white') {{ ($course->hole_4_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_4_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_4_fir == 1) checked @endif></td>
-                                <td><input id="hole_4_gir" type="checkbox" class="form-control" name="hole_4_gir" value="1" @if( $round->hole_4_gir == 1) checked @endif></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>5</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_5_ladies_par}}
-                                    
-                                @else
-                                
-                                    {{$course->hole_5_par}} 
-                                
-                                @endif                                
-                                </td>
-                                <td><input id="hole_5_score" type="number" class="form-control{{ $errors->has('hole_5_score') ? ' is-invalid' : '' }}" name="hole_5_score" value="{{ $round->hole_5_score }}"></td>
-                                <td><input id="hole_5_putts" type="number" class="form-control{{ $errors->has('hole_5_putts') ? ' is-invalid' : '' }}" name="hole_5_putts" value="{{ $round->hole_5_putts }}"></td>
-                                <td><input id="hole_5_drops" type="number" class="form-control{{ $errors->has('hole_5_drops') ? ' is-invalid' : '' }}" name="hole_5_drops" value="{{ $round->hole_5_drops }}"></td>
-                                <td><input id="hole_5_fir" type="checkbox" class="form-control" name="hole_5_fir" value="1" @if($round->yards === 'white') {{ ($course->hole_5_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_5_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_5_fir == 1) checked @endif></td>
-                                <td><input id="hole_5_gir" type="checkbox" class="form-control" name="hole_5_gir" value="1" @if( $round->hole_5_gir == 1) checked @endif></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>6</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_6_ladies_par}}
-                                    
-                                @else
-                                
-                                    {{$course->hole_6_par}} 
-                                
-                                @endif                                
-                                </td>
-                                <td><input id="hole_6_score" type="number" class="form-control{{ $errors->has('hole_6_score') ? ' is-invalid' : '' }}" name="hole_6_score" value="{{ $round->hole_6_score }}"></td>
-                                <td><input id="hole_6_putts" type="number" class="form-control{{ $errors->has('hole_6_putts') ? ' is-invalid' : '' }}" name="hole_6_putts" value="{{ $round->hole_6_putts }}"></td>
-                                <td><input id="hole_6_drops" type="number" class="form-control{{ $errors->has('hole_6_drops') ? ' is-invalid' : '' }}" name="hole_6_drops" value="{{ $round->hole_6_drops }}"></td>
-                                <td><input id="hole_6_fir" type="checkbox" class="form-control" name="hole_6_fir" value="1" @if($round->yards === 'white') {{ ($course->hole_6_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_6_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_6_fir == 1) checked @endif></td>
-                                <td><input id="hole_6_gir" type="checkbox" class="form-control" name="hole_6_gir" value="1" @if( $round->hole_6_gir == 1) checked @endif></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>7</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_7_ladies_par}}
-                                    
-                                @else
-                                
-                                    {{$course->hole_7_par}} 
-                                
-                                @endif                                
-                                </td>
-                                <td><input id="hole_7_score" type="number" class="form-control{{ $errors->has('hole_7_score') ? ' is-invalid' : '' }}" name="hole_7_score" value="{{ $round->hole_7_score }}"></td>
-                                <td><input id="hole_7_putts" type="number" class="form-control{{ $errors->has('hole_7_putts') ? ' is-invalid' : '' }}" name="hole_7_putts" value="{{ $round->hole_7_putts }}"></td>
-                                <td><input id="hole_7_drops" type="number" class="form-control{{ $errors->has('hole_7_drops') ? ' is-invalid' : '' }}" name="hole_7_drops" value="{{ $round->hole_7_drops }}"></td>
-                                <td><input id="hole_7_fir" type="checkbox" class="form-control" name="hole_7_fir" value="1" @if($round->yards === 'white') {{ ($course->hole_7_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_7_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_7_fir == 1) checked @endif></td>
-                                <td><input id="hole_7_gir" type="checkbox" class="form-control" name="hole_7_gir" value="1" @if( $round->hole_7_gir == 1) checked @endif></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>8</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_8_ladies_par}}
-                                    
-                                @else
-                                
-                                    {{$course->hole_8_par}} 
-                                
-                                @endif                                
-                                </td>
-                                <td><input id="hole_8_score" type="number" class="form-control{{ $errors->has('hole_8_score') ? ' is-invalid' : '' }}" name="hole_8_score" value="{{ $round->hole_8_score }}"></td>
-                                <td><input id="hole_8_putts" type="number" class="form-control{{ $errors->has('hole_8_putts') ? ' is-invalid' : '' }}" name="hole_8_putts" value="{{ $round->hole_8_putts }}"></td>
-                                <td><input id="hole_8_drops" type="number" class="form-control{{ $errors->has('hole_8_drops') ? ' is-invalid' : '' }}" name="hole_8_drops" value="{{ $round->hole_8_drops }}"></td>
-                                <td><input id="hole_8_fir" type="checkbox" class="form-control" name="hole_8_fir" value="1" @if( $round->yards === 'white') {{ ($course->hole_8_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_8_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_8_fir == 1) checked @endif></td>
-                                <td><input id="hole_8_gir" type="checkbox" class="form-control" name="hole_8_gir" value="1" @if( $round->hole_8_gir == 1) checked @endif></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>9</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_9_ladies_par}}
-                                    
-                                @else
-                                
-                                    {{$course->hole_9_par}} 
-                                
-                                @endif                                    
-                                </td>
-                                <td><input id="hole_9_score" type="number" class="form-control{{ $errors->has('hole_9_score') ? ' is-invalid' : '' }}" name="hole_9_score" value="{{ $round->hole_9_score }}"></td>
-                                <td><input id="hole_9_putts" type="number" class="form-control{{ $errors->has('hole_9_putts') ? ' is-invalid' : '' }}" name="hole_9_putts" value="{{ $round->hole_9_putts }}"></td>
-                                <td><input id="hole_9_drops" type="number" class="form-control{{ $errors->has('hole_9_drops') ? ' is-invalid' : '' }}" name="hole_9_drops" value="{{ $round->hole_9_drops }}"></td>
-                                <td><input id="hole_9_fir" type="checkbox" class="form-control" name="hole_9_fir" value="1" @if($round->yards === 'white') {{ ($course->hole_9_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_9_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_9_fir == 1) checked @endif></td>
-                                <td><input id="hole_9_gir" type="checkbox" class="form-control" name="hole_9_gir" value="1" @if( $round->hole_9_gir == 1) checked @endif></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>10</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_10_ladies_par}}
-                                    
-                                @else
-                                
-                                    {{$course->hole_10_par}} 
-                                
-                                @endif                                
-                                </td>
-                                <td><input id="hole_10_score" type="number" class="form-control{{ $errors->has('hole_10_score') ? ' is-invalid' : '' }}" name="hole_10_score" value="{{ $round->hole_10_score }}"></td>
-                                <td><input id="hole_10_putts" type="number" class="form-control{{ $errors->has('hole_10_putts') ? ' is-invalid' : '' }}" name="hole_10_putts" value="{{ $round->hole_10_putts }}"></td>
-                                <td><input id="hole_10_drops" type="number" class="form-control{{ $errors->has('hole_10_drops') ? ' is-invalid' : '' }}" name="hole_10_drops" value="{{ $round->hole_10_drops }}"></td>
-                                <td><input id="hole_10_fir" type="checkbox" class="form-control" name="hole_10_fir" value="1" @if($round->yards === 'white') {{ ($course->hole_10_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_10_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_10_fir == 1) checked @endif></td>
-                                <td><input id="hole_10_gir" type="checkbox" class="form-control" name="hole_10_gir" value="1" @if( $round->hole_10_gir == 1) checked @endif></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>11</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_11_ladies_par}}
-                                    
-                                @else
-                                
-                                    {{$course->hole_11_par}} 
-                                
-                                @endif                                
-                                </td>
-                                <td><input id="hole_11_score" type="number" class="form-control{{ $errors->has('hole_11_score') ? ' is-invalid' : '' }}" name="hole_11_score" value="{{ $round->hole_11_score }}"></td>
-                                <td><input id="hole_11_putts" type="number" class="form-control{{ $errors->has('hole_11_putts') ? ' is-invalid' : '' }}" name="hole_11_putts" value="{{ $round->hole_11_putts }}"></td>
-                                <td><input id="hole_11_drops" type="number" class="form-control{{ $errors->has('hole_11_drops') ? ' is-invalid' : '' }}" name="hole_11_drops" value="{{ $round->hole_11_drops }}"></td>
-                                <td><input id="hole_11_fir" type="checkbox" class="form-control" name="hole_11_fir" value="1" @if($round->yards === 'white') {{ ($course->hole_11_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_11_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_11_fir == 1) checked @endif></td>
-                                <td><input id="hole_11_gir" type="checkbox" class="form-control" name="hole_11_gir" value="1" @if( $round->hole_11_gir == 1) checked @endif></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>12</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_12_ladies_par}}
-                                    
-                                @else
-                                
-                                    {{$course->hole_12_par}} 
-                                
-                                @endif                                
-                                </td>
-                                <td><input id="hole_12_score" type="number" class="form-control{{ $errors->has('hole_12_score') ? ' is-invalid' : '' }}" name="hole_12_score" value="{{ $round->hole_12_score }}"></td>
-                                <td><input id="hole_12_putts" type="number" class="form-control{{ $errors->has('hole_12_putts') ? ' is-invalid' : '' }}" name="hole_12_putts" value="{{ $round->hole_12_putts }}"></td>
-                                <td><input id="hole_12_drops" type="number" class="form-control{{ $errors->has('hole_12_drops') ? ' is-invalid' : '' }}" name="hole_12_drops" value="{{ $round->hole_12_drops }}"></td>
-                                <td><input id="hole_12_fir" type="checkbox" class="form-control" name="hole_12_fir" value="1" @if($round->yards === 'white') {{ ($course->hole_12_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_12_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_12_fir == 1) checked @endif></td>
-                                <td><input id="hole_12_gir" type="checkbox" class="form-control" name="hole_12_gir" value="1" @if( $round->hole_12_gir == 1) checked @endif></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>13</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_13_ladies_par}}
-                                    
-                                @else
-                                
-                                    {{$course->hole_13_par}} 
-                                
-                                @endif                                
-                                </td>
-                                <td><input id="hole_13_score" type="number" class="form-control{{ $errors->has('hole_13_score') ? ' is-invalid' : '' }}" name="hole_13_score" value="{{ $round->hole_13_score }}"></td>
-                                <td><input id="hole_13_putts" type="number" class="form-control{{ $errors->has('hole_13_putts') ? ' is-invalid' : '' }}" name="hole_13_putts" value="{{ $round->hole_13_putts }}"></td>
-                                <td><input id="hole_13_drops" type="number" class="form-control{{ $errors->has('hole_13_drops') ? ' is-invalid' : '' }}" name="hole_13_drops" value="{{ $round->hole_13_drops }}"></td>
-                                <td><input id="hole_13_fir" type="checkbox" class="form-control" name="hole_13_fir" value="1" @if($round->yards === 'white') {{ ($course->hole_13_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_13_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_13_fir == 1) checked @endif></td>
-                                <td><input id="hole_13_gir" type="checkbox" class="form-control" name="hole_13_gir" value="1" @if( $round->hole_13_gir == 1) checked @endif></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>14</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_14_ladies_par}}
-                                    
-                                @else
-                                
-                                    {{$course->hole_14_par}} 
-                                
-                                @endif                                    
-                                </td>
-                                <td><input id="hole_14_score" type="number" class="form-control{{ $errors->has('hole_14_score') ? ' is-invalid' : '' }}" name="hole_14_score" value="{{ $round->hole_14_score }}"></td>
-                                <td><input id="hole_14_putts" type="number" class="form-control{{ $errors->has('hole_14_putts') ? ' is-invalid' : '' }}" name="hole_14_putts" value="{{ $round->hole_14_putts }}"></td>
-                                <td><input id="hole_14_drops" type="number" class="form-control{{ $errors->has('hole_14_drops') ? ' is-invalid' : '' }}" name="hole_14_drops" value="{{ $round->hole_14_drops }}"></td>
-                                <td><input id="hole_14_fir" type="checkbox" class="form-control" name="hole_14_fir" value="1" @if($round->yards === 'white') {{ ($course->hole_14_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_14_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_14_fir == 1) checked @endif></td>
-                                <td><input id="hole_14_gir" type="checkbox" class="form-control" name="hole_14_gir" value="1"@if( $round->hole_14_gir == 1) checked @endif></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>15</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_15_ladies_par}}
-                                    
-                                @else
-                                
-                                    {{$course->hole_15_par}} 
-                                
-                                @endif                                
-                                </td>
-                                <td><input id="hole_15_score" type="number" class="form-control{{ $errors->has('hole_15_score') ? ' is-invalid' : '' }}" name="hole_15_score" value="{{ $round->hole_15_score }}"></td>
-                                <td><input id="hole_15_putts" type="number" class="form-control{{ $errors->has('hole_15_putts') ? ' is-invalid' : '' }}" name="hole_15_putts" value="{{ $round->hole_15_putts }}"></td>
-                                <td><input id="hole_15_drops" type="number" class="form-control{{ $errors->has('hole_15_drops') ? ' is-invalid' : '' }}" name="hole_15_drops" value="{{ $round->hole_15_drops }}"></td>
-                                <td><input id="hole_15_fir" type="checkbox" class="form-control" name="hole_15_fir" value="1" @if($round->yards === 'white') {{ ($course->hole_15_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_15_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_15_fir == 1) checked @endif></td>
-                                <td><input id="hole_15_gir" type="checkbox" class="form-control" name="hole_15_gir" value="1" @if( $round->hole_15_gir == 1) checked @endif></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>16</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_16_ladies_par}}
-                                    
-                                @else
-                                
-                                    {{$course->hole_16_par}} 
-                                
-                                @endif                                
-                                </td>
-                                <td><input id="hole_16_score" type="number" class="form-control{{ $errors->has('hole_16_score') ? ' is-invalid' : '' }}" name="hole_16_score" value="{{ $round->hole_16_score }}"></td>
-                                <td><input id="hole_16_putts" type="number" class="form-control{{ $errors->has('hole_16_putts') ? ' is-invalid' : '' }}" name="hole_16_putts" value="{{ $round->hole_16_putts }}"></td>
-                                <td><input id="hole_16_drops" type="number" class="form-control{{ $errors->has('hole_16_drops') ? ' is-invalid' : '' }}" name="hole_16_drops" value="{{ $round->hole_16_drops }}"></td>
-                                <td><input id="hole_16_fir" type="checkbox" class="form-control" name="hole_16_fir" value="1" @if($round->yards === 'white') {{ ($course->hole_16_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_16_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_16_fir == 1) checked @endif></td>
-                                <td><input id="hole_16_gir" type="checkbox" class="form-control" name="hole_16_gir" value="1" @if( $round->hole_16_gir == 1) checked @endif></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>17</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_17_ladies_par}}
-                                    
-                                @else
-                                
-                                    {{$course->hole_17_par}} 
-                                
-                                @endif                                
-                                </td>
-                                <td><input id="hole_17_score" type="number" class="form-control{{ $errors->has('hole_17_score') ? ' is-invalid' : '' }}" name="hole_17_score" value="{{ $round->hole_17_score }}"></td>
-                                <td><input id="hole_17_putts" type="number" class="form-control{{ $errors->has('hole_17_putts') ? ' is-invalid' : '' }}" name="hole_17_putts" value="{{ $round->hole_17_putts }}"></td>
-                                <td><input id="hole_17_drops" type="number" class="form-control{{ $errors->has('hole_17_drops') ? ' is-invalid' : '' }}" name="hole_17_drops" value="{{ $round->hole_17_drops }}"></td>
-                                <td><input id="hole_17_fir" type="checkbox" class="form-control" name="hole_17_fir" value="1" @if($round->yards === 'white') {{ ($course->hole_17_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_17_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_17_fir == 1) checked @endif></td>
-                                <td><input id="hole_17_gir" type="checkbox" class="form-control" name="hole_17_gir" value="1" @if( $round->hole_17_gir == 1) checked @endif></td>
-                            </tr>
-                        
-                            <tr>
-                                <td>18</td>
-                                <td>
-                                @if( $round->yards === 'red')
-
-                                    {{$course->hole_18_ladies_par}}
-
-                                @else
-
-                                    {{$course->hole_18_par}} 
-
-                                @endif                                    
-                                </td>
-                                <td><input id="hole_18_score" type="number" class="form-control{{ $errors->has('hole_18_score') ? ' is-invalid' : '' }}" name="hole_18_score" value="{{ $round->hole_18_score }}"></td>
-                                <td><input id="hole_18_putts" type="number" class="form-control{{ $errors->has('hole_18_putts') ? ' is-invalid' : '' }}" name="hole_18_putts" value="{{ $round->hole_18_putts }}"></td>
-                                <td><input id="hole_18_drops" type="number" class="form-control{{ $errors->has('hole_18_drops') ? ' is-invalid' : '' }}" name="hole_18_drops" value="{{ $round->hole_18_drops }}"></td>
-                                <td><input id="hole_18_fir" type="checkbox" class="form-control" name="hole_18_fir" value="1" @if($round->yards === 'white') {{ ($course->hole_18_par < 4 ? "disabled":"") }} @elseif ($round->yards === 'red') {{ ($course->hole_18_ladies_par < 4 ? "disabled":"") }} @endif  @if( $round->hole_18_fir == 1) checked @endif></td>
-                                <td><input id="hole_18_gir" type="checkbox" class="form-control" name="hole_18_gir" value="1" @if( $round->hole_18_gir == 1) checked @endif ></td>
-                            </tr>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-                        </table>
-    
-    
-
-
-
                         <label>Round Notes</label>
-                        <textarea id="round_notes" type="textarea" rows="4" class="form-control" name="round_notes" value="{{ $round->round_notes }}"> </textarea>                         
+                        <textarea id="round_notes" type="textarea" rows="4" class="form-control" name="round_notes" value="{{ old('round_notes', $round->round_notes) }}"> </textarea>                         
 
                         <button id="submit" type="submit" class="btn btn-cta">
                             <span>{{ __('Update Round') }}</span>

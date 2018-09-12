@@ -23,6 +23,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
 
    // Charts
    .js('resources/assets/js/charts/view_round_charts.js', 'public/js/charts')
+   .js('resources/assets/js/charts/view_profile_charts.js', 'public/js/charts')
 
    .combine('resources/assets/js/bootstrap/*.js', 'public/js/bootstrap.js')
    .combine('resources/assets/js/bundle/*.js', 'public/js/bundle.js')

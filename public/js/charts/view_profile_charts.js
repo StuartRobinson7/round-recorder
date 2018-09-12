@@ -60,99 +60,83 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 17);
+/******/ 	return __webpack_require__(__webpack_require__.s = 21);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 17:
+/***/ 21:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(18);
+module.exports = __webpack_require__(22);
 
 
 /***/ }),
 
-/***/ 18:
+/***/ 22:
 /***/ (function(module, exports) {
 
-$(document).ready(function () {
 
-    function roundTotals($class, $id) {
-
-        var $total = 0;
-
-        $($class).each(function () {
-            $total += parseInt($(this).val());
-        });
-
-        $($id).html($total);
-    }
-
-    roundTotals(".first-nine-score", "#firstNineScore");
-    roundTotals(".first-nine-putts", "#firstNinePutts");
-    roundTotals(".first-nine-drops", "#firstNineDrops");
-
-    roundTotals(".second-nine-score", "#secondNineScore");
-    roundTotals(".second-nine-putts", "#secondNinePutts");
-    roundTotals(".second-nine-drops", "#secondNineDrops");
-
-    roundTotals(".third-nine-score", "#thirdNineScore");
-    roundTotals(".third-nine-putts", "#thirdNinePutts");
-    roundTotals(".third-nine-drops", "#thirdNineDrops");
-
-    function fairwaysTotals($class, $rowId, $id) {
-
-        var $inputs = $($class).length;
-        var $inputsDisabled = $($rowId + ' ' + 'input:disabled').length;
-        var $total = $inputs - $inputsDisabled;
-
-        $count = 0;
-        $($id).html($count);
-        $($id).after('/' + $total);
-
-        $(document).ready(function () {
-            var $count = $($rowId + ' ' + 'input:checked').length;
-            $($id).html($count);
-        });
-
-        $(document).on("change", $class, function () {
-
-            var $count = $($rowId + ' ' + 'input:checked').length;
-
-            $($id).html($count);
-        });
-    }
-
-    fairwaysTotals(".FirstNineFir", "#FirstNineFirs", "#FirstNineFirCount");
-    fairwaysTotals(".SecondNineFir", "#SecondNineFirs", "#SecondNineFirCount");
-    fairwaysTotals(".ThirdNineFir", "#ThirdNineFirs", "#ThirdNineFirCount");
-
-    function greensTotals($class, $inputId, $id) {
-
-        var $total = 9;
-
-        $count = 0;
-        $($id).html($count);
-        $($id).after('/' + $total);
-
-        $(document).ready(function () {
-            var $count = $($inputId + ' ' + 'input:checked').length;
-            $($id).html($count);
-        });
-
-        $(document).on("change", $class, function () {
-
-            var $count = $($inputId + ' ' + 'input:checked').length;
-
-            $($id).html($count);
-        });
-    }
-
-    greensTotals(".FirstNineGir", "#FirstNineGirs", "#FirstNineGirCount");
-    greensTotals(".SecondNineGir", "#SecondNineGirs", "#SecondNineGirCount");
-    greensTotals(".ThirdNineGir", "#ThirdNineGirs", "#ThirdNineGirCount");
+chart_career_fir = new Chartist.Pie('#chart-career-fir', { series: [career_firs, career_firs_leftover] }, {
+    donut: true,
+    donutWidth: 10,
+    startAngle: 270,
+    total: 100,
+    showLabel: false
 });
+
+chart_career_gir = new Chartist.Pie('#chart-career-gir', { series: [career_girs, career_girs_leftover] }, {
+    donut: true,
+    donutWidth: 10,
+    startAngle: 270,
+    total: 100,
+    showLabel: false
+});
+
+chart_career_scrambling = new Chartist.Pie('#chart-career-scrambling', { series: [career_scrambling, career_scrambling_leftover] }, {
+    donut: true,
+    donutWidth: 10,
+    startAngle: 270,
+    total: 100,
+    showLabel: false
+});
+
+function drawHandler(data) {
+
+    if (data.type === 'slice') {
+
+        var pathLength = data.element._node.getTotalLength();
+
+        data.element.attr({
+            'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+        });
+
+        var animationDefinition = {
+            'stroke-dashoffset': {
+                id: 'anim' + data.index,
+                dur: 1000,
+                from: -pathLength + 'px',
+                to: '0px',
+                easing: Chartist.Svg.Easing.easeOut,
+                fill: 'freeze'
+            }
+        };
+
+        if (data.index !== 0) {
+            animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+        }
+
+        data.element.attr({
+            'stroke-dashoffset': -pathLength + 'px'
+        });
+
+        data.element.animate(animationDefinition, false);
+    }
+}
+
+chart_career_fir.on('draw', drawHandler);
+chart_career_gir.on('draw', drawHandler);
+chart_career_scrambling.on('draw', drawHandler);
 
 /***/ })
 

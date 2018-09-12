@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
  
     function roundTotals($class, $id){
@@ -26,34 +25,34 @@ $(document).ready(function(){
     roundTotals(".third-nine-drops","#thirdNineDrops"); 
 
 
-
     function fairwaysTotals($class, $rowId, $id){
-
-        //var $disabledId = 
 
         var $inputs = $($class).length;
         var $inputsDisabled = $($rowId + ' ' + 'input:disabled').length;
         var $total = $inputs - $inputsDisabled;
 
-        //console.log($disabledId);
-
         $count = 0;
         $($id).html($count);
-        $($id).after('/' + $total);        
+        $($id).after('/' + $total);
+        
+        $(document).ready(function(){
+            var $count = $($rowId + ' ' + 'input:checked').length;
+            $($id).html($count);
+        });
 
         $(document).on("change", $class, function () {
 
             var $count = $($rowId + ' ' + 'input:checked').length;
-    
+
             $($id).html($count);
     
         });
 
     }
 
-    fairwaysTotals(".FirstNineFir","#first9Firs", "#FirstNineFirCount");
-    fairwaysTotals(".SecondNineFir","#second9Firs", "#SecondNineFirCount");
-    fairwaysTotals(".ThirdNineFir","#third9Firs", "#ThirdNineFirCount");
+    fairwaysTotals(".FirstNineFir","#FirstNineFirs", "#FirstNineFirCount");
+    fairwaysTotals(".SecondNineFir","#SecondNineFirs", "#SecondNineFirCount");
+    fairwaysTotals(".ThirdNineFir","#ThirdNineFirs", "#ThirdNineFirCount");
 
 
     function greensTotals($class, $inputId, $id){
@@ -62,11 +61,16 @@ $(document).ready(function(){
 
         $count = 0;
         $($id).html($count);
-        $($id).after('/' + $total);        
+        $($id).after('/' + $total);   
+        
+        $(document).ready(function(){
+            var $count = $($inputId + ' ' + 'input:checked').length;
+            $($id).html($count);
+        });        
 
         $(document).on("change", $class, function () {
 
-            var $count = $('#' + $inputId + 'input:checked').length;
+            var $count = $($inputId + ' ' + 'input:checked').length;
     
             $($id).html($count);
     
@@ -74,11 +78,9 @@ $(document).ready(function(){
 
     }
 
-    greensTotals(".FirstNineGir","firstNineGirs", "#FirstNineGirCount");
-    greensTotals(".SecondtNineGir","second9Girs", "#SecondNineGirCount");
-    greensTotals(".ThirdNineGir","third9Girs", "#ThirdNineGirCount");
-
-
+    greensTotals(".FirstNineGir","#FirstNineGirs", "#FirstNineGirCount");
+    greensTotals(".SecondNineGir","#SecondNineGirs", "#SecondNineGirCount");
+    greensTotals(".ThirdNineGir","#ThirdNineGirs", "#ThirdNineGirCount");
 
 
 });
