@@ -1,4 +1,5 @@
 
+
 @if($selected_size === 'half' && $course_info->holes === 18)
 
     <label>Nine Played</label><br />

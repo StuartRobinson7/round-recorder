@@ -63,7 +63,7 @@ class CourseController extends Controller
     {
 
         // validate input data
-        $this->ValidateCourse->courseValidation();
+        $validator = $this->ValidateCourse->courseValidation();
 
         // return with errors if validation fails
         if ( $validator !== true ) {

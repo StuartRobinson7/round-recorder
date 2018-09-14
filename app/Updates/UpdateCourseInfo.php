@@ -16,7 +16,27 @@ class UpdateCourseInfo {
 
         $course->property_name = $request->property_name;
         $course->course_name = $request->course_name;
-        $course->sss = $request->sss;
+
+        $course->white_sss = $request->white_sss;
+        $course->yellow_sss = $request->yellow_sss;
+        $course->red_sss = $request->red_sss;
+
+        $course->white_half_sss = $request->white_half_sss;
+        $course->yellow_half_sss = $request->yellow_half_sss;
+        $course->red_half_sss = $request->red_half_sss;       
+
+        $course->white_first_second_sss = $request->white_first_second_sss;
+        $course->white_second_third_sss = $request->white_second_third_sss;
+        $course->white_first_third_sss = $request->white_first_third_sss;
+
+        $course->yellow_first_second_sss = $request->yellow_first_second_sss;
+        $course->yellow_second_third_sss = $request->yellow_second_third_sss;
+        $course->yellow_first_third_sss = $request->yellow_first_third_sss;
+
+        $course->red_first_second_sss = $request->red_first_second_sss;
+        $course->red_second_third_sss = $request->red_second_third_sss;
+        $course->red_first_third_sss = $request->red_first_third_sss;
+
         $course->holes = $request->holes;
 
         $course->first_nine_name = $request->first_nine_name;

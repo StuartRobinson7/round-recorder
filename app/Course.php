@@ -15,8 +15,17 @@ class Course extends Model
      * @var array
      */
     protected $fillable = [
+        
         /* Course Details */
-        'property_name','course_name', 'sss', 'holes', 'first_nine_name', 'second_nine_name', 'third_nine_name',
+        'property_name','course_name',
+        'white_sss', 'yellow_sss', 'red_sss',
+        'white_half_sss',
+        'yellow_half_sss',        
+        'red_half_sss',       
+        'white_first-second_sss', 'white_second-third_sss', 'white_first-third_sss',
+        'yellow_first-second_sss', 'yellow_second-third_sss', 'yellow_first-third_sss',
+        'red_first-second_sss', 'red_second-third_sss', 'red_first-third_sss',
+        'holes', 'first_nine_name', 'second_nine_name', 'third_nine_name',
 
         /* First Nine */
         'hole_1_white', 'hole_1_white_par', 'hole_1_white_stroke_index', 'hole_1_yellow', 'hole_1_yellow_par', 'hole_1_yellow_stroke_index', 'hole_1_red', 'hole_1_red_par', 'hole_1_red_stroke_index',

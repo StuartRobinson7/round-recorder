@@ -20,8 +20,28 @@ class CreateCoursesTable extends Migration
             $table->string('first_nine_name');
             $table->string('second_nine_name');
             $table->string('third_nine_name');
-            $table->integer('sss');
+
             $table->integer('holes');
+
+            $table->integer('white_sss');
+            $table->integer('yellow_sss');
+            $table->integer('red_sss');
+
+            $table->integer('white_half_sss');
+            $table->integer('yellow_half_sss');
+            $table->integer('red_half_sss');            
+
+            $table->integer('white_first_second_sss');
+            $table->integer('white_second_third_sss');
+            $table->integer('white_first_third_sss');
+
+            $table->integer('yellow_first_second_sss');
+            $table->integer('yellow_second_third_sss');
+            $table->integer('yellow_first_third_sss');
+            
+            $table->integer('red_first_second_sss');
+            $table->integer('red_second_third_sss');
+            $table->integer('red_first_third_sss');            
 
             $table->integer('hole_1_white');
             $table->integer('hole_1_white_par');
@@ -320,7 +340,7 @@ class CreateCoursesTable extends Migration
             $table->integer('hole_27_red_stroke_index_front'); 
             $table->integer('hole_27_red_stroke_index_back');
             
-	        $table->timestamps();    
+	        $table->timestamps(); 
         });
     }
 

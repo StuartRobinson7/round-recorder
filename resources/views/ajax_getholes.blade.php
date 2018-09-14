@@ -1,33 +1,39 @@
                 
 @if($selected_size === '27')
 
-                <div class="row">
-                    <div class="col-12 col-lg">
-                        <div class="form-group">
-                            <label>First Nine Name</label>
-                            <input id="first_nine_name" type="text" class="form-control {{ $errors->has('first_nine_name') ? ' is-invalid' : '' }}" name="first_nine_name" value="" >
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg">
-                        <div class="form-group">
-                            <label>Second Nine Name</label>
-                            <input id="second_nine_name" type="text" class="form-control {{ $errors->has('second_nine_name') ? ' is-invalid' : '' }}" name="second_nine_name" value="" >
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg">
-                        <div class="form-group">
-                            <label>Third Nine Name</label>
-                            <input id="third_nine_name" type="text" class="form-control {{ $errors->has('third_nine_name') ? ' is-invalid' : '' }}" name="third_nine_name" value="" >
-                        </div>
-                    </div>                                        
+<br />
+
+        <p>27 hole courses often name each set of nine holes to easily differentiate between them, if this is the case please enter the names below, if not feel free to leave them blank.</p>
+
+        <div class="row">
+            <div class="col-12 col-lg">
+                <div class="form-group">
+                    <label>First Nine Name</label>
+                    <input id="first_nine_name" type="text" class="form-control {{ $errors->has('first_nine_name') ? ' is-invalid' : '' }}" name="first_nine_name" value="" >
                 </div>
-                <!--/.row -->                
-                
+            </div>
+            <div class="col-12 col-lg">
+                <div class="form-group">
+                    <label>Second Nine Name</label>
+                    <input id="second_nine_name" type="text" class="form-control {{ $errors->has('second_nine_name') ? ' is-invalid' : '' }}" name="second_nine_name" value="" >
+                </div>
+            </div>
+            <div class="col-12 col-lg">
+                <div class="form-group">
+                    <label>Third Nine Name</label>
+                    <input id="third_nine_name" type="text" class="form-control {{ $errors->has('third_nine_name') ? ' is-invalid' : '' }}" name="third_nine_name" value="" >
+                </div>
+            </div>                                        
+        </div>
+        <!--/.row -->     
+
+
+<br />
+
 @endif
 
-                
-                <div class="add-tee-box white-tees">
-                    
+
+                <div class="add-tee-box white-tees">                   
                     
                     <button class="btn btn-block btn-collapse collapsed" type="button" data-toggle="collapse" data-target="#whiteTees" aria-expanded="false" aria-controls="whiteTees">
                         <i class="far"></i> White Tees
@@ -35,21 +41,29 @@
 
                     <div class="collapse" id="whiteTees">
 
-                        @if($selected_size === '27')
-
-                            <div class="row">
-                                <div class="col-12 col-lg-4">
-                                    <div class="form-group">
-                                        <label>First Nine Name</label>
-                                        <input id="first_nine_name" type="text" class="form-control {{ $errors->has('first_nine_name') ? ' is-invalid' : '' }}" name="first_nine_name" value="" >
-                                    </div>
-                                </div>                                       
-                            </div>
-                            <!--/.row -->    
-                        @elseif($selected_size === '18')                                        
-                            <h3>Front Nine</h3>
+                        @if($selected_size === '9')
+                            <div class="form-group">
+                                <label>SSS</label>
+                                <input id="white_half_sss" type="text" class="form-control {{ $errors->has('white_half_sss') ? ' is-invalid' : '' }}" name="white_half_sss" value=""> 
+                            </div>                                              
+                        @elseif($selected_size === '18')
+                            <div class="form-group">
+                                <label>SSS</label>
+                                <input id="white_sss" type="text" class="form-control {{ $errors->has('white_sss') ? ' is-invalid' : '' }}" name="white_sss" value=""> 
+                            </div>                      
                         @endif
 
+                        @if($selected_size === '27')
+
+                            <h3>First Nine</h3>
+                               
+                        @elseif($selected_size === '18') 
+
+                            <h3>Front Nine</h3>
+                        
+                        @else
+
+                        @endif
 
                         <div class="row add-course-row add-course-hole">
 
@@ -256,17 +270,14 @@
 
                         @if($selected_size === '27')
 
-                        <div class="row">
-                            <div class="col-12 col-lg-4">
-                                <div class="form-group">
-                                    <label>Second Nine Name</label>
-                                    <input id="second_nine_name" type="text" class="form-control {{ $errors->has('second_nine_name') ? ' is-invalid' : '' }}" name="second_nine_name" value="" >
-                                </div>
-                            </div>                                       
-                        </div>
-                        <!--/.row -->    
-                        @else                                        
-                        <h3>Back Nine</h3>
+                            <h3>Second Nine</h3>
+                        
+                        @elseif($selected_size === '18') 
+
+                            <h3>Back Nine</h3>
+
+                        @else
+
                         @endif
 
                     <div class="row add-course-row add-course-hole">
@@ -527,15 +538,7 @@
 @if($selected_size === '27')   
 
 
-                        <div class="row">
-                            <div class="col-12 col-lg-4">
-                                <div class="form-group">
-                                    <label>Third Nine Name</label>
-                                    <input id="third_nine_name" type="text" class="form-control {{ $errors->has('third_nine_name') ? ' is-invalid' : '' }}" name="third_nine_name" value="" >
-                                </div>
-                            </div>                                       
-                        </div>
-                        <!--/.row -->    
+                        <h3>Third Nine</h3>  
 
 
                         <div class="row add-course-row add-course-hole">
@@ -805,20 +808,29 @@
 
                     <div class="collapse show" id="yellowTees">
 
+                        @if($selected_size === '9')
+                            <div class="form-group">
+                                <label>SSS</label>
+                                <input id="yellow_half_sss" type="text" class="form-control {{ $errors->has('yellow_half_sss') ? ' is-invalid' : '' }}" name="yellow_half_sss" value=""> 
+                            </div>                                              
+                        @elseif($selected_size === '18')
+                            <div class="form-group">
+                                <label>SSS</label>
+                                <input id="yellow_sss" type="text" class="form-control {{ $errors->has('yellow_sss') ? ' is-invalid' : '' }}" name="yellow_sss" value=""> 
+                            </div>                     
+                        @endif
+
                         @if($selected_size === '27')
 
-                        <div class="row">
-                            <div class="col-12 col-lg-4">
-                                <div class="form-group">
-                                    <label>First Nine Name</label>
-                                    <input id="first_nine_name" type="text" class="form-control {{ $errors->has('first_nine_name') ? ' is-invalid' : '' }}" name="first_nine_name" value="" >
-                                </div>
-                            </div>                                       
-                        </div>
-                        <!--/.row -->    
-                        @elseif($selected_size === '18')                                        
-                        <h3>Front Nine</h3>
-                        @endif                    
+                            <h3>First Nine</h3>
+                        
+                        @elseif($selected_size === '18') 
+
+                            <h3>Front Nine</h3>
+
+                        @else
+
+                        @endif                   
 
                         <div class="row add-course-row add-course-hole">
 
@@ -1021,20 +1033,17 @@
 
 @if($selected_size === '18' || $selected_size === '27') 
 
-                    @if($selected_size === '27')
+                        @if($selected_size === '27')
 
-                    <div class="row">
-                        <div class="col-12 col-lg-4">
-                            <div class="form-group">
-                                <label>Second Nine Name</label>
-                                <input id="second_nine_name" type="text" class="form-control {{ $errors->has('second_nine_name') ? ' is-invalid' : '' }}" name="second_nine_name" value="" >
-                            </div>
-                        </div>                                       
-                    </div>
-                    <!--/.row -->    
-                    @else                                        
-                    <h3>Back Nine</h3>
-                    @endif
+                            <h3>Second Nine</h3>
+                        
+                        @elseif($selected_size === '18') 
+
+                            <h3>Back Nine</h3>
+
+                        @else
+
+                        @endif
 
                     <div class="row add-course-row add-course-hole">
 
@@ -1293,15 +1302,7 @@
              
 @if($selected_size === '27')
 
-                    <div class="row">
-                        <div class="col-12 col-lg-4">
-                            <div class="form-group">
-                                <label>Third Nine Name</label>
-                                <input id="third_nine_name" type="text" class="form-control {{ $errors->has('third_nine_name') ? ' is-invalid' : '' }}" name="third_nine_name" value="" >
-                            </div>
-                        </div>                                       
-                    </div>
-                    <!--/.row -->  
+                    <h3>Third Nine</h3>  
 
                     <div class="row add-course-row add-course-hole">
 
@@ -1567,19 +1568,28 @@
 
                     <div class="collapse" id="redTees">
 
+                        @if($selected_size === '9')
+                            <div class="form-group">
+                                <label>SSS</label>
+                                <input id="red_half_sss" type="text" class="form-control {{ $errors->has('red_half_sss') ? ' is-invalid' : '' }}" name="red_half_sss" value=""> 
+                            </div>                                              
+                        @elseif($selected_size === '18')
+                            <div class="form-group">
+                                <label>SSS</label>
+                                <input id="red_sss" type="text" class="form-control {{ $errors->has('red_sss') ? ' is-invalid' : '' }}" name="red_sss" value=""> 
+                            </div>    
+                        @endif
+
                         @if($selected_size === '27')
 
-                        <div class="row">
-                            <div class="col-12 col-lg-4">
-                                <div class="form-group">
-                                    <label>First Nine Name</label>
-                                    <input id="first_nine_name" type="text" class="form-control {{ $errors->has('first_nine_name') ? ' is-invalid' : '' }}" name="first_nine_name" value="" >
-                                </div>
-                            </div>                                       
-                        </div>
-                        <!--/.row -->    
-                        @elseif($selected_size === '18')                                        
-                        <h3>Front Nine</h3>
+                            <h3>First Nine</h3>
+                        
+                        @elseif($selected_size === '18') 
+
+                            <h3>Front Nine</h3>
+
+                        @else
+
                         @endif
 
                     <div class="row add-course-row add-course-hole">
@@ -1785,17 +1795,14 @@
 
                         @if($selected_size === '27')
 
-                        <div class="row">
-                            <div class="col-12 col-lg-4">
-                                <div class="form-group">
-                                    <label>Second Nine Name</label>
-                                    <input id="second_nine_name" type="text" class="form-control {{ $errors->has('second_nine_name') ? ' is-invalid' : '' }}" name="second_nine_name" value="" >
-                                </div>
-                            </div>                                       
-                        </div>
-                        <!--/.row -->    
-                        @else                                        
-                        <h3>Back Nine</h3>
+                            <h3>Second Nine</h3>
+                        
+                        @elseif($selected_size === '18') 
+
+                            <h3>Back Nine</h3>
+
+                        @else
+
                         @endif
 
                     <div class="row add-course-row add-course-hole">
@@ -2056,15 +2063,7 @@
 
 @if($selected_size === '27')  
 
-                        <div class="row">
-                            <div class="col-12 col-lg-4">
-                                <div class="form-group">
-                                    <label>Third Nine Name</label>
-                                    <input id="third_nine_name" type="text" class="form-control {{ $errors->has('third_nine_name') ? ' is-invalid' : '' }}" name="third_nine_name" value="" >
-                                </div>
-                            </div>                                       
-                        </div>
-                        <!--/.row -->   
+                        <h3>Third Nine</h3>  
 
                     <div class="row add-course-row add-course-hole">
 
@@ -2320,4 +2319,109 @@
                     </div>                    
 
                 </div>
-                <!--/.dropdown --> 
+
+@if($selected_size === '27')
+<hr />
+<br />
+        <p>As 27 hole courses allow you to play different sets of nine they also provide an SSS for each combination of nine holes, and for each set of tee's in those combinations. They are usually found on the courses scorecard in the top right hand corner.</p>
+        <br />                
+
+        <div class="row text-center">
+
+            <div class="col-12 col-lg">
+
+                <div class="form-group">
+
+                    <label>First Nine & Second Nine SSS</label>
+
+                    <div class="row sm-gutters sss-yards-row">
+                    
+                        <div class="col white">
+                            <label>White</label>
+                            <input id="white_first_second_sss" type="text" class="form-control {{ $errors->has('white_first_second_sss') ? ' is-invalid' : '' }}" name="white_first_second_sss" value=""> 
+                        </div>
+
+                        <div class="col yellow">
+                            <label>Yellow</label>
+                            <input id="yellow_first_second_sss" type="text" class="form-control {{ $errors->has('yellow_first_second_sss') ? ' is-invalid' : '' }}" name="yellow_first_second_sss" value=""> 
+                        </div>
+
+                        <div class="col red">
+                            <label>Red</label>
+                            <input id="red_first_second_sss" type="text" class="form-control {{ $errors->has('red_first_second_sss') ? ' is-invalid' : '' }}" name="red_first_second_sss" value=""> 
+                        </div>                                                                
+
+                    </div>
+                    <!--/.row -->
+
+                    
+                </div> 
+
+            </div>
+
+            <div class="col-12 col-lg">
+
+                <div class="form-group">
+
+                    <label>Second Nine & Third Nine SSS</label>
+
+                    <div class="row sm-gutters sss-yards-row">
+                        
+                        <div class="col white">
+                            <label>White</label>
+                            <input id="white_second_third_sss" type="text" class="form-control {{ $errors->has('white_second_third_sss') ? ' is-invalid' : '' }}" name="white_second_third_sss" value=""> 
+                        </div>
+
+                        <div class="col yellow">
+                            <label>Yellow</label>                                
+                            <input id="yellow_second_third_sss" type="text" class="form-control {{ $errors->has('yellow_second_third_sss') ? ' is-invalid' : '' }}" name="yellow_second_third_sss" value=""> 
+                        </div>
+
+                        <div class="col red">
+                            <label>Red</label>
+                            <input id="red_second_third_sss" type="text" class="form-control {{ $errors->has('red_second_third_sss') ? ' is-invalid' : '' }}" name="red_second_third_sss" value=""> 
+                        </div>                                                                
+
+                    </div>
+                    <!--/.row -->
+
+                </div> 
+
+            </div>
+
+            <div class="col-12 col-lg">
+
+                <div class="form-group">
+                    <label>First Nine & Third Nine SSS</label>
+
+
+                    <div class="row sm-gutters sss-yards-row">
+                        
+                        <div class="col white">
+                            <label>White</label>                                
+                            <input id="white_first_third_sss" type="text" class="form-control {{ $errors->has('white_first_third_sss') ? ' is-invalid' : '' }}" name="white_first_third_sss" value=""> 
+                        </div>
+
+                        <div class="col yellow">
+                            <label>Yellow</label>                                
+                            <input id="yellow_first_third_sss" type="text" class="form-control {{ $errors->has('yellow_first_third_sss') ? ' is-invalid' : '' }}" name="yellow_first_third_sss" value=""> 
+                        </div>
+
+                        <div class="col red">
+                            <label>Red</label>
+                            <input id="red_first_third_sss" type="text" class="form-control {{ $errors->has('red_first_third_sss') ? ' is-invalid' : '' }}" name="red_first_third_sss" value=""> 
+                        </div>                                                                
+
+                    </div>
+                    <!--/.row -->
+
+                </div> 
+
+            </div>  
+
+        </div>
+        <!--/.row -->   
+                                            
+                
+@endif                
+                 

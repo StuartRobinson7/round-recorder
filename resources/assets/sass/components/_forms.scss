@@ -4,7 +4,25 @@
 
 // Bootstrap Overrides
 .custom-control-label::before {
-    top:0.45rem;
+    top:0.25rem;
+    background: $border-color;
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before{
+    background: $border-color;
+}
+
+.custom-control-label::after {
+    top:0.25rem;
+}
+
+label{
+    color: $gray-700;
+}
+
+.form-control{
+    border-color: $border-color;
+    border-width: 2px;
 }
 
 

@@ -17,6 +17,20 @@
 }
 
 
+.sss-yards-row{
+    margin: 0;
+    
+    .col{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .white{
+        border: 1px solid $border-color;
+        border-right: none;
+    }
+}
+
+
 .add-tee-box{
 
     button{

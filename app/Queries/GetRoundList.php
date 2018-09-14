@@ -335,9 +335,15 @@ class GetRoundList {
                                       $hole_19_fairway_available + $hole_20_fairway_available + $hole_21_fairway_available + $hole_22_fairway_available + $hole_23_fairway_available + $hole_24_fairway_available + $hole_25_fairway_available + $hole_26_fairway_available + $hole_27_fairway_available;
             }               
            
-            
+            if($fairways_available === 0){
 
-            $fir_percentage = $fairways_hit / $fairways_available * 100;
+                $fir_percentage = 0;
+
+            }
+            else{
+                $fir_percentage = $fairways_hit / $fairways_available * 100;
+            }
+            
                            
             $round->fir_percentage = $fir_percentage;
 

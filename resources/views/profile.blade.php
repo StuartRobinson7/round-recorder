@@ -33,11 +33,12 @@
                 
     
                 <h1>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h1>
-                <h2>{{ ucfirst(trans(Auth::user()->hand)) }} Handed</h2>
-                <h3>Playing off {{ Auth::user()->handicap / 10 }}</h3>
+                <h3>{{ ucfirst(trans(Auth::user()->hand)) }} Handed - Playing off {{ Auth::user()->handicap / 10 }}</h3>
 
+                <br />
+                <br />
 
-                <div class="row">
+                <div class="row text-center">
                 
                     <div class="col">
                     
@@ -55,7 +56,7 @@
 
                     <div class="col">
                     
-                        <h4>Fairways Hit / Fairways Available</h4>
+                        <h4>Fairways Hit</h4>
                         {{ $career_stats->fairways_hit }} / {{ $career_stats->fairways_available }}
                     
                     </div>  
@@ -70,7 +71,10 @@
                 </div>
                 <!--/.row -->
 
-                <div class="row round-total-row">                     
+                <br />
+                <br />
+
+                <div class="row round-total-row text-center">                     
 
                     <div class="col">
                         <h3 class="percent-counter" data-to="{{ number_format($career_stats->fir_percentage, 2) }}" data-speed="500"></h3>

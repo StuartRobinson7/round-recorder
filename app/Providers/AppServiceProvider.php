@@ -320,14 +320,171 @@ class AppServiceProvider extends ServiceProvider
             $model->hole_27_red_stroke_index_front = ($model->hole_27_red_stroke_index_front) ?: '0'; 
             $model->hole_27_red_stroke_index_back = ($model->hole_27_red_stroke_index_back) ?: '0';   
 
-            
-            $par = $model->hole_1_yellow_par + $model->hole_2_yellow_par + $model->hole_3_yellow_par + $model->hole_4_yellow_par + $model->hole_5_yellow_par + $model->hole_6_yellow_par + $model->hole_7_yellow_par + $model->hole_8_yellow_par + $model->hole_9_yellow_par;
+            // Calculate SSS if none provided
+
+            $white_par = $model->hole_1_white_par + $model->hole_2_white_par + $model->hole_3_white_par + $model->hole_4_white_par + $model->hole_5_white_par + $model->hole_6_white_par + $model->hole_7_white_par + $model->hole_8_white_par + $model->hole_9_white_par;
 
             if($model->holes > 9){
-                $par = $model->hole_1_yellow_par + $model->hole_2_yellow_par + $model->hole_3_yellow_par + $model->hole_4_yellow_par + $model->hole_5_yellow_par + $model->hole_6_yellow_par + $model->hole_7_yellow_par + $model->hole_8_yellow_par + $model->hole_9_yellow_par + $model->hole_10_yellow_par + $model->hole_11_yellow_par + $model->hole_2_yellow_par + $model->hole_13_yellow_par + $model->hole_14_yellow_par + $model->hole_15_yellow_par + $model->hole_16_yellow_par + $model->hole_17_yellow_par + $model->hole_18_yellow_par;           
+                $white_par = $model->hole_1_white_par + $model->hole_2_white_par + $model->hole_3_white_par + $model->hole_4_white_par + $model->hole_5_white_par + $model->hole_6_white_par + $model->hole_7_white_par + $model->hole_8_white_par + $model->hole_9_white_par + $model->hole_10_white_par + $model->hole_11_white_par + $model->hole_12_white_par + $model->hole_13_white_par + $model->hole_14_white_par + $model->hole_15_white_par + $model->hole_16_white_par + $model->hole_17_white_par + $model->hole_18_white_par;           
             }
 
-            $model->sss = ($model->sss) ?: $par;            
+            $model->white_sss = ($model->white_sss) ?: $white_par;             
+
+
+            
+            $yellow_par = $model->hole_1_yellow_par + $model->hole_2_yellow_par + $model->hole_3_yellow_par + $model->hole_4_yellow_par + $model->hole_5_yellow_par + $model->hole_6_yellow_par + $model->hole_7_yellow_par + $model->hole_8_yellow_par + $model->hole_9_yellow_par;
+
+            if($model->holes > 9){
+                $yellow_par = $model->hole_1_yellow_par + $model->hole_2_yellow_par + $model->hole_3_yellow_par + $model->hole_4_yellow_par + $model->hole_5_yellow_par + $model->hole_6_yellow_par + $model->hole_7_yellow_par + $model->hole_8_yellow_par + $model->hole_9_yellow_par + $model->hole_10_yellow_par + $model->hole_11_yellow_par + $model->hole_12_yellow_par + $model->hole_13_yellow_par + $model->hole_14_yellow_par + $model->hole_15_yellow_par + $model->hole_16_yellow_par + $model->hole_17_yellow_par + $model->hole_18_yellow_par;           
+            }
+
+            $model->yellow_sss = ($model->yellow_sss) ?: $yellow_par;
+
+            
+            
+            $red_par = $model->hole_1_red_par + $model->hole_2_red_par + $model->hole_3_red_par + $model->hole_4_red_par + $model->hole_5_red_par + $model->hole_6_red_par + $model->hole_7_red_par + $model->hole_8_red_par + $model->hole_9_red_par;
+
+            if($model->holes > 9){
+                $red_par = $model->hole_1_red_par + $model->hole_2_red_par + $model->hole_3_red_par + $model->hole_4_red_par + $model->hole_5_red_par + $model->hole_6_red_par + $model->hole_7_red_par + $model->hole_8_red_par + $model->hole_9_red_par + $model->hole_10_red_par + $model->hole_11_red_par + $model->hole_12_red_par + $model->hole_13_red_par + $model->hole_14_red_par + $model->hole_15_red_par + $model->hole_16_red_par + $model->hole_17_red_par + $model->hole_18_red_par;           
+            }
+
+            $model->red_sss = ($model->red_sss) ?: $red_par;
+
+            
+            // Calculate 27 hole course SSS depending on tees and nines
+
+            if($model->holes === 27){
+
+                $white_first_second_par = $model->hole_1_white_par + $model->hole_2_white_par + $model->hole_3_white_par + $model->hole_4_white_par + $model->hole_5_white_par + $model->hole_6_white_par + $model->hole_7_white_par + $model->hole_8_white_par + $model->hole_9_white_par + 
+                                        $model->hole_10_white_par + $model->hole_11_white_par + $model->hole_12_white_par + $model->hole_13_white_par + $model->hole_14_white_par + $model->hole_15_white_par + $model->hole_16_white_par + $model->hole_17_white_par + $model->hole_18_white_par;
+
+                $model->white_first_second_sss = ($model->white_first_second_sss) ?: $white_first_second_par;
+
+
+                $white_second_third_par = $model->hole_10_white_par + $model->hole_11_white_par + $model->hole_12_white_par + $model->hole_13_white_par + $model->hole_14_white_par + $model->hole_15_white_par + $model->hole_16_white_par + $model->hole_17_white_par + $model->hole_18_white_par + 
+                                        $model->hole_19_white_par + $model->hole_20_white_par + $model->hole_21_white_par + $model->hole_22_white_par + $model->hole_23_white_par + $model->hole_24_white_par + $model->hole_25_white_par + $model->hole_26_white_par + $model->hole_27_white_par;
+
+                $model->white_second_third_sss = ($model->white_second_third_sss) ?: $white_second_third_par; 
+    
+                
+                $white_first_third_par = $model->hole_1_white_par + $model->hole_2_white_par + $model->hole_3_white_par + $model->hole_4_white_par + $model->hole_5_white_par + $model->hole_6_white_par + $model->hole_7_white_par + $model->hole_8_white_par + $model->hole_9_white_par + 
+                                        $model->hole_19_white_par + $model->hole_20_white_par + $model->hole_21_white_par + $model->hole_22_white_par + $model->hole_23_white_par + $model->hole_24_white_par + $model->hole_25_white_par + $model->hole_26_white_par + $model->hole_27_white_par;
+
+                $model->white_first_third_sss = ($model->white_first_third_sss) ?: $white_first_third_par;  
+                
+                
+
+
+                $yellow_first_second_par = $model->hole_1_yellow_par + $model->hole_2_yellow_par + $model->hole_3_yellow_par + $model->hole_4_yellow_par + $model->hole_5_yellow_par + $model->hole_6_yellow_par + $model->hole_7_yellow_par + $model->hole_8_yellow_par + $model->hole_9_yellow_par + 
+                                        $model->hole_10_yellow_par + $model->hole_11_yellow_par + $model->hole_12_yellow_par + $model->hole_13_yellow_par + $model->hole_14_yellow_par + $model->hole_15_yellow_par + $model->hole_16_yellow_par + $model->hole_17_yellow_par + $model->hole_18_yellow_par;
+
+                $model->yellow_first_second_sss = ($model->yellow_first_second_sss) ?: $yellow_first_second_par;
+
+
+                $yellow_second_third_par = $model->hole_10_yellow_par + $model->hole_11_yellow_par + $model->hole_12_yellow_par + $model->hole_13_yellow_par + $model->hole_14_yellow_par + $model->hole_15_yellow_par + $model->hole_16_yellow_par + $model->hole_17_yellow_par + $model->hole_18_yellow_par + 
+                                        $model->hole_19_yellow_par + $model->hole_20_yellow_par + $model->hole_21_yellow_par + $model->hole_22_yellow_par + $model->hole_23_yellow_par + $model->hole_24_yellow_par + $model->hole_25_yellow_par + $model->hole_26_yellow_par + $model->hole_27_yellow_par;
+
+                $model->yellow_second_third_sss = ($model->yellow_second_third_sss) ?: $yellow_second_third_par; 
+    
+                
+                $yellow_first_third_par = $model->hole_1_yellow_par + $model->hole_2_yellow_par + $model->hole_3_yellow_par + $model->hole_4_yellow_par + $model->hole_5_yellow_par + $model->hole_6_yellow_par + $model->hole_7_yellow_par + $model->hole_8_yellow_par + $model->hole_9_yellow_par + 
+                                        $model->hole_19_yellow_par + $model->hole_20_yellow_par + $model->hole_21_yellow_par + $model->hole_22_yellow_par + $model->hole_23_yellow_par + $model->hole_24_yellow_par + $model->hole_25_yellow_par + $model->hole_26_yellow_par + $model->hole_27_yellow_par;
+
+                $model->yellow_first_third_sss = ($model->yellow_first_third_sss) ?: $yellow_first_third_par; 
+
+
+
+
+                $red_first_second_par = $model->hole_1_red_par + $model->hole_2_red_par + $model->hole_3_red_par + $model->hole_4_red_par + $model->hole_5_red_par + $model->hole_6_red_par + $model->hole_7_red_par + $model->hole_8_red_par + $model->hole_9_red_par + 
+                                        $model->hole_10_red_par + $model->hole_11_red_par + $model->hole_12_red_par + $model->hole_13_red_par + $model->hole_14_red_par + $model->hole_15_red_par + $model->hole_16_red_par + $model->hole_17_red_par + $model->hole_18_red_par;
+
+                $model->red_first_second_sss = ($model->red_first_second_sss) ?: $red_first_second_par;
+
+
+                $red_second_third_par = $model->hole_10_red_par + $model->hole_11_red_par + $model->hole_12_red_par + $model->hole_13_red_par + $model->hole_14_red_par + $model->hole_15_red_par + $model->hole_16_red_par + $model->hole_17_red_par + $model->hole_18_red_par + 
+                                        $model->hole_19_red_par + $model->hole_20_red_par + $model->hole_21_red_par + $model->hole_22_red_par + $model->hole_23_red_par + $model->hole_24_red_par + $model->hole_25_red_par + $model->hole_26_red_par + $model->hole_27_red_par;
+
+                $model->red_second_third_sss = ($model->red_second_third_sss) ?: $red_second_third_par; 
+    
+                
+                $red_first_third_par = $model->hole_1_red_par + $model->hole_2_red_par + $model->hole_3_red_par + $model->hole_4_red_par + $model->hole_5_red_par + $model->hole_6_red_par + $model->hole_7_red_par + $model->hole_8_red_par + $model->hole_9_red_par + 
+                                        $model->hole_19_red_par + $model->hole_20_red_par + $model->hole_21_red_par + $model->hole_22_red_par + $model->hole_23_red_par + $model->hole_24_red_par + $model->hole_25_red_par + $model->hole_26_red_par + $model->hole_27_red_par;
+
+                $model->red_first_third_sss = ($model->red_first_third_sss) ?: $red_first_third_par; 
+                
+                
+                $model->white_half_sss = ($model->white_half_sss) ?: 0;
+                $model->yellow_half_sss = ($model->yellow_half_sss) ?: 0;
+                $model->red_half_sss = ($model->red_half_sss) ?: 0;
+                
+                $model->white_sss = ($model->white_sss) ?: 0;
+                $model->yellow_sss = ($model->yellow_sss) ?: 0;
+                $model->red_sss = ($model->red_sss) ?: 0;                     
+
+            }
+
+            elseif($model->holes === 18){
+
+                $white_par = $model->hole_1_white_par + $model->hole_2_white_par + $model->hole_3_white_par + $model->hole_4_white_par + $model->hole_5_white_par + $model->hole_6_white_par + $model->hole_7_white_par + $model->hole_8_white_par + $model->hole_9_white_par;
+
+                $model->white_sss = ($model->white_sss) ?: $white_par;             
+        
+                
+                $yellow_par = $model->hole_1_yellow_par + $model->hole_2_yellow_par + $model->hole_3_yellow_par + $model->hole_4_yellow_par + $model->hole_5_yellow_par + $model->hole_6_yellow_par + $model->hole_7_yellow_par + $model->hole_8_yellow_par + $model->hole_9_yellow_par;
+    
+                $model->yellow_sss = ($model->yellow_sss) ?: $yellow_par;   
+                
+                
+                $red_par = $model->hole_1_red_par + $model->hole_2_red_par + $model->hole_3_red_par + $model->hole_4_red_par + $model->hole_5_red_par + $model->hole_6_red_par + $model->hole_7_red_par + $model->hole_8_red_par + $model->hole_9_red_par;
+    
+                $model->red_sss = ($model->red_sss) ?: $red_par;
+
+
+                $model->white_first_second_sss = ($model->white_first_second_sss) ?: 0;
+                $model->white_second_third_sss = ($model->white_second_third_sss) ?: 0;
+                $model->white_first_third_sss = ($model->white_first_third_sss) ?: 0;
+
+                $model->yellow_first_second_sss = ($model->yellow_first_second_sss) ?: 0;
+                $model->yellow_second_third_sss = ($model->yellow_second_third_sss) ?: 0;
+                $model->yellow_first_third_sss = ($model->yellow_first_third_sss) ?: 0;
+
+                $model->red_first_second_sss = ($model->red_first_second_sss) ?: 0;
+                $model->red_second_third_sss = ($model->red_second_third_sss) ?: 0;
+                $model->red_first_third_sss = ($model->red_first_third_sss) ?: 0;  
+                
+                $model->white_half_sss = ($model->white_half_sss) ?: 0;
+                $model->yellow_half_sss = ($model->yellow_half_sss) ?: 0;
+                $model->red_half_sss = ($model->red_half_sss) ?: 0;                
+
+            }
+
+            else{
+
+                $white_half = $model->hole_1_white_par + $model->hole_2_white_par + $model->hole_3_white_par + $model->hole_4_white_par + $model->hole_5_white_par + $model->hole_6_white_par + $model->hole_7_white_par + $model->hole_8_white_par + $model->hole_9_white_par;
+                $yellow_half = $model->hole_1_yellow_par + $model->hole_2_yellow_par + $model->hole_3_yellow_par + $model->hole_4_yellow_par + $model->hole_5_yellow_par + $model->hole_6_yellow_par + $model->hole_7_yellow_par + $model->hole_8_yellow_par + $model->hole_9_yellow_par;
+                $red_half = $model->hole_1_red_par + $model->hole_2_red_par + $model->hole_3_red_par + $model->hole_4_red_par + $model->hole_5_red_par + $model->hole_6_red_par + $model->hole_7_red_par + $model->hole_8_red_par + $model->hole_9_red_par;
+
+                $model->white_half_sss = ($model->white_half_sss) ?: $white_half;
+                $model->yellow_half_sss = ($model->yellow_half_sss) ?: $yellow_half;
+                $model->red_half_sss = ($model->red_half_sss) ?: $red_half;
+
+                $model->white_first_second_sss = ($model->white_first_second_sss) ?: 0;
+                $model->white_second_third_sss = ($model->white_second_third_sss) ?: 0;
+                $model->white_first_third_sss = ($model->white_first_third_sss) ?: 0;
+
+                $model->yellow_first_second_sss = ($model->yellow_first_second_sss) ?: 0;
+                $model->yellow_second_third_sss = ($model->yellow_second_third_sss) ?: 0;
+                $model->yellow_first_third_sss = ($model->yellow_first_third_sss) ?: 0;
+
+                $model->red_first_second_sss = ($model->red_first_second_sss) ?: 0;
+                $model->red_second_third_sss = ($model->red_second_third_sss) ?: 0;
+                $model->red_first_third_sss = ($model->red_first_third_sss) ?: 0;
+                
+                $model->white_sss = ($model->white_sss) ?: 0;
+                $model->yellow_sss = ($model->yellow_sss) ?: 0;
+                $model->red_sss = ($model->red_sss) ?: 0;                
+
+            }           
 
         });
 
@@ -634,20 +791,144 @@ class AppServiceProvider extends ServiceProvider
             $model->hole_27_red_par = ($model->hole_27_red_par) ?: '0';
             $model->hole_27_red_stroke_index_front = ($model->hole_27_red_stroke_index_front) ?: '0'; 
             $model->hole_27_red_stroke_index_back = ($model->hole_27_red_stroke_index_back) ?: '0';   
-                       
+               
+
+            // Calculate 27 hole course SSS depending on tees and nines
+
+            if($model->holes === 27){
+
+                $white_first_second_par = $model->hole_1_white_par + $model->hole_2_white_par + $model->hole_3_white_par + $model->hole_4_white_par + $model->hole_5_white_par + $model->hole_6_white_par + $model->hole_7_white_par + $model->hole_8_white_par + $model->hole_9_white_par + 
+                                        $model->hole_10_white_par + $model->hole_11_white_par + $model->hole_12_white_par + $model->hole_13_white_par + $model->hole_14_white_par + $model->hole_15_white_par + $model->hole_16_white_par + $model->hole_17_white_par + $model->hole_18_white_par;
+
+                $model->white_first_second_sss = ($model->white_first_second_sss) ?: $white_first_second_par;
+
+
+                $white_second_third_par = $model->hole_10_white_par + $model->hole_11_white_par + $model->hole_12_white_par + $model->hole_13_white_par + $model->hole_14_white_par + $model->hole_15_white_par + $model->hole_16_white_par + $model->hole_17_white_par + $model->hole_18_white_par + 
+                                        $model->hole_19_white_par + $model->hole_20_white_par + $model->hole_21_white_par + $model->hole_22_white_par + $model->hole_23_white_par + $model->hole_24_white_par + $model->hole_25_white_par + $model->hole_26_white_par + $model->hole_27_white_par;
+
+                $model->white_second_third_sss = ($model->white_second_third_sss) ?: $white_second_third_par; 
+    
+                
+                $white_first_third_par = $model->hole_1_white_par + $model->hole_2_white_par + $model->hole_3_white_par + $model->hole_4_white_par + $model->hole_5_white_par + $model->hole_6_white_par + $model->hole_7_white_par + $model->hole_8_white_par + $model->hole_9_white_par + 
+                                        $model->hole_19_white_par + $model->hole_20_white_par + $model->hole_21_white_par + $model->hole_22_white_par + $model->hole_23_white_par + $model->hole_24_white_par + $model->hole_25_white_par + $model->hole_26_white_par + $model->hole_27_white_par;
+
+                $model->white_first_third_sss = ($model->white_first_third_sss) ?: $white_first_third_par;  
+                
+                
+
+
+                $yellow_first_second_par = $model->hole_1_yellow_par + $model->hole_2_yellow_par + $model->hole_3_yellow_par + $model->hole_4_yellow_par + $model->hole_5_yellow_par + $model->hole_6_yellow_par + $model->hole_7_yellow_par + $model->hole_8_yellow_par + $model->hole_9_yellow_par + 
+                                        $model->hole_10_yellow_par + $model->hole_11_yellow_par + $model->hole_12_yellow_par + $model->hole_13_yellow_par + $model->hole_14_yellow_par + $model->hole_15_yellow_par + $model->hole_16_yellow_par + $model->hole_17_yellow_par + $model->hole_18_yellow_par;
+
+                $model->yellow_first_second_sss = ($model->yellow_first_second_sss) ?: $yellow_first_second_par;
+
+
+                $yellow_second_third_par = $model->hole_10_yellow_par + $model->hole_11_yellow_par + $model->hole_12_yellow_par + $model->hole_13_yellow_par + $model->hole_14_yellow_par + $model->hole_15_yellow_par + $model->hole_16_yellow_par + $model->hole_17_yellow_par + $model->hole_18_yellow_par + 
+                                        $model->hole_19_yellow_par + $model->hole_20_yellow_par + $model->hole_21_yellow_par + $model->hole_22_yellow_par + $model->hole_23_yellow_par + $model->hole_24_yellow_par + $model->hole_25_yellow_par + $model->hole_26_yellow_par + $model->hole_27_yellow_par;
+
+                $model->yellow_second_third_sss = ($model->yellow_second_third_sss) ?: $yellow_second_third_par; 
+    
+                
+                $yellow_first_third_par = $model->hole_1_yellow_par + $model->hole_2_yellow_par + $model->hole_3_yellow_par + $model->hole_4_yellow_par + $model->hole_5_yellow_par + $model->hole_6_yellow_par + $model->hole_7_yellow_par + $model->hole_8_yellow_par + $model->hole_9_yellow_par + 
+                                        $model->hole_19_yellow_par + $model->hole_20_yellow_par + $model->hole_21_yellow_par + $model->hole_22_yellow_par + $model->hole_23_yellow_par + $model->hole_24_yellow_par + $model->hole_25_yellow_par + $model->hole_26_yellow_par + $model->hole_27_yellow_par;
+
+                $model->yellow_first_third_sss = ($model->yellow_first_third_sss) ?: $yellow_first_third_par; 
+
+
+
+
+                $red_first_second_par = $model->hole_1_red_par + $model->hole_2_red_par + $model->hole_3_red_par + $model->hole_4_red_par + $model->hole_5_red_par + $model->hole_6_red_par + $model->hole_7_red_par + $model->hole_8_red_par + $model->hole_9_red_par + 
+                                        $model->hole_10_red_par + $model->hole_11_red_par + $model->hole_12_red_par + $model->hole_13_red_par + $model->hole_14_red_par + $model->hole_15_red_par + $model->hole_16_red_par + $model->hole_17_red_par + $model->hole_18_red_par;
+
+                $model->red_first_second_sss = ($model->red_first_second_sss) ?: $red_first_second_par;
+
+
+                $red_second_third_par = $model->hole_10_red_par + $model->hole_11_red_par + $model->hole_12_red_par + $model->hole_13_red_par + $model->hole_14_red_par + $model->hole_15_red_par + $model->hole_16_red_par + $model->hole_17_red_par + $model->hole_18_red_par + 
+                                        $model->hole_19_red_par + $model->hole_20_red_par + $model->hole_21_red_par + $model->hole_22_red_par + $model->hole_23_red_par + $model->hole_24_red_par + $model->hole_25_red_par + $model->hole_26_red_par + $model->hole_27_red_par;
+
+                $model->red_second_third_sss = ($model->red_second_third_sss) ?: $red_second_third_par; 
+    
+                
+                $red_first_third_par = $model->hole_1_red_par + $model->hole_2_red_par + $model->hole_3_red_par + $model->hole_4_red_par + $model->hole_5_red_par + $model->hole_6_red_par + $model->hole_7_red_par + $model->hole_8_red_par + $model->hole_9_red_par + 
+                                        $model->hole_19_red_par + $model->hole_20_red_par + $model->hole_21_red_par + $model->hole_22_red_par + $model->hole_23_red_par + $model->hole_24_red_par + $model->hole_25_red_par + $model->hole_26_red_par + $model->hole_27_red_par;
+
+                $model->red_first_third_sss = ($model->red_first_third_sss) ?: $red_first_third_par; 
+                
+                
+                $model->white_half_sss = ($model->white_half_sss) ?: 0;
+                $model->yellow_half_sss = ($model->yellow_half_sss) ?: 0;
+                $model->red_half_sss = ($model->red_half_sss) ?: 0;
+                
+                $model->white_sss = ($model->white_sss) ?: 0;
+                $model->yellow_sss = ($model->yellow_sss) ?: 0;
+                $model->red_sss = ($model->red_sss) ?: 0;                     
+
+            }
+
+            elseif($model->holes === 18){
+
+                $white_par = $model->hole_1_white_par + $model->hole_2_white_par + $model->hole_3_white_par + $model->hole_4_white_par + $model->hole_5_white_par + $model->hole_6_white_par + $model->hole_7_white_par + $model->hole_8_white_par + $model->hole_9_white_par;
+
+                $model->white_sss = ($model->white_sss) ?: $white_par;             
+        
+                
+                $yellow_par = $model->hole_1_yellow_par + $model->hole_2_yellow_par + $model->hole_3_yellow_par + $model->hole_4_yellow_par + $model->hole_5_yellow_par + $model->hole_6_yellow_par + $model->hole_7_yellow_par + $model->hole_8_yellow_par + $model->hole_9_yellow_par;
+    
+                $model->yellow_sss = ($model->yellow_sss) ?: $yellow_par;   
+                
+                
+                $red_par = $model->hole_1_red_par + $model->hole_2_red_par + $model->hole_3_red_par + $model->hole_4_red_par + $model->hole_5_red_par + $model->hole_6_red_par + $model->hole_7_red_par + $model->hole_8_red_par + $model->hole_9_red_par;
+    
+                $model->red_sss = ($model->red_sss) ?: $red_par;
+
+
+                $model->white_first_second_sss = ($model->white_first_second_sss) ?: 0;
+                $model->white_second_third_sss = ($model->white_second_third_sss) ?: 0;
+                $model->white_first_third_sss = ($model->white_first_third_sss) ?: 0;
+
+                $model->yellow_first_second_sss = ($model->yellow_first_second_sss) ?: 0;
+                $model->yellow_second_third_sss = ($model->yellow_second_third_sss) ?: 0;
+                $model->yellow_first_third_sss = ($model->yellow_first_third_sss) ?: 0;
+
+                $model->red_first_second_sss = ($model->red_first_second_sss) ?: 0;
+                $model->red_second_third_sss = ($model->red_second_third_sss) ?: 0;
+                $model->red_first_third_sss = ($model->red_first_third_sss) ?: 0;  
+                
+                $model->white_half_sss = ($model->white_half_sss) ?: 0;
+                $model->yellow_half_sss = ($model->yellow_half_sss) ?: 0;
+                $model->red_half_sss = ($model->red_half_sss) ?: 0;                
+
+            }
+
+            else{
+
+                $white_half = $model->hole_1_white_par + $model->hole_2_white_par + $model->hole_3_white_par + $model->hole_4_white_par + $model->hole_5_white_par + $model->hole_6_white_par + $model->hole_7_white_par + $model->hole_8_white_par + $model->hole_9_white_par;
+                $yellow_half = $model->hole_1_yellow_par + $model->hole_2_yellow_par + $model->hole_3_yellow_par + $model->hole_4_yellow_par + $model->hole_5_yellow_par + $model->hole_6_yellow_par + $model->hole_7_yellow_par + $model->hole_8_yellow_par + $model->hole_9_yellow_par;
+                $red_half = $model->hole_1_red_par + $model->hole_2_red_par + $model->hole_3_red_par + $model->hole_4_red_par + $model->hole_5_red_par + $model->hole_6_red_par + $model->hole_7_red_par + $model->hole_8_red_par + $model->hole_9_red_par;
+
+                $model->white_half_sss = ($model->white_half_sss) ?: $white_half;
+                $model->yellow_half_sss = ($model->yellow_half_sss) ?: $yellow_half;
+                $model->red_half_sss = ($model->red_half_sss) ?: $red_half;
+
+                $model->white_first_second_sss = ($model->white_first_second_sss) ?: 0;
+                $model->white_second_third_sss = ($model->white_second_third_sss) ?: 0;
+                $model->white_first_third_sss = ($model->white_first_third_sss) ?: 0;
+
+                $model->yellow_first_second_sss = ($model->yellow_first_second_sss) ?: 0;
+                $model->yellow_second_third_sss = ($model->yellow_second_third_sss) ?: 0;
+                $model->yellow_first_third_sss = ($model->yellow_first_third_sss) ?: 0;
+
+                $model->red_first_second_sss = ($model->red_first_second_sss) ?: 0;
+                $model->red_second_third_sss = ($model->red_second_third_sss) ?: 0;
+                $model->red_first_third_sss = ($model->red_first_third_sss) ?: 0;
+                
+                $model->white_sss = ($model->white_sss) ?: 0;
+                $model->yellow_sss = ($model->yellow_sss) ?: 0;
+                $model->red_sss = ($model->red_sss) ?: 0;                
+
+            } 
 
         });
-
-
-
-
-
-
-
-
-
-
-
 
 
 

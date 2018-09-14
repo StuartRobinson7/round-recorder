@@ -59,15 +59,6 @@
 
                             <div class="row">
 
-                            <div class="col-12 col-lg">
-
-                                <div class="form-group">
-                                    <label>SSS</label>
-                                    <input id="sss" type="text" class="form-control {{ $errors->has('sss') ? ' is-invalid' : '' }}" name="sss" value="{{ old('sss', $course_info->sss) }}"> 
-                                </div>
-
-                            </div>
-
                             <div class="col-lg">
 
                                 

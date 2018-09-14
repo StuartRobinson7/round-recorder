@@ -65,3 +65,33 @@ $light:                     $gray-100;
 $dark:                      $gray-800;
 
 
+.white{
+  background: $white;
+  color: $gray-900;
+
+  .form-control{
+    border-color: $gray-400;
+  }
+}
+
+.yellow{
+  background: $yellow;
+  color: $gray-900;
+
+  .form-control{
+    border-color: darken($yellow, 10);
+  }  
+}
+
+.red{
+  background: $red;
+  color: $white;
+
+  label{
+    color:$white;
+  }
+
+  .form-control{
+    border-color: darken($red, 10);
+  }  
+}

@@ -215,8 +215,16 @@ class GetCareerStats {
 
         }
 
-        // calculate percentage
-        $fir_percentage = $fairways_hit / $fairways_available * 100;
+        if($fairways_available === 0){
+
+            $fir_percentage = 0;
+
+        }
+        else{
+
+            $fir_percentage = $fairways_hit / $fairways_available * 100;
+
+        }
 
         // add to object
         $career_stats->fir_percentage = $fir_percentage;
@@ -237,7 +245,12 @@ class GetCareerStats {
 
         }
 
-        $gir_percentage = $greens_hit / $hole_count * 100;
+        if($greens_hit === 0){
+            $gir_percentage = 0;
+        }
+        else{
+            $gir_percentage = $greens_hit / $hole_count * 100;
+        }
 
         $career_stats->greens_hit = $greens_hit;
 
@@ -255,8 +268,13 @@ class GetCareerStats {
 
         }
 
-        $putts_per_hole = $total_putts / $hole_count;
-
+        if($total_putts === 0){
+            $putts_per_hole = 0;
+        }
+        else{
+            $putts_per_hole = $total_putts / $hole_count;
+        }
+        
         $career_stats->total_putts = $total_putts;
 
         $career_stats->putts_per_hole = $putts_per_hole;     
@@ -504,7 +522,13 @@ class GetCareerStats {
 
         }
 
-        $scrambling = $total_scrambles / $total_chances * 100;
+
+        if($total_scrambles === 0){
+            $scrambling = 0;
+        }
+        else{
+            $scrambling = $total_scrambles / $total_chances * 100;
+        }        
 
         $career_stats->scrambling = $scrambling;
 

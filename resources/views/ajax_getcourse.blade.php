@@ -1,8 +1,4 @@
 
-
-
-
-
     @if($selected_nine === 'first-nine' || $selected_nine === 'first-nine-second-nine' || $selected_nine === 'first-nine-third-nine')
     
         @if($course_data->holes === 27)

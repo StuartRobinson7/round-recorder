@@ -27,6 +27,106 @@
                     </div>
                     <!--/.row -->  
 
+
+
+                <div class="row">
+
+                    <div class="col-12 col-lg">
+
+                        <div class="form-group">
+                            <label>First Nine & Second Nine SSS</label>
+
+                            <div class="row">
+                            
+                                <div class="col">
+                                    <label>White</label>
+                                    <input id="white_first_second_sss" type="text" class="form-control {{ $errors->has('white_first_second_sss') ? ' is-invalid' : '' }}" name="white_first_second_sss" value="{{ old('white_first_second_sss', $course_info->white_first_second_sss) }}"> 
+                                </div>
+
+                                <div class="col">
+                                    <label>Yellow</label>
+                                    <input id="yellow_first_second_sss" type="text" class="form-control {{ $errors->has('yellow_first_second_sss') ? ' is-invalid' : '' }}" name="yellow_first_second_sss" value="{{ old('yellow_first_second_sss', $course_info->yellow_first_second_sss) }}"> 
+                                </div>
+
+                                <div class="col">
+                                    <label>Red</label>
+                                    <input id="red_first_second_sss" type="text" class="form-control {{ $errors->has('red_first_second_sss') ? ' is-invalid' : '' }}" name="red_first_second_sss" value="{{ old('red_first_second_sss', $course_info->red_first_second_sss) }}"> 
+                                </div>                                                                
+
+                            </div>
+                            <!--/.row -->
+
+                            
+                        </div> 
+
+                    </div>
+
+                    <div class="col-12 col-lg">
+
+                        <div class="form-group">
+
+                            <label>Second Nine & Third Nine SSS</label>
+
+                            <div class="row">
+                                
+                                <div class="col">
+                                    <label>White</label>
+                                    <input id="white_second_third_sss" type="text" class="form-control {{ $errors->has('white_second_third_sss') ? ' is-invalid' : '' }}" name="white_second_third_sss" value="{{ old('white_second_third_sss', $course_info->white_second_third_sss) }}"> 
+                                </div>
+
+                                <div class="col">
+                                    <label>Yellow</label>                                
+                                    <input id="yellow_second_third_sss" type="text" class="form-control {{ $errors->has('yellow_second_third_sss') ? ' is-invalid' : '' }}" name="yellow_second_third_sss" value="{{ old('yellow_second_third_sss', $course_info->yellow_second_third_sss) }}"> 
+                                </div>
+
+                                <div class="col">
+                                    <label>Red</label>
+                                    <input id="red_second_third_sss" type="text" class="form-control {{ $errors->has('red_second_third_sss') ? ' is-invalid' : '' }}" name="red_second_third_sss" value="{{ old('red_second_third_sss', $course_info->red_second_third_sss) }}"> 
+                                </div>                                                                
+
+                            </div>
+                            <!--/.row -->
+
+                        </div> 
+
+                    </div>
+
+                    <div class="col-12 col-lg">
+
+                        <div class="form-group">
+                            <label>First Nine & Third Nine SSS</label>
+
+
+                            <div class="row">
+                                
+                                <div class="col">
+                                    <label>White</label>                                
+                                    <input id="white_first_third_sss" type="text" class="form-control {{ $errors->has('white_first_third_sss') ? ' is-invalid' : '' }}" name="white_first_third_sss" value="{{ old('white_first_third_sss', $course_info->white_first_third_sss) }}"> 
+                                </div>
+
+                                <div class="col">
+                                    <label>Yellow</label>                                
+                                    <input id="yellow_first_third_sss" type="text" class="form-control {{ $errors->has('yellow_first_third_sss') ? ' is-invalid' : '' }}" name="yellow_first_third_sss" value="{{ old('yellow_first_third_sss', $course_info->yellow_first_third_sss) }}"> 
+                                </div>
+
+                                <div class="col">
+                                    <label>Red</label>
+                                    <input id="red_first_third_sss" type="text" class="form-control {{ $errors->has('red_first_third_sss') ? ' is-invalid' : '' }}" name="red_first_third_sss" value="{{ old('red_first_third_sss', $course_info->red_first_third_sss) }}"> 
+                                </div>                                                                
+
+                            </div>
+                            <!--/.row -->
+
+                        </div> 
+
+                    </div>  
+
+                </div>
+                <!--/.row -->   
+
+
+
+
                     @endif
                     
                     <div class="add-tee-box white-tees">
@@ -38,6 +138,19 @@
 
                     <div class="collapse" id="whiteTees">
 
+                        @if($selected_size === '9')
+                            <div class="form-group">
+                                <label>SSS</label>
+                                <input id="white_half_sss" type="text" class="form-control {{ $errors->has('white_half_sss') ? ' is-invalid' : '' }}" name="white_half_sss" value="{{ old('white_half_sss', $course_info->white_half_sss) }}"> 
+                            </div>                                              
+                        @elseif($selected_size === '18')
+                            <div class="form-group">
+                                <label>SSS</label>
+                                <input id="white_sss" type="text" class="form-control {{ $errors->has('white_sss') ? ' is-invalid' : '' }}" name="white_sss" value="{{ old('white_sss', $course_info->white_sss) }}"> 
+                            </div>                      
+                        @endif
+ 
+
                         @if($selected_size === '27')
 
                             <h3>{{ $course_info->first_nine_name}}</h3>
@@ -45,6 +158,8 @@
                         @elseif($selected_size === '18')  
 
                             <h3>Front Nine</h3>
+
+                        @else                            
 
                         @endif
 
@@ -787,6 +902,19 @@
 
                     <div class="collapse show" id="yellowTees">
 
+                        @if($selected_size === '9')
+                            <div class="form-group">
+                                <label>SSS</label>
+                                <input id="yellow_half_sss" type="text" class="form-control {{ $errors->has('yellow_half_sss') ? ' is-invalid' : '' }}" name="yellow_half_sss" value="{{ old('yellow_half_sss', $course_info->yellow_half_sss) }}"> 
+                            </div>                                              
+                        @elseif($selected_size === '18')
+                            <div class="form-group">
+                                <label>SSS</label>
+                                <input id="yellow_sss" type="text" class="form-control {{ $errors->has('yellow_sss') ? ' is-invalid' : '' }}" name="yellow_sss" value="{{ old('yellow_sss', $course_info->yellow_sss) }}"> 
+                            </div>                      
+                        @endif
+
+
                         @if($selected_size === '27')
 
                         <h3>{{ $course_info->first_nine_name}}</h3>
@@ -1527,6 +1655,19 @@
                     </button>
 
                     <div class="collapse" id="redTees">
+
+
+                        @if($selected_size === '9')
+                            <div class="form-group">
+                                <label>SSS</label>
+                                <input id="red_half_sss" type="text" class="form-control {{ $errors->has('red_half_sss') ? ' is-invalid' : '' }}" name="red_half_sss" value="{{ old('red_half_sss', $course_info->red_half_sss) }}"> 
+                            </div>                                              
+                        @elseif($selected_size === '18')
+                            <div class="form-group">
+                                <label>SSS</label>
+                                <input id="red_sss" type="text" class="form-control {{ $errors->has('red_sss') ? ' is-invalid' : '' }}" name="red_sss" value="{{ old('red_sss', $course_info->red_sss) }}"> 
+                            </div>                      
+                        @endif                    
 
                         @if($selected_size === '27')
 

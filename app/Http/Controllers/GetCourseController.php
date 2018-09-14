@@ -106,7 +106,7 @@ class GetCourseController extends Controller
 
         $selected_size = $request->selected_holes;
 
-        $view = view('/ajax_holes', compact('selected_size'))->render();
+        $view = view('/ajax_getholes', compact('selected_size'))->render();
 
         $view = trim(preg_replace('/\r\n/', ' ', $view));              
 
