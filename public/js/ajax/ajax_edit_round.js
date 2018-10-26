@@ -78,6 +78,21 @@ module.exports = __webpack_require__(18);
 
 $(document).ready(function () {
 
+    if ($(this).prop("checked")) {
+        $('.show-stats').show();
+    } else {
+        $('.show-stats').hide();
+    }
+
+    $('#stats_round').change(function () {
+
+        if ($(this).prop("checked")) {
+            $('.show-stats').show();
+        } else {
+            $('.show-stats').hide();
+        }
+    });
+
     function roundTotals($class, $id) {
 
         var $total = 0;

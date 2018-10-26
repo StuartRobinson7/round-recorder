@@ -2,27 +2,530 @@
 // Forms ----------------------------------
 // ========================================
 
-// Bootstrap Overrides
-.custom-control-label::before {
-    top:0.25rem;
-    background: $border-color;
-}
+.form-holder{
+    background: $gray-100;
+    padding: 1.5rem;
 
-.custom-radio .custom-control-input:checked ~ .custom-control-label::before{
-    background: $border-color;
-}
+    .title{
+        margin: 0;
 
-.custom-control-label::after {
-    top:0.25rem;
+        span{
+            background: $gray-100;
+        }
+    }
 }
 
 label{
+    margin-top: 1rem;
     color: $gray-700;
 }
 
 .form-control{
     border-color: $border-color;
     border-width: 2px;
+
+    &:focus{
+        border-color: $theme-1;
+        box-shadow:0 0 0 0.2rem rgba(1, 143, 110, 0.3);
+    }
+}
+
+
+
+.hidden{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+// date picker
+
+.datepicker{
+    font-size: 14px !important;
+    //margin-top:60px;
+    padding: 0.75rem !important;
+    min-width: inherit !important;
+    max-width: 300px;
+
+    td, th{
+        border: 1px solid $border-color !important;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 0 !important;
+    }
+
+    td{
+        &:hover{
+            background: tint($theme-1, 90) !important;
+        }
+    }
+
+    td.disabled{
+        background: $gray-100 !important; 
+        
+        &:hover{
+            background: $gray-100 !important;
+        }
+    }
+
+    th{
+        background: $gray-200;
+    }
+
+    thead{
+        tr:nth-child(2){
+            background: $theme-1;
+        }
+    }
+
+    .datepicker-switch{
+        @extend %text-bold;
+        @extend %caps;
+        border: none !important;
+        background: none !important;
+        color:$white; 
+        
+        &:hover{
+            background: shade($theme-1, 10) !important; 
+        }
+    }
+    .prev, .next{
+        @extend %text-bold;
+        @extend %caps;
+        border: none !important;
+        background: none !important;
+        color:$white;
+
+        &:hover{
+            background: shade($theme-1, 10) !important; 
+        }               
+    }
+
+    .active.day{
+        background: $theme-1 !important;
+    }
+}
+
+// Switch
+
+$switch-height: calc(#{$input-height} * .8) !default;
+$switch-height-sm: calc(#{$input-height-sm} * .8) !default;
+$switch-height-lg: calc(#{$input-height-lg} * .8) !default;
+$switch-border-radius: $switch-height !default;
+$switch-bg: $custom-control-indicator-bg !default;
+$switch-checked-bg: $theme-1 !default;
+$switch-disabled-bg: #ff0000;
+$switch-disabled-color: #ffcc00;
+$switch-thumb-bg: $white !default;
+$switch-thumb-border-radius: 50% !default;
+$switch-thumb-padding: 2px !default;
+$switch-focus-box-shadow: 0 0 0 $input-btn-focus-width rgba(1, 143, 110, 0.3);
+$switch-transition: .2s all !default;
+
+.switch {
+  font-size: $font-size-base;
+  position: relative;
+
+  input {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    background: none;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    overflow: hidden;
+    padding: 0;
+
+    + label {
+      position: relative;
+      min-width: calc(#{$switch-height} * 2);
+      border-radius: $switch-border-radius;
+      height: $switch-height;
+      line-height: $switch-height;
+      display: inline-block;
+      cursor: pointer;
+      outline: none;
+      user-select: none;
+      vertical-align: middle;
+      text-indent: calc(calc(#{$switch-height} * 2) + .5rem);
+    }
+
+    + label::before,
+    + label::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(#{$switch-height} * 2);
+      bottom: 0;
+      display: block;
+    }
+
+    + label::before {
+      right: 0;
+      background-color: $switch-bg;
+      border-radius: $switch-border-radius;
+      transition: $switch-transition;
+    }
+
+    + label::after {
+      top: $switch-thumb-padding;
+      left: $switch-thumb-padding;
+      width: calc(#{$switch-height} - calc(#{$switch-thumb-padding} * 2));
+      height: calc(#{$switch-height} - calc(#{$switch-thumb-padding} * 2));
+      border-radius: $switch-thumb-border-radius;
+      background-color: $switch-thumb-bg;
+      transition: $switch-transition;
+      z-index: 3;
+    }
+
+    &:checked + label::before {
+      background-color: $switch-checked-bg;
+    }
+
+    &:checked + label::after {
+      margin-left: $switch-height;
+    }
+
+    &:focus + label::before {
+      outline: none;
+      box-shadow: $switch-focus-box-shadow;
+    }
+
+    &:disabled + label {
+      color: $switch-disabled-color;
+      cursor: not-allowed;
+    }
+
+    &:disabled + label::before {
+      background-color: $switch-disabled-bg;
+    }
+  }
+
+  // Small variation
+  &.switch-sm {
+    font-size: $font-size-sm;
+
+    input {
+      + label {
+        min-width: calc(#{$switch-height-sm} * 2);
+        height: $switch-height-sm;
+        line-height: $switch-height-sm;
+        text-indent: calc(calc(#{$switch-height-sm} * 2) + .5rem);
+      }
+
+      + label::before {
+        width: calc(#{$switch-height-sm} * 2);
+      }
+
+      + label::after {
+        width: calc(#{$switch-height-sm} - calc(#{$switch-thumb-padding} * 2));
+        height: calc(#{$switch-height-sm} - calc(#{$switch-thumb-padding} * 2));
+      }
+
+      &:checked + label::after {
+        margin-left: $switch-height-sm;
+      }
+    }
+  }
+
+  // Large variation
+  &.switch-lg {
+    font-size: $font-size-base;
+
+    input {
+      + label {
+        min-width: calc(#{$switch-height-lg} * 2);
+        height: $switch-height-lg;
+        line-height: $switch-height-lg;
+        text-indent: calc(calc(#{$switch-height-lg} * 2) + .5rem);
+        margin: 0.75rem 0 0;
+      }
+
+      + label::before {
+        width: calc(#{$switch-height-lg} * 2);
+      }
+
+      + label::after {
+        width: calc(#{$switch-height-lg} - calc(#{$switch-thumb-padding} * 2));
+        height: calc(#{$switch-height-lg} - calc(#{$switch-thumb-padding} * 2));
+      }
+
+      &:checked + label::after {
+        margin-left: $switch-height-lg;
+      }
+    }
+  }
+
+  + .switch {
+    margin-left: 1rem;
+  }
+
+
+  &:before{
+      @include vertical-align(absolute);
+      content: 'YES';
+      color: $white;
+      font-size: 14px;
+      font-weight: bold;
+      z-index: 1;
+      left: 10px;
+      margin-top: 8px;
+      
+  }
+
+  &:after{
+    @include vertical-align(absolute);
+    content: 'NO';
+    color: $gray-600;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 1;
+    left: 43px;
+    margin-top: 8px;
+    
+}
+
+
+}
+
+
+.radio-group{
+    border-radius: 0.25rem;
+    display: inline-block;
+    font-size: 0;
+    margin-bottom: $vertical-rhythm;
+
+    // radio buttons 
+    .custom-radio{
+        margin: 0;
+        display: inline-block;
+        padding: 0 1rem 0 2rem;
+        background-image: linear-gradient(to bottom, $white, $white);
+        background-repeat: repeat-x; 
+        //background: $white;       
+
+
+        border: 2px solid $border-color;
+
+        .form-check-inline{
+            margin-right: 2rem;        
+        }
+
+        .custom-control-label{
+            @include font-size(18px);
+            @extend %text-base;
+            display: block;
+            padding: 0.7rem 0 0.75rem; 
+            cursor: pointer;
+            margin: 0;       
+        }
+
+        .custom-control-label::before{
+            background: $border-color;
+            top: 0.95rem;
+            left: 0.5rem;            
+            margin: 0;            
+        }    
+
+        .custom-control-label::after {
+            top: 0.45rem;
+            margin: 0.5rem;
+        }
+
+    
+        .custom-control-input:checked ~ .custom-control-label::before{
+            background: $theme-1;
+        }    
+        
+        .custom-control-input:focus ~ .custom-control-label::before {
+            box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(1, 143, 110, 0.3);
+        }        
+    }
+
+    .custom-radio:first-child{
+        border-radius: 0.25rem 0 0 0.25rem;
+        margin-right: -2px;
+    }
+
+    .custom-radio:last-child{
+        border-radius: 0 0.25rem 0.25rem 0;
+        margin-left: -2px;
+    }    
+
+
+    .custom-radio.white{
+        background-image: none;
+        border: 2px solid $border-color;   
+    
+        .custom-control-label::before{
+            background: shade($white, 20);
+        }     
+    
+        .custom-control-input:checked ~ .custom-control-label::before{
+            background: shade($white, 50);
+        }    
+
+        .custom-control-input:focus ~ .custom-control-label::before {
+            box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(204, 204, 204, 0.6);
+        }         
+    }
+    
+    .custom-radio.yellow{
+        background-image: none;
+        border: 2px solid shade($warning, 10);
+    
+        .custom-control-label::before{
+            background: shade($warning, 20);
+        }
+    
+        .custom-control-input:checked ~ .custom-control-label::before{
+            background: shade($warning, 50);
+        }     
+        
+        .custom-control-input:focus ~ .custom-control-label::before {
+            box-shadow: 0 0 0 1px $warning, 0 0 0 0.2rem rgba(128, 97, 4, 0.3);
+        }           
+    }
+    
+    .custom-radio.red{
+        background-image: none;
+        border: 2px solid shade($danger, 10);
+    
+        .custom-control-label::before{
+            background: shade($danger, 20);
+        }    
+    
+        .custom-control-input:checked ~ .custom-control-label::before{
+            background: shade($danger, 50);
+        }      
+
+        .custom-control-input:focus ~ .custom-control-label::before {
+            box-shadow: 0 0 0 1px $danger, 0 0 0 0.2rem rgba(110, 27, 35, 0.3);
+        }         
+    }    
+}
+
+
+
+
+
+
+
+
+
+.btn-group-toggle{
+
+
+    label{
+        margin: 0;
+    }
+
+    .btn-light{
+        @extend %text-base;
+        @include gradient-directional($gray-200, $white, 0deg);
+        text-transform: none;        
+        border: 2px solid $border-color;
+    }
+
+    .btn-light.active{
+        
+    }   
+    
+    .btn-light.red{
+        background: $danger;
+        color: $white;
+        border-color: shade($danger, 10%);
+    }
+
+    .btn-light.yellow{
+        background: $warning;
+        border-color: shade($warning, 10%);
+    } 
+
+    .btn-light.white{
+        background: $white;
+    }     
+
+    
+    .btn-light.red.active{
+        background: $danger;
+        color: $white;
+        border-color: shade($danger, 10%);
+    }
+
+    .btn-light.yellow.active{
+        background: $warning;
+        border-color: shade($warning, 10%);
+    }   
+    
+    .btn-light.white.active{
+        background: $white;
+    }   
+    
+
+}
+
+
+
+
+
+
+.tooltip{
+    z-index: 9999;
+}
+
+// Tooltip Helpers
+.form-tooltip{
+    @include font-size(24px);
+    @include vertical-align();
+    position: absolute;
+    right: 0.25em;
+    color: $blue; 
+}
+
+.form-control-tooltip{
+    padding-right: 2em;
+}
+
+.form-tooltip-static{
+    position: relative;
+    top:inherit;
+    right: 0;
+}
+
+.tooltip-inner{
+    @extend %number;
+    text-align: left;
+    max-width: 300px !important;
+    padding: 0.75em;
+
+    h4{
+        margin-bottom: 0.5em;
+    }
+
+    p:last-child{
+        margin-bottom: 0;
+    }
+}
+
+.tooltip-inner {
+    background-color: $blue;
+}
+.tooltip.bs-tooltip-right .arrow:before {
+    border-right-color: $blue !important;
+}
+.tooltip.bs-tooltip-left .arrow:before {
+    border-left-color: $blue !important;
+}
+.tooltip.bs-tooltip-bottom .arrow:before {
+    border-bottom-color: $blue !important;
+}
+.tooltip.bs-tooltip-top .arrow:before {
+    border-top-color: $blue !important;
 }
 
 
@@ -30,11 +533,10 @@ label{
 
 // override default bootstrap styles
 .btn {
-    @extend %caps;
-    @extend %heading-base;
-
-
+    @extend %heading-thin;
+    font-weight: normal;
     color: $white; 
+    //@include font-size(24px);
 
     #{$a-tags-hover} {
         background: $black;
@@ -60,7 +562,7 @@ label{
 
 // call-to-action 
 .btn-cta {
-    @extend %heading-base;
+    //@extend %heading-base;
 
     position: relative;
     background: $cta;
@@ -89,5 +591,9 @@ label{
     }
 
     //#{$a-tags-hover} {}
+}
+
+.btn-warning{
+    color: $body-color;
 }
 

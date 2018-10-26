@@ -77,11 +77,13 @@ class GetCourseController extends Controller
 
         $selected_nine = $request->selected_nine;
 
+        $selected_stats = $request->selected_stats;
+
         $course_data = $this->GetCourseInfo->courseInfo($selected_id);
 
         $course_totals = $this->GetCourseTotals->courseTotals($selected_id);
 
-        $view = view('/ajax_getcourse', ['course_data' => $course_data, 'course_totals' => $course_totals, 'selected_yards' => $selected_yards, 'selected_size' => $selected_size, 'selected_nine' => $selected_nine])->render(); 
+        $view = view('/ajax_getcourse', ['course_data' => $course_data, 'course_totals' => $course_totals, 'selected_yards' => $selected_yards, 'selected_size' => $selected_size, 'selected_nine' => $selected_nine, 'selected_stats' => $selected_stats])->render(); 
 
         $view = trim(preg_replace('/\r\n/', ' ', $view));                
 
@@ -91,15 +93,32 @@ class GetCourseController extends Controller
 
     public function GetCourseYards(Request $request){ 
 
+        $selected_id = $request->selected_course_id;
         $selected_yards = $request->selected_yards;
+        $selected_nine = $request->selected_nine;
+        $selected_stats = $request->selected_stats;
 
-        $view = view('/ajax_getcourse', ['selected_yards' => $selected_yards])->render(); 
+        $view = view('/ajax_getcourse', ['selected_yards' => $selected_yards, 'selected_nine' => $selected_nine, 'selected_stats' => $selected_stats])->render(); 
 
         $view = trim(preg_replace('/\r\n/', ' ', $view));                
 
         return response()->json($view);
 
-    }    
+    }   
+    
+    public function GetCourseStats(Request $request){ 
+
+        $selected_yards = $request->selected_yards;
+        $selected_nine = $request->selected_nine;
+        $selected_stats = $request->selected_stats;
+
+        $view = view('/ajax_getcourse', ['selected_yards' => $selected_yards, 'selected_nine' => $selected_nine, 'selected_stats' => $selected_stats])->render(); 
+
+        $view = trim(preg_replace('/\r\n/', ' ', $view));                
+
+        return response()->json($view);
+
+    }       
 
 
     public function GetCourseHoles(Request $request){

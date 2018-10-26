@@ -34,6 +34,14 @@ $font-path:'/fonts/';
     @include font-family(DosisExtraLight, dosis-extralight-webfont);
     
 
+// Droid Serif ========================
+
+    @include font-family(DroidSerif, DroidSerif-Regular-webfont);
+    @include font-family(DroidSerifItalic, DroidSerif-Italic-webfont);
+
+    @include font-family(DroidSerifBold, DroidSerif-Bold-webfont);
+    @include font-family(DroidSerifBoldItalic, DroidSerif-Bold-webfont);
+
 
 
 

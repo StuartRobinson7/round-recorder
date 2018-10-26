@@ -8,9 +8,14 @@
 
 .alert{
     @extend %number;
-    padding-left: 3rem;
+    //padding-left: 3rem;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    padding: 1rem 0; 
     position: relative;
     overflow: hidden;
+    margin-bottom: 1rem;
 
     // remove margin from last <p> tag
     p:last-of-type {
@@ -22,27 +27,32 @@
         margin-bottom: 0.5rem;
     }
 
-        
+    .container-fluid{ 
+        position: relative;
+        padding-left: 3.5rem;
+
         &:before{
             @extend .far;
             @include vertical-align(absolute);
             @include font-size(22px);           
             content: '\f06a';
-            left: 0.5rem;
+            left: 1rem;
             z-index: 2;           
         }
 
         &:after{
             @include pseudo-cover;
             right: inherit;
-            width: 2.5rem;
+            width: 3rem;
             z-index: 1;
             border-right-width: 1px;
             border-right-style: solid;
             border-right-color: inherit;
         }
-
+        
+    }   
 }
+
 
     // slight adjustments according to heading size
     //h1{
@@ -60,21 +70,34 @@
 
 
 // specify icons for alert types
+
 .alert-success{
-    &:before{
-        content: '\f058';
+
+    border-color: tint($theme-1, 65);
+
+    .container-fluid{
+
+        border-color: tint($theme-1, 65);
+
+        &:before{
+            content: '\f058';
+        }
     }
 }
 
 .alert-info{
-    &:before{
-        content: '\f05a';
+    .container-fluid{
+        &:before{
+            content: '\f05a';
+        }
     }
 }
 
 .alert-danger,
 .alert-warning{
-    &:before{
-        content:'\f071';
+    .container-fluid{
+        &:before{
+            content:'\f071';
+        }
     }
 }

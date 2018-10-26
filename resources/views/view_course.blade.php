@@ -6,6 +6,7 @@
 
             <div class="container view-course">
 
+
                 <div class="row">
 
                         <div class="col">
@@ -18,17 +19,7 @@
 
                 </div>
                 <!--/.row -->
-            
-
-
-                @if(Session::has('message'))
-                <div class="alert alert-{{ Session::get('message-type') }} alert-dismissable fade show" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                        </button>
-                        <i class="glyphicon glyphicon-{{ Session::get('message-type') == 'success' ? 'ok' : 'remove'}}"></i> {{ Session::get('message') }}
-                </div>
-                @endif                 
+                           
 
 
 

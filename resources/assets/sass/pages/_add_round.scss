@@ -4,6 +4,8 @@
 
 
 
+
+
 .add-round-row{
     @extend .align-items-center;
     @extend %number;
@@ -24,6 +26,30 @@
     .col:first-child{
         text-align: right;
     }
+
+
+    .custom-checkbox{
+        margin: 0 auto;
+        padding: 0;
+        width: 1rem; 
+    
+        label{
+            
+    
+            &:before{
+                top: 0.75rem;
+                margin: 0 auto;
+            }
+    
+            &:after{
+                top: 0.75rem;
+            }
+        }
+    
+        input{        
+            width: 0;
+        }
+    }    
 
 }
 

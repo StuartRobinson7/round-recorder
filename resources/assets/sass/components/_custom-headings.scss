@@ -3,13 +3,16 @@
 // ========================================
 
 // title
-.title {position: relative;
+.title {
+    position: relative;
+
     span{
         background-color: $body-bg; 
-        padding: 1rem 1rem 1rem 0;
+        padding: 0 1rem 0 0;
         position: relative;
         z-index: 1;
     }
+    
     &:before{
         @include vertical-align(absolute);
         content: '';

@@ -1,8 +1,5 @@
 $(document).ready(function(){
 
-
-    //var course_id = json_encode($id);
-
     // bring back selected holes
     function selectHoles() {
 
@@ -19,25 +16,9 @@ $(document).ready(function(){
             dataType: "json",
             method: 'get',
             data: {selected_holes: selected_holes, course_id: course_id},      
-            success: function (response) {
-                
+            success: function (response) {               
                 // return holes
-                $("#get-holes").html(response);
-
-                // show plus/minus icons
-                $('.btn-collapse').each(function(){
-                    if($(this).hasClass('collapsed')) {
-                        $(this).find('i').addClass('fa-plus-circle')
-                    }
-                    else{
-                        $(this).find('i').addClass('fa-minus-circle');
-                    }                 
-                });    
-            
-                // toggle icons on click
-                $('.btn-collapse').click(function(){
-                    $(this).find('i').toggleClass('fa-minus-circle').toggleClass('fa-plus-circle');                 
-                });                   
+                $("#get-holes").html(response);                 
             },
             error:function(error){ 
                 console.log(error)
@@ -49,8 +30,12 @@ $(document).ready(function(){
     $('input:radio[name=holes]').each(selectHoles);
 
     // run on radio change
-    $('input:radio[name=holes]').change(selectHoles);
-            
+    $('input:radio[name=holes]').change(selectHoles);  
+    
+    // Enable Tooltips
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })    
 
 });
 
@@ -117,7 +102,6 @@ $(document).ajaxSuccess(function () {
 
     }
 
-
     courseTotals(".first-white-yards","#firstWhiteYards");
     courseTotals(".first-white-par","#firstWhitePar");
     courseTotals(".first-yellow-yards","#firstYellowYards");
@@ -139,6 +123,9 @@ $(document).ajaxSuccess(function () {
     courseTotals(".third-red-yards","#thirdRedYards");
     courseTotals(".third-red-par","#thirdRedPar");     
 
-
+    // Enable Tooltips
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
 
 });

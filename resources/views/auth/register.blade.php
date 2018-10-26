@@ -37,19 +37,7 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>        
-
-                        <div class="form-group row">
-                            <label for="hand" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
-
-                            <div class="col-md-6">
-                                <select id="gender" class="form-control" name="gender" required>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                    <option value="none-specific">None Specific</option>
-                                </select>
-                            </div>
-                        </div>                                            
+                        </div>                                                  
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -69,7 +57,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                <input id="password" type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
@@ -91,20 +79,22 @@
                             <label for="handicap" class="col-md-4 col-form-label text-md-right">{{ __('Handicap') }}</label>
 
                             <div class="col-md-6">
-                                <input id="handicap" class="form-control" name="handicap" min="0" max="54" type="number" step="00.1">
+                                <input id="handicap" class="form-control" name="handicap" type="number" min="0" max="100" step="0.1">
                             </div>
-                        </div> 
+                        </div>  
 
                         <div class="form-group row">
-                            <label for="hand" class="col-md-4 col-form-label text-md-right">{{ __('Right/Left Handed') }}</label>
+                            <label for="preferred_tees" class="col-md-4 col-form-label text-md-right">{{ __('Preferred Tees') }}</label>
 
                             <div class="col-md-6">
-                                <select id="hand" class="form-control" name="hand" required>
-                                    <option value="right">Right</option>
-                                    <option value="left">Left</option>
+                                <select id="preferred_tees" class="form-control {{ $errors->has('preferred_tees') ? ' is-invalid' : '' }}" name="preferred_tees">
+                                    <option value="" selected disabled>Please Select</option>
+                                    <option value="whites">White Tees</option>
+                                    <option value="yellows">Yellow Tees</option>
+                                    <option value="reds">Red Tees</option>
                                 </select>
                             </div>
-                        </div>                                               
+                        </div>                                                                      
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
@@ -113,6 +103,7 @@
                                 </button>
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>

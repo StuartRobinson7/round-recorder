@@ -46,101 +46,36 @@ class GetRoundResult {
         $hole_26_plus_minus = 0;
         $hole_27_plus_minus = 0;       
 
-        if($round_result->yards === 'white'){
 
-            $hole_1_plus_minus = intval($round_result->hole_1_white_par) - intval($round_result->hole_1_score);
-            $hole_2_plus_minus = intval($round_result->hole_2_white_par) - intval($round_result->hole_2_score);
-            $hole_3_plus_minus = intval($round_result->hole_3_white_par) - intval($round_result->hole_3_score);
-            $hole_4_plus_minus = intval($round_result->hole_4_white_par) - intval($round_result->hole_4_score);
-            $hole_5_plus_minus = intval($round_result->hole_5_white_par) - intval($round_result->hole_5_score);
-            $hole_6_plus_minus = intval($round_result->hole_6_white_par) - intval($round_result->hole_6_score);
-            $hole_7_plus_minus = intval($round_result->hole_7_white_par) - intval($round_result->hole_7_score);
-            $hole_8_plus_minus = intval($round_result->hole_8_white_par) - intval($round_result->hole_8_score);
-            $hole_9_plus_minus = intval($round_result->hole_9_white_par) - intval($round_result->hole_9_score);
-            $hole_10_plus_minus = intval($round_result->hole_10_white_par) - intval($round_result->hole_10_score);
-            $hole_11_plus_minus = intval($round_result->hole_11_white_par) - intval($round_result->hole_11_score);
-            $hole_12_plus_minus = intval($round_result->hole_12_white_par) - intval($round_result->hole_12_score);
-            $hole_13_plus_minus = intval($round_result->hole_13_white_par) - intval($round_result->hole_13_score);
-            $hole_14_plus_minus = intval($round_result->hole_14_white_par) - intval($round_result->hole_14_score);
-            $hole_15_plus_minus = intval($round_result->hole_15_white_par) - intval($round_result->hole_15_score);
-            $hole_16_plus_minus = intval($round_result->hole_16_white_par) - intval($round_result->hole_16_score);
-            $hole_17_plus_minus = intval($round_result->hole_17_white_par) - intval($round_result->hole_17_score);
-            $hole_18_plus_minus = intval($round_result->hole_18_white_par) - intval($round_result->hole_18_score);
-            $hole_19_plus_minus = intval($round_result->hole_19_white_par) - intval($round_result->hole_19_score);
-            $hole_20_plus_minus = intval($round_result->hole_20_white_par) - intval($round_result->hole_20_score);
-            $hole_21_plus_minus = intval($round_result->hole_21_white_par) - intval($round_result->hole_21_score);
-            $hole_22_plus_minus = intval($round_result->hole_22_white_par) - intval($round_result->hole_22_score);
-            $hole_23_plus_minus = intval($round_result->hole_23_white_par) - intval($round_result->hole_23_score);
-            $hole_24_plus_minus = intval($round_result->hole_24_white_par) - intval($round_result->hole_24_score);
-            $hole_25_plus_minus = intval($round_result->hole_25_white_par) - intval($round_result->hole_25_score);
-            $hole_26_plus_minus = intval($round_result->hole_26_white_par) - intval($round_result->hole_26_score);
-            $hole_27_plus_minus = intval($round_result->hole_27_white_par) - intval($round_result->hole_27_score);
+        $hole_1_plus_minus = intval($round_result->hole_1_par) - intval($round_result->hole_1_score);
+        $hole_2_plus_minus = intval($round_result->hole_2_par) - intval($round_result->hole_2_score);
+        $hole_3_plus_minus = intval($round_result->hole_3_par) - intval($round_result->hole_3_score);
+        $hole_4_plus_minus = intval($round_result->hole_4_par) - intval($round_result->hole_4_score);
+        $hole_5_plus_minus = intval($round_result->hole_5_par) - intval($round_result->hole_5_score);
+        $hole_6_plus_minus = intval($round_result->hole_6_par) - intval($round_result->hole_6_score);
+        $hole_7_plus_minus = intval($round_result->hole_7_par) - intval($round_result->hole_7_score);
+        $hole_8_plus_minus = intval($round_result->hole_8_par) - intval($round_result->hole_8_score);
+        $hole_9_plus_minus = intval($round_result->hole_9_par) - intval($round_result->hole_9_score);
+        $hole_10_plus_minus = intval($round_result->hole_10_par) - intval($round_result->hole_10_score);
+        $hole_11_plus_minus = intval($round_result->hole_11_par) - intval($round_result->hole_11_score);
+        $hole_12_plus_minus = intval($round_result->hole_12_par) - intval($round_result->hole_12_score);
+        $hole_13_plus_minus = intval($round_result->hole_13_par) - intval($round_result->hole_13_score);
+        $hole_14_plus_minus = intval($round_result->hole_14_par) - intval($round_result->hole_14_score);
+        $hole_15_plus_minus = intval($round_result->hole_15_par) - intval($round_result->hole_15_score);
+        $hole_16_plus_minus = intval($round_result->hole_16_par) - intval($round_result->hole_16_score);
+        $hole_17_plus_minus = intval($round_result->hole_17_par) - intval($round_result->hole_17_score);
+        $hole_18_plus_minus = intval($round_result->hole_18_par) - intval($round_result->hole_18_score);
+        $hole_19_plus_minus = intval($round_result->hole_19_par) - intval($round_result->hole_19_score);
+        $hole_20_plus_minus = intval($round_result->hole_20_par) - intval($round_result->hole_20_score);
+        $hole_21_plus_minus = intval($round_result->hole_21_par) - intval($round_result->hole_21_score);
+        $hole_22_plus_minus = intval($round_result->hole_22_par) - intval($round_result->hole_22_score);
+        $hole_23_plus_minus = intval($round_result->hole_23_par) - intval($round_result->hole_23_score);
+        $hole_24_plus_minus = intval($round_result->hole_24_par) - intval($round_result->hole_24_score);
+        $hole_25_plus_minus = intval($round_result->hole_25_par) - intval($round_result->hole_25_score);
+        $hole_26_plus_minus = intval($round_result->hole_26_par) - intval($round_result->hole_26_score);
+        $hole_27_plus_minus = intval($round_result->hole_27_par) - intval($round_result->hole_27_score);
 
-        }
 
-        if($round_result->yards === 'yellow'){
-
-            $hole_1_plus_minus = intval($round_result->hole_1_yellow_par) - intval($round_result->hole_1_score);
-            $hole_2_plus_minus = intval($round_result->hole_2_yellow_par) - intval($round_result->hole_2_score);
-            $hole_3_plus_minus = intval($round_result->hole_3_yellow_par) - intval($round_result->hole_3_score);
-            $hole_4_plus_minus = intval($round_result->hole_4_yellow_par) - intval($round_result->hole_4_score);
-            $hole_5_plus_minus = intval($round_result->hole_5_yellow_par) - intval($round_result->hole_5_score);
-            $hole_6_plus_minus = intval($round_result->hole_6_yellow_par) - intval($round_result->hole_6_score);
-            $hole_7_plus_minus = intval($round_result->hole_7_yellow_par) - intval($round_result->hole_7_score);
-            $hole_8_plus_minus = intval($round_result->hole_8_yellow_par) - intval($round_result->hole_8_score);
-            $hole_9_plus_minus = intval($round_result->hole_9_yellow_par) - intval($round_result->hole_9_score);
-            $hole_10_plus_minus = intval($round_result->hole_10_yellow_par) - intval($round_result->hole_10_score);
-            $hole_11_plus_minus = intval($round_result->hole_11_yellow_par) - intval($round_result->hole_11_score);
-            $hole_12_plus_minus = intval($round_result->hole_12_yellow_par) - intval($round_result->hole_12_score);
-            $hole_13_plus_minus = intval($round_result->hole_13_yellow_par) - intval($round_result->hole_13_score);
-            $hole_14_plus_minus = intval($round_result->hole_14_yellow_par) - intval($round_result->hole_14_score);
-            $hole_15_plus_minus = intval($round_result->hole_15_yellow_par) - intval($round_result->hole_15_score);
-            $hole_16_plus_minus = intval($round_result->hole_16_yellow_par) - intval($round_result->hole_16_score);
-            $hole_17_plus_minus = intval($round_result->hole_17_yellow_par) - intval($round_result->hole_17_score);
-            $hole_18_plus_minus = intval($round_result->hole_18_yellow_par) - intval($round_result->hole_18_score);
-            $hole_19_plus_minus = intval($round_result->hole_19_yellow_par) - intval($round_result->hole_19_score);
-            $hole_20_plus_minus = intval($round_result->hole_20_yellow_par) - intval($round_result->hole_20_score);
-            $hole_21_plus_minus = intval($round_result->hole_21_yellow_par) - intval($round_result->hole_21_score);
-            $hole_22_plus_minus = intval($round_result->hole_22_yellow_par) - intval($round_result->hole_22_score);
-            $hole_23_plus_minus = intval($round_result->hole_23_yellow_par) - intval($round_result->hole_23_score);
-            $hole_24_plus_minus = intval($round_result->hole_24_yellow_par) - intval($round_result->hole_24_score);
-            $hole_25_plus_minus = intval($round_result->hole_25_yellow_par) - intval($round_result->hole_25_score);
-            $hole_26_plus_minus = intval($round_result->hole_26_yellow_par) - intval($round_result->hole_26_score);
-            $hole_27_plus_minus = intval($round_result->hole_27_yellow_par) - intval($round_result->hole_27_score);            
-
-        }    
-        
-        if($round_result->yards === 'red'){
-
-            $hole_1_plus_minus = intval($round_result->hole_1_red_par) - intval($round_result->hole_1_score);
-            $hole_2_plus_minus = intval($round_result->hole_2_red_par) - intval($round_result->hole_2_score);
-            $hole_3_plus_minus = intval($round_result->hole_3_red_par) - intval($round_result->hole_3_score);
-            $hole_4_plus_minus = intval($round_result->hole_4_red_par) - intval($round_result->hole_4_score);
-            $hole_5_plus_minus = intval($round_result->hole_5_red_par) - intval($round_result->hole_5_score);
-            $hole_6_plus_minus = intval($round_result->hole_6_red_par) - intval($round_result->hole_6_score);
-            $hole_7_plus_minus = intval($round_result->hole_7_red_par) - intval($round_result->hole_7_score);
-            $hole_8_plus_minus = intval($round_result->hole_8_red_par) - intval($round_result->hole_8_score);
-            $hole_9_plus_minus = intval($round_result->hole_9_red_par) - intval($round_result->hole_9_score);
-            $hole_10_plus_minus = intval($round_result->hole_10_red_par) - intval($round_result->hole_10_score);
-            $hole_11_plus_minus = intval($round_result->hole_11_red_par) - intval($round_result->hole_11_score);
-            $hole_12_plus_minus = intval($round_result->hole_12_red_par) - intval($round_result->hole_12_score);
-            $hole_13_plus_minus = intval($round_result->hole_13_red_par) - intval($round_result->hole_13_score);
-            $hole_14_plus_minus = intval($round_result->hole_14_red_par) - intval($round_result->hole_14_score);
-            $hole_15_plus_minus = intval($round_result->hole_15_red_par) - intval($round_result->hole_15_score);
-            $hole_16_plus_minus = intval($round_result->hole_16_red_par) - intval($round_result->hole_16_score);
-            $hole_17_plus_minus = intval($round_result->hole_17_red_par) - intval($round_result->hole_17_score);
-            $hole_18_plus_minus = intval($round_result->hole_18_red_par) - intval($round_result->hole_18_score);
-            $hole_19_plus_minus = intval($round_result->hole_19_red_par) - intval($round_result->hole_19_score);
-            $hole_20_plus_minus = intval($round_result->hole_20_red_par) - intval($round_result->hole_20_score);
-            $hole_21_plus_minus = intval($round_result->hole_21_red_par) - intval($round_result->hole_21_score);
-            $hole_22_plus_minus = intval($round_result->hole_22_red_par) - intval($round_result->hole_22_score);
-            $hole_23_plus_minus = intval($round_result->hole_23_red_par) - intval($round_result->hole_23_score);
-            $hole_24_plus_minus = intval($round_result->hole_24_red_par) - intval($round_result->hole_24_score);
-            $hole_25_plus_minus = intval($round_result->hole_25_red_par) - intval($round_result->hole_25_score);
-            $hole_26_plus_minus = intval($round_result->hole_26_red_par) - intval($round_result->hole_26_score);
-            $hole_27_plus_minus = intval($round_result->hole_27_red_par) - intval($round_result->hole_27_score);            
-
-        }  
 
         $round_result->hole_1_plus_minus = $hole_1_plus_minus;
         $round_result->hole_2_plus_minus = $hole_2_plus_minus;
@@ -177,29 +112,18 @@ class GetRoundResult {
         $second_nine_par = 0;
         $third_nine_par = 0;
 
-        if($round_result->yards === 'white'){
+        $first_nine_par = intval($round_result->hole_1_par) + intval($round_result->hole_2_par) + intval($round_result->hole_3_par) + intval($round_result->hole_4_par) + intval($round_result->hole_5_par) + intval($round_result->hole_6_par) + intval($round_result->hole_7_par) + intval($round_result->hole_8_par) + intval($round_result->hole_9_par);                
 
-            $first_nine_par = intval($round_result->hole_1_white_par) + intval($round_result->hole_2_white_par) + intval($round_result->hole_3_white_par) + intval($round_result->hole_4_white_par) + intval($round_result->hole_5_white_par) + intval($round_result->hole_6_white_par) + intval($round_result->hole_7_white_par) + intval($round_result->hole_8_white_par) + intval($round_result->hole_9_white_par);
-            $second_nine_par = intval($round_result->hole_10_white_par) + intval($round_result->hole_11_white_par) + intval($round_result->hole_12_white_par) + intval($round_result->hole_13_white_par) + intval($round_result->hole_14_white_par) + intval($round_result->hole_15_white_par) + intval($round_result->hole_16_white_par) + intval($round_result->hole_17_white_par) + intval($round_result->hole_18_white_par);
-            $third_nine_par = intval($round_result->hole_19_white_par) + intval($round_result->hole_20_white_par) + intval($round_result->hole_21_white_par) + intval($round_result->hole_22_white_par) + intval($round_result->hole_23_white_par) + intval($round_result->hole_24_white_par) + intval($round_result->hole_25_white_par) + intval($round_result->hole_26_white_par) + intval($round_result->hole_27_white_par);
-
+        if($round_result->nine === 'second-nine-third-nine'){          
+            $second_nine_par = intval($round_result->hole_1_par) + intval($round_result->hole_2_par) + intval($round_result->hole_3_par) + intval($round_result->hole_4_par) + intval($round_result->hole_5_par) + intval($round_result->hole_6_par) + intval($round_result->hole_7_par) + intval($round_result->hole_8_par) + intval($round_result->hole_9_par);                       
         }
 
-        if($round_result->yards === 'yellow'){
-
-            $first_nine_par = intval($round_result->hole_1_yellow_par) + intval($round_result->hole_2_yellow_par) + intval($round_result->hole_3_yellow_par) + intval($round_result->hole_4_yellow_par) + intval($round_result->hole_5_yellow_par) + intval($round_result->hole_6_yellow_par) + intval($round_result->hole_7_yellow_par) + intval($round_result->hole_8_yellow_par) + intval($round_result->hole_9_yellow_par);
-            $second_nine_par = intval($round_result->hole_10_yellow_par) + intval($round_result->hole_11_yellow_par) + intval($round_result->hole_12_yellow_par) + intval($round_result->hole_13_yellow_par) + intval($round_result->hole_14_yellow_par) + intval($round_result->hole_15_yellow_par) + intval($round_result->hole_16_yellow_par) + intval($round_result->hole_17_yellow_par) + intval($round_result->hole_18_yellow_par);
-            $third_nine_par = intval($round_result->hole_19_yellow_par) + intval($round_result->hole_20_yellow_par) + intval($round_result->hole_21_yellow_par) + intval($round_result->hole_22_yellow_par) + intval($round_result->hole_23_yellow_par) + intval($round_result->hole_24_yellow_par) + intval($round_result->hole_25_yellow_par) + intval($round_result->hole_26_yellow_par) + intval($round_result->hole_27_yellow_par);
-
-        }    
+        else{
+            $second_nine_par = intval($round_result->hole_10_par) + intval($round_result->hole_11_par) + intval($round_result->hole_12_par) + intval($round_result->hole_13_par) + intval($round_result->hole_14_par) + intval($round_result->hole_15_par) + intval($round_result->hole_16_par) + intval($round_result->hole_17_par) + intval($round_result->hole_18_par);                
+        }
         
-        if($round_result->yards === 'red'){
-
-            $first_nine_par = intval($round_result->hole_1_red_par) + intval($round_result->hole_2_red_par) + intval($round_result->hole_3_red_par) + intval($round_result->hole_4_red_par) + intval($round_result->hole_5_red_par) + intval($round_result->hole_6_red_par) + intval($round_result->hole_7_red_par) + intval($round_result->hole_8_red_par) + intval($round_result->hole_9_red_par);
-            $second_nine_par = intval($round_result->hole_10_red_par) + intval($round_result->hole_11_red_par) + intval($round_result->hole_12_red_par) + intval($round_result->hole_13_red_par) + intval($round_result->hole_14_red_par) + intval($round_result->hole_15_red_par) + intval($round_result->hole_16_red_par) + intval($round_result->hole_17_red_par) + intval($round_result->hole_18_red_par);
-            $third_nine_par = intval($round_result->hole_19_red_par) + intval($round_result->hole_20_red_par) + intval($round_result->hole_21_red_par) + intval($round_result->hole_22_red_par) + intval($round_result->hole_23_red_par) + intval($round_result->hole_24_red_par) + intval($round_result->hole_25_red_par) + intval($round_result->hole_26_red_par) + intval($round_result->hole_27_red_par);
-
-        }  
+        $third_nine_par = intval($round_result->hole_10_par) + intval($round_result->hole_11_par) + intval($round_result->hole_12_par) + intval($round_result->hole_13_par) + intval($round_result->hole_14_par) + intval($round_result->hole_15_par) + intval($round_result->hole_16_par) + intval($round_result->hole_17_par) + intval($round_result->hole_18_par);        
+ 
         
         $round_result->first_nine_par = $first_nine_par;
         $round_result->second_nine_par = $second_nine_par;
@@ -218,7 +142,6 @@ class GetRoundResult {
         $round_result->second_nine_score = $second_nine_score;
         
         $round_result->third_nine_score = $third_nine_score;
-
 
 
         // calculate players total score and total course par according to round type and holes played
@@ -277,124 +200,138 @@ class GetRoundResult {
 
         // calculate overall plus minus score
         $round_result->plus_minus =  $total_score - $total_par;
+  
+        return $round_result;
+    }       
 
 
+
+
+    public function statsRoundResult($id){        
+
+        $stats_round_result = \App\Round::where('rounds.id', $id)
+        ->where('stats_round' , '1')
+        ->groupBy('rounds.id')
+        ->join('courses', 'courses.id', '=', 'course_id')  
+        ->first();
+
+        if($stats_round_result){
 
         // calculate putts for each nine
-        $round_result->first_nine_putts = intval($round_result->hole_1_putts) + intval($round_result->hole_2_putts) + intval($round_result->hole_3_putts) + intval($round_result->hole_4_putts) + intval($round_result->hole_5_putts) + intval($round_result->hole_6_putts) + intval($round_result->hole_7_putts) + intval($round_result->hole_8_putts) + intval($round_result->hole_9_putts);
-        $round_result->second_nine_putts = intval($round_result->hole_10_putts) + intval($round_result->hole_11_putts) + intval($round_result->hole_12_putts) + intval($round_result->hole_13_putts) + intval($round_result->hole_14_putts) + intval($round_result->hole_15_putts) + intval($round_result->hole_16_putts) + intval($round_result->hole_17_putts) + intval($round_result->hole_18_putts);
-        $round_result->third_nine_putts = intval($round_result->hole_19_putts) + intval($round_result->hole_20_putts) + intval($round_result->hole_21_putts) + intval($round_result->hole_22_putts) + intval($round_result->hole_23_putts) + intval($round_result->hole_24_putts) + intval($round_result->hole_25_putts) + intval($round_result->hole_26_putts) + intval($round_result->hole_27_putts);
+        $stats_round_result->first_nine_putts = intval($stats_round_result->hole_1_putts) + intval($stats_round_result->hole_2_putts) + intval($stats_round_result->hole_3_putts) + intval($stats_round_result->hole_4_putts) + intval($stats_round_result->hole_5_putts) + intval($stats_round_result->hole_6_putts) + intval($stats_round_result->hole_7_putts) + intval($stats_round_result->hole_8_putts) + intval($stats_round_result->hole_9_putts);
+        $stats_round_result->second_nine_putts = intval($stats_round_result->hole_10_putts) + intval($stats_round_result->hole_11_putts) + intval($stats_round_result->hole_12_putts) + intval($stats_round_result->hole_13_putts) + intval($stats_round_result->hole_14_putts) + intval($stats_round_result->hole_15_putts) + intval($stats_round_result->hole_16_putts) + intval($stats_round_result->hole_17_putts) + intval($stats_round_result->hole_18_putts);
+        $stats_round_result->third_nine_putts = intval($stats_round_result->hole_19_putts) + intval($stats_round_result->hole_20_putts) + intval($stats_round_result->hole_21_putts) + intval($stats_round_result->hole_22_putts) + intval($stats_round_result->hole_23_putts) + intval($stats_round_result->hole_24_putts) + intval($stats_round_result->hole_25_putts) + intval($stats_round_result->hole_26_putts) + intval($stats_round_result->hole_27_putts);
 
         //calculate total putts for round
         $total_putts = 0;
 
-        if($round_result->nine === 'first-nine'){
+        if($stats_round_result->nine === 'first-nine'){
 
-            $total_putts = intval($round_result->first_nine_putts);
+            $total_putts = intval($stats_round_result->first_nine_putts);
 
         }
 
-        if($round_result->nine === 'second-nine'){
+        if($stats_round_result->nine === 'second-nine'){
 
-            $total_putts = intval($round_result->second_nine_putts);
+            $total_putts = intval($stats_round_result->second_nine_putts);
             
         }
         
-        if($round_result->nine === 'third-nine'){
+        if($stats_round_result->nine === 'third-nine'){
 
-            $total_putts = intval($round_result->third_nine_putts);
+            $total_putts = intval($stats_round_result->third_nine_putts);
             
         }        
 
-        if($round_result->nine === 'first-nine-second-nine'){
+        if($stats_round_result->nine === 'first-nine-second-nine'){
 
-            $total_putts = intval($round_result->first_nine_putts) + intval($round_result->second_nine_putts);
+            $total_putts = intval($stats_round_result->first_nine_putts) + intval($stats_round_result->second_nine_putts);
 
         }
 
-        if($round_result->nine === 'second-nine-third-nine'){
+        if($stats_round_result->nine === 'second-nine-third-nine'){
 
-            $total_putts = intval($round_result->second_nine_putts) + intval($round_result->third_nine_putts);
+            $total_putts = intval($stats_round_result->second_nine_putts) + intval($stats_round_result->third_nine_putts);
 
         }  
         
-        if($round_result->nine === 'first-nine-third-nine'){
+        if($stats_round_result->nine === 'first-nine-third-nine'){
 
-            $total_putts = intval($round_result->first_nine_putts) + intval($round_result->third_nine_putts);
+            $total_putts = intval($stats_round_result->first_nine_putts) + intval($stats_round_result->third_nine_putts);
 
         } 
 
-        $round_result->total_putts = $total_putts; 
+        $stats_round_result->total_putts = $total_putts; 
 
 
         // calculate putts_per_hole
         $round_size = 0;
 
-        if($round_result->size === 'full'){
+        if($stats_round_result->size === 'full'){
             $round_size = 18;
         }
 
-        if($round_result->size === 'half'){
+        if($stats_round_result->size === 'half'){
             $round_size = 9;
         }        
 
-        $round_result->putts_per_hole = $total_putts / $round_size;
+        $stats_round_result->putts_per_hole = $total_putts / $round_size;
 
 
 
         // calculate drops for each nine
-        $round_result->first_nine_drops = intval($round_result->hole_1_drops) + intval($round_result->hole_2_drops) + intval($round_result->hole_3_drops) + intval($round_result->hole_4_drops) + intval($round_result->hole_5_drops) + intval($round_result->hole_6_drops) + intval($round_result->hole_7_drops) + intval($round_result->hole_8_drops) + intval($round_result->hole_9_drops);
-        $round_result->second_nine_drops = intval($round_result->hole_10_drops) + intval($round_result->hole_11_drops) + intval($round_result->hole_12_drops) + intval($round_result->hole_13_drops) + intval($round_result->hole_14_drops) + intval($round_result->hole_15_drops) + intval($round_result->hole_16_drops) + intval($round_result->hole_17_drops) + intval($round_result->hole_18_drops);
-        $round_result->third_nine_drops = intval($round_result->hole_19_drops) + intval($round_result->hole_20_drops) + intval($round_result->hole_21_drops) + intval($round_result->hole_22_drops) + intval($round_result->hole_23_drops) + intval($round_result->hole_24_drops) + intval($round_result->hole_25_drops) + intval($round_result->hole_26_drops) + intval($round_result->hole_27_drops);
+        $stats_round_result->first_nine_drops = intval($stats_round_result->hole_1_drops) + intval($stats_round_result->hole_2_drops) + intval($stats_round_result->hole_3_drops) + intval($stats_round_result->hole_4_drops) + intval($stats_round_result->hole_5_drops) + intval($stats_round_result->hole_6_drops) + intval($stats_round_result->hole_7_drops) + intval($stats_round_result->hole_8_drops) + intval($stats_round_result->hole_9_drops);
+        $stats_round_result->second_nine_drops = intval($stats_round_result->hole_10_drops) + intval($stats_round_result->hole_11_drops) + intval($stats_round_result->hole_12_drops) + intval($stats_round_result->hole_13_drops) + intval($stats_round_result->hole_14_drops) + intval($stats_round_result->hole_15_drops) + intval($stats_round_result->hole_16_drops) + intval($stats_round_result->hole_17_drops) + intval($stats_round_result->hole_18_drops);
+        $stats_round_result->third_nine_drops = intval($stats_round_result->hole_19_drops) + intval($stats_round_result->hole_20_drops) + intval($stats_round_result->hole_21_drops) + intval($stats_round_result->hole_22_drops) + intval($stats_round_result->hole_23_drops) + intval($stats_round_result->hole_24_drops) + intval($stats_round_result->hole_25_drops) + intval($stats_round_result->hole_26_drops) + intval($stats_round_result->hole_27_drops);
 
         //calculate total drops for round
         $total_drops = 0;
 
-        if($round_result->nine === 'first-nine'){
+        if($stats_round_result->nine === 'first-nine'){
 
-            $total_drops = intval($round_result->first_nine_drops);
+            $total_drops = intval($stats_round_result->first_nine_drops);
 
         }
 
-        if($round_result->nine === 'second-nine'){
+        if($stats_round_result->nine === 'second-nine'){
 
-            $total_drops = intval($round_result->second_nine_drops);
+            $total_drops = intval($stats_round_result->second_nine_drops);
             
         }
         
-        if($round_result->nine === 'third-nine'){
+        if($stats_round_result->nine === 'third-nine'){
 
-            $total_drops = intval($round_result->third_nine_drops);
+            $total_drops = intval($stats_round_result->third_nine_drops);
             
         }        
 
-        if($round_result->nine === 'first-nine-second-nine'){
+        if($stats_round_result->nine === 'first-nine-second-nine'){
 
-            $total_drops = intval($round_result->first_nine_drops) + intval($round_result->second_nine_drops);
+            $total_drops = intval($stats_round_result->first_nine_drops) + intval($stats_round_result->second_nine_drops);
 
         }
 
-        if($round_result->nine === 'second-nine-third-nine'){
+        if($stats_round_result->nine === 'second-nine-third-nine'){
 
-            $total_drops = intval($round_result->second_nine_drops) + intval($round_result->third_nine_drops);
+            $total_drops = intval($stats_round_result->second_nine_drops) + intval($stats_round_result->third_nine_drops);
 
         }  
         
-        if($round_result->nine === 'first-nine-third-nine'){
+        if($stats_round_result->nine === 'first-nine-third-nine'){
 
-            $total_drops = intval($round_result->first_nine_drops) + intval($round_result->third_nine_drops);
+            $total_drops = intval($stats_round_result->first_nine_drops) + intval($stats_round_result->third_nine_drops);
 
         } 
 
-        $round_result->total_drops = $total_drops;
+        $stats_round_result->total_drops = $total_drops;
 
 
 
         // Fairways in Regulation
 
-        if($round_result->nine === 'first-nine'){
+        if($stats_round_result->nine === 'first-nine'){
 
-            if($round_result->yards === 'white'){
+
 
                 $firs = \App\Round::where('rounds.id', $id)
                 ->groupBy('rounds.id')
@@ -411,93 +348,26 @@ class GetRoundResult {
                         if(hole_8_fir > 0, 1, 0) + 
                         if(hole_9_fir > 0, 1, 0)  
                     ) / (
-                        if(hole_1_white_par > 3, 1, 0) + 
-                        if(hole_2_white_par > 3, 1, 0) + 
-                        if(hole_3_white_par > 3, 1, 0) + 
-                        if(hole_4_white_par > 3, 1, 0) + 
-                        if(hole_5_white_par > 3, 1, 0) + 
-                        if(hole_6_white_par > 3, 1, 0) + 
-                        if(hole_7_white_par > 3, 1, 0) + 
-                        if(hole_8_white_par > 3, 1, 0) + 
-                        if(hole_9_white_par > 3, 1, 0)  
+                        if(hole_1_par > 3, 1, 0) + 
+                        if(hole_2_par > 3, 1, 0) + 
+                        if(hole_3_par > 3, 1, 0) + 
+                        if(hole_4_par > 3, 1, 0) + 
+                        if(hole_5_par > 3, 1, 0) + 
+                        if(hole_6_par > 3, 1, 0) + 
+                        if(hole_7_par > 3, 1, 0) + 
+                        if(hole_8_par > 3, 1, 0) + 
+                        if(hole_9_par > 3, 1, 0)  
                     ) * 100 as fir_percentage")  
                 ->first();
     
                 $fir_percentage = $firs->fir_percentage; 
 
-            }
-    
-            if($round_result->yards === 'yellow'){
-    
-                $firs = \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("
-                    SUM(
-                        if(hole_1_fir > 0, 1, 0) + 
-                        if(hole_2_fir > 0, 1, 0) + 
-                        if(hole_3_fir > 0, 1, 0) + 
-                        if(hole_4_fir > 0, 1, 0) + 
-                        if(hole_5_fir > 0, 1, 0) + 
-                        if(hole_6_fir > 0, 1, 0) + 
-                        if(hole_7_fir > 0, 1, 0) + 
-                        if(hole_8_fir > 0, 1, 0) + 
-                        if(hole_9_fir > 0, 1, 0)  
-                    ) / (
-                        if(hole_1_yellow_par > 3, 1, 0) + 
-                        if(hole_2_yellow_par > 3, 1, 0) + 
-                        if(hole_3_yellow_par > 3, 1, 0) + 
-                        if(hole_4_yellow_par > 3, 1, 0) + 
-                        if(hole_5_yellow_par > 3, 1, 0) + 
-                        if(hole_6_yellow_par > 3, 1, 0) + 
-                        if(hole_7_yellow_par > 3, 1, 0) + 
-                        if(hole_8_yellow_par > 3, 1, 0) + 
-                        if(hole_9_yellow_par > 3, 1, 0)  
-                    ) * 100 as fir_percentage")  
-                ->first();
-    
-                $fir_percentage = $firs->fir_percentage;                 
-
-            }    
-            
-            if($round_result->yards === 'red'){
-    
-                $firs = \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("
-                    SUM(
-                        if(hole_1_fir > 0, 1, 0) + 
-                        if(hole_2_fir > 0, 1, 0) + 
-                        if(hole_3_fir > 0, 1, 0) + 
-                        if(hole_4_fir > 0, 1, 0) + 
-                        if(hole_5_fir > 0, 1, 0) + 
-                        if(hole_6_fir > 0, 1, 0) + 
-                        if(hole_7_fir > 0, 1, 0) + 
-                        if(hole_8_fir > 0, 1, 0) + 
-                        if(hole_9_fir > 0, 1, 0)  
-                    ) / (
-                        if(hole_1_red_par > 3, 1, 0) + 
-                        if(hole_2_red_par > 3, 1, 0) + 
-                        if(hole_3_red_par > 3, 1, 0) + 
-                        if(hole_4_red_par > 3, 1, 0) + 
-                        if(hole_5_red_par > 3, 1, 0) + 
-                        if(hole_6_red_par > 3, 1, 0) + 
-                        if(hole_7_red_par > 3, 1, 0) + 
-                        if(hole_8_red_par > 3, 1, 0) + 
-                        if(hole_9_red_par > 3, 1, 0)  
-                    ) * 100 as fir_percentage")  
-                ->first();
-    
-                $fir_percentage = $firs->fir_percentage; 
-
-            }                     
+                               
 
         }
 
-        if($round_result->nine === 'second-nine'){
+        if($stats_round_result->nine === 'second-nine'){
 
-            if($round_result->yards === 'white'){
 
                 $firs = \App\Round::where('rounds.id', $id)
                 ->groupBy('rounds.id')
@@ -514,353 +384,114 @@ class GetRoundResult {
                         if(hole_17_fir > 0, 1, 0) + 
                         if(hole_18_fir > 0, 1, 0)  
                     ) / (
-                        if(hole_10_white_par > 3, 1, 0) + 
-                        if(hole_11_white_par > 3, 1, 0) + 
-                        if(hole_12_white_par > 3, 1, 0) + 
-                        if(hole_13_white_par > 3, 1, 0) + 
-                        if(hole_14_white_par > 3, 1, 0) + 
-                        if(hole_15_white_par > 3, 1, 0) + 
-                        if(hole_16_white_par > 3, 1, 0) + 
-                        if(hole_17_white_par > 3, 1, 0) + 
-                        if(hole_18_white_par > 3, 1, 0)  
+                        if(hole_10_par > 3, 1, 0) + 
+                        if(hole_11_par > 3, 1, 0) + 
+                        if(hole_12_par > 3, 1, 0) + 
+                        if(hole_13_par > 3, 1, 0) + 
+                        if(hole_14_par > 3, 1, 0) + 
+                        if(hole_15_par > 3, 1, 0) + 
+                        if(hole_16_par > 3, 1, 0) + 
+                        if(hole_17_par > 3, 1, 0) + 
+                        if(hole_18_par > 3, 1, 0)  
                     ) * 100 as fir_percentage")  
                 ->first();
     
                 $fir_percentage = $firs->fir_percentage; 
+             
 
-            }
-    
-            if($round_result->yards === 'yellow'){
-    
-                $firs = \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("
-                    SUM(
-                        if(hole_10_fir > 0, 1, 0) + 
-                        if(hole_11_fir > 0, 1, 0) + 
-                        if(hole_12_fir > 0, 1, 0) + 
-                        if(hole_13_fir > 0, 1, 0) + 
-                        if(hole_14_fir > 0, 1, 0) + 
-                        if(hole_15_fir > 0, 1, 0) + 
-                        if(hole_16_fir > 0, 1, 0) + 
-                        if(hole_17_fir > 0, 1, 0) + 
-                        if(hole_18_fir > 0, 1, 0)  
-                    ) / (
-                        if(hole_10_yellow_par > 3, 1, 0) + 
-                        if(hole_11_yellow_par > 3, 1, 0) + 
-                        if(hole_12_yellow_par > 3, 1, 0) + 
-                        if(hole_13_yellow_par > 3, 1, 0) + 
-                        if(hole_14_yellow_par > 3, 1, 0) + 
-                        if(hole_15_yellow_par > 3, 1, 0) + 
-                        if(hole_16_yellow_par > 3, 1, 0) + 
-                        if(hole_17_yellow_par > 3, 1, 0) + 
-                        if(hole_18_yellow_par > 3, 1, 0)  
-                    ) * 100 as fir_percentage")  
-                ->first();
-    
-                $fir_percentage = $firs->fir_percentage;                 
-
-            }    
-            
-            if($round_result->yards === 'red'){
-    
-                $firs = \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("
-                    SUM(
-                        if(hole_10_fir > 0, 1, 0) + 
-                        if(hole_11_fir > 0, 1, 0) + 
-                        if(hole_12_fir > 0, 1, 0) + 
-                        if(hole_13_fir > 0, 1, 0) + 
-                        if(hole_14_fir > 0, 1, 0) + 
-                        if(hole_15_fir > 0, 1, 0) + 
-                        if(hole_16_fir > 0, 1, 0) + 
-                        if(hole_17_fir > 0, 1, 0) + 
-                        if(hole_18_fir > 0, 1, 0)  
-                    ) / (
-                        if(hole_10_red_par > 3, 1, 0) + 
-                        if(hole_11_red_par > 3, 1, 0) + 
-                        if(hole_12_red_par > 3, 1, 0) + 
-                        if(hole_13_red_par > 3, 1, 0) + 
-                        if(hole_14_red_par > 3, 1, 0) + 
-                        if(hole_15_red_par > 3, 1, 0) + 
-                        if(hole_16_red_par > 3, 1, 0) + 
-                        if(hole_17_red_par > 3, 1, 0) + 
-                        if(hole_18_red_par > 3, 1, 0)  
-                    ) * 100 as fir_percentage")  
-                ->first();
-    
-                $fir_percentage = $firs->fir_percentage; 
-
-            }                
-
-        }
+        }    
         
-        if($round_result->nine === 'third-nine'){
+        if($stats_round_result->nine === 'third-nine' ){
 
-            if($round_result->yards === 'white'){
+
+            $firs = \App\Round::where('rounds.id', $id)
+            ->groupBy('rounds.id')
+            ->join('courses', 'courses.id', '=', 'course_id')
+            ->selectRaw("
+                SUM(
+                    if(hole_19_fir > 0, 1, 0) + 
+                    if(hole_20_fir > 0, 1, 0) + 
+                    if(hole_21_fir > 0, 1, 0) + 
+                    if(hole_22_fir > 0, 1, 0) + 
+                    if(hole_23_fir > 0, 1, 0) + 
+                    if(hole_24_fir > 0, 1, 0) + 
+                    if(hole_25_fir > 0, 1, 0) + 
+                    if(hole_26_fir > 0, 1, 0) + 
+                    if(hole_27_fir > 0, 1, 0)  
+                ) / (
+                    if(hole_10_par > 3, 1, 0) + 
+                    if(hole_11_par > 3, 1, 0) + 
+                    if(hole_12_par > 3, 1, 0) + 
+                    if(hole_13_par > 3, 1, 0) + 
+                    if(hole_14_par > 3, 1, 0) + 
+                    if(hole_15_par > 3, 1, 0) + 
+                    if(hole_16_par > 3, 1, 0) + 
+                    if(hole_17_par > 3, 1, 0) + 
+                    if(hole_18_par > 3, 1, 0)  
+                ) * 100 as fir_percentage")  
+            ->first();
+
+            $fir_percentage = $firs->fir_percentage; 
+         
+
+    }         
+
+        if($stats_round_result->nine === 'first-nine-second-nine'){
+
 
                 $firs = \App\Round::where('rounds.id', $id)
                 ->groupBy('rounds.id')
                 ->join('courses', 'courses.id', '=', 'course_id')
                 ->selectRaw("
                     SUM(
-                        if(hole_19_fir > 0, 1, 0) + 
-                        if(hole_20_fir > 0, 1, 0) + 
-                        if(hole_21_fir > 0, 1, 0) + 
-                        if(hole_22_fir > 0, 1, 0) + 
-                        if(hole_23_fir > 0, 1, 0) + 
-                        if(hole_24_fir > 0, 1, 0) + 
-                        if(hole_25_fir > 0, 1, 0) + 
-                        if(hole_26_fir > 0, 1, 0) + 
-                        if(hole_27_fir > 0, 1, 0)  
+                        if(hole_1_fir > 0, 1, 0) + 
+                        if(hole_2_fir > 0, 1, 0) + 
+                        if(hole_3_fir > 0, 1, 0) + 
+                        if(hole_4_fir > 0, 1, 0) + 
+                        if(hole_5_fir > 0, 1, 0) + 
+                        if(hole_6_fir > 0, 1, 0) + 
+                        if(hole_7_fir > 0, 1, 0) + 
+                        if(hole_8_fir > 0, 1, 0) + 
+                        if(hole_9_fir > 0, 1, 0) + 
+                        if(hole_10_fir > 0, 1, 0) + 
+                        if(hole_11_fir > 0, 1, 0) + 
+                        if(hole_12_fir > 0, 1, 0) + 
+                        if(hole_13_fir > 0, 1, 0) + 
+                        if(hole_14_fir > 0, 1, 0) + 
+                        if(hole_15_fir > 0, 1, 0) + 
+                        if(hole_16_fir > 0, 1, 0) + 
+                        if(hole_17_fir > 0, 1, 0) + 
+                        if(hole_18_fir > 0, 1, 0)                          
                     ) / (
-                        if(hole_19_white_par > 3, 1, 0) + 
-                        if(hole_20_white_par > 3, 1, 0) + 
-                        if(hole_21_white_par > 3, 1, 0) + 
-                        if(hole_22_white_par > 3, 1, 0) + 
-                        if(hole_23_white_par > 3, 1, 0) + 
-                        if(hole_24_white_par > 3, 1, 0) + 
-                        if(hole_25_white_par > 3, 1, 0) + 
-                        if(hole_26_white_par > 3, 1, 0) + 
-                        if(hole_27_white_par > 3, 1, 0)  
-                    ) * 100 as fir_percentage")  
-                ->first();
-    
-                $fir_percentage = $firs->fir_percentage; 
-
-            }
-    
-            if($round_result->yards === 'yellow'){
-    
-                $firs = \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("
-                    SUM(
-                        if(hole_19_fir > 0, 1, 0) + 
-                        if(hole_20_fir > 0, 1, 0) + 
-                        if(hole_21_fir > 0, 1, 0) + 
-                        if(hole_22_fir > 0, 1, 0) + 
-                        if(hole_23_fir > 0, 1, 0) + 
-                        if(hole_24_fir > 0, 1, 0) + 
-                        if(hole_25_fir > 0, 1, 0) + 
-                        if(hole_26_fir > 0, 1, 0) + 
-                        if(hole_27_fir > 0, 1, 0)  
-                    ) / (
-                        if(hole_19_yellow_par > 3, 1, 0) + 
-                        if(hole_20_yellow_par > 3, 1, 0) + 
-                        if(hole_21_yellow_par > 3, 1, 0) + 
-                        if(hole_22_yellow_par > 3, 1, 0) + 
-                        if(hole_23_yellow_par > 3, 1, 0) + 
-                        if(hole_24_yellow_par > 3, 1, 0) + 
-                        if(hole_25_yellow_par > 3, 1, 0) + 
-                        if(hole_26_yellow_par > 3, 1, 0) + 
-                        if(hole_27_yellow_par > 3, 1, 0)  
+                        if(hole_1_par > 3, 1, 0) + 
+                        if(hole_2_par > 3, 1, 0) + 
+                        if(hole_3_par > 3, 1, 0) + 
+                        if(hole_4_par > 3, 1, 0) + 
+                        if(hole_5_par > 3, 1, 0) + 
+                        if(hole_6_par > 3, 1, 0) + 
+                        if(hole_7_par > 3, 1, 0) + 
+                        if(hole_8_par > 3, 1, 0) + 
+                        if(hole_9_par > 3, 1, 0) + 
+                        if(hole_10_par > 3, 1, 0) + 
+                        if(hole_11_par > 3, 1, 0) + 
+                        if(hole_12_par > 3, 1, 0) + 
+                        if(hole_13_par > 3, 1, 0) + 
+                        if(hole_14_par > 3, 1, 0) + 
+                        if(hole_15_par > 3, 1, 0) + 
+                        if(hole_16_par > 3, 1, 0) + 
+                        if(hole_17_par > 3, 1, 0) + 
+                        if(hole_18_par > 3, 1, 0)                          
                     ) * 100 as fir_percentage")  
                 ->first();
     
                 $fir_percentage = $firs->fir_percentage;                 
 
-            }    
-            
-            if($round_result->yards === 'red'){
-    
-                $firs = \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("
-                    SUM(
-                        if(hole_19_fir > 0, 1, 0) + 
-                        if(hole_20_fir > 0, 1, 0) + 
-                        if(hole_21_fir > 0, 1, 0) + 
-                        if(hole_22_fir > 0, 1, 0) + 
-                        if(hole_23_fir > 0, 1, 0) + 
-                        if(hole_24_fir > 0, 1, 0) + 
-                        if(hole_25_fir > 0, 1, 0) + 
-                        if(hole_26_fir > 0, 1, 0) + 
-                        if(hole_27_fir > 0, 1, 0)  
-                    ) / (
-                        if(hole_19_red_par > 3, 1, 0) + 
-                        if(hole_20_red_par > 3, 1, 0) + 
-                        if(hole_21_red_par > 3, 1, 0) + 
-                        if(hole_22_red_par > 3, 1, 0) + 
-                        if(hole_23_red_par > 3, 1, 0) + 
-                        if(hole_24_red_par > 3, 1, 0) + 
-                        if(hole_25_red_par > 3, 1, 0) + 
-                        if(hole_26_red_par > 3, 1, 0) + 
-                        if(hole_27_red_par > 3, 1, 0)  
-                    ) * 100 as fir_percentage")  
-                ->first();
-    
-                $fir_percentage = $firs->fir_percentage; 
-
-            }                 
-
-        }        
-
-        if($round_result->nine === 'first-nine-second-nine'){
-
-            if($round_result->yards === 'white'){
-
-                $firs = \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("
-                    SUM(
-                        if(hole_1_fir > 0, 1, 0) + 
-                        if(hole_2_fir > 0, 1, 0) + 
-                        if(hole_3_fir > 0, 1, 0) + 
-                        if(hole_4_fir > 0, 1, 0) + 
-                        if(hole_5_fir > 0, 1, 0) + 
-                        if(hole_6_fir > 0, 1, 0) + 
-                        if(hole_7_fir > 0, 1, 0) + 
-                        if(hole_8_fir > 0, 1, 0) + 
-                        if(hole_9_fir > 0, 1, 0) + 
-                        if(hole_10_fir > 0, 1, 0) + 
-                        if(hole_11_fir > 0, 1, 0) + 
-                        if(hole_12_fir > 0, 1, 0) + 
-                        if(hole_13_fir > 0, 1, 0) + 
-                        if(hole_14_fir > 0, 1, 0) + 
-                        if(hole_15_fir > 0, 1, 0) + 
-                        if(hole_16_fir > 0, 1, 0) + 
-                        if(hole_17_fir > 0, 1, 0) + 
-                        if(hole_18_fir > 0, 1, 0)                          
-                    ) / (
-                        if(hole_1_white_par > 3, 1, 0) + 
-                        if(hole_2_white_par > 3, 1, 0) + 
-                        if(hole_3_white_par > 3, 1, 0) + 
-                        if(hole_4_white_par > 3, 1, 0) + 
-                        if(hole_5_white_par > 3, 1, 0) + 
-                        if(hole_6_white_par > 3, 1, 0) + 
-                        if(hole_7_white_par > 3, 1, 0) + 
-                        if(hole_8_white_par > 3, 1, 0) + 
-                        if(hole_9_white_par > 3, 1, 0) + 
-                        if(hole_10_white_par > 3, 1, 0) + 
-                        if(hole_11_white_par > 3, 1, 0) + 
-                        if(hole_12_white_par > 3, 1, 0) + 
-                        if(hole_13_white_par > 3, 1, 0) + 
-                        if(hole_14_white_par > 3, 1, 0) + 
-                        if(hole_15_white_par > 3, 1, 0) + 
-                        if(hole_16_white_par > 3, 1, 0) + 
-                        if(hole_17_white_par > 3, 1, 0) + 
-                        if(hole_18_white_par > 3, 1, 0)                          
-                    ) * 100 as fir_percentage")  
-                ->first();
-    
-                $fir_percentage = $firs->fir_percentage;                 
-
-            }
-    
-            if($round_result->yards === 'yellow'){
-    
-                $firs = \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("
-                    SUM(
-                        if(hole_1_fir > 0, 1, 0) + 
-                        if(hole_2_fir > 0, 1, 0) + 
-                        if(hole_3_fir > 0, 1, 0) + 
-                        if(hole_4_fir > 0, 1, 0) + 
-                        if(hole_5_fir > 0, 1, 0) + 
-                        if(hole_6_fir > 0, 1, 0) + 
-                        if(hole_7_fir > 0, 1, 0) + 
-                        if(hole_8_fir > 0, 1, 0) + 
-                        if(hole_9_fir > 0, 1, 0) + 
-                        if(hole_10_fir > 0, 1, 0) + 
-                        if(hole_11_fir > 0, 1, 0) + 
-                        if(hole_12_fir > 0, 1, 0) + 
-                        if(hole_13_fir > 0, 1, 0) + 
-                        if(hole_14_fir > 0, 1, 0) + 
-                        if(hole_15_fir > 0, 1, 0) + 
-                        if(hole_16_fir > 0, 1, 0) + 
-                        if(hole_17_fir > 0, 1, 0) + 
-                        if(hole_18_fir > 0, 1, 0)                          
-                    ) / (
-                        if(hole_1_yellow_par > 3, 1, 0) + 
-                        if(hole_2_yellow_par > 3, 1, 0) + 
-                        if(hole_3_yellow_par > 3, 1, 0) + 
-                        if(hole_4_yellow_par > 3, 1, 0) + 
-                        if(hole_5_yellow_par > 3, 1, 0) + 
-                        if(hole_6_yellow_par > 3, 1, 0) + 
-                        if(hole_7_yellow_par > 3, 1, 0) + 
-                        if(hole_8_yellow_par > 3, 1, 0) + 
-                        if(hole_9_yellow_par > 3, 1, 0) + 
-                        if(hole_10_yellow_par > 3, 1, 0) + 
-                        if(hole_11_yellow_par > 3, 1, 0) + 
-                        if(hole_12_yellow_par > 3, 1, 0) + 
-                        if(hole_13_yellow_par > 3, 1, 0) + 
-                        if(hole_14_yellow_par > 3, 1, 0) + 
-                        if(hole_15_yellow_par > 3, 1, 0) + 
-                        if(hole_16_yellow_par > 3, 1, 0) + 
-                        if(hole_17_yellow_par > 3, 1, 0) + 
-                        if(hole_18_yellow_par > 3, 1, 0)                          
-                    ) * 100 as fir_percentage")  
-                ->first();
-    
-                $fir_percentage = $firs->fir_percentage;                  
-
-            }    
-            
-            if($round_result->yards === 'red'){
-    
-                $firs = \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("
-                    SUM(
-                        if(hole_1_fir > 0, 1, 0) + 
-                        if(hole_2_fir > 0, 1, 0) + 
-                        if(hole_3_fir > 0, 1, 0) + 
-                        if(hole_4_fir > 0, 1, 0) + 
-                        if(hole_5_fir > 0, 1, 0) + 
-                        if(hole_6_fir > 0, 1, 0) + 
-                        if(hole_7_fir > 0, 1, 0) + 
-                        if(hole_8_fir > 0, 1, 0) + 
-                        if(hole_9_fir > 0, 1, 0) + 
-                        if(hole_10_fir > 0, 1, 0) + 
-                        if(hole_11_fir > 0, 1, 0) + 
-                        if(hole_12_fir > 0, 1, 0) + 
-                        if(hole_13_fir > 0, 1, 0) + 
-                        if(hole_14_fir > 0, 1, 0) + 
-                        if(hole_15_fir > 0, 1, 0) + 
-                        if(hole_16_fir > 0, 1, 0) + 
-                        if(hole_17_fir > 0, 1, 0) + 
-                        if(hole_18_fir > 0, 1, 0)                          
-                    ) / (
-                        if(hole_1_red_par > 3, 1, 0) + 
-                        if(hole_2_red_par > 3, 1, 0) + 
-                        if(hole_3_red_par > 3, 1, 0) + 
-                        if(hole_4_red_par > 3, 1, 0) + 
-                        if(hole_5_red_par > 3, 1, 0) + 
-                        if(hole_6_red_par > 3, 1, 0) + 
-                        if(hole_7_red_par > 3, 1, 0) + 
-                        if(hole_8_red_par > 3, 1, 0) + 
-                        if(hole_9_red_par > 3, 1, 0) + 
-                        if(hole_10_red_par > 3, 1, 0) + 
-                        if(hole_11_red_par > 3, 1, 0) + 
-                        if(hole_12_red_par > 3, 1, 0) + 
-                        if(hole_13_red_par > 3, 1, 0) + 
-                        if(hole_14_red_par > 3, 1, 0) + 
-                        if(hole_15_red_par > 3, 1, 0) + 
-                        if(hole_16_red_par > 3, 1, 0) + 
-                        if(hole_17_red_par > 3, 1, 0) + 
-                        if(hole_18_red_par > 3, 1, 0)                          
-                    ) * 100 as fir_percentage")  
-                ->first();
-    
-                $fir_percentage = $firs->fir_percentage;                  
-
-            }  
+ 
 
         }
 
-        if($round_result->nine === 'second-nine-third-nine'){
+        if($stats_round_result->nine === 'second-nine-third-nine'){
 
-            if($round_result->yards === 'white'){
 
                 $firs = \App\Round::where('rounds.id', $id)
                 ->groupBy('rounds.id')
@@ -886,138 +517,35 @@ class GetRoundResult {
                         if(hole_26_fir > 0, 1, 0) + 
                         if(hole_27_fir > 0, 1, 0)                                                  
                     ) / (
-                        if(hole_10_white_par > 3, 1, 0) + 
-                        if(hole_11_white_par > 3, 1, 0) + 
-                        if(hole_12_white_par > 3, 1, 0) + 
-                        if(hole_13_white_par > 3, 1, 0) + 
-                        if(hole_14_white_par > 3, 1, 0) + 
-                        if(hole_15_white_par > 3, 1, 0) + 
-                        if(hole_16_white_par > 3, 1, 0) + 
-                        if(hole_17_white_par > 3, 1, 0) + 
-                        if(hole_18_white_par > 3, 1, 0) +  
-                        if(hole_19_white_par > 3, 1, 0) + 
-                        if(hole_20_white_par > 3, 1, 0) + 
-                        if(hole_21_white_par > 3, 1, 0) + 
-                        if(hole_22_white_par > 3, 1, 0) + 
-                        if(hole_23_white_par > 3, 1, 0) + 
-                        if(hole_24_white_par > 3, 1, 0) + 
-                        if(hole_25_white_par > 3, 1, 0) + 
-                        if(hole_26_white_par > 3, 1, 0) + 
-                        if(hole_27_white_par > 3, 1, 0)                                                 
+                        if(hole_1_par > 3, 1, 0) + 
+                        if(hole_2_par > 3, 1, 0) + 
+                        if(hole_3_par > 3, 1, 0) + 
+                        if(hole_4_par > 3, 1, 0) + 
+                        if(hole_5_par > 3, 1, 0) + 
+                        if(hole_6_par > 3, 1, 0) + 
+                        if(hole_7_par > 3, 1, 0) + 
+                        if(hole_8_par > 3, 1, 0) + 
+                        if(hole_9_par > 3, 1, 0) + 
+                        if(hole_10_par > 3, 1, 0) + 
+                        if(hole_11_par > 3, 1, 0) + 
+                        if(hole_12_par > 3, 1, 0) + 
+                        if(hole_13_par > 3, 1, 0) + 
+                        if(hole_14_par > 3, 1, 0) + 
+                        if(hole_15_par > 3, 1, 0) + 
+                        if(hole_16_par > 3, 1, 0) + 
+                        if(hole_17_par > 3, 1, 0) + 
+                        if(hole_18_par > 3, 1, 0)                                                 
                     ) * 100 as fir_percentage")  
                 ->first();
     
                 $fir_percentage = $firs->fir_percentage;                  
 
-            }
-    
-            if($round_result->yards === 'yellow'){
-    
-                $firs = \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("
-                    SUM(
-                        if(hole_10_fir > 0, 1, 0) + 
-                        if(hole_11_fir > 0, 1, 0) + 
-                        if(hole_12_fir > 0, 1, 0) + 
-                        if(hole_13_fir > 0, 1, 0) + 
-                        if(hole_14_fir > 0, 1, 0) + 
-                        if(hole_15_fir > 0, 1, 0) + 
-                        if(hole_16_fir > 0, 1, 0) + 
-                        if(hole_17_fir > 0, 1, 0) + 
-                        if(hole_18_fir > 0, 1, 0) + 
-                        if(hole_19_fir > 0, 1, 0) + 
-                        if(hole_20_fir > 0, 1, 0) + 
-                        if(hole_21_fir > 0, 1, 0) + 
-                        if(hole_22_fir > 0, 1, 0) + 
-                        if(hole_23_fir > 0, 1, 0) + 
-                        if(hole_24_fir > 0, 1, 0) + 
-                        if(hole_25_fir > 0, 1, 0) + 
-                        if(hole_26_fir > 0, 1, 0) + 
-                        if(hole_27_fir > 0, 1, 0)                                                  
-                    ) / (
-                        if(hole_10_yellow_par > 3, 1, 0) + 
-                        if(hole_11_yellow_par > 3, 1, 0) + 
-                        if(hole_12_yellow_par > 3, 1, 0) + 
-                        if(hole_13_yellow_par > 3, 1, 0) + 
-                        if(hole_14_yellow_par > 3, 1, 0) + 
-                        if(hole_15_yellow_par > 3, 1, 0) + 
-                        if(hole_16_yellow_par > 3, 1, 0) + 
-                        if(hole_17_yellow_par > 3, 1, 0) + 
-                        if(hole_18_yellow_par > 3, 1, 0) +  
-                        if(hole_19_yellow_par > 3, 1, 0) + 
-                        if(hole_20_yellow_par > 3, 1, 0) + 
-                        if(hole_21_yellow_par > 3, 1, 0) + 
-                        if(hole_22_yellow_par > 3, 1, 0) + 
-                        if(hole_23_yellow_par > 3, 1, 0) + 
-                        if(hole_24_yellow_par > 3, 1, 0) + 
-                        if(hole_25_yellow_par > 3, 1, 0) + 
-                        if(hole_26_yellow_par > 3, 1, 0) + 
-                        if(hole_27_yellow_par > 3, 1, 0)                                                 
-                    ) * 100 as fir_percentage")  
-                ->first();
-    
-                $fir_percentage = $firs->fir_percentage;                
 
-            }    
-            
-            if($round_result->yards === 'red'){
-    
-                $firs = \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("
-                    SUM(
-                        if(hole_10_fir > 0, 1, 0) + 
-                        if(hole_11_fir > 0, 1, 0) + 
-                        if(hole_12_fir > 0, 1, 0) + 
-                        if(hole_13_fir > 0, 1, 0) + 
-                        if(hole_14_fir > 0, 1, 0) + 
-                        if(hole_15_fir > 0, 1, 0) + 
-                        if(hole_16_fir > 0, 1, 0) + 
-                        if(hole_17_fir > 0, 1, 0) + 
-                        if(hole_18_fir > 0, 1, 0) + 
-                        if(hole_19_fir > 0, 1, 0) + 
-                        if(hole_20_fir > 0, 1, 0) + 
-                        if(hole_21_fir > 0, 1, 0) + 
-                        if(hole_22_fir > 0, 1, 0) + 
-                        if(hole_23_fir > 0, 1, 0) + 
-                        if(hole_24_fir > 0, 1, 0) + 
-                        if(hole_25_fir > 0, 1, 0) + 
-                        if(hole_26_fir > 0, 1, 0) + 
-                        if(hole_27_fir > 0, 1, 0)                                                  
-                    ) / (
-                        if(hole_10_red_par > 3, 1, 0) + 
-                        if(hole_11_red_par > 3, 1, 0) + 
-                        if(hole_12_red_par > 3, 1, 0) + 
-                        if(hole_13_red_par > 3, 1, 0) + 
-                        if(hole_14_red_par > 3, 1, 0) + 
-                        if(hole_15_red_par > 3, 1, 0) + 
-                        if(hole_16_red_par > 3, 1, 0) + 
-                        if(hole_17_red_par > 3, 1, 0) + 
-                        if(hole_18_red_par > 3, 1, 0) +  
-                        if(hole_19_red_par > 3, 1, 0) + 
-                        if(hole_20_red_par > 3, 1, 0) + 
-                        if(hole_21_red_par > 3, 1, 0) + 
-                        if(hole_22_red_par > 3, 1, 0) + 
-                        if(hole_23_red_par > 3, 1, 0) + 
-                        if(hole_24_red_par > 3, 1, 0) + 
-                        if(hole_25_red_par > 3, 1, 0) + 
-                        if(hole_26_red_par > 3, 1, 0) + 
-                        if(hole_27_red_par > 3, 1, 0)                                                 
-                    ) * 100 as fir_percentage")  
-                ->first();
-    
-                $fir_percentage = $firs->fir_percentage;
-
-            }  
 
         }  
         
-        if($round_result->nine === 'first-nine-third-nine'){
+        if($stats_round_result->nine === 'first-nine-third-nine'){
 
-            if($round_result->yards === 'white'){
 
                 $firs = \App\Round::where('rounds.id', $id)
                 ->groupBy('rounds.id')
@@ -1043,140 +571,37 @@ class GetRoundResult {
                         if(hole_26_fir > 0, 1, 0) + 
                         if(hole_27_fir > 0, 1, 0)                                                  
                     ) / (
-                        if(hole_1_white_par > 3, 1, 0) + 
-                        if(hole_2_white_par > 3, 1, 0) + 
-                        if(hole_3_white_par > 3, 1, 0) + 
-                        if(hole_4_white_par > 3, 1, 0) + 
-                        if(hole_5_white_par > 3, 1, 0) + 
-                        if(hole_6_white_par > 3, 1, 0) + 
-                        if(hole_7_white_par > 3, 1, 0) + 
-                        if(hole_8_white_par > 3, 1, 0) + 
-                        if(hole_9_white_par > 3, 1, 0) +  
-                        if(hole_19_white_par > 3, 1, 0) + 
-                        if(hole_20_white_par > 3, 1, 0) + 
-                        if(hole_21_white_par > 3, 1, 0) + 
-                        if(hole_22_white_par > 3, 1, 0) + 
-                        if(hole_23_white_par > 3, 1, 0) + 
-                        if(hole_24_white_par > 3, 1, 0) + 
-                        if(hole_25_white_par > 3, 1, 0) + 
-                        if(hole_26_white_par > 3, 1, 0) + 
-                        if(hole_27_white_par > 3, 1, 0)                                                 
+                        if(hole_1_par > 3, 1, 0) + 
+                        if(hole_2_par > 3, 1, 0) + 
+                        if(hole_3_par > 3, 1, 0) + 
+                        if(hole_4_par > 3, 1, 0) + 
+                        if(hole_5_par > 3, 1, 0) + 
+                        if(hole_6_par > 3, 1, 0) + 
+                        if(hole_7_par > 3, 1, 0) + 
+                        if(hole_8_par > 3, 1, 0) + 
+                        if(hole_9_par > 3, 1, 0) + 
+                        if(hole_10_par > 3, 1, 0) + 
+                        if(hole_11_par > 3, 1, 0) + 
+                        if(hole_12_par > 3, 1, 0) + 
+                        if(hole_13_par > 3, 1, 0) + 
+                        if(hole_14_par > 3, 1, 0) + 
+                        if(hole_15_par > 3, 1, 0) + 
+                        if(hole_16_par > 3, 1, 0) + 
+                        if(hole_17_par > 3, 1, 0) + 
+                        if(hole_18_par > 3, 1, 0)                                                
                     ) * 100 as fir_percentage")  
                 ->first();
     
                 $fir_percentage = $firs->fir_percentage;                
 
-            }
-    
-            if($round_result->yards === 'yellow'){
-    
-                $firs = \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("
-                    SUM(
-                        if(hole_1_fir > 0, 1, 0) + 
-                        if(hole_2_fir > 0, 1, 0) + 
-                        if(hole_3_fir > 0, 1, 0) + 
-                        if(hole_4_fir > 0, 1, 0) + 
-                        if(hole_5_fir > 0, 1, 0) + 
-                        if(hole_6_fir > 0, 1, 0) + 
-                        if(hole_7_fir > 0, 1, 0) + 
-                        if(hole_8_fir > 0, 1, 0) + 
-                        if(hole_9_fir > 0, 1, 0) + 
-                        if(hole_19_fir > 0, 1, 0) + 
-                        if(hole_20_fir > 0, 1, 0) + 
-                        if(hole_21_fir > 0, 1, 0) + 
-                        if(hole_22_fir > 0, 1, 0) + 
-                        if(hole_23_fir > 0, 1, 0) + 
-                        if(hole_24_fir > 0, 1, 0) + 
-                        if(hole_25_fir > 0, 1, 0) + 
-                        if(hole_26_fir > 0, 1, 0) + 
-                        if(hole_27_fir > 0, 1, 0)                                                  
-                    ) / (
-                        if(hole_1_yellow_par > 3, 1, 0) + 
-                        if(hole_2_yellow_par > 3, 1, 0) + 
-                        if(hole_3_yellow_par > 3, 1, 0) + 
-                        if(hole_4_yellow_par > 3, 1, 0) + 
-                        if(hole_5_yellow_par > 3, 1, 0) + 
-                        if(hole_6_yellow_par > 3, 1, 0) + 
-                        if(hole_7_yellow_par > 3, 1, 0) + 
-                        if(hole_8_yellow_par > 3, 1, 0) + 
-                        if(hole_9_yellow_par > 3, 1, 0) +  
-                        if(hole_19_yellow_par > 3, 1, 0) + 
-                        if(hole_20_yellow_par > 3, 1, 0) + 
-                        if(hole_21_yellow_par > 3, 1, 0) + 
-                        if(hole_22_yellow_par > 3, 1, 0) + 
-                        if(hole_23_yellow_par > 3, 1, 0) + 
-                        if(hole_24_yellow_par > 3, 1, 0) + 
-                        if(hole_25_yellow_par > 3, 1, 0) + 
-                        if(hole_26_yellow_par > 3, 1, 0) + 
-                        if(hole_27_yellow_par > 3, 1, 0)                                                 
-                    ) * 100 as fir_percentage")  
-                ->first();
-    
-                $fir_percentage = $firs->fir_percentage;    
-
-            }    
-            
-            if($round_result->yards === 'red'){
-    
-                $firs = \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("
-                    SUM(
-                        if(hole_1_fir > 0, 1, 0) + 
-                        if(hole_2_fir > 0, 1, 0) + 
-                        if(hole_3_fir > 0, 1, 0) + 
-                        if(hole_4_fir > 0, 1, 0) + 
-                        if(hole_5_fir > 0, 1, 0) + 
-                        if(hole_6_fir > 0, 1, 0) + 
-                        if(hole_7_fir > 0, 1, 0) + 
-                        if(hole_8_fir > 0, 1, 0) + 
-                        if(hole_9_fir > 0, 1, 0) + 
-                        if(hole_19_fir > 0, 1, 0) + 
-                        if(hole_20_fir > 0, 1, 0) + 
-                        if(hole_21_fir > 0, 1, 0) + 
-                        if(hole_22_fir > 0, 1, 0) + 
-                        if(hole_23_fir > 0, 1, 0) + 
-                        if(hole_24_fir > 0, 1, 0) + 
-                        if(hole_25_fir > 0, 1, 0) + 
-                        if(hole_26_fir > 0, 1, 0) + 
-                        if(hole_27_fir > 0, 1, 0) +                                                 
-                    ) / (
-                        if(hole_1_red_par > 3, 1, 0) + 
-                        if(hole_2_red_par > 3, 1, 0) + 
-                        if(hole_3_red_par > 3, 1, 0) + 
-                        if(hole_4_red_par > 3, 1, 0) + 
-                        if(hole_5_red_par > 3, 1, 0) + 
-                        if(hole_6_red_par > 3, 1, 0) + 
-                        if(hole_7_red_par > 3, 1, 0) + 
-                        if(hole_8_red_par > 3, 1, 0) + 
-                        if(hole_9_red_par > 3, 1, 0) +  
-                        if(hole_19_red_par > 3, 1, 0) + 
-                        if(hole_20_red_par > 3, 1, 0) + 
-                        if(hole_21_red_par > 3, 1, 0) + 
-                        if(hole_22_red_par > 3, 1, 0) + 
-                        if(hole_23_red_par > 3, 1, 0) + 
-                        if(hole_24_red_par > 3, 1, 0) + 
-                        if(hole_25_red_par > 3, 1, 0) + 
-                        if(hole_26_red_par > 3, 1, 0) + 
-                        if(hole_27_red_par > 3, 1, 0) +                                                
-                    ) * 100 as fir_percentage")  
-                ->first();
-    
-                $fir_percentage = $firs->fir_percentage;                    
-
-            }  
 
         } 
 
-        $round_result->fir_percentage = $fir_percentage;
+        $stats_round_result->fir_percentage = $fir_percentage;
 
 
         // calculate greens in regulation
-        if($round_result->nine === 'first-nine'){
+        if($stats_round_result->nine === 'first-nine'){
 
             $girs = \App\Round::where('rounds.id', $id)
             ->groupBy('rounds.id')
@@ -1198,7 +623,7 @@ class GetRoundResult {
 
         }
 
-        if($round_result->nine === 'second-nine'){
+        if($stats_round_result->nine === 'second-nine'){
 
             $girs = \App\Round::where('rounds.id', $id)
             ->groupBy('rounds.id')
@@ -1220,7 +645,7 @@ class GetRoundResult {
             
         }
         
-        if($round_result->nine === 'third-nine'){
+        if($stats_round_result->nine === 'third-nine'){
 
             $girs = \App\Round::where('rounds.id', $id)
             ->groupBy('rounds.id')
@@ -1242,7 +667,7 @@ class GetRoundResult {
             
         }        
 
-        if($round_result->nine === 'first-nine-second-nine'){
+        if($stats_round_result->nine === 'first-nine-second-nine'){
 
             $girs = \App\Round::where('rounds.id', $id)
             ->groupBy('rounds.id')
@@ -1273,7 +698,7 @@ class GetRoundResult {
 
         }
 
-        if($round_result->nine === 'second-nine-third-nine'){
+        if($stats_round_result->nine === 'second-nine-third-nine'){
 
             $girs = \App\Round::where('rounds.id', $id)
             ->groupBy('rounds.id')
@@ -1304,7 +729,7 @@ class GetRoundResult {
 
         }  
         
-        if($round_result->nine === 'first-nine-third-nine'){
+        if($stats_round_result->nine === 'first-nine-third-nine'){
 
             $girs = \App\Round::where('rounds.id', $id)
             ->groupBy('rounds.id')
@@ -1335,30 +760,29 @@ class GetRoundResult {
 
         } 
 
-        $round_result->gir_percentage = $gir_percentage;
+        $stats_round_result->gir_percentage = $gir_percentage;
 
         
 
 
         // calculate scrambling
 
-        if($round_result->yards === 'white'){
 
-            if($round_result->nine === 'first-nine'){
+            if($stats_round_result->nine === 'first-nine'){
 
                 $scrambles= \App\Round::where('rounds.id', $id)
                 ->groupBy('rounds.id')
                 ->join('courses', 'courses.id', '=', 'course_id')
                 ->selectRaw("SUM(
-                    if(hole_1_score <= hole_1_white_par and hole_1_gir < 1, 1, 0) + 
-                    if(hole_2_score <= hole_2_white_par and hole_2_gir < 1, 1, 0) + 
-                    if(hole_3_score <= hole_3_white_par and hole_3_gir < 1, 1, 0) + 
-                    if(hole_4_score <= hole_4_white_par and hole_4_gir < 1, 1, 0) + 
-                    if(hole_5_score <= hole_5_white_par and hole_5_gir < 1, 1, 0) + 
-                    if(hole_6_score <= hole_6_white_par and hole_6_gir < 1, 1, 0) + 
-                    if(hole_7_score <= hole_7_white_par and hole_7_gir < 1, 1, 0) + 
-                    if(hole_8_score <= hole_8_white_par and hole_8_gir < 1, 1, 0) + 
-                    if(hole_9_score <= hole_9_white_par and hole_9_gir < 1, 1, 0) 
+                    if(hole_1_score <= hole_1_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_score <= hole_2_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_score <= hole_3_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_score <= hole_4_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_score <= hole_5_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_score <= hole_6_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_score <= hole_7_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_score <= hole_8_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_score <= hole_9_par and hole_9_gir < 1, 1, 0) 
     
                 ) / (
                     if(hole_1_gir < 1, 1, 0) + 
@@ -1378,21 +802,21 @@ class GetRoundResult {
     
             }
     
-            if($round_result->nine === 'second-nine'){
+            if($stats_round_result->nine === 'second-nine'){
     
                 $scrambles= \App\Round::where('rounds.id', $id)
                 ->groupBy('rounds.id')
                 ->join('courses', 'courses.id', '=', 'course_id')
                 ->selectRaw("SUM(
-                    if(hole_10_score <= hole_1_white_par and hole_1_gir < 1, 1, 0) + 
-                    if(hole_11_score <= hole_2_white_par and hole_2_gir < 1, 1, 0) + 
-                    if(hole_12_score <= hole_3_white_par and hole_3_gir < 1, 1, 0) + 
-                    if(hole_13_score <= hole_4_white_par and hole_4_gir < 1, 1, 0) + 
-                    if(hole_14_score <= hole_5_white_par and hole_5_gir < 1, 1, 0) + 
-                    if(hole_15_score <= hole_6_white_par and hole_6_gir < 1, 1, 0) + 
-                    if(hole_16_score <= hole_7_white_par and hole_7_gir < 1, 1, 0) + 
-                    if(hole_17_score <= hole_8_white_par and hole_8_gir < 1, 1, 0) + 
-                    if(hole_18_score <= hole_9_white_par and hole_9_gir < 1, 1, 0) 
+                    if(hole_10_score <= hole_1_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_11_score <= hole_2_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_12_score <= hole_3_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_13_score <= hole_4_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_14_score <= hole_5_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_15_score <= hole_6_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_16_score <= hole_7_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_17_score <= hole_8_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_18_score <= hole_9_par and hole_9_gir < 1, 1, 0) 
     
                 ) / (
                     if(hole_10_gir < 1, 1, 0) + 
@@ -1412,21 +836,21 @@ class GetRoundResult {
     
             }
             
-            if($round_result->nine === 'third-nine'){
+            if($stats_round_result->nine === 'third-nine'){
     
                 $scrambles= \App\Round::where('rounds.id', $id)
                 ->groupBy('rounds.id')
                 ->join('courses', 'courses.id', '=', 'course_id')
                 ->selectRaw("SUM(
-                    if(hole_19_score <= hole_1_white_par and hole_1_gir < 1, 1, 0) + 
-                    if(hole_20_score <= hole_2_white_par and hole_2_gir < 1, 1, 0) + 
-                    if(hole_21_score <= hole_3_white_par and hole_3_gir < 1, 1, 0) + 
-                    if(hole_22_score <= hole_4_white_par and hole_4_gir < 1, 1, 0) + 
-                    if(hole_23_score <= hole_5_white_par and hole_5_gir < 1, 1, 0) + 
-                    if(hole_24_score <= hole_6_white_par and hole_6_gir < 1, 1, 0) + 
-                    if(hole_25_score <= hole_7_white_par and hole_7_gir < 1, 1, 0) + 
-                    if(hole_26_score <= hole_8_white_par and hole_8_gir < 1, 1, 0) + 
-                    if(hole_27_score <= hole_9_white_par and hole_9_gir < 1, 1, 0) 
+                    if(hole_19_score <= hole_10_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_20_score <= hole_11_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_21_score <= hole_12_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_22_score <= hole_13_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_23_score <= hole_14_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_24_score <= hole_15_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_25_score <= hole_16_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_26_score <= hole_17_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_27_score <= hole_18_par and hole_9_gir < 1, 1, 0) 
     
                 ) / (
                     if(hole_19_gir < 1, 1, 0) + 
@@ -1446,30 +870,30 @@ class GetRoundResult {
     
             }        
     
-            if($round_result->nine === 'first-nine-second-nine'){
+            if($stats_round_result->nine === 'first-nine-second-nine'){
     
                 $scrambles= \App\Round::where('rounds.id', $id)
                 ->groupBy('rounds.id')
                 ->join('courses', 'courses.id', '=', 'course_id')
                 ->selectRaw("SUM(
-                    if(hole_1_score <= hole_1_white_par and hole_1_gir < 1, 1, 0) + 
-                    if(hole_2_score <= hole_2_white_par and hole_2_gir < 1, 1, 0) + 
-                    if(hole_3_score <= hole_3_white_par and hole_3_gir < 1, 1, 0) + 
-                    if(hole_4_score <= hole_4_white_par and hole_4_gir < 1, 1, 0) + 
-                    if(hole_5_score <= hole_5_white_par and hole_5_gir < 1, 1, 0) + 
-                    if(hole_6_score <= hole_6_white_par and hole_6_gir < 1, 1, 0) + 
-                    if(hole_7_score <= hole_7_white_par and hole_7_gir < 1, 1, 0) + 
-                    if(hole_8_score <= hole_8_white_par and hole_8_gir < 1, 1, 0) + 
-                    if(hole_9_score <= hole_9_white_par and hole_9_gir < 1, 1, 0) +
-                    if(hole_10_score <= hole_10_white_par and hole_10_gir < 1, 1, 0) +
-                    if(hole_11_score <= hole_11_white_par and hole_11_gir < 1, 1, 0) +
-                    if(hole_12_score <= hole_12_white_par and hole_12_gir < 1, 1, 0) +
-                    if(hole_13_score <= hole_13_white_par and hole_13_gir < 1, 1, 0) +
-                    if(hole_14_score <= hole_14_white_par and hole_14_gir < 1, 1, 0) +
-                    if(hole_15_score <= hole_15_white_par and hole_15_gir < 1, 1, 0) +
-                    if(hole_16_score <= hole_16_white_par and hole_16_gir < 1, 1, 0) +
-                    if(hole_17_score <= hole_17_white_par and hole_17_gir < 1, 1, 0) +
-                    if(hole_18_score <= hole_18_white_par and hole_18_gir < 1, 1, 0)
+                    if(hole_1_score <= hole_1_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_score <= hole_2_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_score <= hole_3_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_score <= hole_4_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_score <= hole_5_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_score <= hole_6_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_score <= hole_7_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_score <= hole_8_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_score <= hole_9_par and hole_9_gir < 1, 1, 0) +
+                    if(hole_10_score <= hole_10_par and hole_10_gir < 1, 1, 0) +
+                    if(hole_11_score <= hole_11_par and hole_11_gir < 1, 1, 0) +
+                    if(hole_12_score <= hole_12_par and hole_12_gir < 1, 1, 0) +
+                    if(hole_13_score <= hole_13_par and hole_13_gir < 1, 1, 0) +
+                    if(hole_14_score <= hole_14_par and hole_14_gir < 1, 1, 0) +
+                    if(hole_15_score <= hole_15_par and hole_15_gir < 1, 1, 0) +
+                    if(hole_16_score <= hole_16_par and hole_16_gir < 1, 1, 0) +
+                    if(hole_17_score <= hole_17_par and hole_17_gir < 1, 1, 0) +
+                    if(hole_18_score <= hole_18_par and hole_18_gir < 1, 1, 0)
                 ) / (
                     if(hole_1_gir < 1, 1, 0) + 
                     if(hole_2_gir < 1, 1, 0) + 
@@ -1497,30 +921,30 @@ class GetRoundResult {
     
             }
     
-            if($round_result->nine === 'second-nine-third-nine'){
+            if($stats_round_result->nine === 'second-nine-third-nine'){
     
                 $scrambles= \App\Round::where('rounds.id', $id)
                 ->groupBy('rounds.id')
                 ->join('courses', 'courses.id', '=', 'course_id')
                 ->selectRaw("SUM(
-                    if(hole_10_score <= hole_10_white_par and hole_10_gir < 1, 1, 0) +
-                    if(hole_11_score <= hole_11_white_par and hole_11_gir < 1, 1, 0) +
-                    if(hole_12_score <= hole_12_white_par and hole_12_gir < 1, 1, 0) +
-                    if(hole_13_score <= hole_13_white_par and hole_13_gir < 1, 1, 0) +
-                    if(hole_14_score <= hole_14_white_par and hole_14_gir < 1, 1, 0) +
-                    if(hole_15_score <= hole_15_white_par and hole_15_gir < 1, 1, 0) +
-                    if(hole_16_score <= hole_16_white_par and hole_16_gir < 1, 1, 0) +
-                    if(hole_17_score <= hole_17_white_par and hole_17_gir < 1, 1, 0) +
-                    if(hole_18_score <= hole_18_white_par and hole_18_gir < 1, 1, 0) +
-                    if(hole_19_score <= hole_19_white_par and hole_19_gir < 1, 1, 0) + 
-                    if(hole_20_score <= hole_20_white_par and hole_20_gir < 1, 1, 0) + 
-                    if(hole_21_score <= hole_21_white_par and hole_21_gir < 1, 1, 0) + 
-                    if(hole_22_score <= hole_22_white_par and hole_22_gir < 1, 1, 0) + 
-                    if(hole_23_score <= hole_23_white_par and hole_23_gir < 1, 1, 0) + 
-                    if(hole_24_score <= hole_24_white_par and hole_24_gir < 1, 1, 0) + 
-                    if(hole_25_score <= hole_25_white_par and hole_25_gir < 1, 1, 0) + 
-                    if(hole_26_score <= hole_26_white_par and hole_26_gir < 1, 1, 0) + 
-                    if(hole_27_score <= hole_27_white_par and hole_27_gir < 1, 1, 0)                 
+                    if(hole_10_score <= hole_1_par and hole_10_gir < 1, 1, 0) +
+                    if(hole_11_score <= hole_2_par and hole_11_gir < 1, 1, 0) +
+                    if(hole_12_score <= hole_3_par and hole_12_gir < 1, 1, 0) +
+                    if(hole_13_score <= hole_4_par and hole_13_gir < 1, 1, 0) +
+                    if(hole_14_score <= hole_5_par and hole_14_gir < 1, 1, 0) +
+                    if(hole_15_score <= hole_6_par and hole_15_gir < 1, 1, 0) +
+                    if(hole_16_score <= hole_7_par and hole_16_gir < 1, 1, 0) +
+                    if(hole_17_score <= hole_8_par and hole_17_gir < 1, 1, 0) +
+                    if(hole_18_score <= hole_9_par and hole_18_gir < 1, 1, 0) +
+                    if(hole_19_score <= hole_10_par and hole_19_gir < 1, 1, 0) + 
+                    if(hole_20_score <= hole_11_par and hole_20_gir < 1, 1, 0) + 
+                    if(hole_21_score <= hole_12_par and hole_21_gir < 1, 1, 0) + 
+                    if(hole_22_score <= hole_13_par and hole_22_gir < 1, 1, 0) + 
+                    if(hole_23_score <= hole_14_par and hole_23_gir < 1, 1, 0) + 
+                    if(hole_24_score <= hole_15_par and hole_24_gir < 1, 1, 0) + 
+                    if(hole_25_score <= hole_16_par and hole_25_gir < 1, 1, 0) + 
+                    if(hole_26_score <= hole_17_par and hole_26_gir < 1, 1, 0) + 
+                    if(hole_27_score <= hole_18_par and hole_27_gir < 1, 1, 0)                 
                 ) / (
                     if(hole_10_gir < 1, 1, 0) + 
                     if(hole_11_gir < 1, 1, 0) + 
@@ -1548,30 +972,30 @@ class GetRoundResult {
     
             }  
             
-            if($round_result->nine === 'first-nine-third-nine'){
+            if($stats_round_result->nine === 'first-nine-third-nine'){
     
                 $scrambles= \App\Round::where('rounds.id', $id)
                 ->groupBy('rounds.id')
                 ->join('courses', 'courses.id', '=', 'course_id')
                 ->selectRaw("SUM(
-                    if(hole_1_score <= hole_1_white_par and hole_1_gir < 1, 1, 0) + 
-                    if(hole_2_score <= hole_2_white_par and hole_2_gir < 1, 1, 0) + 
-                    if(hole_3_score <= hole_3_white_par and hole_3_gir < 1, 1, 0) + 
-                    if(hole_4_score <= hole_4_white_par and hole_4_gir < 1, 1, 0) + 
-                    if(hole_5_score <= hole_5_white_par and hole_5_gir < 1, 1, 0) + 
-                    if(hole_6_score <= hole_6_white_par and hole_6_gir < 1, 1, 0) + 
-                    if(hole_7_score <= hole_7_white_par and hole_7_gir < 1, 1, 0) + 
-                    if(hole_8_score <= hole_8_white_par and hole_8_gir < 1, 1, 0) + 
-                    if(hole_9_score <= hole_9_white_par and hole_9_gir < 1, 1, 0) +
-                    if(hole_19_score <= hole_19_white_par and hole_19_gir < 1, 1, 0) +
-                    if(hole_20_score <= hole_11_white_par and hole_20_gir < 1, 1, 0) +
-                    if(hole_21_score <= hole_21_white_par and hole_21_gir < 1, 1, 0) +
-                    if(hole_22_score <= hole_22_white_par and hole_22_gir < 1, 1, 0) +
-                    if(hole_23_score <= hole_23_white_par and hole_23_gir < 1, 1, 0) +
-                    if(hole_24_score <= hole_24_white_par and hole_24_gir < 1, 1, 0) +
-                    if(hole_25_score <= hole_25_white_par and hole_25_gir < 1, 1, 0) +
-                    if(hole_26_score <= hole_26_white_par and hole_26_gir < 1, 1, 0) +
-                    if(hole_27_score <= hole_27_white_par and hole_27_gir < 1, 1, 0)
+                    if(hole_1_score <= hole_1_par and hole_1_gir < 1, 1, 0) + 
+                    if(hole_2_score <= hole_2_par and hole_2_gir < 1, 1, 0) + 
+                    if(hole_3_score <= hole_3_par and hole_3_gir < 1, 1, 0) + 
+                    if(hole_4_score <= hole_4_par and hole_4_gir < 1, 1, 0) + 
+                    if(hole_5_score <= hole_5_par and hole_5_gir < 1, 1, 0) + 
+                    if(hole_6_score <= hole_6_par and hole_6_gir < 1, 1, 0) + 
+                    if(hole_7_score <= hole_7_par and hole_7_gir < 1, 1, 0) + 
+                    if(hole_8_score <= hole_8_par and hole_8_gir < 1, 1, 0) + 
+                    if(hole_9_score <= hole_9_par and hole_9_gir < 1, 1, 0) +
+                    if(hole_19_score <= hole_10_par and hole_19_gir < 1, 1, 0) +
+                    if(hole_20_score <= hole_11_par and hole_20_gir < 1, 1, 0) +
+                    if(hole_21_score <= hole_12_par and hole_21_gir < 1, 1, 0) +
+                    if(hole_22_score <= hole_13_par and hole_22_gir < 1, 1, 0) +
+                    if(hole_23_score <= hole_14_par and hole_23_gir < 1, 1, 0) +
+                    if(hole_24_score <= hole_15_par and hole_24_gir < 1, 1, 0) +
+                    if(hole_25_score <= hole_16_par and hole_25_gir < 1, 1, 0) +
+                    if(hole_26_score <= hole_17_par and hole_26_gir < 1, 1, 0) +
+                    if(hole_27_score <= hole_18_par and hole_27_gir < 1, 1, 0)
                 ) / (
                     if(hole_1_gir < 1, 1, 0) + 
                     if(hole_2_gir < 1, 1, 0) + 
@@ -1598,598 +1022,89 @@ class GetRoundResult {
                 $scrambling = $scrambles->scrambling;               
     
             }      
+ 
 
-        }
-
-        if($round_result->yards === 'yellow'){
-
-            if($round_result->nine === 'first-nine'){
-
-                $scrambles= \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("SUM(
-                    if(hole_1_score <= hole_1_yellow_par and hole_1_gir < 1, 1, 0) + 
-                    if(hole_2_score <= hole_2_yellow_par and hole_2_gir < 1, 1, 0) + 
-                    if(hole_3_score <= hole_3_yellow_par and hole_3_gir < 1, 1, 0) + 
-                    if(hole_4_score <= hole_4_yellow_par and hole_4_gir < 1, 1, 0) + 
-                    if(hole_5_score <= hole_5_yellow_par and hole_5_gir < 1, 1, 0) + 
-                    if(hole_6_score <= hole_6_yellow_par and hole_6_gir < 1, 1, 0) + 
-                    if(hole_7_score <= hole_7_yellow_par and hole_7_gir < 1, 1, 0) + 
-                    if(hole_8_score <= hole_8_yellow_par and hole_8_gir < 1, 1, 0) + 
-                    if(hole_9_score <= hole_9_yellow_par and hole_9_gir < 1, 1, 0) 
-    
-                ) / (
-                    if(hole_1_gir < 1, 1, 0) + 
-                    if(hole_2_gir < 1, 1, 0) + 
-                    if(hole_3_gir < 1, 1, 0) + 
-                    if(hole_4_gir < 1, 1, 0) + 
-                    if(hole_5_gir < 1, 1, 0) + 
-                    if(hole_6_gir < 1, 1, 0) + 
-                    if(hole_7_gir < 1, 1, 0) + 
-                    if(hole_8_gir < 1, 1, 0) + 
-                    if(hole_9_gir < 1, 1, 0) 
-                ) * 100 as scrambling")             
-                           
-                ->first();
-    
-                $scrambling = $scrambles->scrambling;              
-    
-            }
-    
-            if($round_result->nine === 'second-nine'){
-    
-                $scrambles= \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("SUM(
-                    if(hole_10_score <= hole_1_yellow_par and hole_1_gir < 1, 1, 0) + 
-                    if(hole_11_score <= hole_2_yellow_par and hole_2_gir < 1, 1, 0) + 
-                    if(hole_12_score <= hole_3_yellow_par and hole_3_gir < 1, 1, 0) + 
-                    if(hole_13_score <= hole_4_yellow_par and hole_4_gir < 1, 1, 0) + 
-                    if(hole_14_score <= hole_5_yellow_par and hole_5_gir < 1, 1, 0) + 
-                    if(hole_15_score <= hole_6_yellow_par and hole_6_gir < 1, 1, 0) + 
-                    if(hole_16_score <= hole_7_yellow_par and hole_7_gir < 1, 1, 0) + 
-                    if(hole_17_score <= hole_8_yellow_par and hole_8_gir < 1, 1, 0) + 
-                    if(hole_18_score <= hole_9_yellow_par and hole_9_gir < 1, 1, 0) 
-    
-                ) / (
-                    if(hole_10_gir < 1, 1, 0) + 
-                    if(hole_11_gir < 1, 1, 0) + 
-                    if(hole_12_gir < 1, 1, 0) + 
-                    if(hole_13_gir < 1, 1, 0) + 
-                    if(hole_14_gir < 1, 1, 0) + 
-                    if(hole_15_gir < 1, 1, 0) + 
-                    if(hole_16_gir < 1, 1, 0) + 
-                    if(hole_17_gir < 1, 1, 0) + 
-                    if(hole_18_gir < 1, 1, 0) 
-                ) * 100 as scrambling")             
-                           
-                ->first();
-    
-                $scrambling = $scrambles->scrambling;              
-    
-            }
-            
-            if($round_result->nine === 'third-nine'){
-    
-                $scrambles= \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("SUM(
-                    if(hole_19_score <= hole_1_yellow_par and hole_1_gir < 1, 1, 0) + 
-                    if(hole_20_score <= hole_2_yellow_par and hole_2_gir < 1, 1, 0) + 
-                    if(hole_21_score <= hole_3_yellow_par and hole_3_gir < 1, 1, 0) + 
-                    if(hole_22_score <= hole_4_yellow_par and hole_4_gir < 1, 1, 0) + 
-                    if(hole_23_score <= hole_5_yellow_par and hole_5_gir < 1, 1, 0) + 
-                    if(hole_24_score <= hole_6_yellow_par and hole_6_gir < 1, 1, 0) + 
-                    if(hole_25_score <= hole_7_yellow_par and hole_7_gir < 1, 1, 0) + 
-                    if(hole_26_score <= hole_8_yellow_par and hole_8_gir < 1, 1, 0) + 
-                    if(hole_27_score <= hole_9_yellow_par and hole_9_gir < 1, 1, 0) 
-    
-                ) / (
-                    if(hole_19_gir < 1, 1, 0) + 
-                    if(hole_20_gir < 1, 1, 0) + 
-                    if(hole_21_gir < 1, 1, 0) + 
-                    if(hole_22_gir < 1, 1, 0) + 
-                    if(hole_23_gir < 1, 1, 0) + 
-                    if(hole_24_gir < 1, 1, 0) + 
-                    if(hole_25_gir < 1, 1, 0) + 
-                    if(hole_26_gir < 1, 1, 0) + 
-                    if(hole_27_gir < 1, 1, 0) 
-                ) * 100 as scrambling")             
-                           
-                ->first();
-    
-                $scrambling = $scrambles->scrambling;             
-    
-            }        
-    
-            if($round_result->nine === 'first-nine-second-nine'){
-    
-                $scrambles= \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("SUM(
-                    if(hole_1_score <= hole_1_yellow_par and hole_1_gir < 1, 1, 0) + 
-                    if(hole_2_score <= hole_2_yellow_par and hole_2_gir < 1, 1, 0) + 
-                    if(hole_3_score <= hole_3_yellow_par and hole_3_gir < 1, 1, 0) + 
-                    if(hole_4_score <= hole_4_yellow_par and hole_4_gir < 1, 1, 0) + 
-                    if(hole_5_score <= hole_5_yellow_par and hole_5_gir < 1, 1, 0) + 
-                    if(hole_6_score <= hole_6_yellow_par and hole_6_gir < 1, 1, 0) + 
-                    if(hole_7_score <= hole_7_yellow_par and hole_7_gir < 1, 1, 0) + 
-                    if(hole_8_score <= hole_8_yellow_par and hole_8_gir < 1, 1, 0) + 
-                    if(hole_9_score <= hole_9_yellow_par and hole_9_gir < 1, 1, 0) +
-                    if(hole_10_score <= hole_10_yellow_par and hole_10_gir < 1, 1, 0) +
-                    if(hole_11_score <= hole_11_yellow_par and hole_11_gir < 1, 1, 0) +
-                    if(hole_12_score <= hole_12_yellow_par and hole_12_gir < 1, 1, 0) +
-                    if(hole_13_score <= hole_13_yellow_par and hole_13_gir < 1, 1, 0) +
-                    if(hole_14_score <= hole_14_yellow_par and hole_14_gir < 1, 1, 0) +
-                    if(hole_15_score <= hole_15_yellow_par and hole_15_gir < 1, 1, 0) +
-                    if(hole_16_score <= hole_16_yellow_par and hole_16_gir < 1, 1, 0) +
-                    if(hole_17_score <= hole_17_yellow_par and hole_17_gir < 1, 1, 0) +
-                    if(hole_18_score <= hole_18_yellow_par and hole_18_gir < 1, 1, 0)
-                ) / (
-                    if(hole_1_gir < 1, 1, 0) + 
-                    if(hole_2_gir < 1, 1, 0) + 
-                    if(hole_3_gir < 1, 1, 0) + 
-                    if(hole_4_gir < 1, 1, 0) + 
-                    if(hole_5_gir < 1, 1, 0) + 
-                    if(hole_6_gir < 1, 1, 0) + 
-                    if(hole_7_gir < 1, 1, 0) + 
-                    if(hole_8_gir < 1, 1, 0) + 
-                    if(hole_9_gir < 1, 1, 0) +
-                    if(hole_10_gir < 1, 1, 0) + 
-                    if(hole_11_gir < 1, 1, 0) + 
-                    if(hole_12_gir < 1, 1, 0) + 
-                    if(hole_13_gir < 1, 1, 0) + 
-                    if(hole_14_gir < 1, 1, 0) + 
-                    if(hole_15_gir < 1, 1, 0) + 
-                    if(hole_16_gir < 1, 1, 0) + 
-                    if(hole_17_gir < 1, 1, 0) + 
-                    if(hole_18_gir < 1, 1, 0)                 
-                ) * 100 as scrambling")             
-                           
-                ->first();
-    
-                $scrambling = $scrambles->scrambling;               
-    
-            }
-    
-            if($round_result->nine === 'second-nine-third-nine'){
-    
-                $scrambles= \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("SUM(
-                    if(hole_10_score <= hole_10_yellow_par and hole_10_gir < 1, 1, 0) +
-                    if(hole_11_score <= hole_11_yellow_par and hole_11_gir < 1, 1, 0) +
-                    if(hole_12_score <= hole_12_yellow_par and hole_12_gir < 1, 1, 0) +
-                    if(hole_13_score <= hole_13_yellow_par and hole_13_gir < 1, 1, 0) +
-                    if(hole_14_score <= hole_14_yellow_par and hole_14_gir < 1, 1, 0) +
-                    if(hole_15_score <= hole_15_yellow_par and hole_15_gir < 1, 1, 0) +
-                    if(hole_16_score <= hole_16_yellow_par and hole_16_gir < 1, 1, 0) +
-                    if(hole_17_score <= hole_17_yellow_par and hole_17_gir < 1, 1, 0) +
-                    if(hole_18_score <= hole_18_yellow_par and hole_18_gir < 1, 1, 0) +
-                    if(hole_19_score <= hole_19_yellow_par and hole_19_gir < 1, 1, 0) + 
-                    if(hole_20_score <= hole_20_yellow_par and hole_20_gir < 1, 1, 0) + 
-                    if(hole_21_score <= hole_21_yellow_par and hole_21_gir < 1, 1, 0) + 
-                    if(hole_22_score <= hole_22_yellow_par and hole_22_gir < 1, 1, 0) + 
-                    if(hole_23_score <= hole_23_yellow_par and hole_23_gir < 1, 1, 0) + 
-                    if(hole_24_score <= hole_24_yellow_par and hole_24_gir < 1, 1, 0) + 
-                    if(hole_25_score <= hole_25_yellow_par and hole_25_gir < 1, 1, 0) + 
-                    if(hole_26_score <= hole_26_yellow_par and hole_26_gir < 1, 1, 0) + 
-                    if(hole_27_score <= hole_27_yellow_par and hole_27_gir < 1, 1, 0)                 
-                ) / (
-                    if(hole_10_gir < 1, 1, 0) + 
-                    if(hole_11_gir < 1, 1, 0) + 
-                    if(hole_12_gir < 1, 1, 0) + 
-                    if(hole_13_gir < 1, 1, 0) + 
-                    if(hole_14_gir < 1, 1, 0) + 
-                    if(hole_15_gir < 1, 1, 0) + 
-                    if(hole_16_gir < 1, 1, 0) + 
-                    if(hole_17_gir < 1, 1, 0) + 
-                    if(hole_18_gir < 1, 1, 0) +
-                    if(hole_19_gir < 1, 1, 0) + 
-                    if(hole_20_gir < 1, 1, 0) + 
-                    if(hole_21_gir < 1, 1, 0) + 
-                    if(hole_22_gir < 1, 1, 0) + 
-                    if(hole_23_gir < 1, 1, 0) + 
-                    if(hole_24_gir < 1, 1, 0) + 
-                    if(hole_25_gir < 1, 1, 0) + 
-                    if(hole_26_gir < 1, 1, 0) + 
-                    if(hole_27_gir < 1, 1, 0)                                 
-                ) * 100 as scrambling")             
-                           
-                ->first();
-    
-                $scrambling = $scrambles->scrambling;                 
-    
-            }  
-            
-            if($round_result->nine === 'first-nine-third-nine'){
-    
-                $scrambles= \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("SUM(
-                    if(hole_1_score <= hole_1_yellow_par and hole_1_gir < 1, 1, 0) + 
-                    if(hole_2_score <= hole_2_yellow_par and hole_2_gir < 1, 1, 0) + 
-                    if(hole_3_score <= hole_3_yellow_par and hole_3_gir < 1, 1, 0) + 
-                    if(hole_4_score <= hole_4_yellow_par and hole_4_gir < 1, 1, 0) + 
-                    if(hole_5_score <= hole_5_yellow_par and hole_5_gir < 1, 1, 0) + 
-                    if(hole_6_score <= hole_6_yellow_par and hole_6_gir < 1, 1, 0) + 
-                    if(hole_7_score <= hole_7_yellow_par and hole_7_gir < 1, 1, 0) + 
-                    if(hole_8_score <= hole_8_yellow_par and hole_8_gir < 1, 1, 0) + 
-                    if(hole_9_score <= hole_9_yellow_par and hole_9_gir < 1, 1, 0) +
-                    if(hole_19_score <= hole_19_yellow_par and hole_19_gir < 1, 1, 0) +
-                    if(hole_20_score <= hole_11_yellow_par and hole_20_gir < 1, 1, 0) +
-                    if(hole_21_score <= hole_21_yellow_par and hole_21_gir < 1, 1, 0) +
-                    if(hole_22_score <= hole_22_yellow_par and hole_22_gir < 1, 1, 0) +
-                    if(hole_23_score <= hole_23_yellow_par and hole_23_gir < 1, 1, 0) +
-                    if(hole_24_score <= hole_24_yellow_par and hole_24_gir < 1, 1, 0) +
-                    if(hole_25_score <= hole_25_yellow_par and hole_25_gir < 1, 1, 0) +
-                    if(hole_26_score <= hole_26_yellow_par and hole_26_gir < 1, 1, 0) +
-                    if(hole_27_score <= hole_27_yellow_par and hole_27_gir < 1, 1, 0)
-                ) / (
-                    if(hole_1_gir < 1, 1, 0) + 
-                    if(hole_2_gir < 1, 1, 0) + 
-                    if(hole_3_gir < 1, 1, 0) + 
-                    if(hole_4_gir < 1, 1, 0) + 
-                    if(hole_5_gir < 1, 1, 0) + 
-                    if(hole_6_gir < 1, 1, 0) + 
-                    if(hole_7_gir < 1, 1, 0) + 
-                    if(hole_8_gir < 1, 1, 0) + 
-                    if(hole_9_gir < 1, 1, 0) +
-                    if(hole_19_gir < 1, 1, 0) + 
-                    if(hole_20_gir < 1, 1, 0) + 
-                    if(hole_21_gir < 1, 1, 0) + 
-                    if(hole_22_gir < 1, 1, 0) + 
-                    if(hole_23_gir < 1, 1, 0) + 
-                    if(hole_24_gir < 1, 1, 0) + 
-                    if(hole_25_gir < 1, 1, 0) + 
-                    if(hole_26_gir < 1, 1, 0) + 
-                    if(hole_27_gir < 1, 1, 0)                 
-                ) * 100 as scrambling")             
-                           
-                ->first();
-    
-                $scrambling = $scrambles->scrambling;               
-    
-            }             
-
-        }    
-        
-        if($round_result->yards === 'red'){
-
-            if($round_result->nine === 'first-nine'){
-
-                $scrambles= \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("SUM(
-                    if(hole_1_score <= hole_1_red_par and hole_1_gir < 1, 1, 0) + 
-                    if(hole_2_score <= hole_2_red_par and hole_2_gir < 1, 1, 0) + 
-                    if(hole_3_score <= hole_3_red_par and hole_3_gir < 1, 1, 0) + 
-                    if(hole_4_score <= hole_4_red_par and hole_4_gir < 1, 1, 0) + 
-                    if(hole_5_score <= hole_5_red_par and hole_5_gir < 1, 1, 0) + 
-                    if(hole_6_score <= hole_6_red_par and hole_6_gir < 1, 1, 0) + 
-                    if(hole_7_score <= hole_7_red_par and hole_7_gir < 1, 1, 0) + 
-                    if(hole_8_score <= hole_8_red_par and hole_8_gir < 1, 1, 0) + 
-                    if(hole_9_score <= hole_9_red_par and hole_9_gir < 1, 1, 0) 
-    
-                ) / (
-                    if(hole_1_gir < 1, 1, 0) + 
-                    if(hole_2_gir < 1, 1, 0) + 
-                    if(hole_3_gir < 1, 1, 0) + 
-                    if(hole_4_gir < 1, 1, 0) + 
-                    if(hole_5_gir < 1, 1, 0) + 
-                    if(hole_6_gir < 1, 1, 0) + 
-                    if(hole_7_gir < 1, 1, 0) + 
-                    if(hole_8_gir < 1, 1, 0) + 
-                    if(hole_9_gir < 1, 1, 0) 
-                ) * 100 as scrambling")             
-                           
-                ->first();
-    
-                $scrambling = $scrambles->scrambling;              
-    
-            }
-    
-            if($round_result->nine === 'second-nine'){
-    
-                $scrambles= \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("SUM(
-                    if(hole_10_score <= hole_1_red_par and hole_1_gir < 1, 1, 0) + 
-                    if(hole_11_score <= hole_2_red_par and hole_2_gir < 1, 1, 0) + 
-                    if(hole_12_score <= hole_3_red_par and hole_3_gir < 1, 1, 0) + 
-                    if(hole_13_score <= hole_4_red_par and hole_4_gir < 1, 1, 0) + 
-                    if(hole_14_score <= hole_5_red_par and hole_5_gir < 1, 1, 0) + 
-                    if(hole_15_score <= hole_6_red_par and hole_6_gir < 1, 1, 0) + 
-                    if(hole_16_score <= hole_7_red_par and hole_7_gir < 1, 1, 0) + 
-                    if(hole_17_score <= hole_8_red_par and hole_8_gir < 1, 1, 0) + 
-                    if(hole_18_score <= hole_9_red_par and hole_9_gir < 1, 1, 0) 
-    
-                ) / (
-                    if(hole_10_gir < 1, 1, 0) + 
-                    if(hole_11_gir < 1, 1, 0) + 
-                    if(hole_12_gir < 1, 1, 0) + 
-                    if(hole_13_gir < 1, 1, 0) + 
-                    if(hole_14_gir < 1, 1, 0) + 
-                    if(hole_15_gir < 1, 1, 0) + 
-                    if(hole_16_gir < 1, 1, 0) + 
-                    if(hole_17_gir < 1, 1, 0) + 
-                    if(hole_18_gir < 1, 1, 0) 
-                ) * 100 as scrambling")             
-                           
-                ->first();
-    
-                $scrambling = $scrambles->scrambling;              
-    
-            }
-            
-            if($round_result->nine === 'third-nine'){
-    
-                $scrambles= \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("SUM(
-                    if(hole_19_score <= hole_1_red_par and hole_1_gir < 1, 1, 0) + 
-                    if(hole_20_score <= hole_2_red_par and hole_2_gir < 1, 1, 0) + 
-                    if(hole_21_score <= hole_3_red_par and hole_3_gir < 1, 1, 0) + 
-                    if(hole_22_score <= hole_4_red_par and hole_4_gir < 1, 1, 0) + 
-                    if(hole_23_score <= hole_5_red_par and hole_5_gir < 1, 1, 0) + 
-                    if(hole_24_score <= hole_6_red_par and hole_6_gir < 1, 1, 0) + 
-                    if(hole_25_score <= hole_7_red_par and hole_7_gir < 1, 1, 0) + 
-                    if(hole_26_score <= hole_8_red_par and hole_8_gir < 1, 1, 0) + 
-                    if(hole_27_score <= hole_9_red_par and hole_9_gir < 1, 1, 0) 
-    
-                ) / (
-                    if(hole_19_gir < 1, 1, 0) + 
-                    if(hole_20_gir < 1, 1, 0) + 
-                    if(hole_21_gir < 1, 1, 0) + 
-                    if(hole_22_gir < 1, 1, 0) + 
-                    if(hole_23_gir < 1, 1, 0) + 
-                    if(hole_24_gir < 1, 1, 0) + 
-                    if(hole_25_gir < 1, 1, 0) + 
-                    if(hole_26_gir < 1, 1, 0) + 
-                    if(hole_27_gir < 1, 1, 0) 
-                ) * 100 as scrambling")             
-                           
-                ->first();
-    
-                $scrambling = $scrambles->scrambling;             
-    
-            }        
-    
-            if($round_result->nine === 'first-nine-second-nine'){
-    
-                $scrambles= \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("SUM(
-                    if(hole_1_score <= hole_1_red_par and hole_1_gir < 1, 1, 0) + 
-                    if(hole_2_score <= hole_2_red_par and hole_2_gir < 1, 1, 0) + 
-                    if(hole_3_score <= hole_3_red_par and hole_3_gir < 1, 1, 0) + 
-                    if(hole_4_score <= hole_4_red_par and hole_4_gir < 1, 1, 0) + 
-                    if(hole_5_score <= hole_5_red_par and hole_5_gir < 1, 1, 0) + 
-                    if(hole_6_score <= hole_6_red_par and hole_6_gir < 1, 1, 0) + 
-                    if(hole_7_score <= hole_7_red_par and hole_7_gir < 1, 1, 0) + 
-                    if(hole_8_score <= hole_8_red_par and hole_8_gir < 1, 1, 0) + 
-                    if(hole_9_score <= hole_9_red_par and hole_9_gir < 1, 1, 0) +
-                    if(hole_10_score <= hole_10_red_par and hole_10_gir < 1, 1, 0) +
-                    if(hole_11_score <= hole_11_red_par and hole_11_gir < 1, 1, 0) +
-                    if(hole_12_score <= hole_12_red_par and hole_12_gir < 1, 1, 0) +
-                    if(hole_13_score <= hole_13_red_par and hole_13_gir < 1, 1, 0) +
-                    if(hole_14_score <= hole_14_red_par and hole_14_gir < 1, 1, 0) +
-                    if(hole_15_score <= hole_15_red_par and hole_15_gir < 1, 1, 0) +
-                    if(hole_16_score <= hole_16_red_par and hole_16_gir < 1, 1, 0) +
-                    if(hole_17_score <= hole_17_red_par and hole_17_gir < 1, 1, 0) +
-                    if(hole_18_score <= hole_18_red_par and hole_18_gir < 1, 1, 0)
-                ) / (
-                    if(hole_1_gir < 1, 1, 0) + 
-                    if(hole_2_gir < 1, 1, 0) + 
-                    if(hole_3_gir < 1, 1, 0) + 
-                    if(hole_4_gir < 1, 1, 0) + 
-                    if(hole_5_gir < 1, 1, 0) + 
-                    if(hole_6_gir < 1, 1, 0) + 
-                    if(hole_7_gir < 1, 1, 0) + 
-                    if(hole_8_gir < 1, 1, 0) + 
-                    if(hole_9_gir < 1, 1, 0) +
-                    if(hole_10_gir < 1, 1, 0) + 
-                    if(hole_11_gir < 1, 1, 0) + 
-                    if(hole_12_gir < 1, 1, 0) + 
-                    if(hole_13_gir < 1, 1, 0) + 
-                    if(hole_14_gir < 1, 1, 0) + 
-                    if(hole_15_gir < 1, 1, 0) + 
-                    if(hole_16_gir < 1, 1, 0) + 
-                    if(hole_17_gir < 1, 1, 0) + 
-                    if(hole_18_gir < 1, 1, 0)                 
-                ) * 100 as scrambling")             
-                           
-                ->first();
-    
-                $scrambling = $scrambles->scrambling;               
-    
-            }
-    
-            if($round_result->nine === 'second-nine-third-nine'){
-    
-                $scrambles= \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("SUM(
-                    if(hole_10_score <= hole_10_red_par and hole_10_gir < 1, 1, 0) +
-                    if(hole_11_score <= hole_11_red_par and hole_11_gir < 1, 1, 0) +
-                    if(hole_12_score <= hole_12_red_par and hole_12_gir < 1, 1, 0) +
-                    if(hole_13_score <= hole_13_red_par and hole_13_gir < 1, 1, 0) +
-                    if(hole_14_score <= hole_14_red_par and hole_14_gir < 1, 1, 0) +
-                    if(hole_15_score <= hole_15_red_par and hole_15_gir < 1, 1, 0) +
-                    if(hole_16_score <= hole_16_red_par and hole_16_gir < 1, 1, 0) +
-                    if(hole_17_score <= hole_17_red_par and hole_17_gir < 1, 1, 0) +
-                    if(hole_18_score <= hole_18_red_par and hole_18_gir < 1, 1, 0) +
-                    if(hole_19_score <= hole_19_red_par and hole_19_gir < 1, 1, 0) + 
-                    if(hole_20_score <= hole_20_red_par and hole_20_gir < 1, 1, 0) + 
-                    if(hole_21_score <= hole_21_red_par and hole_21_gir < 1, 1, 0) + 
-                    if(hole_22_score <= hole_22_red_par and hole_22_gir < 1, 1, 0) + 
-                    if(hole_23_score <= hole_23_red_par and hole_23_gir < 1, 1, 0) + 
-                    if(hole_24_score <= hole_24_red_par and hole_24_gir < 1, 1, 0) + 
-                    if(hole_25_score <= hole_25_red_par and hole_25_gir < 1, 1, 0) + 
-                    if(hole_26_score <= hole_26_red_par and hole_26_gir < 1, 1, 0) + 
-                    if(hole_27_score <= hole_27_red_par and hole_27_gir < 1, 1, 0)                 
-                ) / (
-                    if(hole_10_gir < 1, 1, 0) + 
-                    if(hole_11_gir < 1, 1, 0) + 
-                    if(hole_12_gir < 1, 1, 0) + 
-                    if(hole_13_gir < 1, 1, 0) + 
-                    if(hole_14_gir < 1, 1, 0) + 
-                    if(hole_15_gir < 1, 1, 0) + 
-                    if(hole_16_gir < 1, 1, 0) + 
-                    if(hole_17_gir < 1, 1, 0) + 
-                    if(hole_18_gir < 1, 1, 0) +
-                    if(hole_19_gir < 1, 1, 0) + 
-                    if(hole_20_gir < 1, 1, 0) + 
-                    if(hole_21_gir < 1, 1, 0) + 
-                    if(hole_22_gir < 1, 1, 0) + 
-                    if(hole_23_gir < 1, 1, 0) + 
-                    if(hole_24_gir < 1, 1, 0) + 
-                    if(hole_25_gir < 1, 1, 0) + 
-                    if(hole_26_gir < 1, 1, 0) + 
-                    if(hole_27_gir < 1, 1, 0)                                 
-                ) * 100 as scrambling")             
-                           
-                ->first();
-    
-                $scrambling = $scrambles->scrambling;                 
-    
-            }  
-            
-            if($round_result->nine === 'first-nine-third-nine'){
-    
-                $scrambles= \App\Round::where('rounds.id', $id)
-                ->groupBy('rounds.id')
-                ->join('courses', 'courses.id', '=', 'course_id')
-                ->selectRaw("SUM(
-                    if(hole_1_score <= hole_1_red_par and hole_1_gir < 1, 1, 0) + 
-                    if(hole_2_score <= hole_2_red_par and hole_2_gir < 1, 1, 0) + 
-                    if(hole_3_score <= hole_3_red_par and hole_3_gir < 1, 1, 0) + 
-                    if(hole_4_score <= hole_4_red_par and hole_4_gir < 1, 1, 0) + 
-                    if(hole_5_score <= hole_5_red_par and hole_5_gir < 1, 1, 0) + 
-                    if(hole_6_score <= hole_6_red_par and hole_6_gir < 1, 1, 0) + 
-                    if(hole_7_score <= hole_7_red_par and hole_7_gir < 1, 1, 0) + 
-                    if(hole_8_score <= hole_8_red_par and hole_8_gir < 1, 1, 0) + 
-                    if(hole_9_score <= hole_9_red_par and hole_9_gir < 1, 1, 0) +
-                    if(hole_19_score <= hole_19_red_par and hole_19_gir < 1, 1, 0) +
-                    if(hole_20_score <= hole_11_red_par and hole_20_gir < 1, 1, 0) +
-                    if(hole_21_score <= hole_21_red_par and hole_21_gir < 1, 1, 0) +
-                    if(hole_22_score <= hole_22_red_par and hole_22_gir < 1, 1, 0) +
-                    if(hole_23_score <= hole_23_red_par and hole_23_gir < 1, 1, 0) +
-                    if(hole_24_score <= hole_24_red_par and hole_24_gir < 1, 1, 0) +
-                    if(hole_25_score <= hole_25_red_par and hole_25_gir < 1, 1, 0) +
-                    if(hole_26_score <= hole_26_red_par and hole_26_gir < 1, 1, 0) +
-                    if(hole_27_score <= hole_27_red_par and hole_27_gir < 1, 1, 0)
-                ) / (
-                    if(hole_1_gir < 1, 1, 0) + 
-                    if(hole_2_gir < 1, 1, 0) + 
-                    if(hole_3_gir < 1, 1, 0) + 
-                    if(hole_4_gir < 1, 1, 0) + 
-                    if(hole_5_gir < 1, 1, 0) + 
-                    if(hole_6_gir < 1, 1, 0) + 
-                    if(hole_7_gir < 1, 1, 0) + 
-                    if(hole_8_gir < 1, 1, 0) + 
-                    if(hole_9_gir < 1, 1, 0) +
-                    if(hole_19_gir < 1, 1, 0) + 
-                    if(hole_20_gir < 1, 1, 0) + 
-                    if(hole_21_gir < 1, 1, 0) + 
-                    if(hole_22_gir < 1, 1, 0) + 
-                    if(hole_23_gir < 1, 1, 0) + 
-                    if(hole_24_gir < 1, 1, 0) + 
-                    if(hole_25_gir < 1, 1, 0) + 
-                    if(hole_26_gir < 1, 1, 0) + 
-                    if(hole_27_gir < 1, 1, 0)                 
-                ) * 100 as scrambling")             
-                           
-                ->first();
-    
-                $scrambling = $scrambles->scrambling;               
-    
-            }             
-
-        } 
-
-        $round_result->scrambling = $scrambling;
+        $stats_round_result->scrambling = $scrambling;
 
 
 
         // calculate round yards
 
-        if($round_result->yards === 'white'){
+        if($stats_round_result->yards === 'white'){
 
-            $first_nine_yards = intval($round_result->hole_1_white) + intval($round_result->hole_2_white) + intval($round_result->hole_3_white) + intval($round_result->hole_4_white) + intval($round_result->hole_5_white) + intval($round_result->hole_6_white) + intval($round_result->hole_7_white) + intval($round_result->hole_8_white) + intval($round_result->hole_9_white);
-            $second_nine_yards = intval($round_result->hole_10_white) + intval($round_result->hole_11_white) + intval($round_result->hole_12_white) + intval($round_result->hole_13_white) + intval($round_result->hole_14_white) + intval($round_result->hole_15_white) + intval($round_result->hole_16_white) + intval($round_result->hole_17_white) + intval($round_result->hole_18_white);
-            $third_nine_yards = intval($round_result->hole_19_white) + intval($round_result->hole_20_white) + intval($round_result->hole_21_white) + intval($round_result->hole_22_white) + intval($round_result->hole_23_white) + intval($round_result->hole_24_white) + intval($round_result->hole_25_white) + intval($round_result->hole_26_white) + intval($round_result->hole_27_white);
+            $first_nine_yards = intval($stats_round_result->hole_1_white) + intval($stats_round_result->hole_2_white) + intval($stats_round_result->hole_3_white) + intval($stats_round_result->hole_4_white) + intval($stats_round_result->hole_5_white) + intval($stats_round_result->hole_6_white) + intval($stats_round_result->hole_7_white) + intval($stats_round_result->hole_8_white) + intval($stats_round_result->hole_9_white);
+            $second_nine_yards = intval($stats_round_result->hole_10_white) + intval($stats_round_result->hole_11_white) + intval($stats_round_result->hole_12_white) + intval($stats_round_result->hole_13_white) + intval($stats_round_result->hole_14_white) + intval($stats_round_result->hole_15_white) + intval($stats_round_result->hole_16_white) + intval($stats_round_result->hole_17_white) + intval($stats_round_result->hole_18_white);
+            $third_nine_yards = intval($stats_round_result->hole_19_white) + intval($stats_round_result->hole_20_white) + intval($stats_round_result->hole_21_white) + intval($stats_round_result->hole_22_white) + intval($stats_round_result->hole_23_white) + intval($stats_round_result->hole_24_white) + intval($stats_round_result->hole_25_white) + intval($stats_round_result->hole_26_white) + intval($stats_round_result->hole_27_white);
 
         }
 
-        if($round_result->yards === 'yellow'){
+        if($stats_round_result->yards === 'yellow'){
 
-            $first_nine_yards = intval($round_result->hole_1_yellow) + intval($round_result->hole_2_yellow) + intval($round_result->hole_3_yellow) + intval($round_result->hole_4_yellow) + intval($round_result->hole_5_yellow) + intval($round_result->hole_6_yellow) + intval($round_result->hole_7_yellow) + intval($round_result->hole_8_yellow) + intval($round_result->hole_9_yellow);
-            $second_nine_yards = intval($round_result->hole_10_yellow) + intval($round_result->hole_11_yellow) + intval($round_result->hole_12_yellow) + intval($round_result->hole_13_yellow) + intval($round_result->hole_14_yellow) + intval($round_result->hole_15_yellow) + intval($round_result->hole_16_yellow) + intval($round_result->hole_17_yellow) + intval($round_result->hole_18_yellow);
-            $third_nine_yards = intval($round_result->hole_19_yellow) + intval($round_result->hole_20_yellow) + intval($round_result->hole_21_yellow) + intval($round_result->hole_22_yellow) + intval($round_result->hole_23_yellow) + intval($round_result->hole_24_yellow) + intval($round_result->hole_25_yellow) + intval($round_result->hole_26_yellow) + intval($round_result->hole_27_yellow);
+            $first_nine_yards = intval($stats_round_result->hole_1_yellow) + intval($stats_round_result->hole_2_yellow) + intval($stats_round_result->hole_3_yellow) + intval($stats_round_result->hole_4_yellow) + intval($stats_round_result->hole_5_yellow) + intval($stats_round_result->hole_6_yellow) + intval($stats_round_result->hole_7_yellow) + intval($stats_round_result->hole_8_yellow) + intval($stats_round_result->hole_9_yellow);
+            $second_nine_yards = intval($stats_round_result->hole_10_yellow) + intval($stats_round_result->hole_11_yellow) + intval($stats_round_result->hole_12_yellow) + intval($stats_round_result->hole_13_yellow) + intval($stats_round_result->hole_14_yellow) + intval($stats_round_result->hole_15_yellow) + intval($stats_round_result->hole_16_yellow) + intval($stats_round_result->hole_17_yellow) + intval($stats_round_result->hole_18_yellow);
+            $third_nine_yards = intval($stats_round_result->hole_19_yellow) + intval($stats_round_result->hole_20_yellow) + intval($stats_round_result->hole_21_yellow) + intval($stats_round_result->hole_22_yellow) + intval($stats_round_result->hole_23_yellow) + intval($stats_round_result->hole_24_yellow) + intval($stats_round_result->hole_25_yellow) + intval($stats_round_result->hole_26_yellow) + intval($stats_round_result->hole_27_yellow);
 
         }    
         
-        if($round_result->yards === 'red'){
+        if($stats_round_result->yards === 'red'){
 
-            $first_nine_yards = intval($round_result->hole_1_red) + intval($round_result->hole_2_red) + intval($round_result->hole_3_red) + intval($round_result->hole_4_red) + intval($round_result->hole_5_red) + intval($round_result->hole_6_red) + intval($round_result->hole_7_red) + intval($round_result->hole_8_red) + intval($round_result->hole_9_red);
-            $second_nine_yards = intval($round_result->hole_10_red) + intval($round_result->hole_11_red) + intval($round_result->hole_12_red) + intval($round_result->hole_13_red) + intval($round_result->hole_14_red) + intval($round_result->hole_15_red) + intval($round_result->hole_16_red) + intval($round_result->hole_17_red) + intval($round_result->hole_18_red);
-            $third_nine_yards = intval($round_result->hole_19_red) + intval($round_result->hole_20_red) + intval($round_result->hole_21_red) + intval($round_result->hole_22_red) + intval($round_result->hole_23_red) + intval($round_result->hole_24_red) + intval($round_result->hole_25_red) + intval($round_result->hole_26_red) + intval($round_result->hole_27_red);
+            $first_nine_yards = intval($stats_round_result->hole_1_red) + intval($stats_round_result->hole_2_red) + intval($stats_round_result->hole_3_red) + intval($stats_round_result->hole_4_red) + intval($stats_round_result->hole_5_red) + intval($stats_round_result->hole_6_red) + intval($stats_round_result->hole_7_red) + intval($stats_round_result->hole_8_red) + intval($stats_round_result->hole_9_red);
+            $second_nine_yards = intval($stats_round_result->hole_10_red) + intval($stats_round_result->hole_11_red) + intval($stats_round_result->hole_12_red) + intval($stats_round_result->hole_13_red) + intval($stats_round_result->hole_14_red) + intval($stats_round_result->hole_15_red) + intval($stats_round_result->hole_16_red) + intval($stats_round_result->hole_17_red) + intval($stats_round_result->hole_18_red);
+            $third_nine_yards = intval($stats_round_result->hole_19_red) + intval($stats_round_result->hole_20_red) + intval($stats_round_result->hole_21_red) + intval($stats_round_result->hole_22_red) + intval($stats_round_result->hole_23_red) + intval($stats_round_result->hole_24_red) + intval($stats_round_result->hole_25_red) + intval($stats_round_result->hole_26_red) + intval($stats_round_result->hole_27_red);
 
         } 
         
         $round_yards = 0;
 
-        if($round_result->nine === 'first-nine'){
+        if($stats_round_result->nine === 'first-nine'){
 
             $round_yards = $first_nine_yards;
 
         }
 
-        if($round_result->nine === 'second-nine'){
+        if($stats_round_result->nine === 'second-nine'){
 
             $round_yards = $second_nine_yards;
             
         }
         
-        if($round_result->nine === 'third-nine'){
+        if($stats_round_result->nine === 'third-nine'){
 
             $round_yards = $third_nine_yards;
             
         }        
 
-        if($round_result->nine === 'first-nine-second-nine'){
+        if($stats_round_result->nine === 'first-nine-second-nine'){
 
             $round_yards = $first_nine_yards + $second_nine_yards;
 
         }
 
-        if($round_result->nine === 'second-nine-third-nine'){
+        if($stats_round_result->nine === 'second-nine-third-nine'){
 
             $round_yards = $second_nine_yards + $third_nine_yards;
 
         }  
         
-        if($round_result->nine === 'first-nine-third-nine'){
+        if($stats_round_result->nine === 'first-nine-third-nine'){
 
             $round_yards = $first_nine_yards + $third_nine_yards;
 
         }         
 
-        $round_result->round_yards = $round_yards;
+        $stats_round_result->round_yards = $round_yards;
 
-        return $round_result;
+        return $stats_round_result;
+
+    }
+
+    else{
+
+        $stats_round_results = false;
+
+        return $stats_round_results;
+
+    }
 
     }
  

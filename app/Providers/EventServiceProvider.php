@@ -14,8 +14,18 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         'App\Events\RoundAdd' => [
+            'App\Listeners\StoreRoundPar',
+            'App\Listeners\RoundPoints',
             'App\Listeners\CalculateHandicap', 
+            
         ],
+        'App\Events\RoundUpdate' => [
+            'App\Listeners\RoundCorrect',
+             
+        ], 
+        'App\Events\CourseCorrection' => [
+            'App\Listeners\CourseCorrect', 
+        ],                
     ];
 
     /**
@@ -27,6 +37,6 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        //
+
     }
 }

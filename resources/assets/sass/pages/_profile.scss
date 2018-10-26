@@ -1,0 +1,73 @@
+// ========================================
+// Profile -----------------------------
+// ========================================
+
+
+.profile-tabs{
+    border: none;
+
+    .nav-item{
+        margin-right: 2px;
+
+        .nav-link{
+            @include gradient-directional($white, $gray-300, 180deg);           
+            @include font-size(20px);
+            @extend %heading-base;
+            padding: 1rem 1.5rem;
+            border: none;
+            color: $body-color;
+        }
+
+        .nav-link.active{
+            color: $theme-1;
+            background: $white;
+            border: none;
+        }
+        
+    }
+
+}
+
+.profile-tab-content{
+
+
+
+}
+
+
+svg.ct-chart-bar, svg.ct-chart-line{
+    overflow: visible;
+}
+
+.ct-label.ct-label.ct-horizontal.ct-end {
+    position: relative;
+    justify-content: flex-end;
+    text-align: right;
+    transform-origin: 100% 0;
+    transform: translate(-100%) rotate(-45deg);
+    white-space:nowrap;
+    //color:$gray-600;
+}
+
+.ct-point {
+    stroke-width: 12px !important;
+    stroke: tint($theme-1, 50) !important;
+    cursor: pointer;
+    display: block;
+    width: 16px;
+    height: 16px;
+
+  &:before{
+    @include pseudo-cover();
+    z-index: 9998 !important;
+    display: block;
+    width: 16px;
+    height:16px;
+    background: $primary;
+
+    }
+}
+
+.ct-line{
+    stroke: tint($theme-1, 20) !important;
+}

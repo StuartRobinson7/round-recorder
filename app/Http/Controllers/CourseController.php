@@ -6,6 +6,7 @@ use App\Course;
 use App\Queries\GetCourseTotals;
 use App\Queries\GetCourseInfo;
 use App\Updates\UpdateCourseInfo;
+use App\Events\CourseCorrection;
 use App\Validation\ValidateCourse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -76,7 +77,14 @@ class CourseController extends Controller
         // Add course to database
         $course = Course::create($request->all());
 
-        return redirect()->route('profile');           
+        $property_name = $course->property_name;
+        $course_name = $course->course_name;
+
+        $request->session()->flash('message', ''.$property_name.' - '.$course_name.', was added successfully.');
+        $request->session()->flash('message-type', 'success');
+
+        return view('view_course', compact('course', 'success'));
+        //return redirect()->route('profile');           
     }
 
     /**
@@ -132,11 +140,42 @@ class CourseController extends Controller
                 ->withInput();            
         }  
 
-        // update this courses information
-        $this->UpdateCourseInfo->updateCourse($id);
+        if($request->input('submit') === "correct") {
+
+            $action = 'corrected';
+
+            // update this courses information
+            $this->UpdateCourseInfo->updateCourse($id);
+
+            // get the course
+            $course = \App\Course::find($id);
+
+            // adjust previous rounds
+            event(new CourseCorrection($course));
+
+        }
+
+        elseif($request->input('submit') === "update") {
+
+            $action = 'updated';
+
+            // update this courses information
+            $this->UpdateCourseInfo->updateCourse($id);
+
+        } 
+
+        // get the course
+        $course = \App\Course::find($id);
+
+        $property_name = $course->property_name;
+        $course_name = $course->course_name;
+
 
         // get the updated course
         $course = $this->GetCourseTotals->courseTotals($id);
+
+        $request->session()->flash('message', ''.$property_name.' - '.$course_name.', '.$action.' successfully.');
+        $request->session()->flash('message-type', 'success');
 
         // return with updated course
         return view('view_course', compact('course'));

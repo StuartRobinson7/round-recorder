@@ -4,14 +4,16 @@
 
 header {
     //@extend %header-shaddow;
-    height: $header-height;
+    //height: $header-height;
     background: $white;
-    border-bottom: 3px solid $theme-1;
+    border-bottom: 1px solid $gray-200;
 
-    background:$white;                                                     
+    //background:$white;                                                     
     
-    .navbar-brand{
-        width: 420px;
+    .logo-link{
+        display: block;
+        margin: 1rem auto;
+        width: 450px;
     }
 
 
@@ -24,4 +26,26 @@ header {
             z-index: 99;
         }  
     }
+
+    .nav{
+        .nav-item{
+            height: 64px;
+
+            .nav-link{
+                color: $body-color;
+                padding: 1.3rem 1.6rem;
+            }
+
+            &:hover{
+                background: $white;
+            }
+        }
+
+        .logout-item{
+            border: 1px solid $gray-200;
+            border-top: none;
+            border-bottom: none;
+        }
+    }
+
 }

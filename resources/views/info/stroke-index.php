@@ -1,0 +1,2 @@
+<h4>What is the 'Stroke Index'?</h4>
+<p>It's a rough ranking of how difficult each hole on a golf course is, 1 being the most difficult and 18 the easiest. It is used to calculate Stableford scores, handicap adjustments, and to assign strokes during handicap matchplay.</p>

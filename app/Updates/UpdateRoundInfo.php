@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Updates;
+use Storage;
  
 class UpdateRoundInfo {
  
@@ -15,6 +16,9 @@ class UpdateRoundInfo {
         $round = \App\Round::find($id);
 
         $round->round_date = $request->round_date;
+
+        $round->handicap_round = $request->handicap_round;
+        $round->stats_round = $request->stats_round;
      
         $round->hole_1_score = $request->hole_1_score;
         $round->hole_1_putts = $request->hole_1_putts;
@@ -182,9 +186,12 @@ class UpdateRoundInfo {
         $round->hole_27_putts = $request->hole_27_putts;
         $round->hole_27_drops = $request->hole_27_drops;
         $round->hole_27_fir = $request->hole_27_fir;
-        $round->hole_27_gir = $request->hole_27_gir;          
+        $round->hole_27_gir = $request->hole_27_gir; 
+        
 
         $round->round_notes = $request->round_notes;
+
+        $handicap = $round->player_handicap;        
 
         $round->save();
 

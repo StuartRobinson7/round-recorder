@@ -13,8 +13,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        \App\User::creating(function($model){
-            $model->handicap = ($model->handicap) ?: '540';
+        \App\User::creating(function($model){ 
+
+            $model->handicap = ($model->handicap) ?: '54.0';
+            $model->preferred_tees = ($model->preferred_tees) ?: 'yellows';
+
         });
 
         \App\Course::creating(function($model){
@@ -931,13 +934,19 @@ class AppServiceProvider extends ServiceProvider
         });
 
 
-
-
         \App\Round::creating(function($model){
 
             $model->size = ($model->size) ?: 'full';
             $model->yards = ($model->yards) ?: 'yellow';
-            //$model->nine = ($model->nine) ?: 'first-nine-second-nine';
+
+            $model->handicap_round = ($model->handicap_round) ?: '0';
+
+            $model->player_handicap = ($model->player_handicap) ?: '0';
+            $model->handicap_differential = ($model->handicap_differential) ?: '0';
+
+            $model->stats_round = ($model->stats_round) ?: '0';
+
+            $model->total_points = ($model->total_points) ?: '0';
 
             $model->hole_1_drops = ($model->hole_1_drops) ?: '0';
             $model->hole_2_drops = ($model->hole_2_drops) ?: '0';
@@ -1077,16 +1086,61 @@ class AppServiceProvider extends ServiceProvider
             $model->hole_24_gir = ($model->hole_24_gir) ?: '0';
             $model->hole_25_gir = ($model->hole_25_gir) ?: '0';
             $model->hole_26_gir = ($model->hole_26_gir) ?: '0';
-            $model->hole_27_gir = ($model->hole_27_gir) ?: '0';            
+            $model->hole_27_gir = ($model->hole_27_gir) ?: '0'; 
+            
+            $model->hole_1_par = ($model->hole_1_par) ?: '0';
+            $model->hole_2_par = ($model->hole_2_par) ?: '0';
+            $model->hole_3_par = ($model->hole_3_par) ?: '0';
+            $model->hole_4_par = ($model->hole_4_par) ?: '0';
+            $model->hole_5_par = ($model->hole_5_par) ?: '0';
+            $model->hole_6_par = ($model->hole_6_par) ?: '0';
+            $model->hole_7_par = ($model->hole_7_par) ?: '0';
+            $model->hole_8_par = ($model->hole_8_par) ?: '0';
+            $model->hole_9_par = ($model->hole_9_par) ?: '0';
+            $model->hole_10_par = ($model->hole_10_par) ?: '0';
+            $model->hole_11_par = ($model->hole_11_par) ?: '0';
+            $model->hole_12_par = ($model->hole_12_par) ?: '0';
+            $model->hole_13_par = ($model->hole_13_par) ?: '0';
+            $model->hole_14_par = ($model->hole_14_par) ?: '0';
+            $model->hole_15_par = ($model->hole_15_par) ?: '0';
+            $model->hole_16_par = ($model->hole_16_par) ?: '0';
+            $model->hole_17_par = ($model->hole_17_par) ?: '0';
+            $model->hole_18_par = ($model->hole_18_par) ?: '0'; 
+            
+            $model->hole_1_points = ($model->hole_1_points) ?: '0';
+            $model->hole_2_points = ($model->hole_2_points) ?: '0';
+            $model->hole_3_points = ($model->hole_3_points) ?: '0';
+            $model->hole_4_points = ($model->hole_4_points) ?: '0';
+            $model->hole_5_points = ($model->hole_5_points) ?: '0';
+            $model->hole_6_points = ($model->hole_6_points) ?: '0';
+            $model->hole_7_points = ($model->hole_7_points) ?: '0';
+            $model->hole_8_points = ($model->hole_8_points) ?: '0';
+            $model->hole_9_points = ($model->hole_9_points) ?: '0';
+            $model->hole_10_points = ($model->hole_10_points) ?: '0';
+            $model->hole_11_points = ($model->hole_11_points) ?: '0';
+            $model->hole_12_points = ($model->hole_12_points) ?: '0';
+            $model->hole_13_points = ($model->hole_13_points) ?: '0';
+            $model->hole_14_points = ($model->hole_14_points) ?: '0';
+            $model->hole_15_points = ($model->hole_15_points) ?: '0';
+            $model->hole_16_points = ($model->hole_16_points) ?: '0';
+            $model->hole_17_points = ($model->hole_17_points) ?: '0';
+            $model->hole_18_points = ($model->hole_18_points) ?: '0';               
             
             $model->round_notes = ($model->round_notes) ?: '';
                                          
         });  
+
         
         \App\Round::updating(function($model){
             $model->size = ($model->size) ?: 'full';
             $model->yards = ($model->yards) ?: 'yellow';
+
+            $model->total_points = ($model->total_points) ?: '0';
             //$model->nine = ($model->nine) ?: 'first-nine-second-nine';
+
+            $model->stats_round = ($model->stats_round) ?: '0';
+
+            $model->total_points = ($model->total_points) ?: '0';            
 
             $model->hole_1_drops = ($model->hole_1_drops) ?: '0';
             $model->hole_2_drops = ($model->hole_2_drops) ?: '0';
@@ -1226,7 +1280,46 @@ class AppServiceProvider extends ServiceProvider
             $model->hole_24_gir = ($model->hole_24_gir) ?: '0';
             $model->hole_25_gir = ($model->hole_25_gir) ?: '0';
             $model->hole_26_gir = ($model->hole_26_gir) ?: '0';
-            $model->hole_27_gir = ($model->hole_27_gir) ?: '0';            
+            $model->hole_27_gir = ($model->hole_27_gir) ?: '0';
+            
+            $model->hole_1_par = ($model->hole_1_par) ?: '0';
+            $model->hole_2_par = ($model->hole_2_par) ?: '0';
+            $model->hole_3_par = ($model->hole_3_par) ?: '0';
+            $model->hole_4_par = ($model->hole_4_par) ?: '0';
+            $model->hole_5_par = ($model->hole_5_par) ?: '0';
+            $model->hole_6_par = ($model->hole_6_par) ?: '0';
+            $model->hole_7_par = ($model->hole_7_par) ?: '0';
+            $model->hole_8_par = ($model->hole_8_par) ?: '0';
+            $model->hole_9_par = ($model->hole_9_par) ?: '0';
+            $model->hole_10_par = ($model->hole_10_par) ?: '0';
+            $model->hole_11_par = ($model->hole_11_par) ?: '0';
+            $model->hole_12_par = ($model->hole_12_par) ?: '0';
+            $model->hole_13_par = ($model->hole_13_par) ?: '0';
+            $model->hole_14_par = ($model->hole_14_par) ?: '0';
+            $model->hole_15_par = ($model->hole_15_par) ?: '0';
+            $model->hole_16_par = ($model->hole_16_par) ?: '0';
+            $model->hole_17_par = ($model->hole_17_par) ?: '0';
+            $model->hole_18_par = ($model->hole_18_par) ?: '0';
+
+            $model->hole_1_points = ($model->hole_1_points) ?: '0';
+            $model->hole_2_points = ($model->hole_2_points) ?: '0';
+            $model->hole_3_points = ($model->hole_3_points) ?: '0';
+            $model->hole_4_points = ($model->hole_4_points) ?: '0';
+            $model->hole_5_points = ($model->hole_5_points) ?: '0';
+            $model->hole_6_points = ($model->hole_6_points) ?: '0';
+            $model->hole_7_points = ($model->hole_7_points) ?: '0';
+            $model->hole_8_points = ($model->hole_8_points) ?: '0';
+            $model->hole_9_points = ($model->hole_9_points) ?: '0';
+            $model->hole_10_points = ($model->hole_10_points) ?: '0';
+            $model->hole_11_points = ($model->hole_11_points) ?: '0';
+            $model->hole_12_points = ($model->hole_12_points) ?: '0';
+            $model->hole_13_points = ($model->hole_13_points) ?: '0';
+            $model->hole_14_points = ($model->hole_14_points) ?: '0';
+            $model->hole_15_points = ($model->hole_15_points) ?: '0';
+            $model->hole_16_points = ($model->hole_16_points) ?: '0';
+            $model->hole_17_points = ($model->hole_17_points) ?: '0';
+            $model->hole_18_points = ($model->hole_18_points) ?: '0';            
+            
             
             $model->round_notes = ($model->round_notes) ?: '';
                                          

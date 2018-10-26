@@ -46,11 +46,12 @@ $ct-series-colors: (
     display: block;
     width: 40px;
     height:40px;
-    border: 1px solid $gray-300;
+    
 }
 
 .tee-box.white{
-    background: $white;    
+    background: $white;
+    border: 1px solid $gray-300;    
 }
 
 .tee-box.yellow{

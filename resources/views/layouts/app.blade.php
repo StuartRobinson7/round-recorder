@@ -25,54 +25,98 @@
 <body>
     <div id="app">
 
-        <header>
+        <header>        
 
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="/images/round-recorder.svg" alt="Round Recorder" class="img-fluid" />
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <div class="container-fluid">   
+                
+                <div class="row">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="col-auto">
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                     
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
+                        <a class="logo-link" href="{{ url('/') }}">
+                            <img src="/images/round-recorder.svg" alt="Round Recorder" class="img-fluid" />
+                        </a>
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <ul class="nav justify-content-end">
+                            @guest
+
+                            <li class="nav-item login-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
-                            <li class="nav-item">
+
+                            <li class="nav-item register-item">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('profile') }}">{{ __('Profile') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('courses.create') }}">{{ __('Add Course') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('rounds.create') }}">{{ __('Add Round') }}</a>
-                            </li>                         
-                            <li class="nav-item dropdown">
-                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                            </li>                            
+
+                            @else
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('profile') }}">{{ __('View Profile') }}</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('courses.create') }}">{{ __('Add Course') }}</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('rounds.create') }}">{{ __('Add Round') }}</a>
+                                </li> 
+
+                                <li class="nav-item logout-item dropdown">
+                                    <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
-                            </li>
-                        @endguest
-                    </ul>
+                                </li>                                
+
+                            @endguest  
+                        </ul> 
+
+                    </div>    
+                                       
+
                 </div>
+                <!--/.row -->
+
             </div>
-        </nav>
+            <!--/.container-fluid -->            
 
-        </header>
+        </header>       
+   
+        <div class="page-heading-holder">
 
-        <main class="py-4">
-            @yield('content')
+            <div class="container-fluid">
+                
+                @yield('page-heading')
+
+            </div>
+            <!--/.container-fluid -->
+
+        </div>        
+
+        <main class="py-4">           
+
+            <div class="container-fluid">
+
+            @if(Session::has('message'))
+
+                <div class="alert alert-main alert-{{ Session::get('message-type') }} alert-dismissable fade show" role="alert">
+
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                    <i class="glyphicon glyphicon-{{ Session::get('message-type') == 'success' ? 'ok' : 'remove'}}"></i> {{ Session::get('message') }}
+                    
+                </div>
+
+            @endif                
+
+                @yield('content')
+
+            </div>
+            <!--/.container-fluid -->
+
         </main>
     </div>
 </body>

@@ -3,17 +3,178 @@
 // ========================================
 
 
-.hole-select{
-    padding:  0.4rem 0 0;
+.yardage-tabs{   
+    margin: 0 -1px; 
+    border: none;
 
-    .form-check-inline{
-        margin-right: 2rem;        
+    .nav-item{
+        @extend .col-4;
+        padding: 0 6px;
     }
 
-    label{
-        @include font-size(19px);
-        padding-left: 0.3rem;
+    .nav-link{
+        @include font-size(24px);
+        @extend %heading-thin;
+        line-height: 1.5rem;
+        padding: 1rem;
+        border: 2px solid $border-color;
+        opacity: 0.5;
+        border-radius: 0.25rem;
+        position: relative;
+
+        &:hover{
+            opacity: 1;
+        }
+
+        &:after, &:before{
+            top: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            display: none;
+        }
+
+        &:after{
+            border-color: rgba(136, 183, 213, 0);
+            border-top-color: $white;
+            border-width: 30px;
+            margin-left: -30px;
+        }
+
+        &:before{
+            border-color: rgba(194, 225, 245, 0);
+            border-top-color: $border-color;
+            border-width: 34px;
+            margin-left: -34px;
+        }
     }
+
+
+    .nav-link.active{
+        opacity: 1;
+
+        &:after, &:before{
+            display: block;
+        }
+    }
+
+    .nav-link:first-child{
+        margin-left: 0;
+    }
+
+    #whites-tab{
+        @extend .white;
+    }
+
+    #yellows-tab{
+        @extend .yellow;
+
+        &:after{
+            border-top-color: $warning;
+        }
+
+        &:before{
+            border-top-color: shade($warning, 10);; 
+        }       
+    }
+    
+    #reds-tab{
+        @extend .red;
+
+        &:after{
+            border-top-color: $danger;
+        }
+
+        &:before{
+            border-top-color: shade($danger, 10); 
+        }         
+    }    
+
+}
+
+.yardage-pane{
+
+    //padding: 1.5em;
+    //background: $white;
+    //border:1px solid $border-color;
+
+    .col-form-label{
+        @extend %heading-base;
+        margin: 0;
+        padding-right: 0.5em;
+    }
+
+    .sss-row{
+        .form-group{
+            padding: 1em;
+        }
+    }
+
+    .sss-input{
+        width: 90px; 
+    }
+
+    .add-course-row{
+        @extend .align-items-center;
+        @extend %number;
+        margin: 0;
+        text-align: center;
+        background: $white;
+        border-bottom: 1px solid $gray-200;
+        line-height: 36px;
+    
+        h4{           
+            margin: 0;
+        }
+        span{
+            line-height: 42px;
+        }
+    
+        .col{
+            padding: 0.5rem;
+            border-left: 1px solid $gray-200;  
+            height: 100%;  
+        }
+
+        .col:first-child{
+            text-align: right;
+            border-left: none;  
+        }
+    
+    }
+
+}
+
+#whites{
+    //border-top: 10px solid $white;    
+}
+
+#yellows{
+    //border-top: 10px solid $yellow;
+
+    .yards-row{
+        @extend .yellow;
+
+        .col{
+            @extend .yellow;
+        }
+    }     
+}
+
+#reds{
+    //border-top: 10px solid $red;
+
+    .yards-row{
+        @extend .red;
+
+        .col{
+            @extend .red;
+        }        
+    }      
 }
 
 
@@ -30,6 +191,7 @@
     }
 }
 
+/*
 
 .add-tee-box{
 
@@ -55,42 +217,6 @@
         margin: 0 0 $vertical-rhythm;
         border: 1px solid $gray-400;
         border-top: none;
-    }
-
-
-
-    .add-course-row{
-        @extend .align-items-center;
-        @extend %number;
-        margin: 0;
-        text-align: center;
-        background: $white;
-        border-bottom: 1px solid $gray-200;
-        line-height: 36px;
-    
-        h4{
-            margin: 0;
-        }
-    
-        .col{
-            padding: 0.5rem;    
-        }
-
-        .col:first-child{
-            text-align: right;
-        }
-    
-    }
-
-    .add-course-row:last-child{
-        border-bottom: none;
-    }
-
-
-    .add-course-hole{
-        font-weight: bold;
-        background: shade($white, 5);
-        //color:$white;
     }
 
 
@@ -154,7 +280,7 @@
     }          
 }
 
-
+*/
 
 
 

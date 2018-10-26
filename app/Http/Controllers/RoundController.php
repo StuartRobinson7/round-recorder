@@ -4,13 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Round;
 use App\Course;
+
 use App\Queries\GetCourseInfo;
 use App\Queries\GetCourseTotals;
 use App\Queries\GetRoundResult;
+
 use App\Updates\UpdateRoundInfo;
+
 use App\Validation\ValidateRound;
+
 use App\Events\RoundAdd;
+use App\Events\RoundUpdate;
+
 use App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -90,10 +97,14 @@ class RoundController extends Controller
 
         // Display Success Message            
         $request->session()->flash('message', 'New round added successfully.');
-        $request->session()->flash('message-type', 'success');        
+        $request->session()->flash('message-type', 'success');
+
+        $id = $round->id;
+       
+        return response()->json($id);
 
         // Return Success
-        return response()->json('success');
+        //return response()->json('success');
     }
 
     /**
@@ -106,6 +117,8 @@ class RoundController extends Controller
     {
         $round = \App\Round::find($id);
 
+        $round_id = $id;
+
         $course_id = $round->course_id;
 
         $yards = $round->yards;
@@ -116,7 +129,9 @@ class RoundController extends Controller
         
         $round = $this->GetRoundResult->roundResult($id);
 
-        return view('view_round',compact('round', 'course', 'course_totals', 'id'));
+        $stats_round = $this->GetRoundResult->statsRoundResult($id);
+
+        return view('view_round',compact('round', 'stats_round', 'course', 'course_totals', 'id'));
     }
 
     /**
@@ -134,10 +149,6 @@ class RoundController extends Controller
         $course = $this->GetCourseInfo->courseInfo($course_id);
 
         $course_totals = $this->GetCourseTotals->courseTotals($course_id);
-
-        //$course = \App\Course::select('property_name', 'course_name', 'hole_1_par', 'hole_2_par',  'hole_3_par', 'hole_4_par', 'hole_5_par', 'hole_6_par', 'hole_7_par', 'hole_8_par', 'hole_9_par', 'hole_10_par', 'hole_11_par', 'hole_12_par', 'hole_13_par', 'hole_14_par', 'hole_15_par', 'hole_16_par', 'hole_17_par', 'hole_18_par', 'hole_1_ladies_par', 'hole_2_ladies_par',  'hole_3_ladies_par', 'hole_4_ladies_par', 'hole_5_ladies_par', 'hole_6_ladies_par', 'hole_7_ladies_par', 'hole_8_ladies_par', 'hole_9_ladies_par', 'hole_10_ladies_par', 'hole_11_ladies_par', 'hole_12_ladies_par', 'hole_13_ladies_par', 'hole_14_ladies_par', 'hole_15_ladies_par', 'hole_16_ladies_par', 'hole_17_ladies_par', 'hole_18_ladies_par' )      
-        //->where('courses.id', $course_id)
-        //->first();
 
         return view('edit_round',compact('round', 'course', 'course_totals', 'id'));
     }
@@ -161,17 +172,15 @@ class RoundController extends Controller
                     ->back()
                     ->withErrors($validator)
                     ->withInput();            
-            }  
+            }             
 
-            // update this courses information
-            $this->UpdateRoundInfo->updateRound($id);        
-    
+            // update this rounds information
+            $this->UpdateRoundInfo->updateRound($id);           
 
             // get round info
             $round = \App\Round::find($id);
-
-            // Fire an event like a new round has been added
-            event(new RoundAdd($round));
+            
+            event(new RoundUpdate($round));
 
             $course_id = $round->course_id;
     
@@ -180,8 +189,16 @@ class RoundController extends Controller
             $course_totals = $this->GetCourseTotals->courseTotals($course_id);
             
             $round = $this->GetRoundResult->roundResult($id);
+
+            $stats_round = $this->GetRoundResult->statsRoundResult($id);
     
-            return view('view_round',compact('round', 'course', 'course_totals', 'id'))->with('success','Round has been updated');    
+            $round_id = $round->id;
+
+            // Display Success Message            
+            $request->session()->flash('message', 'This round has been successfully updated.');
+            $request->session()->flash('message-type', 'success');            
+
+            return view('view_round',compact('round', 'stats_round', 'course', 'course_totals', 'id'));    
         }
     }
 

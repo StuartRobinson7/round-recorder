@@ -1,0 +1,229 @@
+<?php
+
+namespace App\Listeners;
+
+use App\User;
+use App\Round;
+
+use App\Events\RoundAdd;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Storage;
+
+class StoreRoundPar
+{
+    /**
+     * Create the event listener.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        
+    }
+
+    /**
+     * Handle the event.
+     *
+     * @param  RoundAdd  $event
+     * @return void
+     */
+    public function handle(RoundAdd $event)
+    {
+
+        $course = $event->round->course_id;
+        
+        $yards = $event->round->yards;
+
+        $nine = $event->round->nine;
+
+
+        $course_data = \App\Course::where('id', $course)->first();
+
+
+        if($yards === "white"){
+
+            if($nine === 'first-nine' || $nine === 'first-nine-second-nine' || $nine === 'first-nine-third-nine'){
+
+                $event->round->hole_1_par = $course_data->hole_1_white_par;
+                $event->round->hole_2_par = $course_data->hole_2_white_par;
+                $event->round->hole_3_par = $course_data->hole_3_white_par;
+                $event->round->hole_4_par = $course_data->hole_4_white_par;
+                $event->round->hole_5_par = $course_data->hole_5_white_par;
+                $event->round->hole_6_par = $course_data->hole_6_white_par;
+                $event->round->hole_7_par = $course_data->hole_7_white_par;
+                $event->round->hole_8_par = $course_data->hole_8_white_par;
+                $event->round->hole_9_par = $course_data->hole_9_white_par;
+    
+            }
+    
+            if($nine === 'second-nine'|| $nine === 'first-nine-second-nine'){
+    
+                $event->round->hole_10_par = $course_data->hole_10_white_par;
+                $event->round->hole_11_par = $course_data->hole_11_white_par;
+                $event->round->hole_12_par = $course_data->hole_12_white_par;
+                $event->round->hole_13_par = $course_data->hole_13_white_par;
+                $event->round->hole_14_par = $course_data->hole_14_white_par;
+                $event->round->hole_15_par = $course_data->hole_15_white_par;
+                $event->round->hole_16_par = $course_data->hole_16_white_par;
+                $event->round->hole_17_par = $course_data->hole_17_white_par;
+                $event->round->hole_18_par = $course_data->hole_18_white_par;
+                
+            }
+
+            if($nine === 'second-nine-third-nine'){
+    
+                $event->round->hole_1_par = $course_data->hole_10_white_par;
+                $event->round->hole_2_par = $course_data->hole_11_white_par;
+                $event->round->hole_3_par = $course_data->hole_12_white_par;
+                $event->round->hole_4_par = $course_data->hole_13_white_par;
+                $event->round->hole_5_par = $course_data->hole_14_white_par;
+                $event->round->hole_6_par = $course_data->hole_15_white_par;
+                $event->round->hole_7_par = $course_data->hole_16_white_par;
+                $event->round->hole_8_par = $course_data->hole_17_white_par;
+                $event->round->hole_9_par = $course_data->hole_18_white_par;
+    
+            }              
+            
+            if($nine === 'third-nine' || $nine === 'second-nine-third-nine' || $nine === 'first-nine-third-nine'){
+    
+                $event->round->hole_10_par = $course_data->hole_19_white_par;
+                $event->round->hole_11_par = $course_data->hole_20_white_par;
+                $event->round->hole_12_par = $course_data->hole_21_white_par;
+                $event->round->hole_13_par = $course_data->hole_22_white_par;
+                $event->round->hole_14_par = $course_data->hole_23_white_par;
+                $event->round->hole_15_par = $course_data->hole_24_white_par;
+                $event->round->hole_16_par = $course_data->hole_25_white_par;
+                $event->round->hole_17_par = $course_data->hole_26_white_par;
+                $event->round->hole_18_par = $course_data->hole_27_white_par;
+                
+            }                     
+
+        }
+      
+        if($yards === "yellow"){
+
+            if($nine === 'first-nine' || $nine === 'first-nine-second-nine' || $nine === 'first-nine-third-nine'){
+
+                $event->round->hole_1_par = $course_data->hole_1_yellow_par;
+                $event->round->hole_2_par = $course_data->hole_2_yellow_par;
+                $event->round->hole_3_par = $course_data->hole_3_yellow_par;
+                $event->round->hole_4_par = $course_data->hole_4_yellow_par;
+                $event->round->hole_5_par = $course_data->hole_5_yellow_par;
+                $event->round->hole_6_par = $course_data->hole_6_yellow_par;
+                $event->round->hole_7_par = $course_data->hole_7_yellow_par;
+                $event->round->hole_8_par = $course_data->hole_8_yellow_par;
+                $event->round->hole_9_par = $course_data->hole_9_yellow_par;
+    
+            }
+    
+            if($nine === 'second-nine'|| $nine === 'first-nine-second-nine'){
+    
+                $event->round->hole_10_par = $course_data->hole_10_yellow_par;
+                $event->round->hole_11_par = $course_data->hole_11_yellow_par;
+                $event->round->hole_12_par = $course_data->hole_12_yellow_par;
+                $event->round->hole_13_par = $course_data->hole_13_yellow_par;
+                $event->round->hole_14_par = $course_data->hole_14_yellow_par;
+                $event->round->hole_15_par = $course_data->hole_15_yellow_par;
+                $event->round->hole_16_par = $course_data->hole_16_yellow_par;
+                $event->round->hole_17_par = $course_data->hole_17_yellow_par;
+                $event->round->hole_18_par = $course_data->hole_18_yellow_par;
+                
+            }
+
+            if($nine === 'second-nine-third-nine'){
+    
+                $event->round->hole_1_par = $course_data->hole_10_yellow_par;
+                $event->round->hole_2_par = $course_data->hole_11_yellow_par;
+                $event->round->hole_3_par = $course_data->hole_12_yellow_par;
+                $event->round->hole_4_par = $course_data->hole_13_yellow_par;
+                $event->round->hole_5_par = $course_data->hole_14_yellow_par;
+                $event->round->hole_6_par = $course_data->hole_15_yellow_par;
+                $event->round->hole_7_par = $course_data->hole_16_yellow_par;
+                $event->round->hole_8_par = $course_data->hole_17_yellow_par;
+                $event->round->hole_9_par = $course_data->hole_18_yellow_par;
+    
+            }              
+            
+            if($nine === 'third-nine' || $nine === 'second-nine-third-nine' || $nine === 'first-nine-third-nine'){
+    
+                $event->round->hole_10_par = $course_data->hole_19_yellow_par;
+                $event->round->hole_11_par = $course_data->hole_20_yellow_par;
+                $event->round->hole_12_par = $course_data->hole_21_yellow_par;
+                $event->round->hole_13_par = $course_data->hole_22_yellow_par;
+                $event->round->hole_14_par = $course_data->hole_23_yellow_par;
+                $event->round->hole_15_par = $course_data->hole_24_yellow_par;
+                $event->round->hole_16_par = $course_data->hole_25_yellow_par;
+                $event->round->hole_17_par = $course_data->hole_26_yellow_par;
+                $event->round->hole_18_par = $course_data->hole_27_yellow_par;
+                
+            }                     
+
+        }
+        
+        if($yards === "red"){
+
+            if($nine === 'first-nine' || $nine === 'first-nine-second-nine' || $nine === 'first-nine-third-nine'){
+
+                $event->round->hole_1_par = $course_data->hole_1_red_par;
+                $event->round->hole_2_par = $course_data->hole_2_red_par;
+                $event->round->hole_3_par = $course_data->hole_3_red_par;
+                $event->round->hole_4_par = $course_data->hole_4_red_par;
+                $event->round->hole_5_par = $course_data->hole_5_red_par;
+                $event->round->hole_6_par = $course_data->hole_6_red_par;
+                $event->round->hole_7_par = $course_data->hole_7_red_par;
+                $event->round->hole_8_par = $course_data->hole_8_red_par;
+                $event->round->hole_9_par = $course_data->hole_9_red_par;
+    
+            }
+    
+            if($nine === 'second-nine'|| $nine === 'first-nine-second-nine'){
+    
+                $event->round->hole_10_par = $course_data->hole_10_red_par;
+                $event->round->hole_11_par = $course_data->hole_11_red_par;
+                $event->round->hole_12_par = $course_data->hole_12_red_par;
+                $event->round->hole_13_par = $course_data->hole_13_red_par;
+                $event->round->hole_14_par = $course_data->hole_14_red_par;
+                $event->round->hole_15_par = $course_data->hole_15_red_par;
+                $event->round->hole_16_par = $course_data->hole_16_red_par;
+                $event->round->hole_17_par = $course_data->hole_17_red_par;
+                $event->round->hole_18_par = $course_data->hole_18_red_par;
+                
+            }
+
+            if($nine === 'second-nine-third-nine'){
+    
+                $event->round->hole_1_par = $course_data->hole_10_red_par;
+                $event->round->hole_2_par = $course_data->hole_11_red_par;
+                $event->round->hole_3_par = $course_data->hole_12_red_par;
+                $event->round->hole_4_par = $course_data->hole_13_red_par;
+                $event->round->hole_5_par = $course_data->hole_14_red_par;
+                $event->round->hole_6_par = $course_data->hole_15_red_par;
+                $event->round->hole_7_par = $course_data->hole_16_red_par;
+                $event->round->hole_8_par = $course_data->hole_17_red_par;
+                $event->round->hole_9_par = $course_data->hole_18_red_par;
+    
+            }              
+            
+            if($nine === 'third-nine' || $nine === 'second-nine-third-nine' || $nine === 'first-nine-third-nine'){
+    
+                $event->round->hole_10_par = $course_data->hole_19_red_par;
+                $event->round->hole_11_par = $course_data->hole_20_red_par;
+                $event->round->hole_12_par = $course_data->hole_21_red_par;
+                $event->round->hole_13_par = $course_data->hole_22_red_par;
+                $event->round->hole_14_par = $course_data->hole_23_red_par;
+                $event->round->hole_15_par = $course_data->hole_24_red_par;
+                $event->round->hole_16_par = $course_data->hole_25_red_par;
+                $event->round->hole_17_par = $course_data->hole_26_red_par;
+                $event->round->hole_18_par = $course_data->hole_27_red_par;
+                
+            }                     
+
+        }
+
+        $event->round->save();
+
+        return $event->round;
+
+    }
+}

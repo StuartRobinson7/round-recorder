@@ -2,13 +2,248 @@
 // Tables ---------------------------------
 // ========================================
 
+.rr-table{
+    thead{
+        tr{
+            background: shade($theme-1, 20);
+            color:$white;
+            
+            th{
+                text-align: center;
+                border-color: shade($theme-1, 30);
+
+                *{
+                    margin: 0;
+                }
+            }
+        }
+    }
+    tbody{
+        tr{
+            td{
+                padding: 0.5rem;
+                vertical-align: middle;
+                text-align: center;
+            }
+        }
+        tr:nth-child(odd){
+            background: tint($theme-1, 95);
+        }
+    }
+}
+
+.rr-row{
+    @extend .align-items-center;
+    @extend %number;
+    margin: 0;
+    text-align: center;
+    border-top:1px solid transparent;
+    //line-height: 36px;  
+    
+    .rr-cell{
+        //padding: 0.5rem;
+        border-right:1px solid $gray-200;
+        border-bottom:1px solid $gray-200;
+        height: 56px;
+        line-height: 56px;
+
+        *{
+            line-height: 56px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            @include font-size(16px);
+            margin: 0;            
+            //line-height: 48px;
+        }
+
+        .btn{
+            line-height: 1.2rem;
+            position: relative;
+            top:-3px;
+        }
+
+        .form-control{
+            margin-top: 0.3rem;
+            line-height: 1.8rem;
+        }
+
+        .custom-checkbox{
+            margin: 0 auto;
+            padding: 0;
+            width: 1rem; 
+            cursor: pointer;
+        
+            label{
+                       
+                &:before{
+                    top: 1.2rem;
+                    margin: 0 auto;
+                }
+        
+                &:after{
+                    top: 1.2rem;
+                }
+            }
+        
+            input{        
+                width: 0;
+            }
+
+            .custom-control-label::before{
+                background: $gray-500;
+            }
+
+            .custom-control-input:disabled ~ .custom-control-label::before{
+                background: $gray-300;
+                cursor: default;
+            }
+
+            .custom-control-input:checked ~ .custom-control-label::before{
+                background: $theme-1;                
+            }
+
+            .custom-control-input:focus ~ .custom-control-label::before{
+                box-shadow:0 0 0 0.2rem rgba(1, 143, 110, 0.3);
+            }
+
+        }            
+
+        
+        .score{
+            @include vertical-align(); 
+            position: relative;
+            display: block;
+            margin: 0 auto;
+            line-height: 40px;
+            width: 40px;
+            height:40px;
+
+            &:before{
+                @include pseudo-cover();
+                display: none;
+                border:2px solid $theme-1;                    
+            }
+            &:after{
+                @include pseudo-cover();
+                display: none;
+                border:2px solid $theme-1;
+                top:4px;
+                left:4px;
+                right:4px;
+                bottom:4px;                 
+            }
+        }
+        
+        .eagle, .birdie{
+            &:before, &:after{
+                border-radius: 50%;
+            }
+        }
+
+        .eagle, .double-bogey{
+            &:before, &:after{
+                display: block;
+            }
+        }
+
+        .birdie, .bogey{
+            &:before{
+                display: block;
+            }            
+        }          
+
+        &:first-child{
+            border-left:1px solid $gray-200;
+        }
+
+    } 
+
+    
+    
+    .rr-heading{
+        @extend .col-md-auto;
+        width: 170px;
+        text-align: right;
+
+        a{
+            top: 3px;
+            line-height: 1rem;
+
+            i{
+                line-height: 1rem;
+            }
+        }        
+
+    }
+    
+    .rr-total{
+        font-weight: bold;
+        width: 150px;
+    }    
+
+    &.rr-head-row{
+        background: shade($theme-1, 20);
+        color:$white;        
+
+        .rr-cell{
+            border-color: shade($theme-1, 30);
+        }
+    }
+
+    &.rr-sub-head-row{
+        background: $theme-1;
+        color:$white; 
+
+        .rr-cell{ 
+            border-color: shade($theme-1, 20);  
+        }      
+    }
+
+    &.white{
+        background: $white;
+        color:$body-color;
+
+        .rr-cell{
+            border-color: shade($white, 10%);
+        }        
+    }
+    
+    &.yellow{
+        background: $warning;
+        color:$body-color;
+
+        .rr-cell{
+            border-color: shade($warning, 10%);
+        }        
+    }
+    
+    &.red{
+        background: $danger;
+        color: $white;
+
+        .rr-cell{
+            border-color: shade($danger, 10%);
+        }        
+    }    
+}
+
+
+
+
+/*
 .rr-head-row{
     div{
         border-top: 1px solid transparent; 
     }
 }
 
+
+
+
+
 .rr-row, .rr-head-row{
+    @extend .align-items-center;
     @extend %number;
     margin: 0;
     text-align: center;
@@ -98,14 +333,6 @@ div.rr-row:nth-child(even){
 
 
 
-
-
-
-
-
-
-
-
 .rr-table{
     text-align: center;
 
@@ -140,3 +367,5 @@ div.rr-row:nth-child(even){
         color:$theme-1;
     }
 }
+
+*/

@@ -1,0 +1,2 @@
+<h4>What is 'SSS'?</h4>
+<p>Standard Scratch Score (SSS) is a measure of the playing difficulty of a golf course for a scratch golfer under normal mid-season course and weather conditions. It is used by Round Recorder to calculate your handicap.</p>
